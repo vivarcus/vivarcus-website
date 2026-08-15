@@ -226,6 +226,16 @@ ul {
   color: #fff;
 }
 
+/* The open mobile menu paints a white sheet behind the transparent header,
+   so the inversion above has to stand down or the links turn white-on-white */
+.site-header:not(.site-header--scrolled):has(.header-nav--open) .header-nav a {
+  color: var(--ink);
+}
+
+.site-header:not(.site-header--scrolled):has(.header-nav--open) .header-nav a.nav-active {
+  color: var(--brand-ink);
+}
+
 .site-header .container {
   display: flex;
   align-items: center;
@@ -485,6 +495,16 @@ ul {
 /* The open menu paints a white sheet under the transparent header */
 .site-header:has(.header-nav--open) .header-logo-dark {
   color: var(--ink);
+}
+
+/* backdrop-filter creates a containing block for position:fixed
+   descendants — kill it while the menu is open so the sheet can
+   cover the whole viewport instead of just the header strip */
+.site-header:has(.header-nav--open) {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 /* ============================================================
@@ -2442,6 +2462,12 @@ ul {
     margin: 0;
   }
 
+  /* Lift the logo above the full-screen menu sheet */
+  .site-header:has(.header-nav--open) .header-logo {
+    position: relative;
+    z-index: 1001;
+  }
+
   .header-nav--open a {
     font-size: 1.1875rem;
     font-weight: 600;
@@ -2457,7 +2483,7 @@ ul {
     align-items: center;
     gap: 12px;
     position: fixed;
-    bottom: 36px;
+    bottom: calc(36px + env(safe-area-inset-bottom, 0px));
     left: 28px;
     right: 28px;
     z-index: 1000;

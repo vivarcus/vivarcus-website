@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerNav = document.querySelector(".header-nav");
   const headerActions = document.querySelector(".header-actions");
 
+  // Keep the public template library visible in the shared top navigation.
+  if (headerNav && !headerNav.querySelector('a[href$="templates.html"]')) {
+    const templatesLink = document.createElement("a");
+    templatesLink.href = "/templates.html";
+    templatesLink.dataset.i18n = "common.nav.templates";
+    templatesLink.textContent = document.documentElement.lang.startsWith("en") ? "Templates" : "模板库";
+    const productsLink = headerNav.querySelector('a[href$="products.html"]');
+    productsLink?.insertAdjacentElement("afterend", templatesLink);
+  }
+
   // Sticky header + reading progress
   const progressBar = document.querySelector(".scroll-progress");
   let scrolled = false;

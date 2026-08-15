@@ -6,6 +6,7 @@ window.I18N_DATA = {
   zh: {
     /* ---- Shared: Header ---- */
     'common.nav.products': '产品',
+    'common.nav.templates': '模板库',
     'common.nav.about': '关于',
     'common.nav.help': '帮助中心',
     'common.nav.trial': '试用申请',
@@ -32,6 +33,8 @@ window.I18N_DATA = {
     'common.footer.ctmsGuide': 'CTMS 指南',
     'common.footer.cmp': '系统对比',
     'common.footer.tmfReference': 'TMF 分类参考',
+    'common.footer.templates': '模板库',
+    'common.footer.regulations': '法规库',
     'common.footer.help': '帮助中心',
     'common.footer.copyright': '© 2026 Vivarcus. 保留所有权利。',
 
@@ -48,8 +51,8 @@ window.I18N_DATA = {
     /* ======== index.html ======== */
 
     /* Meta */
-    'home.meta.title': 'Vivarcus — 面向生命科学的数字化平台',
-    'home.meta.desc': 'Vivarcus 是为药企和 CRO 打造的数字化平台，涵盖文档合规、临床运营和审计追踪。',
+    'home.meta.title': 'Vivarcus — eTMF 与 CTMS 临床试验数字化平台',
+    'home.meta.desc': 'Vivarcus 是面向药企与 CRO 的 eTMF（电子试验主文件）与 CTMS 临床试验数字化平台，覆盖文档合规、稽查就绪与临床运营。',
 
     /* Hero */
     'home.hero.eyebrow': '我们的愿景',
@@ -926,6 +929,7 @@ window.I18N_DATA = {
   en: {
     /* ---- Shared: Header ---- */
     'common.nav.products': 'Products',
+    'common.nav.templates': 'Templates',
     'common.nav.about': 'About',
     'common.nav.help': 'Help Center',
     'common.nav.trial': 'Request Demo',
@@ -952,6 +956,8 @@ window.I18N_DATA = {
     'common.footer.ctmsGuide': 'CTMS Guide',
     'common.footer.cmp': 'System Comparison',
     'common.footer.tmfReference': 'TMF Reference',
+    'common.footer.templates': 'Template Library',
+    'common.footer.regulations': 'Regulations',
     'common.footer.help': 'Help Center',
     'common.footer.copyright': '© 2026 Vivarcus. All rights reserved.',
 
@@ -968,8 +974,8 @@ window.I18N_DATA = {
     /* ======== index.html ======== */
 
     /* Meta */
-    'home.meta.title': 'Vivarcus — Digital Platform for Life Sciences',
-    'home.meta.desc': 'Vivarcus is a digital platform for pharma and CROs. Document compliance, clinical operations, audit trails.',
+    'home.meta.title': 'Vivarcus — eTMF & CTMS Clinical Trial Digital Platform',
+    'home.meta.desc': 'Vivarcus is an eTMF (electronic Trial Master File) and CTMS platform for pharma and CROs — document compliance, audit readiness, and clinical operations in one system.',
 
     /* Hero */
     'home.hero.eyebrow': 'Our Vision',

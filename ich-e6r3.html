@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ICH E6(R3) GCP 中文要点：11 条原则逐条解读、与 2026 版 GCP 对应关系、数据治理与稽查轨迹要求、附录 C 必备记录表，附临床运营落地清单。" />
+  <title>ICH E6(R3) 中文要点：11 条原则与对临床运营的影响 | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/ich-e6r3.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/ich-e6r3.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/ich-e6r3.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/ich-e6r3.html" />
+  <meta property="og:title" content="ICH E6(R3) 中文要点：11 条原则与对临床运营的影响 | Vivarcus" />
+  <meta property="og:description" content="ICH E6(R3) GCP 中文要点：11 条原则逐条解读、与 2026 版 GCP 对应关系、数据治理与稽查轨迹要求、附录 C 必备记录表，附临床运营落地清单。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="ICH E6(R3) 中文要点：11 条原则与对临床运营的影响 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <style>
+    .content-wrap { padding: 1.5rem 0 3rem; }
+    .content-inner { max-width: 56rem; }
+    .content-inner h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .content-inner h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .content-inner h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .content-inner p { line-height: 1.8; }
+    .content-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .content-table th, .content-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .content-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .content-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .content-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .content-note p { margin: 0.25rem 0; }
+    .content-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--book-open" aria-hidden="true"></i>
+          <span>法规库 · ICH</span>
+        </span>
+        <h1 class="page-hero-title">ICH E6(R3) 中文要点</h1>
+        <p class="page-hero-subtitle">11 条原则逐条解读 + 与 2026 版 GCP 的对应 + eTMF 合规落点。9 月 1 日新 GCP 施行前，这一页可以当作团队速查表。</p>
+      </div>
+    </section>
+
+    <section class="section content-wrap">
+      <div class="container content-inner">
+<aside class="content-note"><p>版本：v0.1（2026-08-15）｜来源：ICH E6(R3) 合并版（2026-06-16 发布，database.ich.org）与 NMPA 2026 年公告第 50 号</p><p>免责：本文解读为编者自产，非法律意见；正式引用请以官方英文原文与中文官方文本为准。原则标题为编者归纳，官方原文为完整句子。</p></aside>
+<h2>一、一句话背景</h2>
+<p>ICH E6(R3) 是 GCP 自 2016 年 R2 补遗以来最大的一次<strong>结构性修订</strong>：不再是逐章的线性条款，而是"原则 + 附件"的分层结构。中国 2026 版 GCP 全面吸收 R3 理念，自 2026-09-01 施行。</p>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>时间</th><th>事件</th>
+</tr></thead><tbody>
+<tr><td>2023-05-19</td><td>R3 草案（Step 2）公开征求意见，收到 7000+ 条意见</td></tr>
+<tr><td>2025-01-06</td><td>原则 + Annex 1（干预性临床试验）通过 Step 4，1/14 正式发布</td></tr>
+<tr><td>2026-06-03</td><td>Annex 2（去中心化试验等非传统场景）通过 Step 4</td></tr>
+<tr><td>2026-06-16</td><td>ICH 发布合并版（91 页：11 条原则 + Annex 1 + Annex 2 + 附录 A/B/C + 术语表）</td></tr>
+<tr><td>2026-09-01</td><td>中国 2026 版 GCP 施行（2026-06-08 四部门联合发布，2020 版废止）</td></tr>
+</tbody></table></div>
+<h2>二、结构变化：从 8 章到「原则 + 附件」</h2>
+<ul><li><strong>旧 R2</strong>：8 个章节的线性条款（伦理、研究者、申办方、监查、数据、安全、统计、必备文件……）</li><li><strong>新 R3</strong>：<strong>11 条总原则</strong>（贯穿试验全生命周期的灵活框架）+ <strong>Annex 1</strong>（干预性试验的详细要求）+ <strong>Annex 2</strong>（非传统设计与数据源的补充考量）+ 附录 A（研究者手册）/ B（试验方案）/ <strong>C（必备记录表）</strong> + 术语表</li></ul>
+<p>两个对 eTMF 从业者最重要的变化：</p>
+<ol><li><strong>数据治理成为独立主题</strong>：Annex 1 新增 Data Governance 章节；原则 9.4 明确"记录（含数据）的完整性与可追溯性"，9.5 明确必备记录的安全保存与可查</li><li><strong>附录 C 必备记录表</strong>：R3 版本的"必备文件清单"——TMF 结构的官方依据更新，与 DIA TMF Reference Model 对照见 <a href="tmf-reference.html">TMF 文件分类参考</a></li></ol>
+<h2>三、11 条原则中文要点</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>#</th><th>原则主题（编者归纳）</th><th>原文首句摘译</th><th>一句话要点</th><th>eTMF / CTMS 合规落点</th>
+</tr></thead><tbody>
+<tr><td>1</td><td>伦理与受试者保护</td><td>临床试验应遵循源于《赫尔辛基宣言》的伦理原则</td><td>受试者权利、安全与福祉优先于科学与社会利益（1.1）</td><td>ICF 版本受控、签署时间逻辑可核</td></tr>
+<tr><td>2</td><td>知情同意</td><td>知情同意是试验伦理行为的内在组成</td><td>自愿参与、充分知情；特殊情形（紧急、未成年）有明确路径</td><td>ICF 审核清单、同意过程源记录</td></tr>
+<tr><td>3</td><td>独立审查</td><td>临床试验应接受 IRB/IEC 的独立审查</td><td>按已获批准/同意的方案实施，并接受定期审查</td><td>伦理批件、年度审查记录归档 TMF</td></tr>
+<tr><td>4</td><td>科学合理</td><td>临床试验应针对其目的科学合理，基于充分且最新的科学知识与方法</td><td>4.3 要求试验启动后<strong>定期回顾</strong>新科学信息，判断是否需要修改</td><td>方案修订与伦理再批准记录链</td></tr>
+<tr><td>5</td><td>合格人员</td><td>临床试验应由合格人员设计与实施</td><td>按教育、培训与经验胜任各自任务（5.1）</td><td>培训记录表、授权分工表（Delegation Log）</td></tr>
+<tr><td>6</td><td>质量源于设计</td><td>质量应内建于试验的科学与操作设计及实施之中</td><td>前瞻识别关键质量因素（CTQ），使试验达成目标的可能性最大化（6.2）</td><td>质量计划、风险识别文件</td></tr>
+<tr><td>7</td><td>风险相称</td><td>流程、措施与方法应与受试者风险和数据重要性<strong>相称</strong></td><td>聚焦超出常规医疗的风险；避免不必要的负担与复杂性（7.2/7.4）</td><td>基于风险的监查计划（RBM）</td></tr>
+<tr><td>8</td><td>方案</td><td>临床试验应在一份清晰、简洁、科学合理、操作可行的方案中描述</td><td>8.3：方案及执行文件（SAP、DMP、监查计划）都应清晰可行</td><td>方案及配套计划文件的版本归档</td></tr>
+<tr><td>9</td><td>可靠结果</td><td>临床试验应产生可靠结果</td><td>9.4 记录完整性与可追溯性；9.5 必备记录安全保存并可查；9.6 注册与结果公开</td><td><strong>稽查轨迹、TMF 保存期限、试验注册登记</strong></td></tr>
+<tr><td>10</td><td>角色与职责</td><td>角色与职责应清晰并适当记录</td><td>可转移或委托，但<strong>总体责任保留</strong>（10.1）</td><td>授权分工表、申办方监督记录（oversight）</td></tr>
+<tr><td>11</td><td>试验药物</td><td>试验药物应按适用 GMP 生产，并按产品规格与方案管理</td><td>生产、储存、发放、清点、回收全程合规</td><td>药物清点表、温湿度记录、效期管理</td></tr>
+</tbody></table></div>
+<h2>四、Annex 1 与 Annex 2 速览</h2>
+<ul><li><strong>Annex 1（干预性试验）</strong>：IRB/IEC、研究者、申办方、<strong>数据治理（新增）</strong>、安全性报告、监查等详细要求，及附录 A/B/C</li><li><strong>Annex 2（2026-06 通过）</strong>：去中心化试验（DCT）、数字健康技术（DHT）、非传统试验设计的补充考量——中国场景下，远程监查与 eConsent 的文件要求可在此找依据</li><li><strong>监查部分</strong>：支持基于风险与中心化/远程方式——监查计划的写法要随之更新</li></ul>
+<h2>五、与中国 2026 版 GCP 的对应</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>2026 版 GCP</th><th>E6(R3) 对应</th><th>说明</th>
+</tr></thead><tbody>
+<tr><td>第五章「数据治理」（第 51-53 条，新增）</td><td>Annex 1 Data Governance + 原则 9.4/9.5</td><td>51 条：数据附元数据与<strong>稽查轨迹</strong>、更正可追溯；52 条：盲态完整性；53 条：计算机化系统验证、用户管理、权限与稽查轨迹、电子签名</td></tr>
+<tr><td>条文 82 → 54 条</td><td>原则 + 附件分层结构</td><td>精简化，理念转向"设计阶段预防"</td></tr>
+<tr><td>术语「试验参与者」</td><td>participants</td><td>与 R3 术语表对齐</td></tr>
+<tr><td>责任条款</td><td>原则 10.1</td><td>申办方/主要研究者责任可委托不可转移</td></tr>
+</tbody></table></div>
+<h2>六、落地行动清单（9/1 前）</h2>
+<ol><li><strong>系统层</strong>：确认 eTMF/CTMS 具备稽查轨迹、元数据管理与数据更正流程（对应 51 条 + 原则 9.4）</li><li><strong>文件层</strong>：对照附录 C 必备记录表与 <a href="tmf-reference.html">TMF 文件分类参考</a>，更新 TMF 清单与 EDL</li><li><strong>流程层</strong>：监查计划按风险相称原则更新；SOP 覆盖数据治理职责（谁负责元数据审核、数据更正）</li><li><strong>培训层</strong>：完成新版 GCP 培训并留存记录（培训早于执行，稽查必查）</li><li><strong>合同层</strong>：与 CRO 的协议复核责任转移条款（原则 10.1 责任保留）</li></ol>
+<h2>七、来源与说明</h2>
+<ul><li>ICH E6(R3) 合并版：ICH 官网 database.ich.org 可下载（英文官方文本）</li><li>中国 2026 版 GCP：国家药监局等四部门公告 2026 年第 50 号</li><li>本文为编者整理，条款理解有疑问时以官方文本为准</li></ul>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2>E6(R3) 的数据治理要求，Vivarcus eTMF 里已经内置</h2>
+          <p>稽查轨迹、元数据管理、数据更正流程——对应 2026 GCP 第五章与 R3 原则 9.4，开箱即用。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="tmf-reference.html" class="btn btn-outline btn-lg">TMF 分类参考</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="ich-e6r3.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

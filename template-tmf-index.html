@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TMF 文件清单模板（简版 EDL）：按启动前/进行中/结束后三阶段整理的试验主文件必备文件索引，标注核心项与负责方，附自查方法。" />
+  <title>TMF 文件清单模板（EDL）— 试验主文件必备文件索引 | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/template-tmf-index.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-tmf-index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-tmf-index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/template-tmf-index.html" />
+  <meta property="og:title" content="TMF 文件清单模板（EDL）— 试验主文件必备文件索引 | Vivarcus" />
+  <meta property="og:description" content="TMF 文件清单模板（简版 EDL）：按启动前/进行中/结束后三阶段整理的试验主文件必备文件索引，标注核心项与负责方，附自查方法。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="TMF 文件清单模板（EDL）— 试验主文件必备文件索引 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <style>
+    .template-wrap { padding: 1.5rem 0 3rem; }
+    .template-content { max-width: 56rem; }
+    .template-content h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .template-content h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .template-content h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .template-content p { line-height: 1.8; }
+    .template-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .template-table th, .template-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .template-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .template-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .template-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .template-note p { margin: 0.25rem 0; }
+    .template-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+    .template-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.2rem 0 1.5rem; }
+    .template-guide-item { border: 1px solid var(--border, #d8dde4); border-radius: 8px; padding: 0.8rem 0.9rem; }
+    .template-guide-item strong { display: block; margin-bottom: 0.25rem; font-size: 0.78rem; }
+    .template-guide-item span { font-size: 0.86rem; line-height: 1.6; opacity: 0.78; }
+    .template-related { margin: -0.25rem 0 1.4rem; font-size: 0.88rem; }
+    @media (max-width: 720px) { .template-guide { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--folder-open" aria-hidden="true"></i>
+          <span>模板库 · 文件清单</span>
+        </span>
+        <h1 class="page-hero-title">TMF 文件清单模板（简版 EDL）</h1>
+        <p class="page-hero-subtitle">建立 TMF/ISF 结构、中心启动文件核对、稽查前完整性自查的三阶段必备文件索引，标注稽查核心项。</p>
+      </div>
+    </section>
+
+    <section class="section template-wrap">
+      <div class="container template-content">
+        <p class="template-back"><a href="templates.html">&larr; 返回模板库</a></p>
+<div class="template-guide" aria-label="模板使用说明"><div class="template-guide-item"><strong>适合谁</strong><span>申办方、CRA、TMF 管理人员</span></div><div class="template-guide-item"><strong>何时使用</strong><span>建库、中心启动或完整性自查时</span></div><div class="template-guide-item"><strong>重点避免</strong><span>避免文件缺项、责任不清和归档位置不一致</span></div></div><p class="template-related"><strong>配套资源：</strong><a href="tmf-reference.html">TMF 文件分类参考</a> · <a href="template-audit-readiness-checklist.html">稽查准备清单</a></p>
+<aside class="template-note"><p>版本：参考版（2026-08-15）｜适用场景：建立 TMF/ISF 结构、中心启动文件核对、稽查前完整性自查</p><p>免责：本清单为简化参考框架，完整文件分类见 TMF Reference Model 及公司 SOP；最终文件范围随研究类型（药物/器械、分期）调整。</p></aside>
+<h2>一、使用说明</h2>
+<ul><li><strong>TMF（试验主文件）</strong>：申办方/CRO 层面保存的试验必备文件；<strong>ISF（研究者文件夹）</strong>：中心层面保存的文件</li><li>标注「✓核心」的文件为稽查/检查最常核对项，缺失属高等级发现</li><li>每个文件归档时记录：文件名称、版本/日期、存放位置、责任方</li></ul>
+<h2>二、试验启动前（Study Start-up）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>文件</th><th>负责方</th><th>位置</th><th>核心</th>
+</tr></thead><tbody>
+<tr><td>研究方案（批准版）及修订记录</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>研究者手册（IB）及更新</td><td>申办方</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>知情同意书模板（现行批准版）</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>病例报告表（CRF）样表</td><td>申办方</td><td>TMF+ISF</td><td></td></tr>
+<tr><td>伦理委员会批件（方案、ICF、招募材料）</td><td>中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>伦理委员会组成与工作规程文件</td><td>中心</td><td>TMF+ISF</td><td></td></tr>
+<tr><td>研究者资质文件（简历、执业证书、GCP 证书）</td><td>中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>研究中心资质文件（机构许可证、实验室资质与参考范围）</td><td>中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>合同与协议（与中心、与 CRO、财务协议）</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>药物/器械检验报告、注册或备案凭证</td><td>申办方</td><td>TMF</td><td>✓</td></tr>
+<tr><td>保险证明 / 赔偿安排文件</td><td>申办方</td><td>TMF</td><td>✓</td></tr>
+<tr><td>药监/卫健委备案与受理文件（如适用）</td><td>申办方/中心</td><td>TMF</td><td></td></tr>
+<tr><td>授权分工表（Delegation Log）</td><td>中心</td><td>ISF</td><td>✓</td></tr>
+<tr><td>中心启动访视报告</td><td>申办方</td><td>TMF</td><td></td></tr>
+</tbody></table></div>
+<h2>三、试验进行中（Study Conduct）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>文件</th><th>负责方</th><th>位置</th><th>核心</th>
+</tr></thead><tbody>
+<tr><td>监查访视报告（含电话监查/远程监查）</td><td>申办方</td><td>TMF</td><td>✓</td></tr>
+<tr><td>已签署知情同意书（原件）</td><td>中心</td><td>ISF</td><td>✓</td></tr>
+<tr><td>受试者筛选/入选记录（Screening/Enrollment Log）</td><td>中心</td><td>ISF</td><td>✓</td></tr>
+<tr><td>受试者身份识别代码表</td><td>中心</td><td>ISF</td><td>✓</td></tr>
+<tr><td>源文件与源数据（病历、检查报告等）</td><td>中心</td><td>ISF/病历</td><td>✓</td></tr>
+<tr><td>已完成 CRF（含更正记录、质疑解决记录）</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>AE 报告与跟进记录</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>SAE 报告、SUSAR 递交记录（时限核对）</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>方案偏离日志及报告</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>药物管理记录（接收、发放、回收、清点、温湿度）</td><td>中心</td><td>ISF</td><td>✓</td></tr>
+<tr><td>中心沟通记录（信件、邮件、电话记录）</td><td>申办方/中心</td><td>TMF+ISF</td><td></td></tr>
+<tr><td>方案/ICF/CRF 修订与伦理再批准记录</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>培训记录（新授权人员）</td><td>中心</td><td>ISF</td><td>✓</td></tr>
+<tr><td>中期/阶段性统计或安全报告（如适用）</td><td>申办方</td><td>TMF</td><td></td></tr>
+</tbody></table></div>
+<h2>四、试验结束后（Close-out &amp; Archiving）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>文件</th><th>负责方</th><th>位置</th><th>核心</th>
+</tr></thead><tbody>
+<tr><td>关中心访视报告</td><td>申办方</td><td>TMF</td><td>✓</td></tr>
+<tr><td>数据质疑全部解决记录 / 数据核对声明</td><td>申办方/中心</td><td>TMF+ISF</td><td></td></tr>
+<tr><td>药物回收/销毁记录</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>伦理委员会结题/终止通知</td><td>中心</td><td>TMF+ISF</td><td>✓</td></tr>
+<tr><td>终版 CRF 与数据库锁定记录</td><td>申办方</td><td>TMF</td><td></td></tr>
+<tr><td>临床研究报告（CSR）</td><td>申办方</td><td>TMF</td><td>✓</td></tr>
+<tr><td>归档声明（保存期限与地点、责任人）</td><td>申办方/中心</td><td>TMF+ISF</td><td>✓</td></tr>
+</tbody></table></div>
+<h2>五、自查方法</h2>
+<ol><li>按上表逐项核对：文件是否<strong>存在</strong>、是否<strong>现行版本</strong>、是否<strong>签署完整</strong>、是否<strong>位置正确</strong></li><li>重点关注「✓核心」项与时间逻辑（如 ICF 签署早于研究程序、SAE 报告不超时限）</li><li>缺失项登记为待办并指定责任人；系统化缺失（≥3 个中心同一文件缺失）启动 CAPA</li></ol>
+<aside class="template-note"><p>💡 <strong>使用提示</strong>：完整版文件分类（按 TMF Reference Model 的艺术品分类体系）见 <a href="https://vivarcus.com/etmf-guide.html">Vivarcus TMF 文件分类参考页</a>；电子化后所有文件都应具备版本控制与稽查轨迹。</p></aside>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2>这份清单，Vivarcus eTMF 里已经内置</h2>
+          <p>EDL 自动生成、文件自动归位到参考模型对应节点，比手工维护 Excel 清单快一个量级。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="templates.html" class="btn btn-outline btn-lg">全部模板</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="ich-e6r3.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
