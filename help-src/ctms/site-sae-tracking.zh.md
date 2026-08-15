@@ -1,6 +1,6 @@
 ---
 title: 现场 SAE 跟踪（Site SAE Tracking）
-description: 了解如何在 Site Monitoring 中登记研究中心发生的严重不良事件（SAE），包括必填字段、与监查事件的关联和维护职责。
+description: 了解如何在现场监控中登记研究中心发生的严重不良事件（SAE），包括必填字段、与监查事件的关联和维护职责。
 last_updated: 2026-08-15
 related:
   - monitoring-visits
@@ -10,7 +10,7 @@ related:
 
 ## 什么是 SAE 跟踪
 
-**Site SAE Tracking** 记录某研究中心在某研究过程中发生的 SAE（严重不良事件）信息，供 CRA 与监查团队跟踪。入口：**Site Monitoring → Site SAE Tracking**；也可从 **Monitoring Event** 详情页的 **Site SAE Tracking** 区进入与登记。
+**现场 SAE 跟踪** 记录某研究中心在某研究过程中发生的 SAE（严重不良事件）信息，供 CRA 与监查团队跟踪。入口：**现场监控 → 现场 SAE 跟踪**；也可从 **监查事件** 详情页的 **现场 SAE 跟踪** 区进入与登记。
 
 ## 登记 SAE
 
@@ -18,9 +18,9 @@ related:
 
 | 字段 | 说明 |
 |------|------|
-| **Study / Study Country / Study Site** | 所属层级（必填，级联）；从监查事件创建时自动带入 |
+| **研究 / 研究国家/地区 / 研究地点** | 所属层级（必填，级联）；从监查事件创建时自动带入 |
 | **Subject** | 受试者（必填，按中心过滤） |
-| **Monitoring Event** | 可关联发现该 SAE 的监查事件 |
+| **监查事件** | 可关联发现该 SAE 的监查事件 |
 | **SAE Name** | SAE 名称（如具体事件描述） |
 | **SAE Start Date** | SAE 开始日期（必填） |
 | **SAE End Date** | SAE 结束日期 |
@@ -33,7 +33,7 @@ related:
 
 ## 状态与维护
 
-生命周期仅 **Active → Inactive** 两态（**Status** 字段由生命周期驱动，不可手改），无自动计算。记录由 CRA 与研究团队手工维护；登记后随访视核对进度，闭环后可将状态置为 Inactive。
+生命周期仅 **活动 → 非活动** 两态（**状态** 字段由生命周期驱动，不可手改），无自动计算。记录由 CRA 与研究团队手工维护；登记后随访视核对进度，闭环后可将状态置为 Inactive。
 
 ## 常见问题
 

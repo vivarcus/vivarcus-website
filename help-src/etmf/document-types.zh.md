@@ -10,7 +10,7 @@ related:
 
 ## 三级分类体系
 
-**Document Type** 是 TMF 文档分类的主数据，采用 **Type → Subtype → Classification** 三级层次：
+**文档类型** 是 TMF 文档分类的主数据，采用 **Type → Subtype → Classification** 三级层次：
 
 | 层级 | 含义 | 示例 |
 |------|------|------|
@@ -57,7 +57,7 @@ Type 上配置 **Document Number Format**（编号格式）与 **Start Number**�
 
 ## 在 EDL 模板中的使用
 
-**Template Expected Documents** 条目通过 Type / Subtype / Classification 三字段引用本文档分类，研究侧生成的 EDL Item 继承同一分类（见 [模板 EDL 与预期文档模板](template-edls.html)）。修改分类树会影响所有引用它的模板与既有研究，变更前先评估影响面。
+**预期文档的模板** 条目通过 Type / Subtype / Classification 三字段引用本文档分类，研究侧生成的 EDL Item 继承同一分类（见 [模板 EDL 与预期文档模板](template-edls.html)）。修改分类树会影响所有引用它的模板与既有研究，变更前先评估影响面。
 
 ## 所需权限与角色
 

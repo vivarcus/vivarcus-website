@@ -10,13 +10,13 @@ related:
 
 ## 概念：模板 → 研究
 
-**Template EDL**（预期文档列表的模板）定义「某个层级应收集哪些文档」的清单模板，可复用到多个研究；它的条目叫 **Template Expected Document**（预期文档的模板）。研究执行 **Plan Study** 时选择模板 EDL，系统把模板复制为研究级 EDL 与 EDL Item（运行时条目回指源模板）。
+**Template EDL**（预期文档列表的模板）定义「某个层级应收集哪些文档」的清单模板，可复用到多个研究；它的条目叫 **Template Expected Document**（预期文档的模板）。研究执行 **计划研究** 时选择模板 EDL，系统把模板复制为研究级 EDL 与 EDL Item（运行时条目回指源模板）。
 
 模板 EDL 支持**层级嵌套**：通过 **Parent** 字段可让国家/中心级模板继承研究级模板（如 `Standard | Study Level` → `Standard | Country Level` → `Standard | Site Level`）。
 
 ## 创建模板 EDL
 
-**Admin Setup → Template Expected Document Lists** → 创建：
+**管理员设置 → 预期文档列表的模板** → 创建：
 
 | 字段 | 说明 |
 |------|------|
@@ -29,12 +29,12 @@ related:
 
 ## 预期文档的模板（EDL Item Template）
 
-**Admin Setup → Template Expected Documents** 汇总全部条目；每条定义一个预期文档模板：
+**管理员设置 → 预期文档的模板** 汇总全部条目；每条定义一个预期文档模板：
 
 | 字段 | 说明 |
 |------|------|
 | **Name** | 条目名，如 `Clinical Study Report (CSR)` |
-| **Template EDL** | 所属模板（必填） |
+| **模板 EDL** | 所属模板（必填） |
 | **Type / Subtype / Classification** | 文档分类三要素（来自 [文档类型](document-types.html)，不可编辑） |
 | **Requiredness** | 必填性（必填）：`Required` / `Not Required` / `Pending Decision` |
 | **# Expected** | 预期稳态文档份数 |
@@ -56,12 +56,12 @@ related:
 
 ## 应用到研究
 
-研究处于 **Candidate** 状态时，执行 **All Actions → Plan Study**，在弹窗中选择 **Template EDL** 与 **Milestone Master Set**、填写研究开始日期，系统即按模板生成研究级 EDL（详见 [研究层级](study-hierarchy.html)）。
+研究处于 **候选人** 状态时，执行 **所有操作 → 计划研究**，在弹窗中选择 **模板 EDL** 与 **里程碑主集**、填写研究开始日期，系统即按模板生成研究级 EDL（详见 [研究层级](study-hierarchy.html)）。
 
 ## 所需权限与角色
 
 | 类型 | 权限 | 作用 |
 |------|------|------|
-| 对象 | Template EDL / Template Expected Document：Create、Read、Edit | 维护模板清单与条目 |
+| 对象 | 模板 EDL / Template Expected Document：Create、Read、Edit | 维护模板清单与条目 |
 
 **Clinical Application Administrator** 管理全部模板；**Document Contributor** 只读。

@@ -119,23 +119,23 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="概念模板-研究">概念：模板 → 研究</h2>
-<p><strong>Template EDL</strong>（预期文档列表的模板）定义「某个层级应收集哪些文档」的清单模板，可复用到多个研究；它的条目叫 <strong>Template Expected Document</strong>（预期文档的模板）。研究执行 <strong>Plan Study</strong> 时选择模板 EDL，系统把模板复制为研究级 EDL 与 EDL Item（运行时条目回指源模板）。</p>
+<p><strong>Template EDL</strong>（预期文档列表的模板）定义「某个层级应收集哪些文档」的清单模板，可复用到多个研究；它的条目叫 <strong>Template Expected Document</strong>（预期文档的模板）。研究执行 <strong>计划研究</strong> 时选择模板 EDL，系统把模板复制为研究级 EDL 与 EDL Item（运行时条目回指源模板）。</p>
 <p>模板 EDL 支持<strong>层级嵌套</strong>：通过 <strong>Parent</strong> 字段可让国家/中心级模板继承研究级模板（如 <code>Standard | Study Level</code> → <code>Standard | Country Level</code> → <code>Standard | Site Level</code>）。</p>
 <h2 id="创建模板-edl">创建模板 EDL</h2>
-<p><strong>Admin Setup → Template Expected Document Lists</strong> → 创建：</p>
+<p><strong>管理员设置 → 预期文档列表的模板</strong> → 创建：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>模板名（必填且唯一）</td></tr><tr><td><strong>Level</strong></td><td>层级：<code>Study</code> / <code>Country</code> / <code>Site</code></td></tr><tr><td><strong>Milestone Type</strong></td><td>可选；限定模板适用的里程碑类型</td></tr><tr><td><strong>Parent</strong></td><td>可选；上级模板，用于层级继承</td></tr></tbody></table></div>
 <p>保存后在模板详情页的 <strong>EDL Item Templates</strong> 区添加预期文档模板条目。</p>
 <h2 id="预期文档的模板edl-item-template">预期文档的模板（EDL Item Template）</h2>
-<p><strong>Admin Setup → Template Expected Documents</strong> 汇总全部条目；每条定义一个预期文档模板：</p>
-<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>条目名，如 <code>Clinical Study Report (CSR)</code></td></tr><tr><td><strong>Template EDL</strong></td><td>所属模板（必填）</td></tr><tr><td><strong>Type / Subtype / Classification</strong></td><td>文档分类三要素（来自 <a href="document-types.html">文档类型</a>，不可编辑）</td></tr><tr><td><strong>Requiredness</strong></td><td>必填性（必填）：<code>Required</code> / <code>Not Required</code> / <code>Pending Decision</code></td></tr><tr><td><strong># Expected</strong></td><td>预期稳态文档份数</td></tr><tr><td><strong>Department</strong></td><td>负责部门，如 Biostatistics、Data Management</td></tr><tr><td><strong>Study Team Role / Study Organization Role / Study Product Role</strong></td><td>绑定负责角色，用于按角色生成预期文档</td></tr><tr><td><strong>Milestone Type / Owning Milestone Type</strong></td><td>归属里程碑类型，如 <code>IR - First Study Site Initiated</code></td></tr><tr><td><strong>Auto-assign Version Number</strong></td><td>是否自动分配版本号</td></tr></tbody></table></div>
+<p><strong>管理员设置 → 预期文档的模板</strong> 汇总全部条目；每条定义一个预期文档模板：</p>
+<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>条目名，如 <code>Clinical Study Report (CSR)</code></td></tr><tr><td><strong>模板 EDL</strong></td><td>所属模板（必填）</td></tr><tr><td><strong>Type / Subtype / Classification</strong></td><td>文档分类三要素（来自 <a href="document-types.html">文档类型</a>，不可编辑）</td></tr><tr><td><strong>Requiredness</strong></td><td>必填性（必填）：<code>Required</code> / <code>Not Required</code> / <code>Pending Decision</code></td></tr><tr><td><strong># Expected</strong></td><td>预期稳态文档份数</td></tr><tr><td><strong>Department</strong></td><td>负责部门，如 Biostatistics、Data Management</td></tr><tr><td><strong>Study Team Role / Study Organization Role / Study Product Role</strong></td><td>绑定负责角色，用于按角色生成预期文档</td></tr><tr><td><strong>Milestone Type / Owning Milestone Type</strong></td><td>归属里程碑类型，如 <code>IR - First Study Site Initiated</code></td></tr><tr><td><strong>Auto-assign Version Number</strong></td><td>是否自动分配版本号</td></tr></tbody></table></div>
 <div class="help-note"><p class="help-note__label">注意</p><p>出厂预置数百条预期文档模板（CSR、Annotated CRF、Audit Certificate 等），可直接沿用或按机构 SOP 调整。</p></div>
 <h2 id="模板变更如何影响研究">模板变更如何影响研究</h2>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>含义</th></tr></thead><tbody><tr><td><strong>Template Behavior</strong></td><td><code>Reuse</code>（沿用）/ <code>Update</code>（更新既有研究条目）/ <code>Create</code>（新建条目）</td></tr><tr><td><strong>Fields to Update</strong></td><td>变更推送范围，可多选：<code># Expected</code>、<code>Requiredness</code></td></tr></tbody></table></div>
 <p>修改模板后，系统按 Template Behavior 与 Fields to Update 决定是否同步到已使用该模板的研究，实现「改一处、多研究生效」。</p>
 <h2 id="应用到研究">应用到研究</h2>
-<p>研究处于 <strong>Candidate</strong> 状态时，执行 <strong>All Actions → Plan Study</strong>，在弹窗中选择 <strong>Template EDL</strong> 与 <strong>Milestone Master Set</strong>、填写研究开始日期，系统即按模板生成研究级 EDL（详见 <a href="study-hierarchy.html">研究层级</a>）。</p>
+<p>研究处于 <strong>候选人</strong> 状态时，执行 <strong>所有操作 → 计划研究</strong>，在弹窗中选择 <strong>模板 EDL</strong> 与 <strong>里程碑主集</strong>、填写研究开始日期，系统即按模板生成研究级 EDL（详见 <a href="study-hierarchy.html">研究层级</a>）。</p>
 <h2 id="所需权限与角色">所需权限与角色</h2>
-<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Template EDL / Template Expected Document：Create、Read、Edit</td><td>维护模板清单与条目</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>模板 EDL / Template Expected Document：Create、Read、Edit</td><td>维护模板清单与条目</td></tr></tbody></table></div>
 <p><strong>Clinical Application Administrator</strong> 管理全部模板；<strong>Document Contributor</strong> 只读。</p>
         </div>
       </article>

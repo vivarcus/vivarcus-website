@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="了解里程碑模板的四层结构：Template Milestone Master Set、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。" />
+  <meta name="description" content="了解里程碑模板的四层结构：模板里程碑主集、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。" />
   <title>里程碑模板（主集 / 模板集 / 里程碑 / 依赖） — eTMF 帮助 — Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/help/zh/etmf/template-milestones.html" />
   <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/template-milestones.html" />
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/help/zh/etmf/template-milestones.html" />
   <meta property="og:title" content="里程碑模板（主集 / 模板集 / 里程碑 / 依赖） — Vivarcus" />
-  <meta property="og:description" content="了解里程碑模板的四层结构：Template Milestone Master Set、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。" />
+  <meta property="og:description" content="了解里程碑模板的四层结构：模板里程碑主集、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "里程碑模板（主集 / 模板集 / 里程碑 / 依赖）",
-    "description": "了解里程碑模板的四层结构：Template Milestone Master Set、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。",
+    "description": "了解里程碑模板的四层结构：模板里程碑主集、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。",
     "inLanguage": "zh-CN",
     "dateModified": "2026-08-15",
     "mainEntityOfPage": "https://vivarcus.com/help/zh/etmf/template-milestones.html",
@@ -119,10 +119,10 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="四层结构">四层结构</h2>
-<p>里程碑模板体系分四层，研究执行 <strong>Plan Study</strong> 时按主集打包应用到研究：</p>
-<div class="help-table-wrap"><table><thead><tr><th>层</th><th>对象</th><th>作用</th></tr></thead><tbody><tr><td>主集</td><td>Template Milestone Master Set</td><td>打包研究/国家/中心三个初始化集</td></tr><tr><td>模板集</td><td>Template Milestone Set</td><td>一个层级的一套里程碑（挂一个 Story Event）</td></tr><tr><td>里程碑</td><td>Template Milestone</td><td>单个里程碑模板：类型、顺序、时长、完成规则</td></tr><tr><td>依赖</td><td>Template Milestone Dependency</td><td>前驱→后继的日期推算关系</td></tr></tbody></table></div>
+<p>里程碑模板体系分四层，研究执行 <strong>计划研究</strong> 时按主集打包应用到研究：</p>
+<div class="help-table-wrap"><table><thead><tr><th>层</th><th>对象</th><th>作用</th></tr></thead><tbody><tr><td>主集</td><td>模板里程碑主集</td><td>打包研究/国家/中心三个初始化集</td></tr><tr><td>模板集</td><td>Template Milestone Set</td><td>一个层级的一套里程碑（挂一个 Story Event）</td></tr><tr><td>里程碑</td><td>Template Milestone</td><td>单个里程碑模板：类型、顺序、时长、完成规则</td></tr><tr><td>依赖</td><td>Template Milestone Dependency</td><td>前驱→后继的日期推算关系</td></tr></tbody></table></div>
 <h2 id="模板里程碑主集master-set">模板里程碑主集（Master Set）</h2>
-<p><strong>Template Milestone Master Set</strong> 把三个初始化集打包成一次绑定到研究的选择项（<strong>Admin Setup → Template Milestone Master Sets</strong>）：</p>
+<p><strong>模板里程碑主集</strong> 把三个初始化集打包成一次绑定到研究的选择项（<strong>管理员设置 → 模板里程碑主集</strong>）：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>主集名（必填且唯一）</td></tr><tr><td><strong>Study Initialization Set</strong></td><td>研究级初始化集（必填，须为 Study 层级模板集）</td></tr><tr><td><strong>Study Country Initialization Set</strong></td><td>国家/地区级初始化集（必填）</td></tr><tr><td><strong>Study Site Initialization Set</strong></td><td>中心级初始化集（必填）</td></tr></tbody></table></div>
 <div class="help-note"><p class="help-note__label">注意</p><p>出厂预置 <code>Standard Study Level</code> 主集，绑定 Generic Study / Country / Site Candidate 三个初始化集，可直接使用。</p></div>
 <h2 id="里程碑模板集milestone-set">里程碑模板集（Milestone Set）</h2>
@@ -130,17 +130,17 @@
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>模板集名（必填）</td></tr><tr><td><strong>Level</strong></td><td>层级（必填）：<code>Study</code> / <code>Country</code> / <code>Site</code></td></tr><tr><td><strong>Story Event</strong></td><td>触发事件（必填），如 <code>Candidate Study</code>、<code>Study Management</code>、<code>Protocol Amendment</code></td></tr><tr><td><strong>Template Country</strong></td><td>可选；限定为某国家/地区特定的集</td></tr></tbody></table></div>
 <p>出厂预置 14 个标准集（Generic Study Candidate、Study Management、First Study Site Initiated、Study Closing、Site Initiated 等），事件带创建触发器（Initialization / State Change / Ad Hoc）。</p>
 <h2 id="里程碑模板milestone">里程碑模板（Milestone）</h2>
-<p><strong>Template Milestone</strong>（里程碑模板）是研究里程碑的蓝本（<strong>Admin Setup → Template Milestones</strong>）：</p>
-<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Milestone Type</strong></td><td>里程碑类型（必填），如 <code>Study Start</code>、<code>First Subject In (FSI)</code>、<code>Last Subject Last Visit (LSO)</code>、<code>Database Lock</code></td></tr><tr><td><strong>Milestone Set</strong></td><td>所属模板集（必填）</td></tr><tr><td><strong>Sequence</strong></td><td>集内顺序</td></tr><tr><td><strong>Expected Duration (Days)</strong></td><td>预期时长（0–2000 天）</td></tr><tr><td><strong>Expected Duration - Resubmit</strong></td><td>重新提交的预期时长</td></tr><tr><td><strong>Template EDL</strong></td><td>可绑定模板 EDL，里程碑生效时生成预期文档</td></tr><tr><td><strong>Template IRB / EC Type</strong></td><td><code>Central</code> / <code>Local</code></td></tr><tr><td><strong>Autocomplete</strong></td><td>自动完成规则：<code>All Dependencies</code> / <code>Any Dependency</code> / <code>Off</code></td></tr><tr><td><strong>Gating Override Eligible</strong></td><td>是否允许跳过依赖门禁</td></tr><tr><td><strong>Milestone Category</strong></td><td>类别：Core Milestones / Startup / Monitoring / Inspection Readiness 等</td></tr></tbody></table></div>
+<p><strong>Template Milestone</strong>（里程碑模板）是研究里程碑的蓝本（<strong>管理员设置 → 里程碑模板</strong>）：</p>
+<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Milestone Type</strong></td><td>里程碑类型（必填），如 <code>Study Start</code>、<code>First Subject In (FSI)</code>、<code>Last Subject Last Visit (LSO)</code>、<code>Database Lock</code></td></tr><tr><td><strong>Milestone Set</strong></td><td>所属模板集（必填）</td></tr><tr><td><strong>Sequence</strong></td><td>集内顺序</td></tr><tr><td><strong>Expected Duration (Days)</strong></td><td>预期时长（0–2000 天）</td></tr><tr><td><strong>Expected Duration - Resubmit</strong></td><td>重新提交的预期时长</td></tr><tr><td><strong>模板 EDL</strong></td><td>可绑定模板 EDL，里程碑生效时生成预期文档</td></tr><tr><td><strong>Template IRB / EC Type</strong></td><td><code>Central</code> / <code>Local</code></td></tr><tr><td><strong>Autocomplete</strong></td><td>自动完成规则：<code>All Dependencies</code> / <code>Any Dependency</code> / <code>Off</code></td></tr><tr><td><strong>Gating Override Eligible</strong></td><td>是否允许跳过依赖门禁</td></tr><tr><td><strong>Milestone Category</strong></td><td>类别：Core Milestones / Startup / Monitoring / Inspection Readiness 等</td></tr></tbody></table></div>
 <p>模板按类型（object type）分 <strong>Standard</strong>（默认）、<strong>Point in Time</strong>（时间点）、<strong>Event</strong>（事件）、<strong>Monitoring Event</strong>（监查事件）四类；出厂预置 100+ 条里程碑模板。</p>
 <h2 id="里程碑依赖关系模板dependency">里程碑依赖关系模板（Dependency）</h2>
-<p><strong>Template Milestone Dependency</strong>（里程碑依赖关系模板）定义两个模板里程碑之间的前驱→后继关系（<strong>Admin Setup → Template Milestone Dependencies</strong>）：</p>
+<p><strong>Template Milestone Dependency</strong>（里程碑依赖关系模板）定义两个模板里程碑之间的前驱→后继关系（<strong>管理员设置 → 里程碑依赖关系模板</strong>）：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Milestone Set</strong></td><td>所属模板集（必填）</td></tr><tr><td><strong>Previous Template Milestone</strong></td><td>前驱里程碑（必填）</td></tr><tr><td><strong>Next Template Milestone</strong></td><td>后继里程碑（必填）</td></tr><tr><td><strong>Date Offset</strong></td><td>日期偏移（0–3650 天）</td></tr><tr><td><strong>Dependency Type</strong></td><td>依赖类型（object type）</td></tr></tbody></table></div>
 <p>依赖类型决定日期推算方式：</p>
 <div class="help-table-wrap"><table><thead><tr><th>类型</th><th>含义</th></tr></thead><tbody><tr><td><strong>Finish to Finish</strong>（默认）</td><td>完成到完成；后继日期 = 前驱实际完成日 + Date Offset</td></tr><tr><td><strong>Rollup (min date)</strong></td><td>汇总最小日期（如国家 FSI 汇总到研究 FSI）</td></tr><tr><td><strong>Rollup (max date)</strong></td><td>汇总最大日期（如国家 LSI/LSO 汇总到研究 LSI/LSO）</td></tr></tbody></table></div>
 <div class="help-note"><p class="help-note__label">注意</p><p>依赖门禁在研究侧强制执行：下游里程碑 <strong>Mark Complete</strong> 时上游未完成会被拒绝，除非设置 Gating Override Date。</p></div>
 <h2 id="应用到研究">应用到研究</h2>
-<p><strong>All Actions → Plan Study</strong> 选择主集后，研究进入 Planning 时系统按主集的三级初始化集生成里程碑；国家/中心进入 Initiating 时同样应用各自模板。研究侧里程碑初始为 <strong>Unplanned</strong>，通过 <strong>Plan Milestone</strong> 排期（见 <a href="milestones.html">里程碑</a>）。</p>
+<p><strong>所有操作 → 计划研究</strong> 选择主集后，研究进入 Planning 时系统按主集的三级初始化集生成里程碑；国家/中心进入 Initiating 时同样应用各自模板。研究侧里程碑初始为 <strong>未计划</strong>，通过 <strong>计划里程碑</strong> 排期（见 <a href="milestones.html">里程碑</a>）。</p>
 <h2 id="所需权限与角色">所需权限与角色</h2>
 <div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>四个模板对象：Create、Read、Edit</td><td>维护主集、模板集、里程碑与依赖模板</td></tr></tbody></table></div>
 <p><strong>Clinical Application Administrator</strong> 管理全部里程碑模板；<strong>Document Contributor</strong> 只读。</p>

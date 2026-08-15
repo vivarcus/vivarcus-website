@@ -1,6 +1,6 @@
 ---
 title: 全局目录（Global Directory）
-description: 了解 Global Directory 的四个主数据子页：组织、产品、研究产品角色与人员，以及它们如何被研究层级引用。
+description: 了解全球目录的四个主数据子页：组织、产品、研究产品角色与人员，以及它们如何被研究层级引用。
 last_updated: 2026-08-15
 related:
   - study-personnel
@@ -10,20 +10,20 @@ related:
 
 ## 组织
 
-**Organization**（组织）是公司/机构/研究中心的主数据，供各研究通过 Study Organization 引用。**Global Directory → Organizations** 维护：
+**Organization**（组织）是公司/机构/研究中心的主数据，供各研究通过 Study Organization 引用。**全球目录 → 组织** 维护：
 
 | 字段 | 说明 |
 |------|------|
-| **Organization** | 组织名（必填且唯一） |
+| **组织** | 组织名（必填且唯一） |
 | **Organization Type** | 组织类型（对象类型），如 `Institution` |
 | **Parent Organization** | 上级组织（自引用） |
-| **Status** | `Active` / `Inactive`（生命周期驱动） |
+| **状态** | `Active` / `Inactive`（生命周期驱动） |
 
-详情页 **Study Participation** 区展示该组织参与的所有研究；组织也可在研究详情页的 **Study Organizations** 区内联创建（见 [研究人员与通信](study-personnel.html)）。
+详情页 **研究参与** 区展示该组织参与的所有研究；组织也可在研究详情页的 **研究组织** 区内联创建（见 [研究人员与通信](study-personnel.html)）。
 
 ## 产品
 
-**Product**（产品）是研究使用的活性成分/资产主数据。**Global Directory → Products** 维护：**Product Name**（必填且唯一）、**Status**、**External ID**。产品通过 **Study Product**（研究产品）挂到具体研究——在 **Product** 详情页的 **Studies** 区或 **Study** 详情页的 **Study Products** 区创建，并指定该产品在本研究的角色（见下）。
+**Product**（产品）是研究使用的活性成分/资产主数据。**全球目录 → 产品** 维护：**Product Name**（必填且唯一）、**状态**、**External ID**。产品通过 **Study Product**（研究产品）挂到具体研究——在 **产品** 详情页的 **研究** 区或 **Study** 详情页的 **研究产品** 区创建，并指定该产品在本研究的角色（见下）。
 
 ## 研究产品角色
 
@@ -41,7 +41,7 @@ related:
 
 ## 人员
 
-**Person**（人员）是全局人员目录：研究者、中心人员、供应商人员、内部人员与 IRB/IEC 人员，是研究团队（Study Person）的人员来源。**Global Directory → Personnel** 维护：
+**Person**（人员）是全局人员目录：研究者、中心人员、供应商人员、内部人员与 IRB/IEC 人员，是研究团队（Study Person）的人员来源。**全球目录 → 人员** 维护：
 
 | 字段 | 说明 |
 |------|------|
@@ -53,7 +53,7 @@ related:
 | **External ID / CDX ID / Global ID** | 集成映射字段 |
 | **Debarred / Key Opinion Leader / NPI Number** | 合规与画像标记 |
 
-详情页 **Study Participation** 区展示该人员参与的研究团队记录；**Contact Information** 区维护联系方式。人员可执行 **Promote to User** 提升为 Vault 用户。研究人员（Study Person）的人员字段可内联创建 Person（见 [研究人员与通信](study-personnel.html)）。
+详情页 **研究参与** 区展示该人员参与的研究团队记录；**Contact Information** 区维护联系方式。人员可执行 **Promote to User** 提升为 Vault 用户。研究人员（Study Person）的人员字段可内联创建 Person（见 [研究人员与通信](study-personnel.html)）。
 
 ## 常见问题
 
@@ -61,7 +61,7 @@ related:
 |------|----------|
 | 组织/人员在多个研究重复登记 | 主数据建在全局目录，研究侧通过 Study Organization / Study Person 引用即可 |
 | Promote to User 不可见 | 确认该人员尚未关联 Vault User，且具备相应权限 |
-| 找不到某产品 | 先确认产品已在 **Global Directory → Products** 创建，再在 Study Products 区挂到研究 |
+| 找不到某产品 | 先确认产品已在 **全球目录 → 产品** 创建，再在 Study Products 区挂到研究 |
 
 ## 所需权限与角色
 

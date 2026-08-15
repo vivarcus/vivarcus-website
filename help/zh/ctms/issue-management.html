@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、Start PD Review 的团队前置条件，以及与 eTMF 质量问题的对照。" />
+  <meta name="description" content="了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、开始方案偏离审查的团队前置条件，以及与 eTMF 质量问题的对照。" />
   <title>问题与方案偏离 — CTMS 帮助 — Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/help/zh/ctms/issue-management.html" />
   <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/ctms/issue-management.html" />
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/help/zh/ctms/issue-management.html" />
   <meta property="og:title" content="问题与方案偏离 — Vivarcus" />
-  <meta property="og:description" content="了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、Start PD Review 的团队前置条件，以及与 eTMF 质量问题的对照。" />
+  <meta property="og:description" content="了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、开始方案偏离审查的团队前置条件，以及与 eTMF 质量问题的对照。" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "问题与方案偏离",
-    "description": "了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、Start PD Review 的团队前置条件，以及与 eTMF 质量问题的对照。",
+    "description": "了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、开始方案偏离审查的团队前置条件，以及与 eTMF 质量问题的对照。",
     "inLanguage": "zh-CN",
     "dateModified": "2026-08-15",
     "mainEntityOfPage": "https://vivarcus.com/help/zh/ctms/issue-management.html",
@@ -127,28 +127,28 @@
         <div class="help-article__body">
           <h2 id="issue-类型与常用动作">Issue 类型与常用动作</h2>
 <p><strong>Issue</strong> 捕获方案偏离、观察项等过程问题，可关联研究 / 中心 / 受试者，并与 eTMF 质量问题同平台共存。</p>
-<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>起始状态</th><th>常用动作</th></tr></thead><tbody><tr><td><strong>Protocol Deviation</strong>（试验方案偏离）</td><td><strong>Open</strong></td><td><strong>Start PD Review</strong></td></tr><tr><td><strong>Observation</strong>（观察）</td><td><strong>Open</strong></td><td><strong>Resolve Issue</strong> 或 <strong>Promote to Protocol Deviation</strong></td></tr><tr><td><strong>Protocol Violation</strong>（试验方案违背）</td><td><strong>Open</strong></td><td>按页面可用动作推进</td></tr><tr><td><strong>Risk Mitigation Action</strong>（风险缓解措施）</td><td><strong>Open</strong></td><td><strong>Assign Risk Mitigation</strong></td></tr></tbody></table></div>
-<p>典型路径：<strong>登记偏离（Open）→ 审查或解决 → Resolved</strong>。</p>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>起始状态</th><th>常用动作</th></tr></thead><tbody><tr><td><strong>Protocol Deviation</strong>（试验方案偏离）</td><td><strong>打开</strong></td><td><strong>开始方案偏离审查</strong></td></tr><tr><td><strong>Observation</strong>（观察）</td><td><strong>打开</strong></td><td><strong>解决问题</strong> 或 <strong>Promote to Protocol Deviation</strong></td></tr><tr><td><strong>Protocol Violation</strong>（试验方案违背）</td><td><strong>打开</strong></td><td>按页面可用动作推进</td></tr><tr><td><strong>Risk Mitigation Action</strong>（风险缓解措施）</td><td><strong>打开</strong></td><td><strong>Assign Risk Mitigation</strong></td></tr></tbody></table></div>
+<p>典型路径：<strong>登记偏离（Open）→ 审查或解决 → 已解决</strong>。</p>
 <h2 id="创建方案偏离">创建方案偏离</h2>
-<ol><li>导航 <strong>Issue Management → Protocol Deviations</strong>（或 <strong>All Issues</strong>）→ <strong>Create</strong>，类型选 <strong>Protocol Deviation</strong>。<li>填写：</li></li></ol>
-<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Issue Log ID</strong></td><td>偏离标识（或接受系统自动编号）</td></tr><tr><td><strong>Study</strong></td><td>必填</td></tr><tr><td><strong>Study Country / Study Site</strong></td><td>建议填写，便于仪表盘裁剪</td></tr><tr><td><strong>Subject</strong></td><td>关联受试者</td></tr><tr><td><strong>Date Identified</strong></td><td>发现日期（必填）</td></tr><tr><td><strong>Date of Issue</strong></td><td>实际发生日</td></tr><tr><td><strong>Summary</strong></td><td>摘要（必填），如 <code>Visit window deviation: Cycle 1 Day 25 (window Day 21±3)</code></td></tr><tr><td><strong>Category</strong></td><td>分类，如 <code>F. 访视计划 Visit Schedule</code></td></tr><tr><td><strong>Severity</strong></td><td>严重性，如 <code>Minor</code></td></tr><tr><td><strong>Description</strong></td><td>详细描述</td></tr></tbody></table></div>
+<ol><li>导航 <strong>Issue Management → Protocol Deviations</strong>（或 <strong>All Issues</strong>）→ <strong>创建</strong>，类型选 <strong>Protocol Deviation</strong>。<li>填写：</li></li></ol>
+<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Issue Log ID</strong></td><td>偏离标识（或接受系统自动编号）</td></tr><tr><td><strong>Study</strong></td><td>必填</td></tr><tr><td><strong>研究国家/地区 / 研究地点</strong></td><td>建议填写，便于仪表盘裁剪</td></tr><tr><td><strong>Subject</strong></td><td>关联受试者</td></tr><tr><td><strong>Date Identified</strong></td><td>发现日期（必填）</td></tr><tr><td><strong>Date of Issue</strong></td><td>实际发生日</td></tr><tr><td><strong>Summary</strong></td><td>摘要（必填），如 <code>Visit window deviation: Cycle 1 Day 25 (window Day 21±3)</code></td></tr><tr><td><strong>Category</strong></td><td>分类，如 <code>F. 访视计划 Visit Schedule</code></td></tr><tr><td><strong>Severity</strong></td><td>严重性，如 <code>Minor</code></td></tr><tr><td><strong>Description</strong></td><td>详细描述</td></tr></tbody></table></div>
 <h2 id="推进偏离正式路径">推进偏离（正式路径）</h2>
-<ol><li>在偏离详情填写 <strong>Resolution</strong>（解决方案）与 Root Cause（根本原因，可选），保存。<li><strong>All Actions → Start PD Review</strong>：<li><strong>Reviewer: PM</strong> 选研究团队中的 CTMS Study Manager 成员。<ul><li><strong>Reviewer: Medical</strong> 选 Contributor 成员。<ul><li>填截止日期并提交，进入 PD 审查工作流。<ul></ul></li></ul></li></ul></li><li>在 <strong>My Tasks</strong> 完成审查任务，完成后状态趋向 <strong>Resolved</strong>。</li></li></li></ol>
+<ol><li>在偏离详情填写 <strong>Resolution</strong>（解决方案）与 Root Cause（根本原因，可选），保存。<li><strong>所有操作 → 开始方案偏离审查</strong>：<li><strong>Reviewer: PM</strong> 选研究团队中的 CTMS Study Manager 成员。<ul><li><strong>Reviewer: Medical</strong> 选 Contributor 成员。<ul><li>填截止日期并提交，进入 PD 审查工作流。<ul></ul></li></ul></li></ul></li><li>在 <strong>我的任务</strong> 完成审查任务，完成后状态趋向 <strong>已解决</strong>。</li></li></li></ol>
 <div class="help-note"><p class="help-note__label">注意</p><p><strong>选不到人？</strong> 参与人候选来自偏离 Sharing 中的 study_manager / contributor 角色（由研究团队 Matching Rule 写入）。确认研究团队已入队且勾选 <strong>Grant Access to Related Records</strong>；若偏离在入队前已创建，打开偏离 → <strong>Sharing Settings</strong> 手动加入这两个角色，或编辑保存一次偏离以触发 Matching 重算。</p></div>
 <h2 id="快捷闭环observation">快捷闭环：Observation</h2>
-<p>时间有限时的简化路径：<strong>Issue Management → Observations</strong> → Create，填写 Study / Site / Summary 保存（状态 Open），填写 <strong>Resolution</strong> 后 <strong>All Actions → Resolve Issue</strong>，状态变为 <strong>Resolved</strong>（Resolved Date 自动写入）。</p>
-<div class="help-note"><p class="help-note__label">注意</p><p>Protocol Deviation 与 Observation 可用动作不同：Observation 用 <strong>Resolve Issue</strong>；PD 优先 <strong>Start PD Review</strong>。Resolved 通常要求 Resolution 非空。</p></div>
+<p>时间有限时的简化路径：<strong>问题管理 → 观察</strong> → 创建，填写 Study / Site / Summary 保存（状态 Open），填写 <strong>Resolution</strong> 后 <strong>所有操作 → 解决问题</strong>，状态变为 <strong>Resolved</strong>（Resolved Date 自动写入）。</p>
+<div class="help-note"><p class="help-note__label">注意</p><p>Protocol Deviation 与 Observation 可用动作不同：Observation 用 <strong>解决问题</strong>；PD 优先 <strong>开始方案偏离审查</strong>。Resolved 通常要求 Resolution 非空。</p></div>
 <h2 id="风险缓解措施risk-mitigation-action">风险缓解措施（Risk Mitigation Action）</h2>
-<p><strong>Risk Mitigation Action（RMA）</strong> 登记针对研究风险的缓解行动——「识别出风险后，决定做什么、由谁完成」。它与偏离/观察同属 Issue 对象、共用生命周期，但走专用的指派流程。<strong>Issue Management → Risk Mitigation Actions</strong> → Create：</p>
-<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Study</strong></td><td>所属研究（必填，从研究风险评估带入）</td></tr><tr><td><strong>Study Country / Study Site</strong></td><td>可选，按范围裁剪</td></tr><tr><td><strong>Study Risk Assessment / Study Risk / Study Risk Mitigation</strong></td><td>关联的风险链：风险评估 → 风险 → 风险缓解措施</td></tr><tr><td><strong>Date Identified</strong></td><td>识别日期（必填）</td></tr><tr><td><strong>Summary</strong></td><td>摘要（必填），如 <code>增加筛选期实验室复测</code></td></tr><tr><td><strong>Description</strong></td><td>缓解措施的具体描述</td></tr><tr><td><strong>Resolution</strong></td><td>解决方案（进入 Resolved 前必填）</td></tr></tbody></table></div>
+<p><strong>Risk Mitigation Action（RMA）</strong> 登记针对研究风险的缓解行动——「识别出风险后，决定做什么、由谁完成」。它与偏离/观察同属 Issue 对象、共用生命周期，但走专用的指派流程。<strong>问题管理 → Risk Mitigation Actions</strong> → 创建：</p>
+<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Study</strong></td><td>所属研究（必填，从研究风险评估带入）</td></tr><tr><td><strong>研究国家/地区 / 研究地点</strong></td><td>可选，按范围裁剪</td></tr><tr><td><strong>Study Risk Assessment / Study Risk / Study Risk Mitigation</strong></td><td>关联的风险链：风险评估 → 风险 → 风险缓解措施</td></tr><tr><td><strong>Date Identified</strong></td><td>识别日期（必填）</td></tr><tr><td><strong>Summary</strong></td><td>摘要（必填），如 <code>增加筛选期实验室复测</code></td></tr><tr><td><strong>Description</strong></td><td>缓解措施的具体描述</td></tr><tr><td><strong>Resolution</strong></td><td>解决方案（进入 Resolved 前必填）</td></tr></tbody></table></div>
 <h2 id="指派与闭环assign-risk-mitigation">指派与闭环（Assign Risk Mitigation）</h2>
-<p><strong>All Actions → Assign Risk Mitigation</strong> 启动 <strong>Complete Risk Mitigation</strong> 工作流：</p>
+<p><strong>所有操作 → Assign Risk Mitigation</strong> 启动 <strong>完成风险缓解</strong> 工作流：</p>
 <div class="help-table-wrap"><table><thead><tr><th>步骤</th><th>内容</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td>选择 <strong>Mitigation Owner</strong>（缓解措施负责人）并提交</td><td>→ <strong>Assigned</strong></td></tr><tr><td>2</td><td>负责人收到 <strong>Complete Mitigation Action</strong> 任务，按 Description 完成缓解措施并填写 <strong>Resolution</strong></td><td>任务完成</td></tr><tr><td>3</td><td>系统自动收尾</td><td>→ <strong>Resolved</strong>（<strong>Resolved Date</strong> 自动写入）</td></tr></tbody></table></div>
-<div class="help-note"><p class="help-note__label">注意</p><p>与其他类型一样，RMA 也可走通用动作（<strong>Investigate / Implement / Escalate / Resolve Issue</strong>）；<strong>Change Issue Type</strong> 可在 Issue 类型间转换（如 Observation 提升为 Risk Mitigation Action）。</p></div>
+<div class="help-note"><p class="help-note__label">注意</p><p>与其他类型一样，RMA 也可走通用动作（<strong>Investigate / Implement / Escalate / 解决问题</strong>）；<strong>Change Issue Type</strong> 可在 Issue 类型间转换（如 Observation 提升为 Risk Mitigation Action）。</p></div>
 <h2 id="与-etmf-质量问题对照">与 eTMF 质量问题对照</h2>
 <p>同一 Vault 中过程侧 Issue 与文档侧 Quality Issue 并存：Issue 记录&quot;过程出了什么问题&quot;（偏离、观察），Quality Issue 记录&quot;文档出了什么缺陷&quot;（缺页、签名不完整）。稽查时可相互引用，形成「过程偏离 ↔ 文档质量」的完整追溯。</p>
 <h2 id="所需权限与角色">所需权限与角色</h2>
-<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Issue（Protocol Deviation / Observation）：Create、Read、Edit</td><td>登记与维护问题</td></tr><tr><td>对象动作</td><td>Issue：<strong>Start PD Review</strong>、<strong>Resolve Issue</strong>、<strong>Assign Risk Mitigation</strong>、<strong>Change Issue Type</strong></td><td>审查、闭环与缓解措施指派</td></tr><tr><td>团队角色</td><td>Study Person：<strong>CTMS Study Manager</strong> + <strong>Contributor</strong> 入队并 Grant Access</td><td>Start PD Review 的审查人候选来源</td></tr><tr><td>对象</td><td>Clinical User Task：Read、Edit</td><td>在 My Tasks 完成审查任务</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Issue（Protocol Deviation / Observation）：Create、Read、Edit</td><td>登记与维护问题</td></tr><tr><td>对象动作</td><td>Issue：<strong>开始方案偏离审查</strong>、<strong>解决问题</strong>、<strong>Assign Risk Mitigation</strong>、<strong>Change Issue Type</strong></td><td>审查、闭环与缓解措施指派</td></tr><tr><td>团队角色</td><td>Study Person：<strong>CTMS Study Manager</strong> + <strong>Contributor</strong> 入队并 Grant Access</td><td>Start PD Review 的审查人候选来源</td></tr><tr><td>对象</td><td>Clinical User Task：Read、Edit</td><td>在我的任务完成审查任务</td></tr></tbody></table></div>
 <p>若偏离在入队前创建导致选不到人：打开偏离 → <strong>Sharing Settings</strong> 手动加入角色，或编辑保存一次触发 Matching 重算。</p>
         </div>
       </article>

@@ -1,6 +1,6 @@
 ---
 title: 里程碑模板（主集 / 模板集 / 里程碑 / 依赖）
-description: 了解里程碑模板的四层结构：Template Milestone Master Set、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。
+description: 了解里程碑模板的四层结构：模板里程碑主集、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。
 last_updated: 2026-08-15
 related:
   - milestones
@@ -10,18 +10,18 @@ related:
 
 ## 四层结构
 
-里程碑模板体系分四层，研究执行 **Plan Study** 时按主集打包应用到研究：
+里程碑模板体系分四层，研究执行 **计划研究** 时按主集打包应用到研究：
 
 | 层 | 对象 | 作用 |
 |----|------|------|
-| 主集 | Template Milestone Master Set | 打包研究/国家/中心三个初始化集 |
+| 主集 | 模板里程碑主集 | 打包研究/国家/中心三个初始化集 |
 | 模板集 | Template Milestone Set | 一个层级的一套里程碑（挂一个 Story Event） |
 | 里程碑 | Template Milestone | 单个里程碑模板：类型、顺序、时长、完成规则 |
 | 依赖 | Template Milestone Dependency | 前驱→后继的日期推算关系 |
 
 ## 模板里程碑主集（Master Set）
 
-**Template Milestone Master Set** 把三个初始化集打包成一次绑定到研究的选择项（**Admin Setup → Template Milestone Master Sets**）：
+**模板里程碑主集** 把三个初始化集打包成一次绑定到研究的选择项（**管理员设置 → 模板里程碑主集**）：
 
 | 字段 | 说明 |
 |------|------|
@@ -47,7 +47,7 @@ related:
 
 ## 里程碑模板（Milestone）
 
-**Template Milestone**（里程碑模板）是研究里程碑的蓝本（**Admin Setup → Template Milestones**）：
+**Template Milestone**（里程碑模板）是研究里程碑的蓝本（**管理员设置 → 里程碑模板**）：
 
 | 字段 | 说明 |
 |------|------|
@@ -56,7 +56,7 @@ related:
 | **Sequence** | 集内顺序 |
 | **Expected Duration (Days)** | 预期时长（0–2000 天） |
 | **Expected Duration - Resubmit** | 重新提交的预期时长 |
-| **Template EDL** | 可绑定模板 EDL，里程碑生效时生成预期文档 |
+| **模板 EDL** | 可绑定模板 EDL，里程碑生效时生成预期文档 |
 | **Template IRB / EC Type** | `Central` / `Local` |
 | **Autocomplete** | 自动完成规则：`All Dependencies` / `Any Dependency` / `Off` |
 | **Gating Override Eligible** | 是否允许跳过依赖门禁 |
@@ -66,7 +66,7 @@ related:
 
 ## 里程碑依赖关系模板（Dependency）
 
-**Template Milestone Dependency**（里程碑依赖关系模板）定义两个模板里程碑之间的前驱→后继关系（**Admin Setup → Template Milestone Dependencies**）：
+**Template Milestone Dependency**（里程碑依赖关系模板）定义两个模板里程碑之间的前驱→后继关系（**管理员设置 → 里程碑依赖关系模板**）：
 
 | 字段 | 说明 |
 |------|------|
@@ -88,7 +88,7 @@ related:
 
 ## 应用到研究
 
-**All Actions → Plan Study** 选择主集后，研究进入 Planning 时系统按主集的三级初始化集生成里程碑；国家/中心进入 Initiating 时同样应用各自模板。研究侧里程碑初始为 **Unplanned**，通过 **Plan Milestone** 排期（见 [里程碑](milestones.html)）。
+**所有操作 → 计划研究** 选择主集后，研究进入 Planning 时系统按主集的三级初始化集生成里程碑；国家/中心进入 Initiating 时同样应用各自模板。研究侧里程碑初始为 **未计划**，通过 **计划里程碑** 排期（见 [里程碑](milestones.html)）。
 
 ## 所需权限与角色
 

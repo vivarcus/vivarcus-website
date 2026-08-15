@@ -21,25 +21,25 @@ CTMS 的核心使用环节可以概括为七个字：
 | 环节 | 含义 | 相关功能 |
 |------|------|----------|
 | **启** | 研究激活、招募计划 | 研究生命周期、注册指标、Metrics Over Time |
-| **站** | 国家/中心生命周期与异常路径 | Qualify / Select / Initiate Site |
+| **站** | 国家/中心生命周期与异常路径 | Qualify / Select / 启动机构 |
 | **队** | 研究团队与沟通 | Study Person、Team Role、Grant Access |
 | **人** | 受试者筛选、入组与退出 | Subjects、Subject Visits |
 | **监** | 监查访视全生命周期 | Monitoring Events（PSV/SIV/IMV/COV） |
 | **偏** | 方案偏离/观察项闭环 | Issues、Observations、Protocol Deviations |
-| **盘** | 运营仪表盘 | Study Management Homepage、CRA Homepage |
+| **盘** | 运营仪表盘 | 研究管理主页、CRA 主页 |
 
 ## 与 eTMF 共享的研究层级
 
 过程数据同样挂在 **研究（Study）→ 研究国家/地区（Study Country）→ 研究地点（Study Site）** 三级结构下。不同的是：
 
-- 研究须推进到 **Planning** 才会展开里程碑；推进到 **Active** 后，中心才能完成启动（**Initiate Site**）。
-- 中心进入 Initiating 要求父 Country 先执行 **Select Country**——CTMS 的中心启动必须走生命周期，不能只建记录。
+- 研究须推进到 **计划** 才会展开里程碑；推进到 **活动** 后，中心才能完成启动（**启动机构**）。
+- 中心进入 Initiating 要求父 Country 先执行 **选择国家/地区**——CTMS 的中心启动必须走生命周期，不能只建记录。
 
 ## 典型旅程
 
 ```
-启 → 建研究 + Plan Study + 招募指标 Planned + Ready to Enroll（Active）
-站 → Country Select Country；Site Qualify → Select → Initiate（Active）
+启 → 建研究 + 计划研究 + 招募指标 Planned + 注册准备就绪（活动）
+站 → 国家选择国家/地区；中心资格认定 → 选择 → 启动（活动）
 队 → Study Person 入队（Study Manager / Contributor / CRA）
 人 → 受试者 Consented → In Screening → Enrolled
 监 → Monitoring Event：Expected → Planning → Confirmed → In Progress → Final

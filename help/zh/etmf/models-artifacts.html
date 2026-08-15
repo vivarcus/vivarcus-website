@@ -119,12 +119,12 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="参考模型model">参考模型（Model）</h2>
-<p><strong>Model</strong>（参考模型）是 TMF 参考模型的容器——例如 DIA TMF 参考模型 v2.0 / v3.0。<strong>Admin Setup → Models</strong> 维护：</p>
+<p><strong>Model</strong>（参考模型）是 TMF 参考模型的容器——例如 DIA TMF 参考模型 v2.0 / v3.0。<strong>管理员设置 → 参考模型</strong> 维护：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>模型名（必填且唯一）</td></tr><tr><td><strong>Description</strong></td><td>模型说明</td></tr><tr><td><strong>Display in TMF Viewer</strong></td><td>是否在 TMF 查看器中展示（默认是）</td></tr></tbody></table></div>
 <p>出厂预置 5 个模型：</p>
 <div class="help-table-wrap"><table><thead><tr><th>模型</th><th>用途</th></tr></thead><tbody><tr><td><strong>TMF RM v2.0</strong>（2012）</td><td>DIA TMF 参考模型 v2.0</td></tr><tr><td><strong>TMF RM v3.0</strong>（2015）</td><td>DIA TMF 参考模型 v3.0</td></tr><tr><td><strong>Document Type Hierarchy</strong></td><td>按文档类型层级浏览</td></tr><tr><td><strong>Vault Clinical Docs</strong></td><td>Vault 临床文档模型</td></tr><tr><td><strong>Binder Section to Document Type</strong></td><td>自动归档模型：按文档的 Type/Subtype/Classification 匹配 Binder Section 名称归档</td></tr></tbody></table></div>
 <h2 id="工件artifact">工件（Artifact）</h2>
-<p><strong>Artifact</strong>（工件）是参考模型内的层级节点（Zone / Section），构成 TMF 标准层级树，如 <code>01 Trial Management → 01.01 Trial Oversight → 01.01.01 Trial Master File Plan</code>。<strong>Admin Setup → Artifacts</strong> 维护：</p>
+<p><strong>Artifact</strong>（工件）是参考模型内的层级节点（Zone / Section），构成 TMF 标准层级树，如 <code>01 Trial Management → 01.01 Trial Oversight → 01.01.01 Trial Master File Plan</code>。<strong>管理员设置 → 工件</strong> 维护：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Model</strong></td><td>所属参考模型（必填）</td></tr><tr><td><strong>Name</strong></td><td>工件名</td></tr><tr><td><strong>Number</strong></td><td>层级编号，如 <code>01.01.01</code></td></tr><tr><td><strong>Parent Artifact</strong></td><td>上级工件，自引用建树</td></tr><tr><td><strong>Description</strong></td><td>工件定义文本（取自 TMF 参考模型）</td></tr></tbody></table></div>
 <div class="help-note"><p class="help-note__label">注意</p><p>出厂预置 TMF RM v2.0 的完整工件树，各工件带官方定义文本，可作内部 SOP 与稽查对照的标准层级。</p></div>
 <h2 id="与文档归档的关系">与文档归档的关系</h2>

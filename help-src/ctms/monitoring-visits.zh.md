@@ -25,20 +25,20 @@ related:
 | 状态 | 含义 | 可执行操作 |
 |------|------|------------|
 | **Expected** | 已登记、待排期 | **Plan Visit** |
-| **Planning** | 排期中 | **Confirm Visit** |
+| **计划** | 排期中 | **Confirm Visit** |
 | **Confirmed** | 已确认 | **Start Trip Report** |
 | **In Progress** | 访视进行中 | **Start Review** 等 |
 | **In Review → Passed Review → Final** | 审查至定稿 | **Complete Review** → **Finalize** |
 
 ## 创建监查访视
 
-1. 导航 **Site Monitoring → Monitoring Events** → 创建，选择访视类型（如 **Interim Monitoring Visit**）。
+1. 导航 **现场监控 → 监查事件** → 创建，选择访视类型（如 **中期监查访视**）。
 2. 填写：
 
 | 字段 | 说明 |
 |------|------|
 | **Name** | 访视名称（如 `CTMS-IMV-20260802`） |
-| **Study / Study Country / Study Site** | 三者均为必填 |
+| **研究 / 研究国家/地区 / 研究地点** | 三者均为必填 |
 | **Study Person** | 选已入队的 CRA |
 | **Planned Start / Planned End** | 计划起止日期 |
 
@@ -48,7 +48,7 @@ related:
 
 | 步骤 | 操作 | 状态变化 |
 |------|------|----------|
-| 1 | **Plan Visit**，确认计划起止日期 | Expected → **Planning** |
+| 1 | **Plan Visit**，确认计划起止日期 | Expected → **计划** |
 | 2 | **Confirm Visit** | → **Confirmed** |
 | 3 | **Start Trip Report**，填 Actual Start/End Date | → **In Progress** |
 | 4 | **Start Review** | → **In Review** |
@@ -59,8 +59,8 @@ related:
 
 ## 在仪表盘查看
 
-- **CRA Homepage → Monitoring Plan**：列出按范围裁剪的访视计划，可下钻到 Monitoring Event 详情。
-- **Study Management Homepage → Monitoring Status**：按访视类型分布计数。
+- **CRA 主页 → Monitoring Plan**：列出按范围裁剪的访视计划，可下钻到 Monitoring Event 详情。
+- **研究管理主页 → 监查状态**：按访视类型分布计数。
 
 ## 常见问题
 

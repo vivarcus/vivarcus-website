@@ -20,15 +20,15 @@ related:
 
 ## 注册并入组
 
-1. 进入 **Subjects** 列表 → **Create**。
+1. 进入 **Subjects** 列表 → **创建**。
 2. 填写：
 
 | 字段 | 说明 |
 |------|------|
 | **Subject ID** | 受试者标识（如 `CTMS-OV-20260802-001`） |
 | **Study** | 所属研究 |
-| **Study Country** | 研究国家/地区 |
-| **Study Site** | 研究地点——须为 **Active** 中心 |
+| **研究国家/地区** | 研究国家/地区 |
+| **研究地点** | 研究地点——须为 **活动** 中心 |
 | **Subject Status** | 先 `Consented`，再 `In Screening`，最后 `Enrolled`（可分次保存） |
 | **Initial Consent Date** | 知情同意日 |
 | **Screened Date** | 筛选日 |
@@ -40,7 +40,7 @@ related:
 
 ## 受试者访视
 
-受试者访视（Subject Visit）记录「某位受试者的某次访视」的计划与执行情况，在 **Study Info → Subject Visits** 中管理：
+受试者访视（Subject Visit）记录「某位受试者的某次访视」的计划与执行情况，在 **研究信息 → 受试者访视** 中管理：
 
 | 字段 | 说明 |
 |------|------|

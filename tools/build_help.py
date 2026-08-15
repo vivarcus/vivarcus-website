@@ -332,7 +332,7 @@ def groups_html(app, lang, ui):
 
 
 def app_cards_html(cfg, lang):
-    icons = {"etmf": "ic--folder-open", "ctms": "ic--chart-line"}
+    icons = {"etmf": "ic--folder-open", "ctms": "ic--chart-line", "vault-ai": "ic--sparkles"}
     parts = []
     for app in cfg["apps"]:
         parts.append(

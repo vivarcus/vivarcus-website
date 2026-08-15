@@ -122,10 +122,10 @@
 <p><strong>Template Task</strong>（模板任务）为模板里程碑预定义「该里程碑生效时需要完成的任务」，研究按模板生成后，任务变为研究侧的 <strong>Clinical User Task</strong>（见 <a href="clinical-tasks.html">临床任务</a>）。</p>
 <p>例如 <code>Study Start</code> 里程碑挂 <code>Confirm TMF Filing Plan</code>（确认 TMF 归档计划，必做，14 天内完成）；<code>Final Database Lock</code> 挂 <code>Prepare Database Lock Checklist</code>（准备锁库清单，7 天内完成）。</p>
 <h2 id="关键字段">关键字段</h2>
-<p><strong>Admin Setup → Template Tasks</strong> 维护：</p>
+<p><strong>管理员设置 → 模板任务</strong> 维护：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>任务名（必填且唯一）</td></tr><tr><td><strong>Milestone Set</strong></td><td>所属模板集（必填）</td></tr><tr><td><strong>Milestone</strong></td><td>关联的模板里程碑（必填）</td></tr><tr><td><strong>Required</strong></td><td>是否必做（默认否）；必做任务计入里程碑完成度</td></tr><tr><td><strong>Expected Turnaround Time (Days)</strong></td><td>预期完成时长（0–200 天）</td></tr><tr><td><strong>Category</strong></td><td>任务类别（必填），如 <code>Essential Documents/ISF</code>、<code>Data Collection/Data Entry/Query Resolution</code></td></tr><tr><td><strong>Priority</strong></td><td>优先级（必填）：<code>Low</code> / <code>Medium</code> / <code>High</code></td></tr></tbody></table></div>
 <h2 id="与运行时任务的关系">与运行时任务的关系</h2>
-<p>模板任务挂在「模板集 + 模板里程碑」两个维度上；研究执行 <strong>Plan Study</strong> 并按模板生成里程碑时，系统把模板任务复制为研究侧临床任务，继承类别、优先级、必做性与预期时长。运行时任务完成后计入所属里程碑的完成度（见 <a href="milestones.html">里程碑</a>）。</p>
+<p>模板任务挂在「模板集 + 模板里程碑」两个维度上；研究执行 <strong>计划研究</strong> 并按模板生成里程碑时，系统把模板任务复制为研究侧临床任务，继承类别、优先级、必做性与预期时长。运行时任务完成后计入所属里程碑的完成度（见 <a href="milestones.html">里程碑</a>）。</p>
 <div class="help-note"><p class="help-note__label">注意</p><p>模板任务只定义「该做什么」；实际指派（Assigned To）、日期与解决在研究侧的任务上维护，修改模板不会改已生成的任务。</p></div>
 <h2 id="所需权限与角色">所需权限与角色</h2>
 <div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Template Task：Create、Read、Edit</td><td>为里程碑预定义任务清单</td></tr></tbody></table></div>

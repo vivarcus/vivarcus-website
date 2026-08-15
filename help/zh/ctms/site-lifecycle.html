@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="学习国家与中心的完整生命周期：Select Country、Qualify Site、Select Site、Initiate Site，以及 On Hold 与 Will Not Participate 两条异常路径。" />
+  <meta name="description" content="学习国家与中心的完整生命周期：选择国家/地区、使研究地点具有资格、选择机构、启动机构，以及 On Hold 与 Will Not Participate 两条异常路径。" />
   <title>中心生命周期：Candidate 到 Active — CTMS 帮助 — Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/help/zh/ctms/site-lifecycle.html" />
   <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/ctms/site-lifecycle.html" />
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/help/zh/ctms/site-lifecycle.html" />
   <meta property="og:title" content="中心生命周期：Candidate 到 Active — Vivarcus" />
-  <meta property="og:description" content="学习国家与中心的完整生命周期：Select Country、Qualify Site、Select Site、Initiate Site，以及 On Hold 与 Will Not Participate 两条异常路径。" />
+  <meta property="og:description" content="学习国家与中心的完整生命周期：选择国家/地区、使研究地点具有资格、选择机构、启动机构，以及 On Hold 与 Will Not Participate 两条异常路径。" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "中心生命周期：Candidate 到 Active",
-    "description": "学习国家与中心的完整生命周期：Select Country、Qualify Site、Select Site、Initiate Site，以及 On Hold 与 Will Not Participate 两条异常路径。",
+    "description": "学习国家与中心的完整生命周期：选择国家/地区、使研究地点具有资格、选择机构、启动机构，以及 On Hold 与 Will Not Participate 两条异常路径。",
     "inLanguage": "zh-CN",
     "dateModified": "2026-08-15",
     "mainEntityOfPage": "https://vivarcus.com/help/zh/ctms/site-lifecycle.html",
@@ -126,21 +126,21 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="中心状态主路径">中心状态主路径</h2>
-<div class="help-table-wrap"><table><thead><tr><th>状态</th><th>含义</th><th>关键动作</th></tr></thead><tbody><tr><td><strong>Candidate</strong></td><td>候选</td><td><strong>Qualify Site</strong> / <strong>Place Site on Hold</strong> / <strong>Site Will Not Participate</strong></td></tr><tr><td><strong>Qualifying</strong></td><td>资格认定中</td><td><strong>Select Site</strong></td></tr><tr><td><strong>Initiating</strong></td><td>启动中</td><td><strong>Initiate Site</strong>（需父 Study 已 Active）</td></tr><tr><td><strong>Active</strong></td><td>已激活，可入组</td><td>日常运营</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>状态</th><th>含义</th><th>关键动作</th></tr></thead><tbody><tr><td><strong>候选人</strong></td><td>候选</td><td><strong>使研究地点具有资格</strong> / <strong>Place Site on Hold</strong> / <strong>Site Will Not Participate</strong></td></tr><tr><td><strong>合格</strong></td><td>资格认定中</td><td><strong>选择机构</strong></td></tr><tr><td><strong>启动</strong></td><td>启动中</td><td><strong>启动机构</strong>（需父 Study 已 Active）</td></tr><tr><td><strong>活动</strong></td><td>已激活，可入组</td><td>日常运营</td></tr></tbody></table></div>
 <h2 id="创建并选定国家">创建并选定国家</h2>
-<ol><li><strong>Study Countries</strong> → Create：<strong>Study</strong> 选研究，<strong>Country</strong> 选国家/地区，保存（状态 Candidate，Name 自动生成）。<li>打开国家详情 → <strong>All Actions → Select Country</strong>，填 <strong>Country Selected Date</strong>，提交。状态变为 <strong>Initiating</strong>，可生成国家级里程碑。</li></li></ol>
+<ol><li><strong>研究国家/地区</strong> → 创建：<strong>Study</strong> 选研究，<strong>Country</strong> 选国家/地区，保存（状态 Candidate，Name 自动生成）。<li>打开国家详情 → <strong>所有操作 → 选择国家/地区</strong>，填 <strong>Country Selected Date</strong>，提交。状态变为 <strong>启动</strong>，可生成国家级里程碑。</li></li></ol>
 <div class="help-note"><p class="help-note__label">注意</p><p>中心进入 Initiating 要求父 Country <strong>不是</strong> Candidate——CTMS 的中心启动必须先走这一步，不能只建记录。</p></div>
 <h2 id="主路径candidate-qualifying-initiating-active">主路径：Candidate → Qualifying → Initiating → Active</h2>
-<div class="help-table-wrap"><table><thead><tr><th>步骤</th><th>操作</th><th>结果</th></tr></thead><tbody><tr><td>1</td><td><strong>Study Sites</strong> → Create：<strong>Study Site Number</strong> = <code>Site-001</code>，<strong>Study Country</strong> 选国家记录；<strong>Study Number</strong> 留空（自动推导）</td><td>状态 Candidate</td></tr><tr><td>2</td><td><strong>All Actions → Qualify Site</strong></td><td>状态 Qualifying，可生成中心级里程碑</td></tr><tr><td>3</td><td><strong>All Actions → Select Site</strong>，填 <strong>Site Selected Date</strong></td><td>状态 Initiating</td></tr><tr><td>4</td><td>确认父 Study 已 Active → <strong>All Actions → Initiate Site</strong></td><td>状态 Active</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>步骤</th><th>操作</th><th>结果</th></tr></thead><tbody><tr><td>1</td><td><strong>研究地点</strong> → 创建：<strong>Study Site Number</strong> = <code>Site-001</code>，<strong>研究国家/地区</strong> 选国家记录；<strong>研究编号</strong> 留空（自动推导）</td><td>状态 Candidate</td></tr><tr><td>2</td><td><strong>所有操作 → 使研究地点具有资格</strong></td><td>状态 Qualifying，可生成中心级里程碑</td></tr><tr><td>3</td><td><strong>所有操作 → 选择机构</strong>，填 <strong>Site Selected Date</strong></td><td>状态 Initiating</td></tr><tr><td>4</td><td>确认父 Study 已 Active → <strong>所有操作 → 启动机构</strong></td><td>状态 Active</td></tr></tbody></table></div>
 <h2 id="异常路径on-hold">异常路径：On Hold</h2>
 <p>对 Candidate 中心执行 <strong>Place Site on Hold</strong>，填写 Hold 原因（如 <code>PI on medical leave</code>），状态变为 <strong>Qualifying Hold</strong>。恢复时执行 <strong>Remove Site Hold</strong>，回到 Qualifying 后可继续 Select / Initiate。</p>
 <h2 id="异常路径不参与">异常路径：不参与</h2>
 <p>对 Candidate 中心执行 <strong>Site Will Not Participate</strong>，填写 Reason / Notes（如 <code>Imaging capability insufficient</code>），状态变为 <strong>Not Selected</strong>。</p>
 <h2 id="常见问题">常见问题</h2>
-<div class="help-table-wrap"><table><thead><tr><th>现象</th><th>处理建议</th></tr></thead><tbody><tr><td>Qualify Site 失败</td><td>父 Study 不能仍是 Candidate；先完成 Plan Study</td></tr><tr><td>Select Site / Initiate Site 失败</td><td>Country 须先 Select Country；Initiate Site 要求父 Study 为 Active</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>现象</th><th>处理建议</th></tr></thead><tbody><tr><td>使研究地点具有资格失败</td><td>父 Study 不能仍是 Candidate；先完成计划研究</td></tr><tr><td>选择机构 / 启动机构失败</td><td>Country 须先选择国家/地区；启动机构要求父 Study 为 Active</td></tr></tbody></table></div>
 <h2 id="所需权限与角色">所需权限与角色</h2>
-<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Study Country / Study Site：Create、Read、Edit</td><td>创建国家与中心</td></tr><tr><td>生命周期动作</td><td>Study Country：<strong>Select Country</strong></td><td>国家选定（中心启动的前置）</td></tr><tr><td>生命周期动作</td><td>Study Site：<strong>Qualify Site</strong>、<strong>Select Site</strong>、<strong>Initiate Site</strong>、<strong>Place Site on Hold</strong>、<strong>Remove Site Hold</strong>、<strong>Site Will Not Participate</strong></td><td>中心生命周期主路径与异常路径</td></tr></tbody></table></div>
-<p>注意生命周期门禁：Initiate Site 要求父 Study 已 Active，且父 Country 已完成 Select Country。</p>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Study Country / Study Site：Create、Read、Edit</td><td>创建国家与中心</td></tr><tr><td>生命周期动作</td><td>Study Country：<strong>选择国家/地区</strong></td><td>国家选定（中心启动的前置）</td></tr><tr><td>生命周期动作</td><td>Study Site：<strong>使研究地点具有资格</strong>、<strong>选择机构</strong>、<strong>启动机构</strong>、<strong>Place Site on Hold</strong>、<strong>Remove Site Hold</strong>、<strong>Site Will Not Participate</strong></td><td>中心生命周期主路径与异常路径</td></tr></tbody></table></div>
+<p>注意生命周期门禁：启动机构要求父 Study 已 Active，且父 Country 已完成选择国家/地区。</p>
         </div>
       </article>
 

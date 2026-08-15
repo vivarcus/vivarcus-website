@@ -119,20 +119,20 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="里程碑状态">里程碑状态</h2>
-<p>里程碑标记研究的关键节点（如首例受试者入组、数据库锁定），帮助团队跟踪进度。研究创建并 Plan Study 后，系统按 Milestone Master Set 自动生成里程碑记录。</p>
-<div class="help-table-wrap"><table><thead><tr><th>状态</th><th>含义</th><th>可执行操作</th></tr></thead><tbody><tr><td><strong>Unplanned</strong></td><td>未计划</td><td>Plan Milestone、Mark Complete、View Expected Documents</td></tr><tr><td><strong>Planned</strong></td><td>已排期</td><td>View Expected Documents</td></tr><tr><td><strong>Complete</strong></td><td>已完成</td><td>只读查看</td></tr></tbody></table></div>
+<p>里程碑标记研究的关键节点（如首例受试者入组、数据库锁定），帮助团队跟踪进度。研究创建并计划研究后，系统按里程碑主集自动生成里程碑记录。</p>
+<div class="help-table-wrap"><table><thead><tr><th>状态</th><th>含义</th><th>可执行操作</th></tr></thead><tbody><tr><td><strong>未计划</strong></td><td>未计划</td><td>计划里程碑、Mark Complete、查看预期文档</td></tr><tr><td><strong>已计划</strong></td><td>已排期</td><td>查看预期文档</td></tr><tr><td><strong>Complete</strong></td><td>已完成</td><td>只读查看</td></tr></tbody></table></div>
 <h2 id="排期plan-milestone">排期（Plan Milestone）</h2>
-<ol><li>打开研究 → <strong>Milestones</strong> 列表，可见多条 <strong>Unplanned</strong> 记录。<li>打开一条里程碑（如 <strong>Study Start</strong>）。<li><strong>All Actions → Plan Milestone</strong>，填写 <strong>Planned Finish Date</strong>，提交。状态变为 <strong>Planned</strong>。</li></li></li></ol>
+<ol><li>打开研究 → <strong>里程碑</strong> 列表，可见多条 <strong>未计划</strong> 记录。<li>打开一条里程碑（如 <strong>Study Start</strong>）。<li><strong>所有操作 → 计划里程碑</strong>，填写 <strong>计划完成日期</strong>，提交。状态变为 <strong>已计划</strong>。</li></li></li></ol>
 <h2 id="完成里程碑含依赖约束">完成里程碑（含依赖约束）</h2>
 <p>部分里程碑存在上下游依赖：须先完成上游，才能完成下游。</p>
 <ol><li>找到一对有依赖关系的里程碑；下游详情中 <strong>Dependencies</strong> 指向上游。<li>无依赖时可在下游手动添加：选择上游里程碑，类型 <strong>Finish to Start</strong>。<li>对下游执行 <strong>Mark Complete</strong> 时，若上游未完成，操作会被拒绝。<li>先完成上游（填 <strong>Actual Finish Date</strong>），再完成下游。</li></li></li></li></ol>
 <div class="help-note"><p class="help-note__label">注意</p><p>Mark Complete 被拒绝时，先完成依赖链中的上游里程碑。</p></div>
 <h2 id="查看关联的预期文档">查看关联的预期文档</h2>
-<p>任选里程碑 → <strong>All Actions → View Expected Documents</strong>，进入里程碑工作区，显示关联的预期文档列表；点击条目名称可进入详情查看 Matched Documents。</p>
-<h2 id="与-tmf-homepage-的关系">与 TMF Homepage 的关系</h2>
+<p>任选里程碑 → <strong>所有操作 → 查看预期文档</strong>，进入里程碑工作区，显示关联的预期文档列表；点击条目名称可进入详情查看 Matched Documents。</p>
+<h2 id="与-tmf-主页的关系">与 TMF 主页的关系</h2>
 <p><strong>Upcoming Milestones</strong> Widget 列出尚无 Actual Finish Date 的里程碑（即 Unplanned / Planned 状态的记录），可按 <strong>Milestone Category</strong> 过滤——是团队跟进&quot;下一步该做什么&quot;的日常入口。</p>
 <h2 id="所需权限与角色">所需权限与角色</h2>
-<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Milestone：Read、Edit</td><td>查看里程碑、编辑计划日期</td></tr><tr><td>生命周期动作</td><td>Milestone：<strong>Plan Milestone</strong>、<strong>Mark Complete</strong></td><td>排期与完成</td></tr><tr><td>对象</td><td>Milestone Dependency：Create</td><td>添加上下游依赖</td></tr><tr><td>对象</td><td>EDL Item：Read</td><td>经 <strong>View Expected Documents</strong> 查看关联条目</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Milestone：Read、Edit</td><td>查看里程碑、编辑计划日期</td></tr><tr><td>生命周期动作</td><td>Milestone：<strong>计划里程碑</strong>、<strong>Mark Complete</strong></td><td>排期与完成</td></tr><tr><td>对象</td><td>Milestone Dependency：Create</td><td>添加上下游依赖</td></tr><tr><td>对象</td><td>EDL Item：Read</td><td>经 <strong>查看预期文档</strong> 查看关联条目</td></tr></tbody></table></div>
 <p>依赖门禁在服务端强制执行：即便有 Mark Complete 权限，上游未完成时操作仍会被拒绝。</p>
         </div>
       </article>
@@ -147,7 +147,7 @@
 <a href="#排期plan-milestone">排期（Plan Milestone）</a>
 <a href="#完成里程碑含依赖约束">完成里程碑（含依赖约束）</a>
 <a href="#查看关联的预期文档">查看关联的预期文档</a>
-<a href="#与-tmf-homepage-的关系">与 TMF Homepage 的关系</a>
+<a href="#与-tmf-主页的关系">与 TMF 主页的关系</a>
 <a href="#所需权限与角色">所需权限与角色</a>
       </nav>
     </aside>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及 Match Documents 与 Update Related Expected Documents 两个常用动作。" />
+  <meta name="description" content="了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及匹配文档与 更新相关预期文档两个常用动作。" />
   <title>EDL 与预期文档（Expected Documents） — eTMF 帮助 — Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/help/zh/etmf/edl.html" />
   <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/edl.html" />
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/help/zh/etmf/edl.html" />
   <meta property="og:title" content="EDL 与预期文档（Expected Documents） — Vivarcus" />
-  <meta property="og:description" content="了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及 Match Documents 与 Update Related Expected Documents 两个常用动作。" />
+  <meta property="og:description" content="了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及匹配文档与 更新相关预期文档两个常用动作。" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <script type="application/ld+json">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "EDL 与预期文档（Expected Documents）",
-    "description": "了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及 Match Documents 与 Update Related Expected Documents 两个常用动作。",
+    "description": "了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及匹配文档与 更新相关预期文档两个常用动作。",
     "inLanguage": "zh-CN",
     "dateModified": "2026-08-15",
     "mainEntityOfPage": "https://vivarcus.com/help/zh/etmf/edl.html",
@@ -119,31 +119,31 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="什么是-edl">什么是 EDL</h2>
-<p>EDL（Expected Document List，预期文档清单）是 TMF 的「应收清单」：描述这份试验主文件应收集哪些文档、需要几份、是否必填。EDL 由管理员用模板配置，在研究执行 <strong>Plan Study</strong> 时自动生成到研究（及国家/中心）上。</p>
+<p>EDL（Expected Document List，预期文档清单）是 TMF 的「应收清单」：描述这份试验主文件应收集哪些文档、需要几份、是否必填。EDL 由管理员用模板配置，在研究执行 <strong>计划研究</strong> 时自动生成到研究（及国家/中心）上。</p>
 <p>EDL 的条目称为<strong>预期文档（EDL Item / Expected Document）</strong>。系统以 EDL 为准绳判断文档完整度，也是文档自动归档的目标位置来源。</p>
 <h2 id="推荐路径从-edl-item-创建文档">推荐路径：从 EDL Item 创建文档</h2>
 <p>推荐<strong>从 EDL Item 直接创建文档</strong>——系统会自动带出研究、分类等字段，匹配成功率最高：</p>
-<ol><li>打开研究 → <strong>Expected Documents</strong> 列表，任选一条条目打开详情。<li>详情页显示 <strong>Document Type / Classification</strong>、<strong># Expected</strong>、<strong>Completeness</strong> 等字段；下方 <strong>Matched Documents</strong> 区域初始为空。<li><strong>All Actions → Create Document</strong>，选择创建方式（Upload / Placeholder / From Template），填写 Name 并上传文件，保存。</li></li></li></ol>
+<ol><li>打开研究 → <strong>预期文档</strong> 列表，任选一条条目打开详情。<li>详情页显示 <strong>文档类型 / Classification</strong>、<strong># Expected</strong>、<strong>Completeness</strong> 等字段；下方 <strong>Matched Documents</strong> 区域初始为空。<li><strong>所有操作 → 创建文档</strong>，选择创建方式（Upload / Placeholder / From Template），填写 Name 并上传文件，保存。</li></li></li></ol>
 <div class="help-note"><p class="help-note__label">注意</p><p>从 EDL Item 创建文档时，系统<strong>仅自动填充字段</strong>，不会立即建立匹配关系；匹配在文档保存后由系统自动完成。</p></div>
 <h2 id="匹配规则">匹配规则</h2>
 <p>文档与 EDL Item 的对应关系由系统<strong>自动匹配</strong>维护。系统在配置的匹配字段（通常包括 Study、Study Country、Site、Classification 等）上比对：</p>
 <ul><li>配置的<strong>全部</strong>匹配字段值一致 → 建立匹配<li>两边某字段都为空 → 视为一致<li>一边有值、另一边为空 → <strong>不匹配</strong></li></li></li></ul>
 <p>手工创建文档时，须确保这些字段与 EDL Item 对齐。</p>
 <h2 id="常用动作">常用动作</h2>
-<div class="help-table-wrap"><table><thead><tr><th>动作</th><th>用途</th></tr></thead><tbody><tr><td><strong>Match Documents</strong></td><td>对该条目执行一次匹配，刷新 Matched Documents 与计数</td></tr><tr><td><strong>Update Related Expected Documents</strong></td><td>将当前条目的 <strong># Expected</strong> 和 <strong>Requiredness</strong> 同步到同研究内的相关条目（如国家/中心级对应条目）</td></tr><tr><td><strong>Create Document</strong></td><td>从条目创建文档（上传 / 占位 / 从模板）</td></tr></tbody></table></div>
-<div class="help-note"><p class="help-note__label">注意</p><p>Update Related Expected Documents 仅同步份数与必要性，不涉及文档匹配。</p></div>
+<div class="help-table-wrap"><table><thead><tr><th>动作</th><th>用途</th></tr></thead><tbody><tr><td><strong>匹配文档</strong></td><td>对该条目执行一次匹配，刷新 Matched Documents 与计数</td></tr><tr><td><strong>更新相关预期文档</strong></td><td>将当前条目的 <strong># Expected</strong> 和 <strong>Requiredness</strong> 同步到同研究内的相关条目（如国家/中心级对应条目）</td></tr><tr><td><strong>创建文档</strong></td><td>从条目创建文档（上传 / 占位 / 从模板）</td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">注意</p><p>更新相关预期文档仅同步份数与必要性，不涉及文档匹配。</p></div>
 <h2 id="查看完成度">查看完成度</h2>
 <p>条目详情页的计数与状态：</p>
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>含义</th></tr></thead><tbody><tr><td><strong>All Doc Count</strong></td><td>匹配到的全部文档数</td></tr><tr><td><strong>Steady State Doc Count</strong></td><td>其中已批准的稳态文档数</td></tr><tr><td><strong>Completeness</strong></td><td>达标时显示 <strong>Complete</strong></td></tr></tbody></table></div>
 <div class="help-note"><p class="help-note__label">注意</p><p>若 All Doc Count 有值但 Steady State 为 0，说明匹配文档尚未批准；完成批准流程后再查看。</p></div>
 <h2 id="预期文档条目edl-item">预期文档条目（EDL Item）</h2>
-<p><strong>Planning → Expected Documents</strong> 列表汇总全库的 EDL Item 条目；每条属于某个 EDL，代表「某个位置需要收齐的一种文档」。打开条目详情可查看：</p>
-<ul><li><strong>Document Type / Classification</strong> 与 <strong># Expected</strong>（应收集份数）、<strong>Requiredness</strong>（是否必填）<li><strong>Completeness</strong> 完成度计数与 <strong>Matched Documents</strong> 匹配文档区<li><strong>All Actions</strong> 提供 <strong>Create Document</strong>、<strong>Match Documents</strong>、<strong>Update Related Expected Documents</strong>（见上文「常用动作」）</li></li></li></ul>
-<p>按研究打开 <strong>Expected Documents</strong> 相关列表（如研究详情页）可只看该研究的条目；国家/中心级的条目可在研究国家/地点详情页查看。</p>
+<p><strong>计划 → 预期文档</strong> 列表汇总全库的 EDL Item 条目；每条属于某个 EDL，代表「某个位置需要收齐的一种文档」。打开条目详情可查看：</p>
+<ul><li><strong>文档类型 / Classification</strong> 与 <strong># Expected</strong>（应收集份数）、<strong>Requiredness</strong>（是否必填）<li><strong>Completeness</strong> 完成度计数与 <strong>Matched Documents</strong> 匹配文档区<li><strong>所有操作</strong> 提供 <strong>创建文档</strong>、<strong>匹配文档</strong>、<strong>Update Related Expected Documents</strong>（见上文「常用动作」）</li></li></li></ul>
+<p>按研究打开 <strong>预期文档</strong> 相关列表（如研究详情页）可只看该研究的条目；国家/中心级的条目可在研究国家/地点详情页查看。</p>
 <h2 id="常见问题">常见问题</h2>
-<div class="help-table-wrap"><table><thead><tr><th>现象</th><th>处理建议</th></tr></thead><tbody><tr><td>Matched Documents 为空</td><td>确认文档的 Study、Classification 等与 EDL Item 一致；等待几秒刷新，或执行 <strong>Match Documents</strong></td></tr><tr><td>Completeness 仍为 Not Started</td><td>文档须先保存；匹配字段须完全对齐</td></tr><tr><td>Update Related 后相关条目未变</td><td>确认同研究内存在对应的国家/中心级相关条目</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>现象</th><th>处理建议</th></tr></thead><tbody><tr><td>Matched Documents 为空</td><td>确认文档的 Study、Classification 等与 EDL Item 一致；等待几秒刷新，或执行 <strong>匹配文档</strong></td></tr><tr><td>Completeness 仍为 Not Started</td><td>文档须先保存；匹配字段须完全对齐</td></tr><tr><td>Update Related 后相关条目未变</td><td>确认同研究内存在对应的国家/中心级相关条目</td></tr></tbody></table></div>
 <h2 id="所需权限与角色">所需权限与角色</h2>
-<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>EDL / EDL Item：Read、Edit</td><td>查看预期文档清单与条目、编辑 # Expected 与 Requiredness</td></tr><tr><td>对象动作</td><td>EDL Item：<strong>Create Document</strong>、<strong>Match Documents</strong>、<strong>Update Related Expected Documents</strong></td><td>从条目创建文档、手动匹配、同步相关条目</td></tr><tr><td>对象</td><td>Document：Create、Edit</td><td>保存新文档（匹配在保存后自动发生）</td></tr></tbody></table></div>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>EDL / EDL Item：Read、Edit</td><td>查看预期文档清单与条目、编辑 # Expected 与 Requiredness</td></tr><tr><td>对象动作</td><td>EDL Item：<strong>创建文档</strong>、<strong>匹配文档</strong>、<strong>更新相关预期文档</strong></td><td>从条目创建文档、手动匹配、同步相关条目</td></tr><tr><td>对象</td><td>Document：Create、Edit</td><td>保存新文档（匹配在保存后自动发生）</td></tr></tbody></table></div>
 <p><strong>Document Contributor</strong> 具备 EDL 与文档的读写权限；只读角色（如 <strong>External Inspector</strong>）可查看 Matched Documents 与计数，但无法执行动作。</p>
         </div>
       </article>

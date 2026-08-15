@@ -1,6 +1,6 @@
 ---
 title: TMF Viewer 与 Master File Binder
-description: 理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习 Create Study Binders、自动归档与 View Model 切换。
+description: 理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习创建研究活页夹、自动归档与 View Model 切换。
 last_updated: 2026-08-15
 related:
   - upload-documents
@@ -15,14 +15,14 @@ eTMF 提供两套「按参考模型找文档」的能力，分工不同：
 | | Binder（活页夹） | TMF Viewer（查看器） |
 |--|------------------|----------------------|
 | 定位 | Master File 的**物理归档容器** | 按 DocType → Artifact 映射计算的**虚拟视图** |
-| 生成 | 依赖 **Create Study Binders**；支持 Auto-Filing / 手工挂链 | **不依赖** Binder 是否存在 |
+| 生成 | 依赖 **创建研究活页夹**；支持 Auto-Filing / 手工挂链 | **不依赖** Binder 是否存在 |
 | 内容 | Section 树 → 文档链接（含 Filing Origin） | Artifact 树 + 文档列表，按 Study 范围计算 |
 
 手工移入/移出 Binder **不会**改变 Viewer 中的位置；Viewer 的位置只跟文档分类与 Study 范围有关。
 
 ## 创建研究活页夹（Create Study Binders）
 
-1. 打开研究 → **All Actions → Create Study Binders**。
+1. 打开研究 → **所有操作 → 创建研究活页夹**。
 2. **Model** 选择参考模型（如 **TMF RM v3.0**）；**Filing Levels** 选择研究级、国家/地区级和研究机构级主文件，确认。
 3. 创建后可见 **Study Level File**、**Country Level File**、**Site Level File**（对应已建的国家/中心）。
 
@@ -59,7 +59,7 @@ eTMF 提供两套「按参考模型找文档」的能力，分工不同：
 |------|------|------|
 | Tab | TMF Viewer：View | 访问 TMF Viewer |
 | 对象 | Document：Read | 浏览并打开文档 |
-| 对象动作 | Study：**Create Study Binders** | 生成 Master File Binder |
+| 对象动作 | Study：**创建研究活页夹** | 生成 Master File Binder |
 | 对象动作 | Binder：**Refresh Auto-Filing** | 手动触发自动归档 |
 
 **External Inspector** 等只读角色可完整使用 Viewer（虚拟浏览不依赖 Binder）；创建 Binder 与刷新归档需要编辑类权限。

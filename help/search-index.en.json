@@ -419,5 +419,46 @@
    "Relationship to Deviations & Visits",
    "Required Permissions & Roles"
   ]
+ },
+ {
+  "app": "vault-ai",
+  "app_label": "Vault AI Help",
+  "slug": "chat",
+  "title": "Chatting with Vault AI",
+  "description": "Start conversations on the Vault AI tab: ask questions, use record cards, try suggested questions, and manage recent chats and history.",
+  "headings": [
+   "Starting a Conversation",
+   "Record Cards in Answers",
+   "Suggested Questions",
+   "Task Execution Status",
+   "Tips"
+  ]
+ },
+ {
+  "app": "vault-ai",
+  "app_label": "Vault AI Help",
+  "slug": "overview",
+  "title": "Vault AI Overview",
+  "description": "Vault AI is the in-vault AI assistant: query studies, documents, and tasks in natural language; ask, summarize, and translate in record context. Learn the two entry points, capabilities, and safety notes.",
+  "headings": [
+   "What Is Vault AI",
+   "Two Entry Points",
+   "Safety & Boundaries",
+   "Get Started"
+  ]
+ },
+ {
+  "app": "vault-ai",
+  "app_label": "Vault AI Help",
+  "slug": "record-context",
+  "title": "Using Vault AI in Record Context",
+  "description": "Open a record, then use the Vault AI chat panel to ask, summarize, and translate; use Start Trace to keep a dedicated conversation per record.",
+  "headings": [
+   "Opening Record Context",
+   "Quick Actions",
+   "Start Trace",
+   "Docking the Panel",
+   "Tips"
+  ]
  }
 ]

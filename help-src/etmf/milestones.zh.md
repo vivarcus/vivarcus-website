@@ -10,19 +10,19 @@ related:
 
 ## 里程碑状态
 
-里程碑标记研究的关键节点（如首例受试者入组、数据库锁定），帮助团队跟踪进度。研究创建并 Plan Study 后，系统按 Milestone Master Set 自动生成里程碑记录。
+里程碑标记研究的关键节点（如首例受试者入组、数据库锁定），帮助团队跟踪进度。研究创建并计划研究后，系统按里程碑主集自动生成里程碑记录。
 
 | 状态 | 含义 | 可执行操作 |
 |------|------|------------|
-| **Unplanned** | 未计划 | Plan Milestone、Mark Complete、View Expected Documents |
-| **Planned** | 已排期 | View Expected Documents |
+| **未计划** | 未计划 | 计划里程碑、Mark Complete、查看预期文档 |
+| **已计划** | 已排期 | 查看预期文档 |
 | **Complete** | 已完成 | 只读查看 |
 
 ## 排期（Plan Milestone）
 
-1. 打开研究 → **Milestones** 列表，可见多条 **Unplanned** 记录。
+1. 打开研究 → **里程碑** 列表，可见多条 **未计划** 记录。
 2. 打开一条里程碑（如 **Study Start**）。
-3. **All Actions → Plan Milestone**，填写 **Planned Finish Date**，提交。状态变为 **Planned**。
+3. **所有操作 → 计划里程碑**，填写 **计划完成日期**，提交。状态变为 **已计划**。
 
 ## 完成里程碑（含依赖约束）
 
@@ -37,9 +37,9 @@ related:
 
 ## 查看关联的预期文档
 
-任选里程碑 → **All Actions → View Expected Documents**，进入里程碑工作区，显示关联的预期文档列表；点击条目名称可进入详情查看 Matched Documents。
+任选里程碑 → **所有操作 → 查看预期文档**，进入里程碑工作区，显示关联的预期文档列表；点击条目名称可进入详情查看 Matched Documents。
 
-## 与 TMF Homepage 的关系
+## 与 TMF 主页的关系
 
 **Upcoming Milestones** Widget 列出尚无 Actual Finish Date 的里程碑（即 Unplanned / Planned 状态的记录），可按 **Milestone Category** 过滤——是团队跟进"下一步该做什么"的日常入口。
 
@@ -48,8 +48,8 @@ related:
 | 类型 | 权限 | 作用 |
 |------|------|------|
 | 对象 | Milestone：Read、Edit | 查看里程碑、编辑计划日期 |
-| 生命周期动作 | Milestone：**Plan Milestone**、**Mark Complete** | 排期与完成 |
+| 生命周期动作 | Milestone：**计划里程碑**、**Mark Complete** | 排期与完成 |
 | 对象 | Milestone Dependency：Create | 添加上下游依赖 |
-| 对象 | EDL Item：Read | 经 **View Expected Documents** 查看关联条目 |
+| 对象 | EDL Item：Read | 经 **查看预期文档** 查看关联条目 |
 
 依赖门禁在服务端强制执行：即便有 Mark Complete 权限，上游未完成时操作仍会被拒绝。

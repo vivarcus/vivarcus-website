@@ -35,7 +35,7 @@
   "app_label": "eTMF 帮助",
   "slug": "edl",
   "title": "EDL 与预期文档（Expected Documents）",
-  "description": "了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及 Match Documents 与 Update Related Expected Documents 两个常用动作。",
+  "description": "了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及匹配文档与 更新相关预期文档两个常用动作。",
   "headings": [
    "什么是 EDL",
    "推荐路径：从 EDL Item 创建文档",
@@ -58,7 +58,7 @@
    "排期（Plan Milestone）",
    "完成里程碑（含依赖约束）",
    "查看关联的预期文档",
-   "与 TMF Homepage 的关系",
+   "与 TMF 主页的关系",
    "所需权限与角色"
   ]
  },
@@ -95,13 +95,13 @@
   "app_label": "eTMF 帮助",
   "slug": "quality-issues",
   "title": "质量问题（Quality Issues）",
-  "description": "Quality Issue 记录文档缺陷并跟踪从发现到关闭的整改。了解四种状态、创建方式、与文档的双向关联，以及在 TMF Homepage 中的统计视图。",
+  "description": "Quality Issue 记录文档缺陷并跟踪从发现到关闭的整改。了解四种状态、创建方式、与文档的双向关联，以及在 TMF 主页中的统计视图。",
   "headings": [
    "什么是 Quality Issue",
    "状态流转",
    "创建质量问题",
    "双向关联",
-   "在 TMF Homepage 查看",
+   "在 TMF 主页查看",
    "所需权限与角色"
   ]
  },
@@ -125,7 +125,7 @@
   "app_label": "eTMF 帮助",
   "slug": "study-hierarchy",
   "title": "研究层级：创建研究、国家与中心",
-  "description": "学习创建 Study、配置里程碑主集与模板 EDL、执行 Plan Study 与 Ready to Enroll，以及创建研究国家/地区与研究地点的完整流程。",
+  "description": "学习创建研究、配置里程碑主集与模板 EDL、执行计划研究与注册准备就绪，以及创建研究国家/地区与研究地点的完整流程。",
   "headings": [
    "三级结构",
    "创建研究",
@@ -169,7 +169,7 @@
   "app_label": "eTMF 帮助",
   "slug": "template-milestones",
   "title": "里程碑模板（主集 / 模板集 / 里程碑 / 依赖）",
-  "description": "了解里程碑模板的四层结构：Template Milestone Master Set、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。",
+  "description": "了解里程碑模板的四层结构：模板里程碑主集、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。",
   "headings": [
    "四层结构",
    "模板里程碑主集（Master Set）",
@@ -198,13 +198,13 @@
   "app_label": "eTMF 帮助",
   "slug": "tmf-homepage",
   "title": "TMF Homepage：文档完成度与稽查就绪",
-  "description": "TMF Homepage 把完整性、及时性、质量问题与待办汇总成一张健康仪表盘。了解各 Widget 的口径、Study 选择器与稽查就绪自检清单。",
+  "description": "TMF 主页把完整性、及时性、质量问题与待办汇总成一张健康仪表盘。了解各 Widget 的口径、Study 选择器与稽查就绪自检清单。",
   "headings": [
    "概述",
    "Widget 一览",
    "Completeness 口径",
    "Timeliness",
-   "Quality Issues 与任务",
+   "质量问题与任务",
    "稽查就绪自检清单",
    "所需权限与角色"
   ]
@@ -214,7 +214,7 @@
   "app_label": "eTMF 帮助",
   "slug": "tmf-viewer",
   "title": "TMF Viewer 与 Master File Binder",
-  "description": "理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习 Create Study Binders、自动归档与 View Model 切换。",
+  "description": "理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习创建研究活页夹、自动归档与 View Model 切换。",
   "headings": [
    "Binder 与 Viewer 的分工",
    "创建研究活页夹（Create Study Binders）",
@@ -244,11 +244,11 @@
   "app_label": "CTMS 帮助",
   "slug": "clinical-tasks",
   "title": "监查跟进项与 CTMS 临床任务",
-  "description": "了解 CTMS 侧的 Clinical Tasks 列表、监查事件跟进项（Monitoring Follow Up Item）的创建与关联，以及 Seed Follow Up Items 在访视报告中的用法。",
+  "description": "了解 CTMS 侧的临床任务列表、监查事件跟进项（Monitoring Follow Up Item）的创建与关联，以及关联跟进项目在访视报告中的用法。",
   "headings": [
    "与 eTMF 临床任务的关系",
    "监查事件跟进项（Monitoring Follow Up Items）",
-   "Seed Follow Up Items 与访视报告",
+   "关联跟进项目与访视报告",
    "与里程碑完成度的联动",
    "常见问题",
    "所需权限与角色"
@@ -259,12 +259,12 @@
   "app_label": "CTMS 帮助",
   "slug": "dashboards",
   "title": "运营仪表板：Study Management 与 CRA Homepage",
-  "description": "了解两张 CTMS 工作台的 Widget 构成与三级范围选择器：Study Management Homepage 给研究经理，CRA Homepage 给监查员。",
+  "description": "了解两张 CTMS 工作台的 Widget 构成与三级范围选择器：研究管理主页给研究经理，CRA 主页给监查员。",
   "headings": [
    "两张工作台",
-   "Study Management Homepage",
-   "CRA Homepage",
-   "与 TMF Homepage 的分工",
+   "研究管理主页",
+   "CRA 主页",
+   "与 TMF 主页的分工",
    "所需权限与角色"
   ]
  },
@@ -273,7 +273,7 @@
   "app_label": "CTMS 帮助",
   "slug": "global-directory",
   "title": "全局目录（Global Directory）",
-  "description": "了解 Global Directory 的四个主数据子页：组织、产品、研究产品角色与人员，以及它们如何被研究层级引用。",
+  "description": "了解全球目录的四个主数据子页：组织、产品、研究产品角色与人员，以及它们如何被研究层级引用。",
   "headings": [
    "组织",
    "产品",
@@ -288,7 +288,7 @@
   "app_label": "CTMS 帮助",
   "slug": "issue-management",
   "title": "问题与方案偏离",
-  "description": "了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、Start PD Review 的团队前置条件，以及与 eTMF 质量问题的对照。",
+  "description": "了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、开始方案偏离审查的团队前置条件，以及与 eTMF 质量问题的对照。",
   "headings": [
    "Issue 类型与常用动作",
    "创建方案偏离",
@@ -335,7 +335,7 @@
   "app_label": "CTMS 帮助",
   "slug": "site-lifecycle",
   "title": "中心生命周期：Candidate 到 Active",
-  "description": "学习国家与中心的完整生命周期：Select Country、Qualify Site、Select Site、Initiate Site，以及 On Hold 与 Will Not Participate 两条异常路径。",
+  "description": "学习国家与中心的完整生命周期：选择国家/地区、使研究地点具有资格、选择机构、启动机构，以及 On Hold 与 Will Not Participate 两条异常路径。",
   "headings": [
    "中心状态主路径",
    "创建并选定国家",
@@ -351,7 +351,7 @@
   "app_label": "CTMS 帮助",
   "slug": "site-sae-tracking",
   "title": "现场 SAE 跟踪（Site SAE Tracking）",
-  "description": "了解如何在 Site Monitoring 中登记研究中心发生的严重不良事件（SAE），包括必填字段、与监查事件的关联和维护职责。",
+  "description": "了解如何在现场监控中登记研究中心发生的严重不良事件（SAE），包括必填字段、与监查事件的关联和维护职责。",
   "headings": [
    "什么是 SAE 跟踪",
    "登记 SAE",
@@ -365,14 +365,14 @@
   "app_label": "CTMS 帮助",
   "slug": "study-lifecycle",
   "title": "研究生命周期：创建、计划与激活",
-  "description": "学习 CTMS 研究从 Candidate 到 Active 的完整流程：配置招募计划、补齐招募里程碑日期、填写注册指标 Planned、Plan Subject Recruitment 与 Ready to Enroll。",
+  "description": "学习 CTMS 研究从 Candidate 到 Active 的完整流程：配置招募计划、补齐招募里程碑日期、填写注册指标 Planned、计划受试者招募与注册准备就绪。",
   "headings": [
    "状态流转",
    "创建研究",
-   "配置与 Plan Study",
+   "配置与计划研究",
    "补齐招募里程碑日期",
    "填写注册指标 Planned",
-   "Plan Subject Recruitment",
+   "计划受试者招募",
    "激活研究",
    "常见问题",
    "所需权限与角色"
@@ -383,7 +383,7 @@
   "app_label": "CTMS 帮助",
   "slug": "study-metrics",
   "title": "里程碑跟踪与注册指标",
-  "description": "了解 Study Management 的里程碑跟踪（Milestone Tracking）与注册指标（Enrollment Metrics）：从 Plan Study 生成到排期完成、指标播种与 Metrics Over Time 的门禁。",
+  "description": "了解研究管理的里程碑跟踪（Milestone Tracking）与注册指标（Enrollment Metrics）：从计划研究生成到排期完成、指标播种与 Metrics Over Time 的门禁。",
   "headings": [
    "里程碑跟踪",
    "注册指标",
@@ -418,6 +418,47 @@
    "受试者访视",
    "与偏离/访视的关联",
    "所需权限与角色"
+  ]
+ },
+ {
+  "app": "vault-ai",
+  "app_label": "Vault AI 帮助",
+  "slug": "chat",
+  "title": "与 Vault AI 对话",
+  "description": "在 Vault AI 标签页发起对话：提问、查看记录卡片、使用建议问题、管理最近对话与历史记录。",
+  "headings": [
+   "发起对话",
+   "回答中的记录卡片",
+   "建议问题",
+   "任务执行状态",
+   "提示"
+  ]
+ },
+ {
+  "app": "vault-ai",
+  "app_label": "Vault AI 帮助",
+  "slug": "overview",
+  "title": "Vault AI 概览",
+  "description": "Vault AI 是库内 AI 助手：用自然语言查询研究、文档与任务，在记录上下文中提问、摘要与翻译。了解两个入口、能力边界与安全提示。",
+  "headings": [
+   "什么是 Vault AI",
+   "两个入口",
+   "安全与边界",
+   "开始使用"
+  ]
+ },
+ {
+  "app": "vault-ai",
+  "app_label": "Vault AI 帮助",
+  "slug": "record-context",
+  "title": "在记录上下文中使用 Vault AI",
+  "description": "打开记录后用 Vault AI 聊天面板提问、摘要记录、翻译记录，并通过\"开始跟踪\"为记录建立专属对话。",
+  "headings": [
+   "打开记录上下文",
+   "三种快捷操作",
+   "开始跟踪",
+   "面板停靠",
+   "提示"
   ]
  }
 ]

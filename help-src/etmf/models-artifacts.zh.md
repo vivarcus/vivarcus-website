@@ -10,7 +10,7 @@ related:
 
 ## 参考模型（Model）
 
-**Model**（参考模型）是 TMF 参考模型的容器——例如 DIA TMF 参考模型 v2.0 / v3.0。**Admin Setup → Models** 维护：
+**Model**（参考模型）是 TMF 参考模型的容器——例如 DIA TMF 参考模型 v2.0 / v3.0。**管理员设置 → 参考模型** 维护：
 
 | 字段 | 说明 |
 |------|------|
@@ -30,7 +30,7 @@ related:
 
 ## 工件（Artifact）
 
-**Artifact**（工件）是参考模型内的层级节点（Zone / Section），构成 TMF 标准层级树，如 `01 Trial Management → 01.01 Trial Oversight → 01.01.01 Trial Master File Plan`。**Admin Setup → Artifacts** 维护：
+**Artifact**（工件）是参考模型内的层级节点（Zone / Section），构成 TMF 标准层级树，如 `01 Trial Management → 01.01 Trial Oversight → 01.01.01 Trial Master File Plan`。**管理员设置 → 工件** 维护：
 
 | 字段 | 说明 |
 |------|------|

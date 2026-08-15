@@ -119,7 +119,7 @@
         <p class="help-article__meta">更新于 2026-08-15</p>
         <div class="help-article__body">
           <h2 id="三级分类体系">三级分类体系</h2>
-<p><strong>Document Type</strong> 是 TMF 文档分类的主数据，采用 <strong>Type → Subtype → Classification</strong> 三级层次：</p>
+<p><strong>文档类型</strong> 是 TMF 文档分类的主数据，采用 <strong>Type → Subtype → Classification</strong> 三级层次：</p>
 <div class="help-table-wrap"><table><thead><tr><th>层级</th><th>含义</th><th>示例</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>顶级文档大类</td><td>Regulatory、Safety Reporting</td></tr><tr><td><strong>Subtype</strong></td><td>大类下的细分</td><td>Regulatory → Reports</td></tr><tr><td><strong>Classification</strong></td><td>最细的分类</td><td>General → Relevant Communications</td></tr></tbody></table></div>
 <p>每个条目通过 <strong>Level</strong> 字段标记层级、通过 <strong>Parent Type</strong> 自引用挂到上级，构成分类树。该体系是 EDL 模板引用文档类型三要素的来源，也是文档自动归档的匹配依据。</p>
 <h2 id="预置文档类型">预置文档类型</h2>
@@ -133,7 +133,7 @@
 <div class="help-table-wrap"><table><thead><tr><th>字段</th><th>含义</th></tr></thead><tbody><tr><td><strong>eTMF RM v2.0 / eTMF RM v3.0</strong></td><td>映射到 TMF 参考模型 v2.0 / v3.0 的工件</td></tr><tr><td><strong>Vault Clinical Docs</strong></td><td>映射到 Vault Clinical Docs 模型工件</td></tr></tbody></table></div>
 <p>映射后，文档可依分类在 <strong>TMF 查看器</strong>中按参考模型层级浏览；同时支撑 <code>Binder Section to Document Type</code> 模型——文档归档时按 Type/Subtype/Classification 匹配 Binder Section 名称（见 <a href="models-artifacts.html">参考模型与工件</a>）。</p>
 <h2 id="在-edl-模板中的使用">在 EDL 模板中的使用</h2>
-<p><strong>Template Expected Documents</strong> 条目通过 Type / Subtype / Classification 三字段引用本文档分类，研究侧生成的 EDL Item 继承同一分类（见 <a href="template-edls.html">模板 EDL 与预期文档模板</a>）。修改分类树会影响所有引用它的模板与既有研究，变更前先评估影响面。</p>
+<p><strong>预期文档的模板</strong> 条目通过 Type / Subtype / Classification 三字段引用本文档分类，研究侧生成的 EDL Item 继承同一分类（见 <a href="template-edls.html">模板 EDL 与预期文档模板</a>）。修改分类树会影响所有引用它的模板与既有研究，变更前先评估影响面。</p>
 <h2 id="所需权限与角色">所需权限与角色</h2>
 <div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Document Type：Create、Read、Edit</td><td>维护三级分类树与编号规则</td></tr></tbody></table></div>
 <p><strong>Clinical Application Administrator</strong> 负责维护分类；<strong>Document Contributor</strong> 对分类只读。</p>

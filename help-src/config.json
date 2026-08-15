@@ -5,17 +5,58 @@
     "trial_url": "trial.html"
   },
   "marketing_pages": [
-    {"loc": "/", "lastmod": "2026-08-08", "changefreq": "weekly", "priority": "1.0"},
-    {"loc": "/products.html", "lastmod": "2026-08-08", "changefreq": "weekly", "priority": "0.9"},
-    {"loc": "/about.html", "lastmod": "2026-08-08", "changefreq": "monthly", "priority": "0.7"},
-    {"loc": "/trial.html", "lastmod": "2026-08-08", "changefreq": "monthly", "priority": "0.8"},
-    {"loc": "/etmf-guide.html", "lastmod": "2026-08-15", "changefreq": "monthly", "priority": "0.8"},
-    {"loc": "/ctms-guide.html", "lastmod": "2026-08-15", "changefreq": "monthly", "priority": "0.8"},
-    {"loc": "/etmf-ctms-edc.html", "lastmod": "2026-08-15", "changefreq": "monthly", "priority": "0.8"}
+    {
+      "loc": "/",
+      "lastmod": "2026-08-08",
+      "changefreq": "weekly",
+      "priority": "1.0"
+    },
+    {
+      "loc": "/products.html",
+      "lastmod": "2026-08-08",
+      "changefreq": "weekly",
+      "priority": "0.9"
+    },
+    {
+      "loc": "/about.html",
+      "lastmod": "2026-08-08",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/trial.html",
+      "lastmod": "2026-08-08",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/etmf-guide.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/ctms-guide.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/etmf-ctms-edc.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    }
   ],
   "home": {
-    "zh": {"title": "帮助中心", "description": "Vivarcus 产品使用文档与操作指南：eTMF 电子试验主文件与 CTMS 临床运营管理。"},
-    "en": {"title": "Help Center", "description": "Vivarcus product documentation and guides: eTMF electronic trial master file and CTMS clinical operations."}
+    "zh": {
+      "title": "帮助中心",
+      "description": "Vivarcus 产品使用文档与操作指南：eTMF 电子试验主文件、CTMS 临床运营管理与 Vault AI 智能助手。"
+    },
+    "en": {
+      "title": "Help Center",
+      "description": "Vivarcus product documentation and guides: eTMF electronic trial master file, CTMS clinical operations, and the Vault AI assistant."
+    }
   },
   "ui": {
     "zh": {
@@ -58,7 +99,10 @@
   "apps": [
     {
       "key": "etmf",
-      "name": {"zh": "eTMF 帮助", "en": "eTMF Help"},
+      "name": {
+        "zh": "eTMF 帮助",
+        "en": "eTMF Help"
+      },
       "tagline": {
         "zh": "电子试验主文件管理：研究层级、文档收审、EDL 与里程碑、稽查就绪。",
         "en": "Electronic trial master file: study hierarchy, document workflows, EDLs & milestones, inspection readiness."
@@ -70,70 +114,306 @@
       "groups": [
         {
           "key": "get-started",
-          "label": {"zh": "入门", "en": "Get Started"},
+          "label": {
+            "zh": "入门",
+            "en": "Get Started"
+          },
           "items": [
-            {"key": "overview", "label": {"zh": "什么是 eTMF 与 TMF 参考模型", "en": "What Is eTMF & the TMF Reference Model"}, "article": "overview"}
+            {
+              "key": "overview",
+              "label": {
+                "zh": "什么是 eTMF 与 TMF 参考模型",
+                "en": "What Is eTMF & the TMF Reference Model"
+              },
+              "article": "overview"
+            }
           ]
         },
         {
           "key": "etmf-core",
-          "label": {"zh": "eTMF", "en": "eTMF"},
+          "label": {
+            "zh": "eTMF",
+            "en": "eTMF"
+          },
           "items": [
-            {"key": "tmf-homepage", "label": {"zh": "TMF 主页", "en": "TMF Homepage"}, "article": "tmf-homepage"},
-            {"key": "tmf-viewer", "label": {"zh": "TMF 查看器", "en": "TMF Viewer"}, "article": "tmf-viewer"}
+            {
+              "key": "tmf-homepage",
+              "label": {
+                "zh": "TMF 主页",
+                "en": "TMF Homepage"
+              },
+              "article": "tmf-homepage"
+            },
+            {
+              "key": "tmf-viewer",
+              "label": {
+                "zh": "TMF 查看器",
+                "en": "TMF Viewer"
+              },
+              "article": "tmf-viewer"
+            }
           ]
         },
         {
           "key": "study-info",
-          "label": {"zh": "研究信息", "en": "Study Info"},
+          "label": {
+            "zh": "研究信息",
+            "en": "Study Info"
+          },
           "items": [
-            {"key": "studies", "label": {"zh": "研究", "en": "Studies"}, "article": "study-hierarchy"},
-            {"key": "study-countries", "label": {"zh": "研究国家/地区", "en": "Study Countries"}, "article": "study-hierarchy", "anchor": {"zh": "创建研究国家/地区", "en": "Creating a Study Country"}},
-            {"key": "study-sites", "label": {"zh": "研究地点", "en": "Study Sites"}, "article": "study-hierarchy", "anchor": {"zh": "创建研究地点", "en": "Creating a Study Site"}}
+            {
+              "key": "studies",
+              "label": {
+                "zh": "研究",
+                "en": "Studies"
+              },
+              "article": "study-hierarchy"
+            },
+            {
+              "key": "study-countries",
+              "label": {
+                "zh": "研究国家/地区",
+                "en": "Study Countries"
+              },
+              "article": "study-hierarchy",
+              "anchor": {
+                "zh": "创建研究国家/地区",
+                "en": "Creating a Study Country"
+              }
+            },
+            {
+              "key": "study-sites",
+              "label": {
+                "zh": "研究地点",
+                "en": "Study Sites"
+              },
+              "article": "study-hierarchy",
+              "anchor": {
+                "zh": "创建研究地点",
+                "en": "Creating a Study Site"
+              }
+            }
           ]
         },
         {
           "key": "document-management",
-          "label": {"zh": "文档管理", "en": "Document Management"},
+          "label": {
+            "zh": "文档管理",
+            "en": "Document Management"
+          },
           "items": [
-            {"key": "upload-documents", "label": {"zh": "上传与匹配", "en": "Upload & Matching"}, "article": "upload-documents"},
-            {"key": "review-workflow", "label": {"zh": "审阅与批准", "en": "Review & Approval"}, "article": "review-workflow"},
-            {"key": "quality-issues", "label": {"zh": "质量问题", "en": "Quality Issues"}, "article": "quality-issues"}
+            {
+              "key": "upload-documents",
+              "label": {
+                "zh": "上传与匹配",
+                "en": "Upload & Matching"
+              },
+              "article": "upload-documents"
+            },
+            {
+              "key": "review-workflow",
+              "label": {
+                "zh": "审阅与批准",
+                "en": "Review & Approval"
+              },
+              "article": "review-workflow"
+            },
+            {
+              "key": "quality-issues",
+              "label": {
+                "zh": "质量问题",
+                "en": "Quality Issues"
+              },
+              "article": "quality-issues"
+            }
           ]
         },
         {
           "key": "planning",
-          "label": {"zh": "计划", "en": "Planning"},
+          "label": {
+            "zh": "计划",
+            "en": "Planning"
+          },
           "items": [
-            {"key": "edls", "label": {"zh": "预期文档列表", "en": "Expected Document Lists"}, "article": "edl"},
-            {"key": "edl-items", "label": {"zh": "预期文档", "en": "Expected Documents"}, "article": "edl", "anchor": {"zh": "预期文档条目（EDL Item）", "en": "Expected Documents (EDL Items)"}},
-            {"key": "milestones", "label": {"zh": "里程碑", "en": "Milestones"}, "article": "milestones"},
-            {"key": "clinical-tasks", "label": {"zh": "临床任务", "en": "Clinical Tasks"}, "article": "clinical-tasks"}
+            {
+              "key": "edls",
+              "label": {
+                "zh": "预期文档列表",
+                "en": "Expected Document Lists"
+              },
+              "article": "edl"
+            },
+            {
+              "key": "edl-items",
+              "label": {
+                "zh": "预期文档",
+                "en": "Expected Documents"
+              },
+              "article": "edl",
+              "anchor": {
+                "zh": "预期文档条目（EDL Item）",
+                "en": "Expected Documents (EDL Items)"
+              }
+            },
+            {
+              "key": "milestones",
+              "label": {
+                "zh": "里程碑",
+                "en": "Milestones"
+              },
+              "article": "milestones"
+            },
+            {
+              "key": "clinical-tasks",
+              "label": {
+                "zh": "临床任务",
+                "en": "Clinical Tasks"
+              },
+              "article": "clinical-tasks"
+            }
           ]
         },
         {
           "key": "admin-setup",
-          "label": {"zh": "管理员设置", "en": "Admin Setup"},
+          "label": {
+            "zh": "管理员设置",
+            "en": "Admin Setup"
+          },
           "items": [
-            {"key": "study-personnel", "label": {"zh": "研究人员", "en": "Study Personnel"}, "article": "study-personnel"},
-            {"key": "user-role-setup", "label": {"zh": "用户角色设置", "en": "User Role Setup"}, "article": "study-personnel", "anchor": {"zh": "用户角色设置（User Role Setup）", "en": "User Role Setup"}},
-            {"key": "document-types", "label": {"zh": "文档类型", "en": "Document Types"}, "article": "document-types"},
-            {"key": "template-edls", "label": {"zh": "预期文档列表的模板", "en": "Template Expected Document Lists"}, "article": "template-edls"},
-            {"key": "template-edl-items", "label": {"zh": "预期文档的模板", "en": "Template Expected Documents"}, "article": "template-edls", "anchor": {"zh": "预期文档的模板（EDL Item Template）", "en": "Template Expected Documents (EDL Item Templates)"}},
-            {"key": "template-ms-master-sets", "label": {"zh": "模板里程碑主集", "en": "Template Milestone Master Sets"}, "article": "template-milestones", "anchor": {"zh": "模板里程碑主集（Master Set）", "en": "Template Milestone Master Sets"}},
-            {"key": "template-ms-sets", "label": {"zh": "里程碑模板集", "en": "Template Milestone Sets"}, "article": "template-milestones", "anchor": {"zh": "里程碑模板集（Milestone Set）", "en": "Template Milestone Sets"}},
-            {"key": "template-milestones", "label": {"zh": "里程碑模板", "en": "Template Milestones"}, "article": "template-milestones", "anchor": {"zh": "里程碑模板（Milestone）", "en": "Template Milestones"}},
-            {"key": "models", "label": {"zh": "参考模型", "en": "Models"}, "article": "models-artifacts"},
-            {"key": "artifacts", "label": {"zh": "工件", "en": "Artifacts"}, "article": "models-artifacts", "anchor": {"zh": "工件（Artifact）", "en": "Artifacts"}},
-            {"key": "template-ms-dependencies", "label": {"zh": "里程碑依赖关系模板", "en": "Template Milestone Dependencies"}, "article": "template-milestones", "anchor": {"zh": "里程碑依赖关系模板（Dependency）", "en": "Template Milestone Dependencies"}},
-            {"key": "template-tasks", "label": {"zh": "模板任务", "en": "Template Tasks"}, "article": "template-tasks"}
+            {
+              "key": "study-personnel",
+              "label": {
+                "zh": "研究人员",
+                "en": "Study Personnel"
+              },
+              "article": "study-personnel"
+            },
+            {
+              "key": "user-role-setup",
+              "label": {
+                "zh": "用户角色设置",
+                "en": "User Role Setup"
+              },
+              "article": "study-personnel",
+              "anchor": {
+                "zh": "用户角色设置（User Role Setup）",
+                "en": "User Role Setup"
+              }
+            },
+            {
+              "key": "document-types",
+              "label": {
+                "zh": "文档类型",
+                "en": "Document Types"
+              },
+              "article": "document-types"
+            },
+            {
+              "key": "template-edls",
+              "label": {
+                "zh": "预期文档列表的模板",
+                "en": "Template Expected Document Lists"
+              },
+              "article": "template-edls"
+            },
+            {
+              "key": "template-edl-items",
+              "label": {
+                "zh": "预期文档的模板",
+                "en": "Template Expected Documents"
+              },
+              "article": "template-edls",
+              "anchor": {
+                "zh": "预期文档的模板（EDL Item Template）",
+                "en": "Template Expected Documents (EDL Item Templates)"
+              }
+            },
+            {
+              "key": "template-ms-master-sets",
+              "label": {
+                "zh": "模板里程碑主集",
+                "en": "Template Milestone Master Sets"
+              },
+              "article": "template-milestones",
+              "anchor": {
+                "zh": "模板里程碑主集（Master Set）",
+                "en": "Template Milestone Master Sets"
+              }
+            },
+            {
+              "key": "template-ms-sets",
+              "label": {
+                "zh": "里程碑模板集",
+                "en": "Template Milestone Sets"
+              },
+              "article": "template-milestones",
+              "anchor": {
+                "zh": "里程碑模板集（Milestone Set）",
+                "en": "Template Milestone Sets"
+              }
+            },
+            {
+              "key": "template-milestones",
+              "label": {
+                "zh": "里程碑模板",
+                "en": "Template Milestones"
+              },
+              "article": "template-milestones",
+              "anchor": {
+                "zh": "里程碑模板（Milestone）",
+                "en": "Template Milestones"
+              }
+            },
+            {
+              "key": "models",
+              "label": {
+                "zh": "参考模型",
+                "en": "Models"
+              },
+              "article": "models-artifacts"
+            },
+            {
+              "key": "artifacts",
+              "label": {
+                "zh": "工件",
+                "en": "Artifacts"
+              },
+              "article": "models-artifacts",
+              "anchor": {
+                "zh": "工件（Artifact）",
+                "en": "Artifacts"
+              }
+            },
+            {
+              "key": "template-ms-dependencies",
+              "label": {
+                "zh": "里程碑依赖关系模板",
+                "en": "Template Milestone Dependencies"
+              },
+              "article": "template-milestones",
+              "anchor": {
+                "zh": "里程碑依赖关系模板（Dependency）",
+                "en": "Template Milestone Dependencies"
+              }
+            },
+            {
+              "key": "template-tasks",
+              "label": {
+                "zh": "模板任务",
+                "en": "Template Tasks"
+              },
+              "article": "template-tasks"
+            }
           ]
         }
       ]
     },
     {
       "key": "ctms",
-      "name": {"zh": "CTMS 帮助", "en": "CTMS Help"},
+      "name": {
+        "zh": "CTMS 帮助",
+        "en": "CTMS Help"
+      },
       "tagline": {
         "zh": "临床试验管理系统：研究启动、站点管理、受试者追踪、监查与问题管理、运营仪表板。",
         "en": "Clinical trial management system: study startup, site management, subject tracking, monitoring & issues, operational dashboards."
@@ -145,72 +425,397 @@
       "groups": [
         {
           "key": "get-started",
-          "label": {"zh": "入门", "en": "Get Started"},
+          "label": {
+            "zh": "入门",
+            "en": "Get Started"
+          },
           "items": [
-            {"key": "overview", "label": {"zh": "什么是 CTMS 与研究运营闭环", "en": "What Is CTMS & the Study Operations Loop"}, "article": "overview"}
+            {
+              "key": "overview",
+              "label": {
+                "zh": "什么是 CTMS 与研究运营闭环",
+                "en": "What Is CTMS & the Study Operations Loop"
+              },
+              "article": "overview"
+            }
           ]
         },
         {
           "key": "study-info",
-          "label": {"zh": "研究信息", "en": "Study Info"},
+          "label": {
+            "zh": "研究信息",
+            "en": "Study Info"
+          },
           "items": [
-            {"key": "subjects", "label": {"zh": "受试者", "en": "Subjects"}, "article": "subjects"},
-            {"key": "subject-visits", "label": {"zh": "受试者访视", "en": "Subject Visits"}, "article": "subjects", "anchor": {"zh": "受试者访视", "en": "Subject Visits"}},
-            {"key": "study-sites", "label": {"zh": "研究地点", "en": "Study Sites"}, "article": "site-lifecycle"}
+            {
+              "key": "subjects",
+              "label": {
+                "zh": "受试者",
+                "en": "Subjects"
+              },
+              "article": "subjects"
+            },
+            {
+              "key": "subject-visits",
+              "label": {
+                "zh": "受试者访视",
+                "en": "Subject Visits"
+              },
+              "article": "subjects",
+              "anchor": {
+                "zh": "受试者访视",
+                "en": "Subject Visits"
+              }
+            },
+            {
+              "key": "study-sites",
+              "label": {
+                "zh": "研究地点",
+                "en": "Study Sites"
+              },
+              "article": "site-lifecycle"
+            }
           ]
         },
         {
           "key": "study-management",
-          "label": {"zh": "研究管理", "en": "Study Management"},
+          "label": {
+            "zh": "研究管理",
+            "en": "Study Management"
+          },
           "items": [
-            {"key": "study-management-homepage", "label": {"zh": "研究管理主页", "en": "Study Management Homepage"}, "article": "dashboards", "anchor": "Study Management Homepage"},
-            {"key": "studies", "label": {"zh": "研究", "en": "Studies"}, "article": "study-lifecycle"},
-            {"key": "milestone-tracking", "label": {"zh": "里程碑跟踪", "en": "Milestone Tracking"}, "article": "study-metrics", "anchor": {"zh": "里程碑跟踪", "en": "Milestone Tracking"}},
-            {"key": "enrollment-metrics", "label": {"zh": "注册指标", "en": "Enrollment Metrics"}, "article": "study-metrics", "anchor": {"zh": "注册指标", "en": "Enrollment Metrics"}},
-            {"key": "clinical-tasks", "label": {"zh": "临床任务", "en": "Clinical Tasks"}, "article": "clinical-tasks"}
+            {
+              "key": "study-management-homepage",
+              "label": {
+                "zh": "研究管理主页",
+                "en": "Study Management Homepage"
+              },
+              "article": "dashboards",
+              "anchor": "Study Management Homepage"
+            },
+            {
+              "key": "studies",
+              "label": {
+                "zh": "研究",
+                "en": "Studies"
+              },
+              "article": "study-lifecycle"
+            },
+            {
+              "key": "milestone-tracking",
+              "label": {
+                "zh": "里程碑跟踪",
+                "en": "Milestone Tracking"
+              },
+              "article": "study-metrics",
+              "anchor": {
+                "zh": "里程碑跟踪",
+                "en": "Milestone Tracking"
+              }
+            },
+            {
+              "key": "enrollment-metrics",
+              "label": {
+                "zh": "注册指标",
+                "en": "Enrollment Metrics"
+              },
+              "article": "study-metrics",
+              "anchor": {
+                "zh": "注册指标",
+                "en": "Enrollment Metrics"
+              }
+            },
+            {
+              "key": "clinical-tasks",
+              "label": {
+                "zh": "临床任务",
+                "en": "Clinical Tasks"
+              },
+              "article": "clinical-tasks"
+            }
           ]
         },
         {
           "key": "site-monitoring",
-          "label": {"zh": "现场监控", "en": "Site Monitoring"},
+          "label": {
+            "zh": "现场监控",
+            "en": "Site Monitoring"
+          },
           "items": [
-            {"key": "cra-homepage", "label": {"zh": "CRA 主页", "en": "CRA Homepage"}, "article": "dashboards", "anchor": "CRA Homepage"},
-            {"key": "studies", "label": {"zh": "研究", "en": "Studies"}, "article": "study-lifecycle"},
-            {"key": "monitoring-events", "label": {"zh": "监查事件", "en": "Monitoring Events"}, "article": "monitoring-visits"},
-            {"key": "monitoring-follow-up-items", "label": {"zh": "监查事件跟进项", "en": "Monitoring Follow Up Items"}, "article": "clinical-tasks", "anchor": {"zh": "监查事件跟进项（Monitoring Follow Up Items）", "en": "Monitoring Follow Up Items"}},
-            {"key": "clinical-tasks", "label": {"zh": "临床任务", "en": "Clinical Tasks"}, "article": "clinical-tasks"},
-            {"key": "site-sae-tracking", "label": {"zh": "现场 SAE 跟踪", "en": "Site SAE Tracking"}, "article": "site-sae-tracking"}
+            {
+              "key": "cra-homepage",
+              "label": {
+                "zh": "CRA 主页",
+                "en": "CRA Homepage"
+              },
+              "article": "dashboards",
+              "anchor": "CRA Homepage"
+            },
+            {
+              "key": "studies",
+              "label": {
+                "zh": "研究",
+                "en": "Studies"
+              },
+              "article": "study-lifecycle"
+            },
+            {
+              "key": "monitoring-events",
+              "label": {
+                "zh": "监查事件",
+                "en": "Monitoring Events"
+              },
+              "article": "monitoring-visits"
+            },
+            {
+              "key": "monitoring-follow-up-items",
+              "label": {
+                "zh": "监查事件跟进项",
+                "en": "Monitoring Follow Up Items"
+              },
+              "article": "clinical-tasks",
+              "anchor": {
+                "zh": "监查事件跟进项（Monitoring Follow Up Items）",
+                "en": "Monitoring Follow Up Items"
+              }
+            },
+            {
+              "key": "clinical-tasks",
+              "label": {
+                "zh": "临床任务",
+                "en": "Clinical Tasks"
+              },
+              "article": "clinical-tasks"
+            },
+            {
+              "key": "site-sae-tracking",
+              "label": {
+                "zh": "现场 SAE 跟踪",
+                "en": "Site SAE Tracking"
+              },
+              "article": "site-sae-tracking"
+            }
           ]
         },
         {
           "key": "study-contacts",
-          "label": {"zh": "研究人员与通信", "en": "Study Personnel & Communication"},
+          "label": {
+            "zh": "研究人员与通信",
+            "en": "Study Personnel & Communication"
+          },
           "items": [
-            {"key": "study-personnel", "label": {"zh": "研究人员", "en": "Study Personnel"}, "article": "study-personnel"},
-            {"key": "study-organizations", "label": {"zh": "研究组织", "en": "Study Organizations"}, "article": "study-personnel", "anchor": {"zh": "研究组织（Study Organizations）", "en": "Study Organizations"}},
-            {"key": "study-communication-log", "label": {"zh": "研究通信日志", "en": "Study Communication Log"}, "article": "study-personnel", "anchor": {"zh": "研究通信日志（Study Communication Log）", "en": "Study Communication Log"}}
+            {
+              "key": "study-personnel",
+              "label": {
+                "zh": "研究人员",
+                "en": "Study Personnel"
+              },
+              "article": "study-personnel"
+            },
+            {
+              "key": "study-organizations",
+              "label": {
+                "zh": "研究组织",
+                "en": "Study Organizations"
+              },
+              "article": "study-personnel",
+              "anchor": {
+                "zh": "研究组织（Study Organizations）",
+                "en": "Study Organizations"
+              }
+            },
+            {
+              "key": "study-communication-log",
+              "label": {
+                "zh": "研究通信日志",
+                "en": "Study Communication Log"
+              },
+              "article": "study-personnel",
+              "anchor": {
+                "zh": "研究通信日志（Study Communication Log）",
+                "en": "Study Communication Log"
+              }
+            }
           ]
         },
         {
           "key": "issue-management",
-          "label": {"zh": "问题管理", "en": "Issue Management"},
+          "label": {
+            "zh": "问题管理",
+            "en": "Issue Management"
+          },
           "items": [
-            {"key": "issues", "label": {"zh": "所有问题", "en": "All Issues"}, "article": "issue-management"},
-            {"key": "observations", "label": {"zh": "观察", "en": "Observations"}, "article": "issue-management", "anchor": {"zh": "快捷闭环：Observation", "en": "Quick Closure: Observation"}},
-            {"key": "protocol-deviations", "label": {"zh": "试验方案偏离", "en": "Protocol Deviations"}, "article": "issue-management", "anchor": {"zh": "创建方案偏离", "en": "Creating a Protocol Deviation"}},
-            {"key": "risk-mitigation-actions", "label": {"zh": "风险缓解措施", "en": "Risk Mitigation Actions"}, "article": "issue-management", "anchor": {"zh": "风险缓解措施（Risk Mitigation Action）", "en": "Risk Mitigation Actions (RMA)"}},
-            {"key": "clinical-tasks", "label": {"zh": "临床任务", "en": "Clinical Tasks"}, "article": "clinical-tasks"},
-            {"key": "monitoring-follow-up-items", "label": {"zh": "监查事件跟进项", "en": "Monitoring Follow Up Items"}, "article": "clinical-tasks", "anchor": {"zh": "监查事件跟进项（Monitoring Follow Up Items）", "en": "Monitoring Follow Up Items"}}
+            {
+              "key": "issues",
+              "label": {
+                "zh": "所有问题",
+                "en": "All Issues"
+              },
+              "article": "issue-management"
+            },
+            {
+              "key": "observations",
+              "label": {
+                "zh": "观察",
+                "en": "Observations"
+              },
+              "article": "issue-management",
+              "anchor": {
+                "zh": "快捷闭环：Observation",
+                "en": "Quick Closure: Observation"
+              }
+            },
+            {
+              "key": "protocol-deviations",
+              "label": {
+                "zh": "试验方案偏离",
+                "en": "Protocol Deviations"
+              },
+              "article": "issue-management",
+              "anchor": {
+                "zh": "创建方案偏离",
+                "en": "Creating a Protocol Deviation"
+              }
+            },
+            {
+              "key": "risk-mitigation-actions",
+              "label": {
+                "zh": "风险缓解措施",
+                "en": "Risk Mitigation Actions"
+              },
+              "article": "issue-management",
+              "anchor": {
+                "zh": "风险缓解措施（Risk Mitigation Action）",
+                "en": "Risk Mitigation Actions (RMA)"
+              }
+            },
+            {
+              "key": "clinical-tasks",
+              "label": {
+                "zh": "临床任务",
+                "en": "Clinical Tasks"
+              },
+              "article": "clinical-tasks"
+            },
+            {
+              "key": "monitoring-follow-up-items",
+              "label": {
+                "zh": "监查事件跟进项",
+                "en": "Monitoring Follow Up Items"
+              },
+              "article": "clinical-tasks",
+              "anchor": {
+                "zh": "监查事件跟进项（Monitoring Follow Up Items）",
+                "en": "Monitoring Follow Up Items"
+              }
+            }
           ]
         },
         {
           "key": "global-directory",
-          "label": {"zh": "全局目录", "en": "Global Directory"},
+          "label": {
+            "zh": "全局目录",
+            "en": "Global Directory"
+          },
           "items": [
-            {"key": "organizations", "label": {"zh": "组织", "en": "Organizations"}, "article": "global-directory", "anchor": {"zh": "组织", "en": "Organizations"}},
-            {"key": "products", "label": {"zh": "产品", "en": "Products"}, "article": "global-directory", "anchor": {"zh": "产品", "en": "Products"}},
-            {"key": "study-product-roles", "label": {"zh": "研究产品角色", "en": "Study Product Roles"}, "article": "global-directory", "anchor": {"zh": "研究产品角色", "en": "Study Product Roles"}},
-            {"key": "personnel", "label": {"zh": "人员", "en": "Personnel"}, "article": "global-directory", "anchor": {"zh": "人员", "en": "Personnel"}}
+            {
+              "key": "organizations",
+              "label": {
+                "zh": "组织",
+                "en": "Organizations"
+              },
+              "article": "global-directory",
+              "anchor": {
+                "zh": "组织",
+                "en": "Organizations"
+              }
+            },
+            {
+              "key": "products",
+              "label": {
+                "zh": "产品",
+                "en": "Products"
+              },
+              "article": "global-directory",
+              "anchor": {
+                "zh": "产品",
+                "en": "Products"
+              }
+            },
+            {
+              "key": "study-product-roles",
+              "label": {
+                "zh": "研究产品角色",
+                "en": "Study Product Roles"
+              },
+              "article": "global-directory",
+              "anchor": {
+                "zh": "研究产品角色",
+                "en": "Study Product Roles"
+              }
+            },
+            {
+              "key": "personnel",
+              "label": {
+                "zh": "人员",
+                "en": "Personnel"
+              },
+              "article": "global-directory",
+              "anchor": {
+                "zh": "人员",
+                "en": "Personnel"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "vault-ai",
+      "name": {
+        "zh": "Vault AI 帮助",
+        "en": "Vault AI Help"
+      },
+      "tagline": {
+        "zh": "库内 AI 助手：用自然语言查询研究、文档与任务，在记录上下文中提问、摘要与翻译。",
+        "en": "In-vault AI assistant: query studies, documents and tasks in natural language; ask, summarize and translate in record context."
+      },
+      "cross_hint": {
+        "zh": "文档归档与稽查就绪见 eTMF 帮助；研究运营、监查与问题管理见 CTMS 帮助。",
+        "en": "For document filing and inspection readiness see eTMF Help; for study operations, monitoring and issues see CTMS Help."
+      },
+      "groups": [
+        {
+          "key": "using-vault-ai",
+          "label": {
+            "zh": "使用 Vault AI",
+            "en": "Using Vault AI"
+          },
+          "items": [
+            {
+              "key": "overview",
+              "label": {
+                "zh": "Vault AI 概览",
+                "en": "Vault AI Overview"
+              },
+              "article": "overview"
+            },
+            {
+              "key": "chat",
+              "label": {
+                "zh": "与 Vault AI 对话",
+                "en": "Chatting with Vault AI"
+              },
+              "article": "chat"
+            },
+            {
+              "key": "record-context",
+              "label": {
+                "zh": "在记录上下文中使用",
+                "en": "Record Context"
+              },
+              "article": "record-context"
+            }
           ]
         }
       ]

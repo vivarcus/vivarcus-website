@@ -10,14 +10,14 @@ related:
 
 ## 研究人员（Study Personnel）
 
-**Study Person** 把全局目录人员挂到研究（及国家/中心），指定团队角色与起止日期。**Study Personnel & Communication → Study Personnel** 创建：
+**Study Person** 把全局目录人员挂到研究（及国家/中心），指定团队角色与起止日期。**Study Personnel & Communication → 研究人员** 创建：
 
 | 字段 | 说明 |
 |------|------|
 | **Person** | 人员（必填），从全局目录选择或内联创建 |
 | **Full Name** | 自动带出 |
 | **Study** | 所属研究（必填） |
-| **Study Country / Study Site** | 按研究→国家→中心级联 |
+| **研究国家/地区 / 研究地点** | 按研究→国家→中心级联 |
 | **Study Team Role** | 团队角色（必填）：CRA、Lead CRA、Study Manager、CTMS Study Manager、Contributor、Central Monitor、CTA 等 |
 | **Primary Contact Information** | 主要联系信息（可内联创建） |
 | **Grant Access to Related Records** | 勾选后生成 User Role Setup 授予相关记录访问权 |
@@ -29,18 +29,18 @@ related:
 
 ## 研究组织（Study Organizations）
 
-**Study Organization** 记录哪些组织参与了研究（可到国家/中心），**Study Personnel & Communication → Study Organizations** 创建：
+**Study Organization** 记录哪些组织参与了研究（可到国家/中心），**Study Personnel & Communication → 研究组织** 创建：
 
 | 字段 | 说明 |
 |------|------|
-| **Organization** | 组织（必填），从全局目录选择或内联创建 |
+| **组织** | 组织（必填），从全局目录选择或内联创建 |
 | **Study** | 所属研究（必填） |
-| **Study Country / Study Site** | 可选，级联限定 |
+| **研究国家/地区 / 研究地点** | 可选，级联限定 |
 | **Location** | 组织地点（按所选组织过滤） |
 | **Primary Payee** | 是否主要付款方 |
 | **Start / End Date** | 参与起止日期 |
 
-组织也可从 **Study / Study Country / Study Site** 详情页的 **Study Organizations** 区创建；组织详情页 **Study Participation** 区反向展示其参与的所有研究。
+组织也可从 **研究 / 研究国家/地区 / 研究地点** 详情页的 **研究组织** 区创建；组织详情页 **研究参与** 区反向展示其参与的所有研究。
 
 ## 研究通信日志（Study Communication Log）
 
@@ -61,7 +61,7 @@ related:
 | **Detail** | 详细内容（供审计方理解通信目的与结果） |
 | **Related Inquiry** | 关联往来记录，形成通信链 |
 
-创建入口：**Site** 详情页的 **Study Site Communications** 区（中心通信）；**Study / Study Country** 详情页对应区（其他通信）；以及本子页列表。通信记录可被方案偏离（PDV）的 **Related Communication** 字段引用。
+创建入口：**Site** 详情页的 **Study Site Communications** 区（中心通信）；**研究 / 研究国家/地区** 详情页对应区（其他通信）；以及本子页列表。通信记录可被方案偏离（PDV）的 **Related Communication** 字段引用。
 
 ## 常见问题
 
