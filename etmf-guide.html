@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="guide.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="guide.meta.desc" content="什么是 eTMF？本指南介绍电子试验主文件的定义、监管要求（ICH GCP、21 CFR Part 11）、DIA TMF 参考模型，以及如何选择 eTMF 系统。" />
+  <title>什么是 eTMF？电子试验主文件完全指南 — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/etmf-guide.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/etmf-guide.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/etmf-guide.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/etmf-guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/etmf-guide.html" />
+  <meta property="og:title" data-i18n-og="guide.meta.title" content="什么是 eTMF？电子试验主文件完全指南 — Vivarcus" />
+  <meta property="og:description" data-i18n-og="guide.meta.desc" content="什么是 eTMF？本指南介绍电子试验主文件的定义、监管要求（ICH GCP、21 CFR Part 11）、DIA TMF 参考模型，以及如何选择 eTMF 系统。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="什么是 eTMF？电子试验主文件完全指南" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="guide.meta.title" content="什么是 eTMF？电子试验主文件完全指南 — Vivarcus" />
+  <meta name="twitter:description" data-i18n-og="guide.meta.desc" content="什么是 eTMF？本指南介绍电子试验主文件的定义、监管要求（ICH GCP、21 CFR Part 11）、DIA TMF 参考模型，以及如何选择 eTMF 系统。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "什么是 eTMF？电子试验主文件完全指南",
+        "description": "什么是 eTMF？本指南介绍电子试验主文件的定义、监管要求、DIA TMF 参考模型与选型要点。",
+        "url": "https://vivarcus.com/etmf-guide.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "eTMF 指南", "item": "https://vivarcus.com/etmf-guide.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/etmf-guide.html#faq-zh",
+        "inLanguage": "zh-CN",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "什么是 eTMF？",
+            "acceptedAnswer": { "@type": "Answer", "text": "eTMF（electronic Trial Master File，电子试验主文件）是临床试验主文件（TMF）的电子化形式。TMF 是 ICH GCP 要求申办方维护的一套关键文件集合，用于证明试验的开展符合 GCP 和适用法规。eTMF 用受控的电子系统管理这些文件的收集、审阅、归档与稽查导出。" }
+          },
+          {
+            "@type": "Question",
+            "name": "eTMF 和 TMF 有什么区别？",
+            "acceptedAnswer": { "@type": "Answer", "text": "TMF 指试验主文件本身（可以是纸质或电子），eTMF 特指用受控电子系统管理的试验主文件。纸质 TMF 需要物理归档、人工维护索引，稽查时逐箱调阅；eTMF 提供即时检索、自动索引、版本控制、审计追踪与远程稽查支持。" }
+          },
+          {
+            "@type": "Question",
+            "name": "使用 eTMF 是监管强制要求吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "维护 TMF 是 ICH GCP 的强制要求；ICH GCP E6(R2) 鼓励以电子方式维护关键文件，2025 年发布的 E6(R3) 进一步强化了电子化预期。虽然未强制指定必须使用商业 eTMF 系统，但稽查机构（FDA、EMA、MHRA 等）对文件的完整性、及时性和可检索性有明确预期，电子系统是满足这些预期的最可靠方式。" }
+          },
+          {
+            "@type": "Question",
+            "name": "能用网盘或 SharePoint 代替 eTMF 系统吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "不建议。网盘和 SharePoint 缺乏临床试验所需的核心控制：按 DIA 模型组织的文件结构、完整的审计追踪、电子签名（21 CFR Part 11）、文档生命周期和状态控制、以及一键生成 TMF Index 供稽查导出的能力。稽查时人工在网盘中翻找文件的风险极高。" }
+          },
+          {
+            "@type": "Question",
+            "name": "开源 eTMF 有哪些选择？",
+            "acceptedAnswer": { "@type": "Answer", "text": "商业 eTMF 市场由 Veeva Vault eTMF、Phlexglobal PhlexEview 等厂商主导，价格对中小 Biotech 和本土 CRO 往往偏高。开源 eTMF 领域长期是空白，Vivarcus 以开源核心进入这一领域，提供符合 DIA 模型的 eTMF 能力，支持自建或托管部署。" }
+          },
+          {
+            "@type": "Question",
+            "name": "部署一套 eTMF 系统需要多长时间？",
+            "acceptedAnswer": { "@type": "Answer", "text": "取决于方案。云托管型 eTMF 通常数天至数周即可开通并完成基础配置；自建型需要额外考虑部署、验证（IQ/OQ/PQ）与运维，通常需要 1-3 个月。无论哪种方案，按 DIA 模型完成现有 TMF 内容的迁移整理才是时间的主要部分。" }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/etmf-guide.html#faq-en",
+        "inLanguage": "en-US",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an eTMF?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The eTMF (electronic Trial Master File) is the electronic form of the clinical Trial Master File (TMF). The TMF is a collection of essential documents that ICH GCP requires sponsors to maintain, demonstrating that a trial was conducted in compliance with GCP and applicable regulations. An eTMF manages the collection, review, filing, and inspection export of these documents in a controlled electronic system." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between eTMF and TMF?",
+            "acceptedAnswer": { "@type": "Answer", "text": "TMF refers to the trial master file itself, which may be paper or electronic. eTMF specifically means a TMF managed in a controlled electronic system. Paper TMFs require physical archiving and manual indexes; an eTMF provides instant retrieval, automatic indexing, version control, audit trails, and support for remote inspections." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is using an eTMF a regulatory requirement?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Maintaining a TMF is mandatory under ICH GCP. ICH GCP E6(R2) encourages maintaining essential documents electronically, and E6(R3), published in 2025, further strengthens electronic expectations. While regulators do not mandate a specific commercial system, inspection agencies (FDA, EMA, MHRA, and others) have clear expectations for completeness, timeliness, and retrievability, which electronic systems meet most reliably." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a shared drive or SharePoint replace an eTMF system?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not recommended. Shared drives and SharePoint lack the core controls clinical trials require: a DIA-aligned document structure, complete audit trails, electronic signatures (21 CFR Part 11), document lifecycle and status control, and the ability to generate a TMF Index for inspection export. Manually locating files in a shared drive during an inspection is extremely risky." }
+          },
+          {
+            "@type": "Question",
+            "name": "What open-source eTMF options are available?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The commercial eTMF market is dominated by vendors such as Veeva Vault eTMF and Phlexglobal PhlexEview, whose pricing is often steep for small biotechs and regional CROs. Open-source eTMF has long been a gap; Vivarcus enters this space with an open-source core offering DIA-aligned eTMF capabilities, supporting both self-hosted and managed deployments." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to deploy an eTMF system?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It depends on the approach. Hosted eTMFs can typically be provisioned and configured within days to weeks. Self-hosted deployments additionally require validation (IQ/OQ/PQ) and operations planning, typically 1–3 months. In either case, migrating and organizing existing TMF content according to the DIA model usually takes the most time." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--folder-open" aria-hidden="true"></i>
+          <span data-i18n="guide.hero.eyebrow">eTMF 指南</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="guide.hero.title">什么是 eTMF？</h1>
+        <p class="page-hero-subtitle" data-i18n="guide.hero.subtitle">电子试验主文件完全入门指南 — 定义、监管依据、DIA 标准模型与选型要点，一文讲清楚。</p>
+      </div>
+    </section>
+
+    <!-- Definition -->
+    <section class="about-intro" data-reveal>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 data-i18n="guide.def.title">什么是 eTMF？</h2>
+            <p data-i18n="guide.def.p1">
+              eTMF 是「电子试验主文件」（electronic Trial Master File）的缩写，即临床试验主文件（TMF）的电子化形式。
+              根据 ICH GCP 的定义，TMF 是「单独或共同用于评估临床试验开展过程与数据质量的关键文件集合」— 通俗地说，它是记录一项临床试验从头到尾「发生了什么、依据是什么」的完整证据档案。
+            </p>
+            <p data-i18n-html="guide.def.p2">
+              eTMF 用一套受控的电子系统来管理这些文件：按标准结构自动归类、审阅流转、版本控制、电子签名、审计追踪，并支持随时<strong>一键导出 TMF Index</strong> 供稽查使用。稽查员远程登录系统即可核验文件，而不必等申办方从档案室一箱箱搬纸。
+            </p>
+            <p data-i18n="guide.def.p3">
+              需要说明的是：eTMF 管理的是试验的「证据文件」（方案、批件、知情同意、培训记录等），它不是 EDC（病例数据）、也不是 CTMS（运营状态追踪）— 三者各司其职，共同构成临床试验的数字化底座。
+            </p>
+          </div>
+          <div class="about-visual">
+            <div class="arch-layer arch-layer--app">
+              <i class="ic ic--folder-open" aria-hidden="true"></i>
+              <span data-i18n="guide.def.arch.app">eTMF 证据文件</span>
+            </div>
+            <div class="arch-layer arch-layer--vault">
+              <i class="ic ic--chart-line" aria-hidden="true"></i>
+              <span data-i18n="guide.def.arch.ops">CTMS 运营状态</span>
+            </div>
+            <div class="arch-layer arch-layer--domain">
+              <i class="ic ic--flask-conical" aria-hidden="true"></i>
+              <span data-i18n="guide.def.arch.edc">EDC 病例数据</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why eTMF matters -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="guide.why.label">监管依据</span>
+          <h2 class="section-title" data-i18n="guide.why.title">为什么 eTMF 正在成为行业标配</h2>
+          <p class="section-desc" data-i18n="guide.why.desc">不是厂商在推动，而是监管要求与稽查实践共同指向电子化。</p>
+        </div>
+
+        <div class="capability-grid capability-grid--bento" data-reveal-group>
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--green">
+              <i class="ic ic--landmark" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="guide.why.gcp.title">ICH GCP</h3>
+            <p data-i18n="guide.why.gcp.desc">ICH GCP E6(R2) 要求申办方维护 TMF 并鼓励电子化；2025 年发布的 E6(R3) 进一步强化了对电子记录与系统的预期。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--blue">
+              <i class="ic ic--file-signature" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="guide.why.part11.title">21 CFR Part 11</h3>
+            <p data-i18n="guide.why.part11.desc">美国 FDA 对电子记录与电子签名的法规。eTMF 中的电子签名、审计追踪必须满足其要求，否则记录不被认可。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--orange">
+              <i class="ic ic--search" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="guide.why.inspection.title">稽查实践</h3>
+            <p data-i18n="guide.why.inspection.desc">FDA、EMA、MHRA 等机构的 GCP 稽查，TMF 是必查项。稽查前 48 小时内要能导出完整 TMF Index — 纸质档案几乎无法做到。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--purple">
+              <i class="ic ic--network" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="guide.why.collab.title">跨组织协作</h3>
+            <p data-i18n="guide.why.collab.desc">申办方与 CRO 之间的 TMF 移交是高频场景。电子系统让移交从「搬仓库」变成「转权限」，随时保持稽查就绪。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIA TMF Reference Model -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="guide.dia.label">标准模型</span>
+          <h2 class="section-title" data-i18n="guide.dia.title">DIA TMF 参考模型：行业共同语言</h2>
+          <p class="section-desc" data-i18n="guide.dia.desc">选择 eTMF 系统时首先要确认的一件事：它是否遵循 DIA TMF 参考模型。</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p data-i18n="guide.dia.p1">
+              DIA（药物信息协会）发布的 TMF 参考模型（TMF Reference Model）定义了 TMF 的标准组织结构。它把试验文件划分为多个层级，并给每类文件定义预期元数据（作者、日期、版本等），让全行业用同一套语言描述 TMF。
+            </p>
+            <p data-i18n-html="guide.dia.p2">
+              模型同时定义了 <strong>TMF Index</strong> 的标准导出格式（CSV），申办方与 CRO 之间按此格式移交、按此格式接受稽查 — 这也是大多数监管机构检查 TMF 时实际查看的东西。
+            </p>
+          </div>
+          <div class="about-text">
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.dia.f1">Zone（分区）：按试验级、国家/地区级、站点级组织文件</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.dia.f2">Section（章节）：每个分区下按主题细分</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.dia.f3">Artifact（文件）：最小单元，带标准元数据定义</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.dia.f4">TMF Index：标准 CSV 导出，用于移交与稽查</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selection checklist -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="guide.pick.label">选型要点</span>
+          <h2 class="section-title" data-i18n="guide.pick.title">选择 eTMF 系统的 8 项核心能力清单</h2>
+          <p class="section-desc" data-i18n="guide.pick.desc">无论商业还是开源，评估任何 eTMF 方案都可以对照这张清单。</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f1">遵循 DIA TMF 参考模型的分类与索引，开箱即用</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f2">完整审计追踪：谁在何时做了什么，全部可查</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f3">电子签名满足 21 CFR Part 11 / EU Annex 11</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f4">文档生命周期与版本控制，避免版本混乱</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about-text">
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f5">一键导出 TMF Index（CSV），随时应对稽查</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f6">角色级权限控制，支持申办方 / CRO / 稽查员协作</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f7">完整度与及时性看板：缺什么文件、哪些逾期，一眼可见</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="guide.pick.f8">总拥有成本可控：许可、实施、验证、运维可预期</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="guide.faq.label">常见问题</span>
+          <h2 class="section-title" data-i18n="guide.faq.title">eTMF 常见问题</h2>
+          <p class="section-desc" data-i18n="guide.faq.desc">关于电子试验主文件，被问得最多的问题。</p>
+        </div>
+
+        <div class="faq-grid" data-reveal-group>
+          <div class="faq-item">
+            <h3 data-i18n="guide.faq.q1">什么是 eTMF？</h3>
+            <p data-i18n="guide.faq.a1">eTMF 是电子试验主文件，即用受控电子系统管理的临床试验主文件。TMF 是 ICH GCP 要求申办方维护的关键文件集合，用于证明试验符合 GCP 与适用法规；eTMF 让这些文件的收集、审阅、归档与稽查导出全部电子化。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="guide.faq.q2">eTMF 和 TMF 有什么区别？</h3>
+            <p data-i18n="guide.faq.a2">TMF 指试验主文件本身（纸质或电子均可），eTMF 特指用受控电子系统管理的 TMF。纸质 TMF 需要物理归档、人工索引，稽查时逐箱调阅；eTMF 提供即时检索、自动索引、版本控制、审计追踪与远程稽查支持。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="guide.faq.q3">使用 eTMF 是监管强制要求吗？</h3>
+            <p data-i18n="guide.faq.a3">维护 TMF 是 ICH GCP 的强制要求；E6(R2) 鼓励电子化，2025 年发布的 E6(R3) 进一步强化了电子化预期。监管不强制指定某个系统，但对文件的完整性、及时性和可检索性有明确预期，电子系统是满足这些预期最可靠的方式。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="guide.faq.q4">能用网盘或 SharePoint 代替 eTMF 系统吗？</h3>
+            <p data-i18n="guide.faq.a4">不建议。网盘缺乏 DIA 结构、审计追踪、电子签名、生命周期控制与 TMF Index 导出等核心能力，稽查时人工翻找文件风险极高。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="guide.faq.q5">开源 eTMF 有哪些选择？</h3>
+            <p data-i18n="guide.faq.a5">商业市场由 Veeva Vault eTMF、Phlexglobal PhlexEview 等厂商主导，价格对中小 Biotech 和本土 CRO 往往偏高。开源 eTMF 长期是空白，Vivarcus 以开源核心进入这一领域，支持自建或托管部署。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="guide.faq.q6">部署一套 eTMF 系统需要多长时间？</h3>
+            <p data-i18n="guide.faq.a6">托管型 eTMF 数天至数周即可开通；自建型加上验证（IQ/OQ/PQ）与运维通常 1–3 个月。时间大头是现有 TMF 内容按 DIA 模型的迁移整理。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="guide.cta.title">想看看 Vivarcus 的 eTMF 长什么样？</h2>
+          <p data-i18n="guide.cta.desc">基于 DIA TMF 参考模型，开源核心，支持自建或托管部署。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="products.html" class="btn btn-outline btn-lg" data-i18n="common.cta.viewProducts">查看产品</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+[
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "clinical-tasks",
+  "title": "临床任务（Clinical Tasks）",
+  "description": "了解临床用户任务（Clinical User Task）的对象类型、创建方式、Open → Investigating / Implementing / Escalated → Resolved 状态流转与自动统计。",
+  "headings": [
+   "什么是临床任务",
+   "任务类型（Object Type）",
+   "创建任务",
+   "状态与动作",
+   "校验规则",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "document-types",
+  "title": "文档类型（Document Types）",
+  "description": "了解 Type → Subtype → Classification 三级文档分类体系、文档编号规则、预置分类，以及与 TMF 参考模型工件的映射关系。",
+  "headings": [
+   "三级分类体系",
+   "预置文档类型",
+   "文档编号",
+   "映射到参考模型工件",
+   "在 EDL 模板中的使用",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "edl",
+  "title": "EDL 与预期文档（Expected Documents）",
+  "description": "了解预期文档清单（EDL）与预期文档条目（EDL Item）的概念、匹配规则、从条目创建文档的推荐路径，以及 Match Documents 与 Update Related Expected Documents 两个常用动作。",
+  "headings": [
+   "什么是 EDL",
+   "推荐路径：从 EDL Item 创建文档",
+   "匹配规则",
+   "常用动作",
+   "查看完成度",
+   "预期文档条目（EDL Item）",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "milestones",
+  "title": "里程碑排期与完成",
+  "description": "了解里程碑的三种状态、排期操作、依赖约束下的完成顺序，以及查看里程碑关联预期文档的入口。",
+  "headings": [
+   "里程碑状态",
+   "排期（Plan Milestone）",
+   "完成里程碑（含依赖约束）",
+   "查看关联的预期文档",
+   "与 TMF Homepage 的关系",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "models-artifacts",
+  "title": "参考模型与工件（Models & Artifacts）",
+  "description": "了解 TMF 参考模型（Model）与工件（Artifact）层级、出厂预置的模型与工件树，以及文档分类到工件的映射如何支撑自动归档与 TMF 查看器。",
+  "headings": [
+   "参考模型（Model）",
+   "工件（Artifact）",
+   "与文档归档的关系",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "overview",
+  "title": "什么是 eTMF 与 TMF 参考模型",
+  "description": "了解 Vivarcus eTMF 的核心概念：研究层级、预期文档清单（EDL）、里程碑、TMF 参考模型，以及管收审变查五环节的典型工作流。",
+  "headings": [
+   "什么是 eTMF",
+   "核心概念",
+   "TMF 参考模型",
+   "一个典型的工作流",
+   "开始之前",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "quality-issues",
+  "title": "质量问题（Quality Issues）",
+  "description": "Quality Issue 记录文档缺陷并跟踪从发现到关闭的整改。了解四种状态、创建方式、与文档的双向关联，以及在 TMF Homepage 中的统计视图。",
+  "headings": [
+   "什么是 Quality Issue",
+   "状态流转",
+   "创建质量问题",
+   "双向关联",
+   "在 TMF Homepage 查看",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "review-workflow",
+  "title": "文档审阅、批准与升版",
+  "description": "学习文档受控生命周期的完整流转：提交审查、内容审阅、QC、批准、电子签名，以及方案修订时的文档升版。",
+  "headings": [
+   "文档生命周期",
+   "提交审查",
+   "审查、QC 与批准",
+   "文档升版",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "study-hierarchy",
+  "title": "研究层级：创建研究、国家与中心",
+  "description": "学习创建 Study、配置里程碑主集与模板 EDL、执行 Plan Study 与 Ready to Enroll，以及创建研究国家/地区与研究地点的完整流程。",
+  "headings": [
+   "三级结构",
+   "创建研究",
+   "配置并启动研究",
+   "创建研究国家/地区",
+   "创建研究地点",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "study-personnel",
+  "title": "研究人员与用户角色设置",
+  "description": "了解如何把人员加入研究团队、授予相关记录访问权限（URS）、按角色生成预期文档，以及 User Role Setup 记录的结构与维护。",
+  "headings": [
+   "研究人员（Study Personnel）",
+   "用户角色设置（User Role Setup）",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "template-edls",
+  "title": "模板 EDL 与预期文档模板",
+  "description": "了解 Template Expected Document List（模板 EDL）的层级结构与 Template Expected Documents（预期文档模板）的关键字段，以及模板变更如何影响既有研究。",
+  "headings": [
+   "概念：模板 → 研究",
+   "创建模板 EDL",
+   "预期文档的模板（EDL Item Template）",
+   "模板变更如何影响研究",
+   "应用到研究",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "template-milestones",
+  "title": "里程碑模板（主集 / 模板集 / 里程碑 / 依赖）",
+  "description": "了解里程碑模板的四层结构：Template Milestone Master Set、Template Milestone Set、Template Milestone 与 Template Milestone Dependency，以及它们如何驱动研究里程碑生成。",
+  "headings": [
+   "四层结构",
+   "模板里程碑主集（Master Set）",
+   "里程碑模板集（Milestone Set）",
+   "里程碑模板（Milestone）",
+   "里程碑依赖关系模板（Dependency）",
+   "应用到研究",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "template-tasks",
+  "title": "模板任务（Template Tasks）",
+  "description": "了解 Template Task 如何为模板里程碑预定义任务，以及研究生成后如何变为临床用户任务（Clinical User Task）。",
+  "headings": [
+   "模板任务是什么",
+   "关键字段",
+   "与运行时任务的关系",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "tmf-homepage",
+  "title": "TMF Homepage：文档完成度与稽查就绪",
+  "description": "TMF Homepage 把完整性、及时性、质量问题与待办汇总成一张健康仪表盘。了解各 Widget 的口径、Study 选择器与稽查就绪自检清单。",
+  "headings": [
+   "概述",
+   "Widget 一览",
+   "Completeness 口径",
+   "Timeliness",
+   "Quality Issues 与任务",
+   "稽查就绪自检清单",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "tmf-viewer",
+  "title": "TMF Viewer 与 Master File Binder",
+  "description": "理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习 Create Study Binders、自动归档与 View Model 切换。",
+  "headings": [
+   "Binder 与 Viewer 的分工",
+   "创建研究活页夹（Create Study Binders）",
+   "自动归档（Auto-Filing）",
+   "使用 TMF Viewer",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF 帮助",
+  "slug": "upload-documents",
+  "title": "上传文档与文档匹配",
+  "description": "学习从 EDL Item 创建并上传文档的推荐路径、三种创建方式（Upload / Placeholder / From Template），以及从文档库手工创建的备选路径。",
+  "headings": [
+   "从 EDL Item 创建文档（推荐）",
+   "三种创建方式",
+   "从文档库创建（备选）",
+   "保存后发生了什么",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "clinical-tasks",
+  "title": "监查跟进项与 CTMS 临床任务",
+  "description": "了解 CTMS 侧的 Clinical Tasks 列表、监查事件跟进项（Monitoring Follow Up Item）的创建与关联，以及 Seed Follow Up Items 在访视报告中的用法。",
+  "headings": [
+   "与 eTMF 临床任务的关系",
+   "监查事件跟进项（Monitoring Follow Up Items）",
+   "Seed Follow Up Items 与访视报告",
+   "与里程碑完成度的联动",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "dashboards",
+  "title": "运营仪表板：Study Management 与 CRA Homepage",
+  "description": "了解两张 CTMS 工作台的 Widget 构成与三级范围选择器：Study Management Homepage 给研究经理，CRA Homepage 给监查员。",
+  "headings": [
+   "两张工作台",
+   "Study Management Homepage",
+   "CRA Homepage",
+   "与 TMF Homepage 的分工",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "global-directory",
+  "title": "全局目录（Global Directory）",
+  "description": "了解 Global Directory 的四个主数据子页：组织、产品、研究产品角色与人员，以及它们如何被研究层级引用。",
+  "headings": [
+   "组织",
+   "产品",
+   "研究产品角色",
+   "人员",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "issue-management",
+  "title": "问题与方案偏离",
+  "description": "了解 Issue 的四种类型（Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action）、创建与推进方式、Start PD Review 的团队前置条件，以及与 eTMF 质量问题的对照。",
+  "headings": [
+   "Issue 类型与常用动作",
+   "创建方案偏离",
+   "推进偏离（正式路径）",
+   "快捷闭环：Observation",
+   "风险缓解措施（Risk Mitigation Action）",
+   "指派与闭环（Assign Risk Mitigation）",
+   "与 eTMF 质量问题对照",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "monitoring-visits",
+  "title": "监查访视（Monitoring Events）",
+  "description": "学习四类监查访视（PSV/SIV/IMV/COV）的创建与全生命周期推进：Expected → Planning → Confirmed → In Progress → Final。",
+  "headings": [
+   "访视类型",
+   "访视状态（主路径）",
+   "创建监查访视",
+   "推进全生命周期",
+   "在仪表盘查看",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "overview",
+  "title": "什么是 CTMS 与研究运营闭环",
+  "description": "CTMS 管过程：研究、站点、受试者、监查与问题。了解启站队人监偏盘七环节，以及与 eTMF 的分工。",
+  "headings": [
+   "什么是 CTMS",
+   "七环节闭环",
+   "与 eTMF 共享的研究层级",
+   "典型旅程",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "site-lifecycle",
+  "title": "中心生命周期：Candidate 到 Active",
+  "description": "学习国家与中心的完整生命周期：Select Country、Qualify Site、Select Site、Initiate Site，以及 On Hold 与 Will Not Participate 两条异常路径。",
+  "headings": [
+   "中心状态主路径",
+   "创建并选定国家",
+   "主路径：Candidate → Qualifying → Initiating → Active",
+   "异常路径：On Hold",
+   "异常路径：不参与",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "site-sae-tracking",
+  "title": "现场 SAE 跟踪（Site SAE Tracking）",
+  "description": "了解如何在 Site Monitoring 中登记研究中心发生的严重不良事件（SAE），包括必填字段、与监查事件的关联和维护职责。",
+  "headings": [
+   "什么是 SAE 跟踪",
+   "登记 SAE",
+   "状态与维护",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "study-lifecycle",
+  "title": "研究生命周期：创建、计划与激活",
+  "description": "学习 CTMS 研究从 Candidate 到 Active 的完整流程：配置招募计划、补齐招募里程碑日期、填写注册指标 Planned、Plan Subject Recruitment 与 Ready to Enroll。",
+  "headings": [
+   "状态流转",
+   "创建研究",
+   "配置与 Plan Study",
+   "补齐招募里程碑日期",
+   "填写注册指标 Planned",
+   "Plan Subject Recruitment",
+   "激活研究",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "study-metrics",
+  "title": "里程碑跟踪与注册指标",
+  "description": "了解 Study Management 的里程碑跟踪（Milestone Tracking）与注册指标（Enrollment Metrics）：从 Plan Study 生成到排期完成、指标播种与 Metrics Over Time 的门禁。",
+  "headings": [
+   "里程碑跟踪",
+   "注册指标",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "study-personnel",
+  "title": "研究人员与通信（研究团队 / 组织 / 通信日志）",
+  "description": "了解 Study Personnel & Communication 标签的三个子页：研究团队（研究人员）、研究组织与研究通信日志的字段与创建入口。",
+  "headings": [
+   "研究人员（Study Personnel）",
+   "研究组织（Study Organizations）",
+   "研究通信日志（Study Communication Log）",
+   "常见问题",
+   "所需权限与角色"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS 帮助",
+  "slug": "subjects",
+  "title": "受试者注册与状态追踪",
+  "description": "学习受试者记录的状态流转（Consented → In Screening → Enrolled）、注册字段填写，以及筛选失败等异常路径的登记。",
+  "headings": [
+   "受试者常用状态",
+   "注册并入组",
+   "筛选失败（异常路径）",
+   "受试者访视",
+   "与偏离/访视的关联",
+   "所需权限与角色"
+  ]
+ }
+]

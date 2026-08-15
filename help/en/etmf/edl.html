@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the concepts of Expected Document Lists (EDLs) and EDL Items, the matching rules, the recommended path of creating documents from EDL Items, and the Match Documents / Update Related Expected Documents actions." />
+  <title>EDL & Expected Documents — eTMF Help — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/help/en/etmf/edl.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/help/zh/etmf/edl.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/edl.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/help/zh/etmf/edl.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/help/en/etmf/edl.html" />
+  <meta property="og:title" content="EDL & Expected Documents — Vivarcus" />
+  <meta property="og:description" content="Learn the concepts of Expected Document Lists (EDLs) and EDL Items, the matching rules, the recommended path of creating documents from EDL Items, and the Match Documents / Update Related Expected Documents actions." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "EDL & Expected Documents",
+    "description": "Learn the concepts of Expected Document Lists (EDLs) and EDL Items, the matching rules, the recommended path of creating documents from EDL Items, and the Match Documents / Update Related Expected Documents actions.",
+    "inLanguage": "en-US",
+    "dateModified": "2026-08-15",
+    "mainEntityOfPage": "https://vivarcus.com/help/en/etmf/edl.html",
+    "publisher": {"@type": "Organization", "name": "Vivarcus", "url": "https://vivarcus.com/"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../../css/icons.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/help.css" />
+</head>
+<body class="help-page help-page--article">
+  <header class="help-header">
+  <div class="help-header__inner">
+    <a href="../../..?lang=en" class="help-header__brand" aria-label="Vivarcus">
+      <span class="help-header__logo-dark">Vivar</span><span class="help-header__logo-accent">cus</span>
+    </a>
+    <span class="help-header__divider" aria-hidden="true">/</span>
+    <a href="../../../help/en/index.html" class="help-header__help-label">Help Center</a>
+    <div class="help-header__actions">
+      <a href="../../../trial.html?lang=en" class="help-header__trial">Request Trial</a>
+      <a href="../../../help/zh/etmf/edl.html" class="help-header__lang" hreflang="zh-CN">中文</a>
+    </div>
+  </div>
+</header>
+
+  <div class="help-layout">
+    <button class="help-sidebar-toggle" aria-expanded="false" aria-controls="help-sidebar">☰</button>
+    <aside class="help-sidebar" id="help-sidebar">
+      <p class="help-sidebar__title"><a href="index.html">eTMF Help</a></p>
+<nav class="help-sidebar__nav">
+<details class="help-sidebar__group">
+<summary>Get Started</summary>
+<ul>
+<li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>eTMF</summary>
+<ul>
+<li><a href="tmf-homepage.html">TMF Homepage</a></li>
+<li><a href="tmf-viewer.html">TMF Viewer</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Study Info</summary>
+<ul>
+<li><a href="study-hierarchy.html">Studies</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-country">Study Countries</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-site">Study Sites</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Document Management</summary>
+<ul>
+<li><a href="upload-documents.html">Upload &amp; Matching</a></li>
+<li><a href="review-workflow.html">Review &amp; Approval</a></li>
+<li><a href="quality-issues.html">Quality Issues</a></li>
+</ul></details>
+<details class="help-sidebar__group" open>
+<summary>Planning</summary>
+<ul>
+<li><a href="edl.html" class="active">Expected Document Lists</a></li>
+<li><a href="edl.html#expected-documents-edl-items" class="active">Expected Documents</a></li>
+<li><a href="milestones.html">Milestones</a></li>
+<li><a href="clinical-tasks.html">Clinical Tasks</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Admin Setup</summary>
+<ul>
+<li><a href="study-personnel.html">Study Personnel</a></li>
+<li><a href="study-personnel.html#user-role-setup">User Role Setup</a></li>
+<li><a href="document-types.html">Document Types</a></li>
+<li><a href="template-edls.html">Template Expected Document Lists</a></li>
+<li><a href="template-edls.html#template-expected-documents-edl-item-templates">Template Expected Documents</a></li>
+<li><a href="template-milestones.html#template-milestone-master-sets">Template Milestone Master Sets</a></li>
+<li><a href="template-milestones.html#template-milestone-sets">Template Milestone Sets</a></li>
+<li><a href="template-milestones.html#template-milestones">Template Milestones</a></li>
+<li><a href="models-artifacts.html">Models</a></li>
+<li><a href="models-artifacts.html#artifacts">Artifacts</a></li>
+<li><a href="template-milestones.html#template-milestone-dependencies">Template Milestone Dependencies</a></li>
+<li><a href="template-tasks.html">Template Tasks</a></li>
+</ul></details>
+</nav>
+    </aside>
+
+    <main class="help-main help-main--article">
+      <nav class="help-breadcrumbs" aria-label="breadcrumb">
+        <a href="../../../help/en/index.html">Help Center</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <a href="index.html">eTMF Help</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <span>EDL & Expected Documents</span>
+      </nav>
+
+      <article class="help-article">
+        <h1>EDL & Expected Documents</h1>
+        <p class="help-article__meta">Last updated 2026-08-15</p>
+        <div class="help-article__body">
+          <h2 id="what-is-an-edl">What Is an EDL</h2>
+<p>The EDL (Expected Document List) is the &quot;receivables checklist&quot; of the TMF: it describes which documents should be collected, how many copies, and whether each is required. Admins configure EDLs via templates, and they are generated automatically onto the study (and its countries/sites) by the <strong>Plan Study</strong> action.</p>
+<p>EDL entries are called <strong>Expected Documents (EDL Items)</strong>. The system measures document completeness against the EDL, and uses it as the source of filing locations for automatic archiving.</p>
+<h2 id="recommended-path-create-documents-from-an-edl-item">Recommended Path: Create Documents from an EDL Item</h2>
+<p>Creating documents <strong>from an EDL Item</strong> is recommended — the system carries over fields such as Study and Classification, which maximizes matching success:</p>
+<ol><li>Open the study → <strong>Expected Documents</strong> list, and open any entry&#x27;s detail page.<li>The detail page shows <strong>Document Type / Classification</strong>, <strong># Expected</strong>, <strong>Completeness</strong>, etc.; the <strong>Matched Documents</strong> section is initially empty.<li><strong>All Actions → Create Document</strong>, choose a creation method (Upload / Placeholder / From Template), fill in the Name and upload the file, then save.</li></li></li></ol>
+<div class="help-note"><p class="help-note__label">Note</p><p>Creating from an EDL Item only pre-fills fields; the match relationship is established automatically after the document is saved.</p></div>
+<h2 id="matching-rules">Matching Rules</h2>
+<p>The correspondence between documents and EDL Items is maintained by <strong>automatic matching</strong>. The system compares configured matching fields (typically Study, Study Country, Site, Classification, etc.):</p>
+<ul><li>All configured matching fields equal → match established<li>A field empty on both sides → treated as equal<li>A value on one side and empty on the other → <strong>no match</strong></li></li></li></ul>
+<p>When creating documents manually, make sure these fields align with the EDL Item.</p>
+<h2 id="common-actions">Common Actions</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Action</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Match Documents</strong></td><td>Runs one matching pass for the entry; refreshes Matched Documents and counts</td></tr><tr><td><strong>Update Related Expected Documents</strong></td><td>Syncs <strong># Expected</strong> and <strong>Requiredness</strong> to related entries of the same study (e.g. country/site-level counterparts)</td></tr><tr><td><strong>Create Document</strong></td><td>Creates a document from the entry (Upload / Placeholder / From Template)</td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">Note</p><p>Update Related Expected Documents syncs only counts and requiredness, not document matches.</p></div>
+<h2 id="checking-completeness">Checking Completeness</h2>
+<p>Counts and status on the entry detail page:</p>
+<div class="help-table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>All Doc Count</strong></td><td>Total number of matched documents</td></tr><tr><td><strong>Steady State Doc Count</strong></td><td>Approved steady-state documents among them</td></tr><tr><td><strong>Completeness</strong></td><td>Shows <strong>Complete</strong> when the threshold is met</td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">Note</p><p>If All Doc Count has a value but Steady State is 0, the matched documents are not yet approved; complete the approval workflow first.</p></div>
+<h2 id="expected-documents-edl-items">Expected Documents (EDL Items)</h2>
+<p>The <strong>Planning → Expected Documents</strong> list aggregates EDL Item entries across the vault; each entry belongs to an EDL and represents &quot;one document type expected at one location&quot;. The entry detail shows:</p>
+<ul><li><strong>Document Type / Classification</strong> and <strong># Expected</strong> (how many are due), <strong>Requiredness</strong> (required or not)<li><strong>Completeness</strong> counts and the <strong>Matched Documents</strong> section<li><strong>All Actions</strong> offering <strong>Create Document</strong>, <strong>Match Documents</strong>, <strong>Update Related Expected Documents</strong> (see Common Actions above)</li></li></li></ul>
+<p>Open the study-scoped <strong>Expected Documents</strong> list from the study detail to see only that study&#x27;s entries; country/site-level entries are visible on the study country/site detail pages.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Symptom</th><th>Suggestion</th></tr></thead><tbody><tr><td>Matched Documents is empty</td><td>Verify the document&#x27;s Study, Classification etc. match the EDL Item; wait a few seconds and refresh, or run <strong>Match Documents</strong></td></tr><tr><td>Completeness stays Not Started</td><td>The document must be saved and all matching fields aligned</td></tr><tr><td>Related entries unchanged after Update Related</td><td>Verify that corresponding country/site-level entries exist in the same study</td></tr></tbody></table></div>
+<h2 id="required-permissions-roles">Required Permissions &amp; Roles</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Type</th><th>Permission</th><th>Controls</th></tr></thead><tbody><tr><td>Object</td><td>EDL / EDL Item: Read, Edit</td><td>Viewing lists and entries, editing # Expected and Requiredness</td></tr><tr><td>Object action</td><td>EDL Item: <strong>Create Document</strong>, <strong>Match Documents</strong>, <strong>Update Related Expected Documents</strong></td><td>Creating documents from entries, manual matching, syncing related entries</td></tr><tr><td>Object</td><td>Document: Create, Edit</td><td>Saving new documents (matching happens automatically after save)</td></tr></tbody></table></div>
+<p><strong>Document Contributor</strong> has read/write on EDLs and documents; read-only roles (e.g. <strong>External Inspector</strong>) can view Matched Documents and counts but cannot run actions.</p>
+        </div>
+      </article>
+
+      <section class="help-related"><h2>Related articles</h2><ul><li><a href="upload-documents.html">Uploading &amp; Matching Documents</a></li><li><a href="tmf-homepage.html">TMF Homepage: Completeness &amp; Inspection Readiness</a></li><li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li></ul></section>
+    </main>
+
+    <aside class="help-toc" aria-label="On this page">
+      <p class="help-toc__title">On this page</p>
+      <nav class="help-toc__nav">
+        <a href="#what-is-an-edl">What Is an EDL</a>
+<a href="#recommended-path-create-documents-from-an-edl-item">Recommended Path: Create Documents from an EDL Item</a>
+<a href="#matching-rules">Matching Rules</a>
+<a href="#common-actions">Common Actions</a>
+<a href="#checking-completeness">Checking Completeness</a>
+<a href="#expected-documents-edl-items">Expected Documents (EDL Items)</a>
+<a href="#troubleshooting">Troubleshooting</a>
+<a href="#required-permissions-roles">Required Permissions &amp; Roles</a>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="help-footer">
+  <div class="help-footer__inner">
+    <span class="help-footer__copyright">© 2026 Vivarcus</span>
+    <nav class="help-footer__nav">
+      <a href="../../../trial.html?lang=en">Request Trial</a>
+      <a href="../../..?lang=en">Back to website</a>
+    </nav>
+  </div>
+</footer>
+  <script src="../../../js/help.js"></script>
+</body>
+</html>

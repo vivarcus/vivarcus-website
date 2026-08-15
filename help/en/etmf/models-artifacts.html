@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the TMF reference Model and Artifact hierarchy, the seeded models and artifact tree, and how document-type-to-artifact mapping drives auto-filing and the TMF Viewer." />
+  <title>Models & Artifacts — eTMF Help — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/help/en/etmf/models-artifacts.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/help/zh/etmf/models-artifacts.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/models-artifacts.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/help/zh/etmf/models-artifacts.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/help/en/etmf/models-artifacts.html" />
+  <meta property="og:title" content="Models & Artifacts — Vivarcus" />
+  <meta property="og:description" content="Learn the TMF reference Model and Artifact hierarchy, the seeded models and artifact tree, and how document-type-to-artifact mapping drives auto-filing and the TMF Viewer." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Models & Artifacts",
+    "description": "Learn the TMF reference Model and Artifact hierarchy, the seeded models and artifact tree, and how document-type-to-artifact mapping drives auto-filing and the TMF Viewer.",
+    "inLanguage": "en-US",
+    "dateModified": "2026-08-15",
+    "mainEntityOfPage": "https://vivarcus.com/help/en/etmf/models-artifacts.html",
+    "publisher": {"@type": "Organization", "name": "Vivarcus", "url": "https://vivarcus.com/"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../../css/icons.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/help.css" />
+</head>
+<body class="help-page help-page--article">
+  <header class="help-header">
+  <div class="help-header__inner">
+    <a href="../../..?lang=en" class="help-header__brand" aria-label="Vivarcus">
+      <span class="help-header__logo-dark">Vivar</span><span class="help-header__logo-accent">cus</span>
+    </a>
+    <span class="help-header__divider" aria-hidden="true">/</span>
+    <a href="../../../help/en/index.html" class="help-header__help-label">Help Center</a>
+    <div class="help-header__actions">
+      <a href="../../../trial.html?lang=en" class="help-header__trial">Request Trial</a>
+      <a href="../../../help/zh/etmf/models-artifacts.html" class="help-header__lang" hreflang="zh-CN">中文</a>
+    </div>
+  </div>
+</header>
+
+  <div class="help-layout">
+    <button class="help-sidebar-toggle" aria-expanded="false" aria-controls="help-sidebar">☰</button>
+    <aside class="help-sidebar" id="help-sidebar">
+      <p class="help-sidebar__title"><a href="index.html">eTMF Help</a></p>
+<nav class="help-sidebar__nav">
+<details class="help-sidebar__group">
+<summary>Get Started</summary>
+<ul>
+<li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>eTMF</summary>
+<ul>
+<li><a href="tmf-homepage.html">TMF Homepage</a></li>
+<li><a href="tmf-viewer.html">TMF Viewer</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Study Info</summary>
+<ul>
+<li><a href="study-hierarchy.html">Studies</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-country">Study Countries</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-site">Study Sites</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Document Management</summary>
+<ul>
+<li><a href="upload-documents.html">Upload &amp; Matching</a></li>
+<li><a href="review-workflow.html">Review &amp; Approval</a></li>
+<li><a href="quality-issues.html">Quality Issues</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Planning</summary>
+<ul>
+<li><a href="edl.html">Expected Document Lists</a></li>
+<li><a href="edl.html#expected-documents-edl-items">Expected Documents</a></li>
+<li><a href="milestones.html">Milestones</a></li>
+<li><a href="clinical-tasks.html">Clinical Tasks</a></li>
+</ul></details>
+<details class="help-sidebar__group" open>
+<summary>Admin Setup</summary>
+<ul>
+<li><a href="study-personnel.html">Study Personnel</a></li>
+<li><a href="study-personnel.html#user-role-setup">User Role Setup</a></li>
+<li><a href="document-types.html">Document Types</a></li>
+<li><a href="template-edls.html">Template Expected Document Lists</a></li>
+<li><a href="template-edls.html#template-expected-documents-edl-item-templates">Template Expected Documents</a></li>
+<li><a href="template-milestones.html#template-milestone-master-sets">Template Milestone Master Sets</a></li>
+<li><a href="template-milestones.html#template-milestone-sets">Template Milestone Sets</a></li>
+<li><a href="template-milestones.html#template-milestones">Template Milestones</a></li>
+<li><a href="models-artifacts.html" class="active">Models</a></li>
+<li><a href="models-artifacts.html#artifacts" class="active">Artifacts</a></li>
+<li><a href="template-milestones.html#template-milestone-dependencies">Template Milestone Dependencies</a></li>
+<li><a href="template-tasks.html">Template Tasks</a></li>
+</ul></details>
+</nav>
+    </aside>
+
+    <main class="help-main help-main--article">
+      <nav class="help-breadcrumbs" aria-label="breadcrumb">
+        <a href="../../../help/en/index.html">Help Center</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <a href="index.html">eTMF Help</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <span>Models & Artifacts</span>
+      </nav>
+
+      <article class="help-article">
+        <h1>Models & Artifacts</h1>
+        <p class="help-article__meta">Last updated 2026-08-15</p>
+        <div class="help-article__body">
+          <h2 id="models">Models</h2>
+<p>A <strong>Model</strong> is the container of a TMF reference model — for example the DIA TMF Reference Model v2.0 / v3.0. Maintain under <strong>Admin Setup → Models</strong>:</p>
+<div class="help-table-wrap"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Model name (required, unique)</td></tr><tr><td><strong>Description</strong></td><td>Model description</td></tr><tr><td><strong>Display in TMF Viewer</strong></td><td>Whether to show in the TMF Viewer (default yes)</td></tr></tbody></table></div>
+<p>Five models are seeded:</p>
+<div class="help-table-wrap"><table><thead><tr><th>Model</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>TMF RM v2.0</strong> (2012)</td><td>DIA TMF Reference Model v2.0</td></tr><tr><td><strong>TMF RM v3.0</strong> (2015)</td><td>DIA TMF Reference Model v3.0</td></tr><tr><td><strong>Document Type Hierarchy</strong></td><td>Browse by document type hierarchy</td></tr><tr><td><strong>Vault Clinical Docs</strong></td><td>Vault clinical documents model</td></tr><tr><td><strong>Binder Section to Document Type</strong></td><td>Auto-filing model: files documents by matching their Type/Subtype/Classification to binder section names</td></tr></tbody></table></div>
+<h2 id="artifacts">Artifacts</h2>
+<p>An <strong>Artifact</strong> is a node (Zone / Section) inside a reference model, forming the standard TMF hierarchy such as <code>01 Trial Management → 01.01 Trial Oversight → 01.01.01 Trial Master File Plan</code>. Maintain under <strong>Admin Setup → Artifacts</strong>:</p>
+<div class="help-table-wrap"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Model</strong></td><td>The owning model (required)</td></tr><tr><td><strong>Name</strong></td><td>Artifact name</td></tr><tr><td><strong>Number</strong></td><td>Hierarchy number, e.g. <code>01.01.01</code></td></tr><tr><td><strong>Parent Artifact</strong></td><td>Parent artifact; self-reference builds the tree</td></tr><tr><td><strong>Description</strong></td><td>Artifact definition text (from the TMF Reference Model)</td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">Note</p><p>The complete TMF RM v2.0 artifact tree is seeded with official definitions — a standard hierarchy for internal SOPs and inspection readiness.</p></div>
+<h2 id="relationship-to-document-filing">Relationship to Document Filing</h2>
+<p>The <strong>eTMF RM v2.0 / eTMF RM v3.0 / Vault Clinical Docs</strong> fields on Document Type map the taxonomy to artifacts (see <a href="document-types.html">Document Types</a>), while the <strong>Binder Section to Document Type</strong> model matches documents to filing locations by taxonomy. Together they auto-file documents to their reference-model location after save and make them browsable by model-artifact hierarchy in the <strong>TMF Viewer</strong> (see <a href="tmf-viewer.html">TMF Viewer</a>).</p>
+<h2 id="required-permissions-roles">Required Permissions &amp; Roles</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Type</th><th>Permission</th><th>Controls</th></tr></thead><tbody><tr><td>Object</td><td>Model / Artifact: Create, Read, Edit</td><td>Maintaining reference models and the artifact tree</td></tr></tbody></table></div>
+<p>Models and artifacts are system-managed master data, seeded out of the box; <strong>Clinical Application Administrator</strong> may adjust them, <strong>Document Contributor</strong> is read-only.</p>
+        </div>
+      </article>
+
+      <section class="help-related"><h2>Related articles</h2><ul><li><a href="tmf-viewer.html">TMF Viewer &amp; Master File Binders</a></li><li><a href="document-types.html">Document Types</a></li><li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li></ul></section>
+    </main>
+
+    <aside class="help-toc" aria-label="On this page">
+      <p class="help-toc__title">On this page</p>
+      <nav class="help-toc__nav">
+        <a href="#models">Models</a>
+<a href="#artifacts">Artifacts</a>
+<a href="#relationship-to-document-filing">Relationship to Document Filing</a>
+<a href="#required-permissions-roles">Required Permissions &amp; Roles</a>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="help-footer">
+  <div class="help-footer__inner">
+    <span class="help-footer__copyright">© 2026 Vivarcus</span>
+    <nav class="help-footer__nav">
+      <a href="../../../trial.html?lang=en">Request Trial</a>
+      <a href="../../..?lang=en">Back to website</a>
+    </nav>
+  </div>
+</footer>
+  <script src="../../../js/help.js"></script>
+</body>
+</html>

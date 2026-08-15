@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the three milestone states, planning actions, completion order under dependency constraints, and how to view a milestone's expected documents." />
+  <title>Planning & Completing Milestones — eTMF Help — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/help/en/etmf/milestones.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/help/zh/etmf/milestones.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/milestones.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/help/zh/etmf/milestones.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/help/en/etmf/milestones.html" />
+  <meta property="og:title" content="Planning & Completing Milestones — Vivarcus" />
+  <meta property="og:description" content="Learn the three milestone states, planning actions, completion order under dependency constraints, and how to view a milestone's expected documents." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Planning & Completing Milestones",
+    "description": "Learn the three milestone states, planning actions, completion order under dependency constraints, and how to view a milestone's expected documents.",
+    "inLanguage": "en-US",
+    "dateModified": "2026-08-15",
+    "mainEntityOfPage": "https://vivarcus.com/help/en/etmf/milestones.html",
+    "publisher": {"@type": "Organization", "name": "Vivarcus", "url": "https://vivarcus.com/"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../../css/icons.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/help.css" />
+</head>
+<body class="help-page help-page--article">
+  <header class="help-header">
+  <div class="help-header__inner">
+    <a href="../../..?lang=en" class="help-header__brand" aria-label="Vivarcus">
+      <span class="help-header__logo-dark">Vivar</span><span class="help-header__logo-accent">cus</span>
+    </a>
+    <span class="help-header__divider" aria-hidden="true">/</span>
+    <a href="../../../help/en/index.html" class="help-header__help-label">Help Center</a>
+    <div class="help-header__actions">
+      <a href="../../../trial.html?lang=en" class="help-header__trial">Request Trial</a>
+      <a href="../../../help/zh/etmf/milestones.html" class="help-header__lang" hreflang="zh-CN">中文</a>
+    </div>
+  </div>
+</header>
+
+  <div class="help-layout">
+    <button class="help-sidebar-toggle" aria-expanded="false" aria-controls="help-sidebar">☰</button>
+    <aside class="help-sidebar" id="help-sidebar">
+      <p class="help-sidebar__title"><a href="index.html">eTMF Help</a></p>
+<nav class="help-sidebar__nav">
+<details class="help-sidebar__group">
+<summary>Get Started</summary>
+<ul>
+<li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>eTMF</summary>
+<ul>
+<li><a href="tmf-homepage.html">TMF Homepage</a></li>
+<li><a href="tmf-viewer.html">TMF Viewer</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Study Info</summary>
+<ul>
+<li><a href="study-hierarchy.html">Studies</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-country">Study Countries</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-site">Study Sites</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Document Management</summary>
+<ul>
+<li><a href="upload-documents.html">Upload &amp; Matching</a></li>
+<li><a href="review-workflow.html">Review &amp; Approval</a></li>
+<li><a href="quality-issues.html">Quality Issues</a></li>
+</ul></details>
+<details class="help-sidebar__group" open>
+<summary>Planning</summary>
+<ul>
+<li><a href="edl.html">Expected Document Lists</a></li>
+<li><a href="edl.html#expected-documents-edl-items">Expected Documents</a></li>
+<li><a href="milestones.html" class="active">Milestones</a></li>
+<li><a href="clinical-tasks.html">Clinical Tasks</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Admin Setup</summary>
+<ul>
+<li><a href="study-personnel.html">Study Personnel</a></li>
+<li><a href="study-personnel.html#user-role-setup">User Role Setup</a></li>
+<li><a href="document-types.html">Document Types</a></li>
+<li><a href="template-edls.html">Template Expected Document Lists</a></li>
+<li><a href="template-edls.html#template-expected-documents-edl-item-templates">Template Expected Documents</a></li>
+<li><a href="template-milestones.html#template-milestone-master-sets">Template Milestone Master Sets</a></li>
+<li><a href="template-milestones.html#template-milestone-sets">Template Milestone Sets</a></li>
+<li><a href="template-milestones.html#template-milestones">Template Milestones</a></li>
+<li><a href="models-artifacts.html">Models</a></li>
+<li><a href="models-artifacts.html#artifacts">Artifacts</a></li>
+<li><a href="template-milestones.html#template-milestone-dependencies">Template Milestone Dependencies</a></li>
+<li><a href="template-tasks.html">Template Tasks</a></li>
+</ul></details>
+</nav>
+    </aside>
+
+    <main class="help-main help-main--article">
+      <nav class="help-breadcrumbs" aria-label="breadcrumb">
+        <a href="../../../help/en/index.html">Help Center</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <a href="index.html">eTMF Help</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <span>Planning & Completing Milestones</span>
+      </nav>
+
+      <article class="help-article">
+        <h1>Planning & Completing Milestones</h1>
+        <p class="help-article__meta">Last updated 2026-08-15</p>
+        <div class="help-article__body">
+          <h2 id="milestone-states">Milestone States</h2>
+<p>Milestones mark key study events (e.g. first subject enrolled, database lock) and help the team track progress. After creating a study and running Plan Study, the system generates milestone records from the Milestone Master Set.</p>
+<div class="help-table-wrap"><table><thead><tr><th>State</th><th>Meaning</th><th>Available actions</th></tr></thead><tbody><tr><td><strong>Unplanned</strong></td><td>Not yet planned</td><td>Plan Milestone, Mark Complete, View Expected Documents</td></tr><tr><td><strong>Planned</strong></td><td>Scheduled</td><td>View Expected Documents</td></tr><tr><td><strong>Complete</strong></td><td>Done</td><td>Read-only</td></tr></tbody></table></div>
+<h2 id="planning-plan-milestone">Planning (Plan Milestone)</h2>
+<ol><li>Open the study → <strong>Milestones</strong> list — you&#x27;ll see several <strong>Unplanned</strong> records.<li>Open a milestone (e.g. <strong>Study Start</strong>).<li><strong>All Actions → Plan Milestone</strong>, fill in <strong>Planned Finish Date</strong>, and submit. The state becomes <strong>Planned</strong>.</li></li></li></ol>
+<h2 id="completing-milestones-with-dependency-constraints">Completing Milestones (with Dependency Constraints)</h2>
+<p>Some milestones depend on others: upstream milestones must be completed before downstream ones.</p>
+<ol><li>Find a pair of dependent milestones; the downstream detail page shows <strong>Dependencies</strong> pointing to the upstream.<li>If none exist, add one manually on the downstream milestone: select the upstream milestone with type <strong>Finish to Start</strong>.<li>Running <strong>Mark Complete</strong> on the downstream milestone is rejected while the upstream is incomplete.<li>Complete the upstream first (fill <strong>Actual Finish Date</strong>), then the downstream.</li></li></li></li></ol>
+<div class="help-note"><p class="help-note__label">Note</p><p>If Mark Complete is rejected, complete the upstream milestones in the dependency chain first.</p></div>
+<h2 id="viewing-related-expected-documents">Viewing Related Expected Documents</h2>
+<p>Open any milestone → <strong>All Actions → View Expected Documents</strong> to enter the milestone workspace with the related expected document list; click an entry name to open its detail page and Matched Documents.</p>
+<h2 id="relationship-to-the-tmf-homepage">Relationship to the TMF Homepage</h2>
+<p>The <strong>Upcoming Milestones</strong> widget lists milestones without an Actual Finish Date (i.e. Unplanned / Planned records), filterable by <strong>Milestone Category</strong> — the daily entry point for &quot;what to do next&quot;.</p>
+<h2 id="required-permissions-roles">Required Permissions &amp; Roles</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Type</th><th>Permission</th><th>Controls</th></tr></thead><tbody><tr><td>Object</td><td>Milestone: Read, Edit</td><td>Viewing milestones, editing planned dates</td></tr><tr><td>Lifecycle action</td><td>Milestone: <strong>Plan Milestone</strong>, <strong>Mark Complete</strong></td><td>Scheduling and completing</td></tr><tr><td>Object</td><td>Milestone Dependency: Create</td><td>Adding upstream/downstream dependencies</td></tr><tr><td>Object</td><td>EDL Item: Read</td><td>Viewing related entries via <strong>View Expected Documents</strong></td></tr></tbody></table></div>
+<p>Dependency gates are enforced server-side: even with Mark Complete permission, the action is rejected while upstream milestones are incomplete.</p>
+        </div>
+      </article>
+
+      <section class="help-related"><h2>Related articles</h2><ul><li><a href="edl.html">EDL &amp; Expected Documents</a></li><li><a href="tmf-homepage.html">TMF Homepage: Completeness &amp; Inspection Readiness</a></li><li><a href="study-hierarchy.html">Study Hierarchy: Creating Studies, Countries &amp; Sites</a></li></ul></section>
+    </main>
+
+    <aside class="help-toc" aria-label="On this page">
+      <p class="help-toc__title">On this page</p>
+      <nav class="help-toc__nav">
+        <a href="#milestone-states">Milestone States</a>
+<a href="#planning-plan-milestone">Planning (Plan Milestone)</a>
+<a href="#completing-milestones-with-dependency-constraints">Completing Milestones (with Dependency Constraints)</a>
+<a href="#viewing-related-expected-documents">Viewing Related Expected Documents</a>
+<a href="#relationship-to-the-tmf-homepage">Relationship to the TMF Homepage</a>
+<a href="#required-permissions-roles">Required Permissions &amp; Roles</a>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="help-footer">
+  <div class="help-footer__inner">
+    <span class="help-footer__copyright">© 2026 Vivarcus</span>
+    <nav class="help-footer__nav">
+      <a href="../../../trial.html?lang=en">Request Trial</a>
+      <a href="../../..?lang=en">Back to website</a>
+    </nav>
+  </div>
+</footer>
+  <script src="../../../js/help.js"></script>
+</body>
+</html>
