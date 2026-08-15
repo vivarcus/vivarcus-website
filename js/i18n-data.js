@@ -42,6 +42,8 @@ window.I18N_DATA = {
     'common.footer.timeline': '时限日历',
     'common.footer.tmfChecker': 'TMF 自查器',
     'common.footer.edlGenerator': 'EDL 生成器',
+    'common.footer.auditFindings': '稽查对照表',
+    'common.footer.cdeTrials': 'CDE 数据',
     'common.footer.help': '帮助中心',
     'common.footer.copyright': '© 2026 Vivarcus. 保留所有权利。',
 
@@ -972,6 +974,8 @@ window.I18N_DATA = {
     'common.footer.timeline': 'Timeline Calendar',
     'common.footer.tmfChecker': 'TMF Checker',
     'common.footer.edlGenerator': 'EDL Generator',
+    'common.footer.auditFindings': 'Audit Findings',
+    'common.footer.cdeTrials': 'CDE Trials Data',
     'common.footer.help': 'Help Center',
     'common.footer.copyright': '© 2026 Vivarcus. All rights reserved.',
 

@@ -43,6 +43,19 @@ PAGES = [
         "cta_secondary_href": "ich-e6r3.html",
         "cta_secondary_label": "ICH E6(R3) 要点",
     },
+    {
+        "src": "audit-trail-essentials.md",
+        "file": "audit-trail.html",
+        "title": "稽查轨迹专题：2026 GCP 第 51/53 条与 ICH E6(R3) 要求 | Vivarcus",
+        "desc": "稽查轨迹合规专题：ICH E6(R3) 术语表定义与 Annex 1 第 4.2.3 节逐项要求、2026 版 GCP 第 51/53 条对照、系统层/流程层/文件层 10 项落地自查清单。",
+        "eyebrow": "法规库 · 专题",
+        "hero": "稽查轨迹专题",
+        "subtitle": "9 月 1 日施行后，稽查轨迹从系统加分项变成硬性合规要求。这一页把 GCP 与 E6(R3) 的官方要求合成一张可执行的自查清单。",
+        "cta_title": "稽查轨迹、版本史与权限留痕，Vivarcus eTMF 原生支持",
+        "cta_desc": "初始值不遮盖、变更可追溯、工作流动作留痕、权限台账可导出——对应 2026 GCP 51/53 条与 E6(R3) 4.2.3，核查现场可直接演示。",
+        "cta_secondary_href": "gcp-2026.html",
+        "cta_secondary_label": "2026 版 GCP 要点",
+    },
 ]
 
 

@@ -109,6 +109,7 @@ HEAD = """<!DOCTYPE html>
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/i18n-data.js"></script>
   <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
   <style>
     .template-wrap { padding: 1.5rem 0 3rem; }
     .template-content { max-width: 56rem; }
@@ -233,6 +234,8 @@ FOOT = """
           <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
           <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
           <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
           <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
           <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
           <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
@@ -326,7 +329,7 @@ PAGE_GUIDES = {
         "QA、PM、CRA、中心研究团队",
         "稽查或监管检查前 2–4 周",
         "避免临场突击、文件调阅困难和整改项未闭环",
-        '<a href="template-icf-checklist.html">ICF 审核清单</a> · <a href="template-tmf-index.html">TMF 文件清单</a>',
+        '<a href="template-icf-checklist.html">ICF 审核清单</a> · <a href="template-tmf-index.html">TMF 文件清单</a> · <a href="audit-findings.html">稽查发现分类对照表</a>',
     ),
     "template-training-log.html": (
         "研究团队及培训组织者",

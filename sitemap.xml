@@ -272,6 +272,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/gcp-2026.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/audit-trail.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/audit-trail.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/audit-trail.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/audit-trail.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/glossary.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -297,6 +306,24 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/edl-generator.html" />
     <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/edl-generator.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/edl-generator.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/audit-findings.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/audit-findings.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/audit-findings.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/audit-findings.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/cde-trials.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/cde-trials.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/cde-trials.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/cde-trials.html" />
   </url>
   <url>
     <loc>https://vivarcus.com/help/zh/index.html</loc>

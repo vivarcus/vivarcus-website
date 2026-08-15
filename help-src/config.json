@@ -186,6 +186,12 @@
       "priority": "0.7"
     },
     {
+      "loc": "/audit-trail.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
       "loc": "/glossary.html",
       "lastmod": "2026-08-15",
       "changefreq": "monthly",
@@ -199,6 +205,18 @@
     },
     {
       "loc": "/edl-generator.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/audit-findings.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/cde-trials.html",
       "lastmod": "2026-08-15",
       "changefreq": "monthly",
       "priority": "0.7"

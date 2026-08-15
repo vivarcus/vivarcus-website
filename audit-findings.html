@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="稽查发现分类对照表：53 条常见稽查发现按 2026 版 GCP 六章与 ICH E6(R3) 原则归类，含条款定位、严重程度分级（严重 15 条、高频 9 条）与自查落点，支持筛选与 CSV 导出，稽查/飞检前自查用。" />
+  <title>稽查发现分类对照表：常见稽查发现按 2026 GCP 章节归类 | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/audit-findings.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/audit-findings.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/audit-findings.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/audit-findings.html" />
+  <meta property="og:title" content="稽查发现分类对照表：常见稽查发现按 2026 GCP 章节归类 | Vivarcus" />
+  <meta property="og:description" content="稽查发现分类对照表：53 条常见稽查发现按 2026 版 GCP 六章与 ICH E6(R3) 原则归类，含条款定位、严重程度分级（严重 15 条、高频 9 条）与自查落点，支持筛选与 CSV 导出，稽查/飞检前自查用。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="稽查发现分类对照表：常见稽查发现按 2026 GCP 章节归类 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .content-wrap { padding: 1.5rem 0 3rem; }
+    .content-inner { max-width: 56rem; }
+    .content-inner h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .content-inner h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .content-inner h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .content-inner p { line-height: 1.8; }
+    .content-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .content-table th, .content-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .content-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .content-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .content-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .content-note p { margin: 0.25rem 0; }
+    .content-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+
+    .af-howto { display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; margin: 0 0 1.2rem; padding: 1rem 1.1rem;
+      border: 1px solid var(--border, #d8dde4); border-radius: 10px; background: var(--bg-soft, #f6f8fa); }
+    .af-howto-item { flex: 1 1 15rem; font-size: 0.88rem; line-height: 1.65; }
+    .af-howto-item strong { display: block; margin-bottom: 0.15rem; }
+    .af-controls { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; margin-bottom: 0.9rem; }
+    .af-field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .af-field > label, .af-field > .af-field-label { font-size: 0.82rem; opacity: 0.65; font-weight: 600; }
+    .af-field select, .af-field input[type="text"] {
+      padding: 0.5rem 0.8rem; font-size: 0.92rem;
+      border: 1px solid var(--border, #d8dde4); border-radius: 8px; outline: none;
+      background: var(--bg, #fff); color: inherit; min-width: 10rem;
+    }
+    .af-field input[type="text"] { min-width: 14rem; }
+    .af-field select:focus, .af-field input[type="text"]:focus { border-color: var(--accent, #2563eb); }
+    .af-sevs { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; padding: 0.45rem 0; }
+    .af-sevs label { display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+    .af-toolbar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.2rem;
+      margin: 1rem 0 1.4rem; padding: 0.8rem 1rem; border: 1px solid var(--border, #d8dde4);
+      border-radius: 10px; background: var(--bg-soft, #f6f8fa); font-size: 0.9rem;
+    }
+    .af-stats { margin-left: auto; opacity: 0.85; white-space: nowrap; }
+    .af-topic-head { margin: 1.6rem 0 0.5rem; font-size: 1.02rem; }
+    .af-topic-count { font-weight: 400; font-size: 0.78rem; opacity: 0.6; margin-left: 0.4rem; }
+    .af-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .af-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0 0 0.6rem; min-width: 46rem; }
+    .af-table th, .af-table td { text-align: left; padding: 0.5rem 0.7rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .af-table th { font-size: 0.78rem; opacity: 0.6; font-weight: 600; white-space: nowrap; }
+    .af-idx { opacity: 0.55; font-family: ui-monospace, monospace; white-space: nowrap; }
+    .af-finding { line-height: 1.55; min-width: 16rem; }
+    .af-clause { white-space: nowrap; opacity: 0.85; }
+    .af-e6 { opacity: 0.75; white-space: nowrap; font-size: 0.82rem; }
+    .af-check { line-height: 1.55; min-width: 16rem; opacity: 0.9; }
+    .af-badge {
+      font-size: 0.7rem; line-height: 1.4; padding: 0 0.4rem; border-radius: 4px;
+      border: 1px solid var(--border, #d8dde4); opacity: 0.8; white-space: nowrap;
+    }
+    .af-sev-critical { color: #b91c1c; border-color: rgba(220, 38, 38, 0.4); }
+    .af-sev-major { color: #b45309; border-color: rgba(217, 119, 6, 0.4); }
+    .af-sev-minor { color: #1d4ed8; border-color: rgba(37, 99, 235, 0.35); }
+    .af-hot { color: #b45309; border-color: rgba(217, 119, 6, 0.4); margin-left: 0.3rem; }
+    .af-legend { font-size: 0.84rem; opacity: 0.8; line-height: 1.8; margin: 0.6rem 0 0; }
+    .af-empty { padding: 1.5rem 0; opacity: 0.7; }
+    .af-preview { margin-top: 1rem; }
+    @media print {
+      body.tools-print-mode .site-header, body.tools-print-mode .page-hero,
+      body.tools-print-mode .cta-section, body.tools-print-mode .site-footer,
+      body.tools-print-mode .no-print { display: none !important; }
+    }
+  
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--book-open" aria-hidden="true"></i>
+          <span>行业资源 · 稽查工具</span>
+        </span>
+        <h1 class="page-hero-title">稽查发现分类对照表</h1>
+        <p class="page-hero-subtitle">53 条常见稽查发现，按 2026 版 GCP 六章与 ICH E6(R3) 原则归类；选范围 → 对照自查 → 导出整改清单。</p>
+      </div>
+    </section>
+
+    <section class="section content-wrap">
+      <div class="container content-inner">
+
+        <aside class="content-note">
+          <p><strong>依据：</strong>2026 版 GCP（2026-09-01 施行，NMPA 公告 2026 年第 50 号）+ ICH E6(R3)。条款定位原则：已公开解读的条文标具体条号，其余锚定「章 · 主题」；详见 <a href="gcp-2026.html">2026 版 GCP 要点</a> 与 <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>。</p>
+          <p><strong>免责声明：</strong>发现库与严重程度分级为编者归纳的稽查实践参考，不构成合规结论；正式检查以现行法规、方案与公司 SOP 为准。</p>
+        </aside>
+
+        <div class="af-howto no-print">
+          <div class="af-howto-item"><strong>① 选范围</strong>按章、主题、严重程度筛选，或搜索关键词（如「稽查轨迹」「时限」）。</div>
+          <div class="af-howto-item"><strong>② 对照自查</strong>逐条看「自查落点」，把有风险的条目记下来，高频发现优先。</div>
+          <div class="af-howto-item"><strong>③ 导出整改</strong>下载 CSV 作为整改清单底稿，逐条闭环后归档。</div>
+        </div>
+
+        <div class="af-controls no-print" id="af-controls">
+          <div class="af-field">
+            <label for="af-chapter">章</label>
+            <select id="af-chapter">
+              <option value="all" selected>全部章节</option>
+                            <option value="ch1">第一章 总则</option>
+              <option value="ch2">第二章 伦理审查委员会</option>
+              <option value="ch3">第三章 主要研究者和药物临床试验机构</option>
+              <option value="ch4">第四章 申办者</option>
+              <option value="ch5">第五章 数据治理</option>
+              <option value="ch6">第六章 附则</option>
+            </select>
+          </div>
+          <div class="af-field">
+            <label for="af-topic">主题</label>
+            <select id="af-topic">
+              <option value="all" selected>全部主题</option>
+                            <option value="icf">知情同意（6）</option>
+              <option value="personnel">人员与授权（5）</option>
+              <option value="ethics">伦理审查（5）</option>
+              <option value="records">记录与文件（6）</option>
+              <option value="data">数据治理（12）</option>
+              <option value="safety">安全性报告（5）</option>
+              <option value="drug">试验药物管理（5）</option>
+              <option value="pd">方案偏离与整改（3）</option>
+              <option value="oversight">监查与供应商（4）</option>
+              <option value="registry">登记与公开（2）</option>
+            </select>
+          </div>
+          <div class="af-field">
+            <span class="af-field-label">严重程度</span>
+            <div class="af-sevs">
+                            <label><input type="checkbox" name="af-sev" value="critical" checked /> 严重</label>
+              <label><input type="checkbox" name="af-sev" value="major" checked /> 主要</label>
+              <label><input type="checkbox" name="af-sev" value="minor" checked /> 一般</label>
+            </div>
+          </div>
+          <div class="af-field">
+            <label for="af-search">搜索</label>
+            <input type="text" id="af-search" placeholder="关键词：如「时限」「授权」「备份」" />
+          </div>
+        </div>
+
+        <div class="af-toolbar no-print">
+          <span class="af-stats" id="af-stats"></span>
+          <button type="button" class="btn btn-primary" id="af-csv-btn">下载对照表（CSV）</button>
+          <button type="button" class="btn btn-outline" id="af-print-btn">打印 / 导出 PDF</button>
+        </div>
+
+        <div id="af-preview" class="af-preview"></div>
+
+        <p class="af-legend">分级说明：<strong>严重</strong>=影响受试者权益/安全或数据可靠性的系统性发现；<strong>主要</strong>=违反 GCP/方案/SOP、需整改计划；<strong>一般</strong>=文档瑕疵或局部偏离。<strong>高频</strong>=稽查/核查中反复出现的发现，自查优先。</p>
+
+        <p class="ctcae-related" style="margin-top:2.4rem;font-size:0.9rem;">
+          相关资源：<a href="gcp-2026.html">2026 版 GCP 要点</a> ·
+          <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a> ·
+          <a href="template-audit-readiness-checklist.html">稽查准备清单模板</a> ·
+          <a href="tmf-checker.html">TMF 完整性自查器</a> ·
+          <a href="pd-decision-tree.html">PD 决策树</a> ·
+          <a href="timeline-calendar.html">时限日历</a>
+        </p>
+        <script type="application/json" id="af-data">{"findings": [{"topic": "icf", "chapter": "ch2", "clause": "第二章 · 知情同意", "severity": "critical", "hot": true, "finding": "ICF 签署时间晚于试验相关程序开始（先筛查/给药/采血，后签署知情同意）", "check": "核对每名受试者 ICF 签署日期与首次试验程序日期的时间逻辑；抽查筛选记录中的实际操作时间。", "e6": "原则 2"}, {"topic": "icf", "chapter": "ch2", "clause": "第二章 · 知情同意", "severity": "critical", "finding": "使用的 ICF 不是现行伦理批准版本（修订获批后仍在使用旧版）", "check": "核对 ICF 版本号与最新伦理批件的覆盖范围；检查新旧版本切换节点是否有交接记录。", "e6": "原则 2 / 3"}, {"topic": "icf", "chapter": "ch3", "clause": "第三章 · 知情同意", "severity": "major", "hot": true, "finding": "ICF 签署时间逻辑错误（受试者签署日期晚于研究者签署日期等）", "check": "按 ICF 审核清单逐份核对签字日期链（告知 → 受试者签署 → 研究者签署）。", "e6": "原则 2"}, {"topic": "icf", "chapter": "ch3", "clause": "第三章 · 知情同意", "severity": "major", "finding": "知情同意过程无源文件记录（仅存签名页，无法证明充分告知与答疑）", "check": "检查同意过程记录（谈话记录、受试者笔记）是否归档到 TMF/ISF 对应分类。", "e6": "原则 2"}, {"topic": "icf", "chapter": "ch3", "clause": "第三章 · 知情同意", "severity": "critical", "finding": "新版 ICF 获批后，未对在组受试者重新告知并签署", "check": "检查每次 ICF 修订后的再同意记录，覆盖全部在组受试者。", "e6": "原则 2 / 4"}, {"topic": "icf", "chapter": "ch3", "clause": "第三章 · 知情同意", "severity": "major", "finding": "ICF 由未授权人员签署，或签署人的授权文件缺失", "check": "核对 ICF 签署人与授权分工表（Delegation Log）的一致性。", "e6": "原则 10"}, {"topic": "personnel", "chapter": "ch3", "clause": "第三章 · 人员与职责", "severity": "major", "hot": true, "finding": "授权分工表未实时更新（人员离职/新增后仍显示原分工）", "check": "抽查近 3 个月人员变动与授权分工表更新记录；核对实际操作人与授权一致。", "e6": "原则 5 / 10"}, {"topic": "personnel", "chapter": "ch3", "clause": "第三章 · 人员与职责", "severity": "major", "hot": true, "finding": "培训记录缺失，或培训日期晚于开始执行任务日期", "check": "核对培训日期与首次执行任务日期先后；新成员/新方案/新系统培训均有记录。", "e6": "原则 5"}, {"topic": "personnel", "chapter": "ch3", "clause": "第三章 · 人员与职责", "severity": "major", "finding": "资质文件不全（简历、执业证书缺失或过期）", "check": "建立资质文件台账，核查证书有效期；到期前安排更新。", "e6": "原则 5"}, {"topic": "personnel", "chapter": "ch3", "clause": "第三章 · 人员与职责", "severity": "critical", "finding": "超出授权范围执行任务（未被授权的人员执行研究者职责）", "check": "对照授权分工表抽查关键操作（知情同意、疗效评估、开医嘱）的签名人。", "e6": "原则 10"}, {"topic": "personnel", "chapter": "ch3", "clause": "第十九条 · 主要研究者责任", "severity": "major", "finding": "PI 变更未及时记录或未按程序通报（现场最终责任人不明确）", "check": "检查 PI 变更的批准/通报记录；确认新 PI 的资质与培训记录完整。", "e6": "原则 10"}, {"topic": "ethics", "chapter": "ch2", "clause": "第二章 · 伦理审查", "severity": "critical", "finding": "方案或 ICF 修订在获得伦理批准之前已实施", "check": "核对修订版本生效日期与伦理批件日期；建立「批件—版本」对照表。", "e6": "原则 3"}, {"topic": "ethics", "chapter": "ch2", "clause": "第二章 · 伦理审查", "severity": "major", "finding": "定期/年度跟踪审查未按期递交", "check": "维护伦理审查日历（批件到期日、年度报告截止日），到期前递交并留存回执。", "e6": "原则 3"}, {"topic": "ethics", "chapter": "ch2", "clause": "第二章 · 伦理审查", "severity": "critical", "finding": "伦理要求的安全性报告（SAE/SUSAR 等）未递交或逾期", "check": "核对伦理递交记录与 SAE/SUSAR 清单的一致性。", "e6": "原则 3 / Annex 1 安全性报告"}, {"topic": "ethics", "chapter": "ch2", "clause": "第二章 · 伦理审查", "severity": "critical", "finding": "伦理批件与实施文件版本不一致（批准 v1.1，实施 v1.0）", "check": "建立「批件—文件版本」对照表，随每次修订更新。", "e6": "原则 3"}, {"topic": "ethics", "chapter": "ch2", "clause": "第十六条 · 伦理记录保存", "severity": "major", "finding": "伦理审查记录保存不符合期限要求（获批上市后 5 年 / 终止后 5 年）", "check": "建立伦理记录保存期限台账与到期处置流程。", "e6": "原则 9.5"}, {"topic": "records", "chapter": "ch3", "clause": "第三章 · 记录与报告", "severity": "major", "hot": true, "finding": "ISF/TMF 文件缺失或索引无法定位（调阅困难）", "check": "按 TMF 分类参考做月度自查；做一次模拟调阅演练（抽查 10 份文件）。", "e6": "原则 9.4"}, {"topic": "records", "chapter": "ch4", "clause": "第四章 · 记录与文件", "severity": "major", "hot": true, "finding": "现行版与历史版文件混放，版本控制失效", "check": "检查文档区/目录的版本隔离与标识；历史版单独归档并注明作废。", "e6": "原则 8"}, {"topic": "records", "chapter": "ch3", "clause": "第三章 · 记录与报告", "severity": "major", "finding": "源文件涂改覆盖（无单线划改、无签名和日期）", "check": "抽查源文件更正方式；SOP 中明确更正规则并培训。", "e6": "原则 9.4"}, {"topic": "records", "chapter": "ch4", "clause": "第二十九条 · 必备记录保存", "severity": "major", "finding": "必备记录保存期限未建立台账、无到期处置流程", "check": "建立保存期限台账（同第十六条口径），明确到期后的处置与审批。", "e6": "原则 9.5"}, {"topic": "records", "chapter": "ch4", "clause": "第四章 · 监查", "severity": "major", "finding": "监查报告缺失或严重滞后（访视后长期无报告）", "check": "核对访视→报告时限；建立监查报告跟进台账。", "e6": "原则 7 / Annex 1 监查"}, {"topic": "records", "chapter": "ch4", "clause": "第四章 · 质量管理", "severity": "minor", "hot": true, "finding": "SOP 与实际操作不一致（文件一套、实际一套）", "check": "抽查 SOP 执行证据与流程一致性；SOP 修订与实际流程同步。", "e6": "原则 6"}, {"topic": "data", "chapter": "ch5", "clause": "第五十三条 · 计算机化系统", "severity": "critical", "finding": "计算机化系统无稽查轨迹，或轨迹不完整（数据修改无痕迹）", "check": "验证系统审计追踪功能覆盖关键数据要素；保留轨迹配置与抽查记录。", "e6": "原则 9.4 / Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十一条 · 数据治理", "severity": "critical", "finding": "数据更正无受控流程（直接改库、无理由与审批记录、更正不可追溯）", "check": "检查数据更正记录是否含原因、审批与时间戳；SOP 明确更正流程。", "e6": "原则 9.4 / Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十三条 · 计算机化系统", "severity": "critical", "finding": "系统未经验证，或试验期间未保持验证有效状态（换版后未再验证）", "check": "检查验证文件包与当前版本对应；建立版本变更触发再验证的机制。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十三条 · 用户与权限", "severity": "major", "finding": "共享账号，或用户权限与职责、盲法设置不符", "check": "核对用户清单与授权分工表；按职责最小化授权并定期审查。", "e6": "原则 10 / Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十三条 · 电子签名", "severity": "critical", "finding": "电子签名不合规（代签、共用密码、签名与职责不符）", "check": "检查电子签名策略与培训记录；禁止账号共享并抽查登录日志。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十三条 · 系统问题管理", "severity": "major", "finding": "系统问题无记录、无定期审查（无 issue log）", "check": "建立系统问题日志；定期审查识别系统性问题并留痕。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十一条 · 数据传输", "severity": "major", "finding": "系统间数据传输未经验证流程（手工搬数无校验）", "check": "检查数据传输的校验记录与流程文件。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十二条 · 盲态完整性", "severity": "critical", "finding": "非盲信息访问权限未界定、未记录（盲态完整性风险）", "check": "检查权限设计是否覆盖盲态角色清单；确认可访问非盲信息的角色、职责已文档化。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十二条 · 盲态完整性", "severity": "major", "finding": "揭盲/意外破盲未记录、未评估影响", "check": "检查破盲记录与影响评估；必要时与 SAE 报告关联归档。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十一条 · 数据治理", "severity": "major", "finding": "统计分析前未按预定程序对数据集做最终确认", "check": "检查最终数据集确认记录与审批链。", "e6": "原则 9.4"}, {"topic": "data", "chapter": "ch5", "clause": "第五十一条 · 元数据", "severity": "major", "finding": "采集数据缺少元数据（无来源、无时间戳）", "check": "抽查关键数据要素的元数据完整性（含计算机化系统直接采集的数据）。", "e6": "Annex 1 数据治理"}, {"topic": "data", "chapter": "ch5", "clause": "第五十三条 · 备份与应急", "severity": "major", "finding": "电子数据无备份，或备份不可恢复", "check": "检查备份策略与恢复演练记录；故障应急措施是否可执行。", "e6": "Annex 1 数据治理"}, {"topic": "safety", "chapter": "ch4", "clause": "第四章 · 安全性报告", "severity": "critical", "hot": true, "finding": "SAE 报告超时限（未在 24 小时内向申办者提供书面报告，以现行法规/方案时限为准）", "check": "建立时限台账并定期回溯（参考时限日历工具）；核对 SAE 首报/随访报链。", "e6": "Annex 1 安全性报告"}, {"topic": "safety", "chapter": "ch4", "clause": "第四章 · 安全性报告", "severity": "critical", "finding": "SUSAR 未按要求递交（致死/危及生命 7 天、其他 15 天，以现行要求为准）", "check": "核对 SUSAR 递交记录与法规时限的符合性。", "e6": "Annex 1 安全性报告"}, {"topic": "safety", "chapter": "ch4", "clause": "第四章 · 安全性报告", "severity": "major", "finding": "源数据中存在的 AE 未录入/漏报", "check": "抽查源数据（病历、化验单）与 AE 列表的一致性。", "e6": "原则 9.4"}, {"topic": "safety", "chapter": "ch4", "clause": "第四章 · 安全性报告", "severity": "major", "finding": "SAE 报告内容与源数据不一致", "check": "核对 SAE 表格与源记录的字段一致性（起止时间、因果关系、结局）。", "e6": "原则 9.4"}, {"topic": "safety", "chapter": "ch4", "clause": "第四章 · 安全性报告", "severity": "major", "finding": "安全性更新报告（如 DSUR）未递交或逾期", "check": "核查递交日历与接收回执。", "e6": "Annex 1 安全性报告"}, {"topic": "drug", "chapter": "ch3", "clause": "第三章 · 试验药物管理", "severity": "major", "hot": true, "finding": "温湿度记录断档，或超范围未按预案处置", "check": "检查温湿度记录连续性；异常处置记录与设备异常预案是否执行。", "e6": "原则 11"}, {"topic": "drug", "chapter": "ch3", "clause": "第三章 · 试验药物管理", "severity": "major", "finding": "药物清点记录与库存不符", "check": "稽查前预清点；建立收发存账实核对机制。", "e6": "原则 11"}, {"topic": "drug", "chapter": "ch3", "clause": "第三章 · 试验药物管理", "severity": "critical", "finding": "药物发放不符合随机化/方案要求", "check": "核对发放记录与随机化方案（随机号、组别、访视窗）。", "e6": "原则 11"}, {"topic": "drug", "chapter": "ch3", "clause": "第三章 · 试验药物管理", "severity": "major", "finding": "效期管理缺失（过期药物未隔离）", "check": "检查效期台账与隔离区标识；临期药物提前处置。", "e6": "原则 11"}, {"topic": "drug", "chapter": "ch3", "clause": "第三章 · 试验药物管理", "severity": "minor", "finding": "回收/销毁记录不完整", "check": "核对发放—回收—销毁链条的签名与数量逻辑。", "e6": "原则 11"}, {"topic": "pd", "chapter": "ch3", "clause": "第三章 · 方案执行", "severity": "major", "finding": "方案偏离未记录或未分级评估（重要偏离未报伦理）", "check": "检查偏离日志完整性（参考 PD 决策树工具）；重要偏离的伦理报告记录。", "e6": "原则 7 / 9"}, {"topic": "pd", "chapter": "ch4", "clause": "第四章 · 质量管理", "severity": "major", "finding": "CAPA 未闭环（发现 → 纠正 → 预防链条断裂）", "check": "抽查 CAPA 关闭证据（根因分析、纠正措施、有效性确认）。", "e6": "原则 6 / 9"}, {"topic": "pd", "chapter": "ch4", "clause": "第四章 · 质量管理", "severity": "major", "finding": "质量风险识别与缓解措施未文档化（关键质量因素无管理计划）", "check": "检查质量计划与风险记录；风险相称原则是否体现在监查/稽查计划中。", "e6": "原则 6 / 7"}, {"topic": "oversight", "chapter": "ch4", "clause": "第四章 · 监查", "severity": "major", "finding": "监查计划未按风险相称原则制定，或长期未更新", "check": "核对监查计划与风险评估的联动更新记录。", "e6": "原则 7 / Annex 1 监查"}, {"topic": "oversight", "chapter": "ch4", "clause": "第三十二条 · 申办者责任", "severity": "major", "finding": "CRO/供应商协议未明确责任与监督安排（责任可委托不可转移）", "check": "复核外包合同的责任条款；确认协议与 2026 版 GCP 第三十二条口径一致。", "e6": "原则 10.1"}, {"topic": "oversight", "chapter": "ch4", "clause": "第三十二条 · 申办者责任", "severity": "major", "finding": "对 CRO/供应商的监督记录缺失（oversight 无据可查）", "check": "检查监督记录（会议纪要、绩效报告、问题升级记录）。", "e6": "原则 10.1"}, {"topic": "oversight", "chapter": "ch4", "clause": "第四章 · 供应商管理", "severity": "minor", "finding": "供应商资质评估文件不全", "check": "核查供应商评估档案（资质、经验、质量体系）。", "e6": "原则 10"}, {"topic": "registry", "chapter": "ch4", "clause": "第四章 · 注册登记", "severity": "major", "finding": "试验登记信息与方案不一致，或重大变更未及时更新", "check": "核对登记平台信息与现行方案版本的一致性。", "e6": "原则 9.6"}, {"topic": "registry", "chapter": "ch4", "clause": "第四章 · 结果公开", "severity": "minor", "finding": "试验结果公开逾期或缺失", "check": "检查结果递交日历与公开记录。", "e6": "原则 9.6"}], "topics": [{"key": "icf", "label": "知情同意", "count": 6}, {"key": "personnel", "label": "人员与授权", "count": 5}, {"key": "ethics", "label": "伦理审查", "count": 5}, {"key": "records", "label": "记录与文件", "count": 6}, {"key": "data", "label": "数据治理", "count": 12}, {"key": "safety", "label": "安全性报告", "count": 5}, {"key": "drug", "label": "试验药物管理", "count": 5}, {"key": "pd", "label": "方案偏离与整改", "count": 3}, {"key": "oversight", "label": "监查与供应商", "count": 4}, {"key": "registry", "label": "登记与公开", "count": 2}], "chapters": [{"key": "ch1", "label": "第一章 总则"}, {"key": "ch2", "label": "第二章 伦理审查委员会"}, {"key": "ch3", "label": "第三章 主要研究者和药物临床试验机构"}, {"key": "ch4", "label": "第四章 申办者"}, {"key": "ch5", "label": "第五章 数据治理"}, {"key": "ch6", "label": "第六章 附则"}], "sev": {"critical": "严重", "major": "主要", "minor": "一般"}}</script>
+
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2>稽查准备清单与完整性指标，Vivarcus eTMF 里已经内置</h2>
+          <p>发现→条款→自查落点之外，完整性、及时性、质量指标实时可见；稽查轨迹与受控数据更正对应 2026 GCP 第五章，开箱即用。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="template-audit-readiness-checklist.html" class="btn btn-outline btn-lg">稽查准备清单模板</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
+<script>
+    var AF_DATA = JSON.parse(document.getElementById('af-data').textContent);
+
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    function currentControls() {
+      var severities = [];
+      document.querySelectorAll('input[name="af-sev"]:checked').forEach(function (c) { severities.push(c.value); });
+      severities.sort();
+      return {
+        chapter: document.getElementById('af-chapter').value,
+        topic: document.getElementById('af-topic').value,
+        severities: severities,
+        q: document.getElementById('af-search').value.trim().toLowerCase(),
+      };
+    }
+
+    function matches(f, c) {
+      if (c.chapter !== 'all' && f.chapter !== c.chapter) return false;
+      if (c.topic !== 'all' && f.topic !== c.topic) return false;
+      if (c.severities.indexOf(f.severity) === -1) return false;
+      if (c.q) {
+        var hay = (f.finding + ' ' + f.check + ' ' + f.clause + ' ' + f.e6).toLowerCase();
+        if (hay.indexOf(c.q) === -1) return false;
+      }
+      return true;
+    }
+
+    // 过滤后的行（主题顺序），同时供预览与 CSV 导出使用
+    function filteredRows(c) {
+      var rows = [];
+      AF_DATA.topics.forEach(function (t) {
+        if (c.topic !== 'all' && t.key !== c.topic) return;
+        AF_DATA.findings.forEach(function (f) {
+          if (f.topic !== t.key || !matches(f, c)) return;
+          rows.push({ finding: f, topic: t });
+        });
+      });
+      return rows;
+    }
+
+    function sevBadge(s) {
+      var cls = s === 'critical' ? 'af-sev-critical' : (s === 'major' ? 'af-sev-major' : 'af-sev-minor');
+      return '<span class="af-badge ' + cls + '">' + esc(AF_DATA.sev[s] || s) + '</span>';
+    }
+
+    function renderPreview() {
+      var c = currentControls();
+      var rows = filteredRows(c);
+      var nCritical = rows.filter(function (r) { return r.finding.severity === 'critical'; }).length;
+      var nHot = rows.filter(function (r) { return r.finding.hot; }).length;
+      var html = '', idx = 0, curTopic = null;
+      rows.forEach(function (r) {
+        if (curTopic !== r.topic.key) {
+          if (curTopic !== null) html += '</tbody></table></div>';
+          curTopic = r.topic.key;
+          html += '<h3 class="af-topic-head">' + esc(r.topic.label) +
+                  ' <span class="af-topic-count">' +
+                  rows.filter(function (x) { return x.topic.key === curTopic; }).length + ' 条</span></h3>';
+          html += '<div class="af-scroll"><table class="af-table"><thead><tr>' +
+            '<th>#</th><th>发现描述</th><th>条款定位（2026 GCP）</th><th>E6(R3)</th><th>严重程度</th><th>自查落点</th>' +
+            '</tr></thead><tbody>';
+        }
+        idx++;
+        var f = r.finding;
+        html += '<tr>' +
+          '<td class="af-idx">' + idx + '</td>' +
+          '<td class="af-finding">' + esc(f.finding) +
+            (f.hot ? ' <span class="af-badge af-hot">高频</span>' : '') + '</td>' +
+          '<td class="af-clause">' + esc(f.clause) + '</td>' +
+          '<td class="af-e6">' + esc(f.e6) + '</td>' +
+          '<td>' + sevBadge(f.severity) + '</td>' +
+          '<td class="af-check">' + esc(f.check) + '</td>' +
+          '</tr>';
+      });
+      html += '</tbody></table></div>';
+      var list = document.getElementById('af-preview');
+      list.innerHTML = html || '<p class="af-empty">当前筛选条件下没有条目。请放宽筛选条件或清空搜索词。</p>';
+      document.getElementById('af-stats').textContent =
+        '共 ' + rows.length + ' 条 · 严重 ' + nCritical + ' · 高频 ' + nHot;
+    }
+
+    function csvCell(s) {
+      s = String(s == null ? '' : s);
+      if (/[",\n\r]/.test(s)) s = '"' + s.replace(/"/g, '""') + '"';
+      return s;
+    }
+
+    function downloadCsv() {
+      var c = currentControls();
+      var rows = filteredRows(c);
+      if (!rows.length) { renderPreview(); return; }
+      var lines = ['\uFEFF序号,主题,发现描述,条款定位（2026 GCP）,E6(R3) 映射,严重程度,自查落点'];
+      rows.forEach(function (r, i) {
+        lines.push([
+          i + 1,
+          r.topic.label,
+          r.finding.finding,
+          r.finding.clause,
+          r.finding.e6,
+          AF_DATA.sev[r.finding.severity] || '',
+          r.finding.check,
+        ].map(csvCell).join(','));
+      });
+      var now = new Date();
+      var dateStr = now.getFullYear() + String(now.getMonth() + 1).padStart(2, '0') + String(now.getDate()).padStart(2, '0');
+      var fname = 'vivarcus-audit-findings-' + dateStr + '.csv';
+      var blob = new Blob([lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fname;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderPreview);
+
+    document.addEventListener('change', function (e) {
+      if (!e.target) return;
+      if (e.target.id === 'af-chapter' || e.target.id === 'af-topic' || e.target.name === 'af-sev') { renderPreview(); }
+    });
+
+    var searchTimer = null;
+    document.addEventListener('input', function (e) {
+      if (!e.target || e.target.id !== 'af-search') return;
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(renderPreview, 150);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.id === 'af-csv-btn') downloadCsv();
+      if (e.target && e.target.id === 'af-print-btn') Tools.printReport();
+    });
+  </script></body>
+</html>

@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/i18n-data.js"></script>
   <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
   <style>
     .content-wrap { padding: 1.5rem 0 3rem; }
     .content-inner { max-width: 56rem; }
@@ -101,7 +102,7 @@
 <h2>三、新增第五章「数据治理」逐条要点</h2>
 <h3>第五十一条：数据治理总体责任</h3>
 <ul><li>申办者、主要研究者和临床试验机构<strong>在各自职责范围内共同承担</strong>数据治理责任，贯穿数据全生命周期</li><li><strong>从任何来源获取的数据（含计算机化系统直接采集）应附带元数据，包括稽查轨迹</strong></li><li>制定数据和元数据审核规程；更正数据错误的流程须确保更正过程可追溯</li><li>系统间数据传输须经验证流程，保证可靠性、可追溯性、安全性</li><li>统计分析前按预定程序对数据集做最终确认</li></ul>
-<p><strong>落点</strong>：eTMF/CTMS 须具备稽查轨迹、元数据管理与受控的数据更正流程；TMF 中归档数据管理计划（DMP）与数据清理记录。</p>
+<p><strong>落点</strong>：eTMF/CTMS 须具备稽查轨迹、元数据管理与受控的数据更正流程；TMF 中归档数据管理计划（DMP）与数据清理记录。「完善」到什么程度，逐项要求见 <a href="audit-trail.html">稽查轨迹专题</a>。</p>
 <h3>第五十二条：盲态完整性</h3>
 <ul><li>盲法试验各阶段保持盲态完整性</li><li>实施前确定并记录可访问非盲信息的角色、职责和流程</li><li>记录揭盲或意外破盲情况，评估影响并采取必要措施</li></ul>
 <p><strong>落点</strong>：系统权限模型须支持按盲态分层；破盲事件记录归档 TMF 并与 SAE 报告关联。</p>
@@ -130,7 +131,7 @@
 </tbody></table></div>
 <p>详细解读见 <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>。</p>
 <h2>六、9/1 前落地行动清单</h2>
-<ol><li><strong>文件措辞</strong>：ICF、方案、SOP 中的「受试者」表述核对是否需同步为「试验参与者」</li><li><strong>系统能力</strong>：确认 eTMF/CTMS 具备稽查轨迹、元数据、权限分层（盲态）与电子签名（对应 51/52/53 条）</li><li><strong>保存期限台账</strong>：按第十六条、第二十九条建立记录保存期限台账与到期处置流程</li><li><strong>培训与记录</strong>：完成新版 GCP 培训，留存记录（培训早于执行）</li><li><strong>外包合同</strong>：与 CRO/供应商协议复核责任条款（第三十二条：责任不随委托转移）</li><li><strong>核查准备</strong>：对照核查中心新核查要点（征求意见稿）自查数据治理与稽查轨迹部分</li></ol>
+<ol><li><strong>文件措辞</strong>：ICF、方案、SOP 中的「受试者」表述核对是否需同步为「试验参与者」</li><li><strong>系统能力</strong>：确认 eTMF/CTMS 具备稽查轨迹、元数据、权限分层（盲态）与电子签名（对应 51/52/53 条）</li><li><strong>保存期限台账</strong>：按第十六条、第二十九条建立记录保存期限台账与到期处置流程</li><li><strong>培训与记录</strong>：完成新版 GCP 培训，留存记录（培训早于执行）</li><li><strong>外包合同</strong>：与 CRO/供应商协议复核责任条款（第三十二条：责任不随委托转移）</li><li><strong>核查准备</strong>：对照核查中心新核查要点（征求意见稿）自查数据治理与稽查轨迹部分；常见发现逐条对照见 <a href="audit-findings.html">稽查发现分类对照表</a></li></ol>
 <h2>七、来源与说明</h2>
 <ul><li><a href="https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html" target="_blank" rel="noopener">中国 2026 版 GCP 官方公告</a>（国家药监局等四部门公告 2026 年第 50 号，含全文附件与官方问答）</li><li><a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>（本库对应条目，含 ICH 官方 PDF 链接）</li><li>配套核查要点修订征求意见稿：国家药监局核查中心 2026-06-08 发布</li><li>本文为编者整理，条款理解有疑问时以官方文本为准</li></ul>
       </div>
@@ -184,6 +185,8 @@
           <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
           <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
           <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
           <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
           <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
           <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
