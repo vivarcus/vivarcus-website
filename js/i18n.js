@@ -103,15 +103,6 @@
       }
     }
 
-    // Language-specific href targets (e.g. help center zh/en subdirectories)
-    els = document.querySelectorAll('[data-lang-href-zh]');
-    for (i = 0; i < els.length; i++) {
-      var target = lang === 'zh'
-        ? els[i].getAttribute('data-lang-href-zh')
-        : els[i].getAttribute('data-lang-href-en');
-      if (target) els[i].setAttribute('href', target);
-    }
-
     // Meta description & Open Graph / Twitter
     els = document.querySelectorAll('[data-i18n-meta], [data-i18n-og]');
     for (i = 0; i < els.length; i++) {
