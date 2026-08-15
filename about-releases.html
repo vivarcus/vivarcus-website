@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="rel.about.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="rel.about.meta.desc" content="Vivarcus 版本号体系、发布类型与发布流程说明：如何解读 26R3.1、公开发布/维护发布/预发布的区别，以及版本升级规则。" />
+  <title>关于版本发布 — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/about-releases.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/about-releases.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/about-releases.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/about-releases.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/about-releases.html" />
+  <meta property="og:title" data-i18n-og="rel.about.meta.title" content="关于版本发布 — Vivarcus" />
+  <meta property="og:description" data-i18n-og="rel.about.meta.desc" content="Vivarcus 版本号体系、发布类型与发布流程说明，以及版本升级规则。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="关于 Vivarcus 版本发布" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="rel.about.meta.title" content="关于版本发布 — Vivarcus" />
+  <meta name="twitter:description" data-i18n-og="rel.about.meta.desc" content="Vivarcus 版本号体系、发布类型与发布流程说明。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "关于版本发布",
+        "description": "Vivarcus 版本号体系、发布类型与发布流程说明，以及版本升级规则。",
+        "url": "https://vivarcus.com/about-releases.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "发布说明", "item": "https://vivarcus.com/release-26r3.html" },
+          { "@type": "ListItem", "position": 3, "name": "关于版本发布", "item": "https://vivarcus.com/about-releases.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--box" aria-hidden="true"></i>
+          <span data-i18n="rel.about.hero.eyebrow">发布说明 · 参考</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="rel.about.hero.title">关于版本发布</h1>
+        <p class="page-hero-subtitle" data-i18n="rel.about.hero.subtitle">版本号如何读、有哪些发布类型、版本如何升级 — 一文讲清。</p>
+      </div>
+    </section>
+
+    <!-- Release sub-nav -->
+    <nav class="rel-nav" aria-label="发布说明导航">
+      <div class="container">
+        <div class="rel-nav__inner">
+          <span class="rel-nav__title" data-i18n="rel.nav.group">26R3</span>
+          <a class="rel-nav__link" href="release-26r3.html" data-i18n="rel.nav.overview">发布概览</a>
+          <a class="rel-nav__link" href="release-26r3-features.html" data-i18n="rel.nav.features">新功能</a>
+          <a class="rel-nav__link" href="release-26r3-fixes.html" data-i18n="rel.nav.fixes">已修复问题</a>
+          <a class="rel-nav__link" href="release-26r3-known-issues.html" data-i18n="rel.nav.issues">已知问题</a>
+          <span class="rel-nav__sep" aria-hidden="true"></span>
+          <a class="rel-nav__link is-active" href="about-releases.html" data-i18n="rel.nav.about">关于版本发布</a>
+          <a class="rel-nav__link" href="pre-release-faq.html" data-i18n="rel.nav.pre">预发布 FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 版本号体系 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel.about.ver.label">版本号体系</span>
+          <h2 class="section-title" data-i18n="rel.about.ver.title">26R3.1 是怎么读出来的</h2>
+          <p class="section-desc" data-i18n="rel.about.ver.desc">平台版本号采用四段格式 {Year}R{Release}.{Patch}.{Maintenance}，另有与版本号解耦的 build 号。</p>
+        </div>
+        <div class="rel-list" data-reveal>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.ver.r1">年度与版本位</div>
+            <p class="rel-row__desc" data-i18n="rel.about.ver.r1d">「26R3」表示 2026 年第 3 个正式版本，如 26R3.1 的「26R3」。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.ver.r2">Patch 位</div>
+            <p class="rel-row__desc" data-i18n="rel.about.ver.r2d">正式版本内的小版本位，如 26R3.1 的「.1」。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.ver.r3">Maintenance 位</div>
+            <p class="rel-row__desc" data-i18n="rel.about.ver.r3d">维护发布序号，按 scope 独立递增（如 26R3.1.46），不同 scope 的维护版本各自编号，故版本号并非严格时间顺序。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.ver.r4">build 号</div>
+            <p class="rel-row__desc" data-i18n="rel.about.ver.r4d">与版本号解耦的十进制数字串（如 Assembly 13258 / Platform 13250），由构建工件产出，供定位具体构建。</p>
+          </div>
+        </div>
+        <div class="rel-note rel-note--spaced" data-reveal>
+          <strong data-i18n="rel.about.ver.info.title">Vault Information 里能看到什么</strong>
+          <span data-i18n-html="rel.about.ver.info.desc">每个 Vault 在 Vault Information 页只读展示三个版本标识：<strong>Vault Version</strong>（当前版本号）、<strong>Vault Assembly Version</strong>（组装 build 号）与 <strong>Vault Platform Version</strong>（平台内核 build 号）。三者仅供查看与排障，不可自行选择。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 发布类型 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel.about.types.label">发布类型</span>
+          <h2 class="section-title" data-i18n="rel.about.types.title">三类发布</h2>
+          <p class="section-desc" data-i18n="rel.about.types.desc">按内容与节奏区分三类发布。</p>
+        </div>
+        <div class="rel-list" data-reveal>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.types.g">公开发布（General Release）</div>
+            <p class="rel-row__desc" data-i18n="rel.about.types.gd">带来新功能与修复的正式版本，如 26R3.1。每个公开发布都有对应的发布说明：新功能、已修复问题与已知问题。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.types.m">维护发布（Maintenance Release）</div>
+            <p class="rel-row__desc" data-i18n="rel.about.types.md">针对已发布版本的小修复，版本号 Maintenance 位递增。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.types.p">预发布（Prerelease）</div>
+            <p class="rel-row__desc" data-i18n="rel.about.types.pd">正式发布前，在沙盒上运行新版本以验证配置与流程的窗口。详见「预发布 FAQ」。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 发布流程 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel.about.flow.label">发布流程</span>
+          <h2 class="section-title" data-i18n="rel.about.flow.title">一个版本如何发布</h2>
+          <p class="section-desc" data-i18n="rel.about.flow.desc">版本经由发布列车（ADCV）统一编排，关键节点如下。</p>
+        </div>
+        <div class="rel-timeline" data-reveal>
+          <div class="rel-timeline__item">
+            <div class="rel-timeline__date" data-i18n="rel.about.flow.s1.date">01</div>
+            <div class="rel-timeline__title" data-i18n="rel.about.flow.s1.title">发布列车收敛</div>
+            <p class="rel-timeline__desc" data-i18n="rel.about.flow.s1.desc">功能与配置在发布列车（ADCV）上收敛，形成目标版本。</p>
+          </div>
+          <div class="rel-timeline__item">
+            <div class="rel-timeline__date" data-i18n="rel.about.flow.s2.date">02</div>
+            <div class="rel-timeline__title" data-i18n="rel.about.flow.s2.title">切版与打标</div>
+            <p class="rel-timeline__desc" data-i18n="rel.about.flow.s2.desc">切出版本并打标（如 v26R3.1-13258），版本号与 build 号从此确定。</p>
+          </div>
+          <div class="rel-timeline__item">
+            <div class="rel-timeline__date" data-i18n="rel.about.flow.s3.date">03</div>
+            <div class="rel-timeline__title" data-i18n="rel.about.flow.s3.title">制品产出</div>
+            <p class="rel-timeline__desc" data-i18n="rel.about.flow.s3.desc">产出镜像与 CLI / 演示制品，供环境部署与客户端使用。</p>
+          </div>
+          <div class="rel-timeline__item">
+            <div class="rel-timeline__date" data-i18n="rel.about.flow.s4.date">04</div>
+            <div class="rel-timeline__title" data-i18n="rel.about.flow.s4.title">环境升级</div>
+            <p class="rel-timeline__desc" data-i18n="rel.about.flow.s4.desc">沙盒可先行验证，生产 Vault 由平台统一编排升级。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 版本升级规则 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel.about.rules.label">版本升级规则</span>
+          <h2 class="section-title" data-i18n="rel.about.rules.title">版本由平台统一管理</h2>
+          <p class="section-desc" data-i18n="rel.about.rules.desc">以下规则保证升级可预期、可追溯。</p>
+        </div>
+        <div class="rel-list" data-reveal>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.rules.r1">客户不挑版本</div>
+            <p class="rel-row__desc" data-i18n="rel.about.rules.r1d">生产 Vault 的升级由平台统一编排，不能提前升级、延后升级、跳过或降级。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.rules.r2">沙盒版本方向</div>
+            <p class="rel-row__desc" data-i18n="rel.about.rules.r2d">目标版本等于源版本：直接复制；目标更高：复制后前向升级；目标更低：拒绝（不会误降级）。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.rules.r3">沙盒载荷二选一</div>
+            <p class="rel-row__desc" data-i18n="rel.about.rules.r3d">仅配置载荷：复制配置，不含业务数据、文档与用户；含数据载荷：源沙盒的完整拷贝（含用户与归属）。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.rules.r4">派生后相互独立</div>
+            <p class="rel-row__desc" data-i18n="rel.about.rules.r4d">沙盒与源互为独立实例：源的后续变更不影响沙盒，沙盒的变更也不回流源。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 发布建议 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel.about.tips.label">发布建议</span>
+          <h2 class="section-title" data-i18n="rel.about.tips.title">升级期间的几点建议</h2>
+        </div>
+        <div class="rel-list" data-reveal>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.tips.t1">沙盒先行验证</div>
+            <p class="rel-row__desc" data-i18n="rel.about.tips.t1d">正式升级前，先在沙盒上运行新版本，验证既有配置与关键流程。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.tips.t2">升级窗口内不建议配置变更</div>
+            <p class="rel-row__desc" data-i18n="rel.about.tips.t2d">避免配置变更与版本升级相互影响。</p>
+          </div>
+          <div class="rel-row">
+            <div class="rel-row__name" data-i18n="rel.about.tips.t3">关注已知问题</div>
+            <p class="rel-row__desc" data-i18n="rel.about.tips.t3d">升级前查看当前版本的已知问题页。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="rel26r3.overview.resources.title">想深入了解？</h2>
+          <p data-i18n="rel26r3.overview.resources.desc">查看帮助中心的操作文档，或申请试用体验 26R3.1。</p>
+          <div class="cta-actions">
+            <a href="release-26r3.html" class="btn btn-primary btn-lg">
+              <span data-i18n="rel.nav.overview">发布概览</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="pre-release-faq.html" class="btn btn-outline btn-lg" data-i18n="rel.nav.pre">预发布 FAQ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

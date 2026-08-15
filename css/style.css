@@ -2993,3 +2993,15 @@ ul {
 .rel-prose strong {
   color: var(--ink);
 }
+
+/* ---- Release sub-nav separator ---- */
+.rel-nav__sep {
+  width: 1px;
+  height: 20px;
+  background: var(--line);
+  margin: 0 6px;
+}
+
+.rel-note--spaced {
+  margin-top: 20px;
+}

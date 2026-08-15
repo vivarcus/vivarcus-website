@@ -379,4 +379,22 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/release-26r3-known-issues.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/release-26r3-known-issues.html" />
   </url>
+  <url>
+    <loc>https://vivarcus.com/about-releases.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/about-releases.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/about-releases.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/about-releases.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/pre-release-faq.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/pre-release-faq.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/pre-release-faq.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/pre-release-faq.html" />
+  </url>
 </urlset>

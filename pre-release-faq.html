@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="rel.pre.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="rel.pre.meta.desc" content="Vivarcus 预发布常见问题：什么是预发布、如何创建与刷新预发布沙盒、参与方式与升级规则。" />
+  <title>预发布 FAQ — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/pre-release-faq.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/pre-release-faq.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/pre-release-faq.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/pre-release-faq.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/pre-release-faq.html" />
+  <meta property="og:title" data-i18n-og="rel.pre.meta.title" content="预发布 FAQ — Vivarcus" />
+  <meta property="og:description" data-i18n-og="rel.pre.meta.desc" content="Vivarcus 预发布常见问题：什么是预发布、如何创建与刷新预发布沙盒、参与方式与升级规则。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vivarcus 预发布 FAQ" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="rel.pre.meta.title" content="预发布 FAQ — Vivarcus" />
+  <meta name="twitter:description" data-i18n-og="rel.pre.meta.desc" content="Vivarcus 预发布常见问题。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "预发布 FAQ",
+        "description": "Vivarcus 预发布常见问题：什么是预发布、如何创建与刷新预发布沙盒、参与方式与升级规则。",
+        "url": "https://vivarcus.com/pre-release-faq.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "发布说明", "item": "https://vivarcus.com/release-26r3.html" },
+          { "@type": "ListItem", "position": 3, "name": "预发布 FAQ", "item": "https://vivarcus.com/pre-release-faq.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/pre-release-faq.html#faq-zh",
+        "inLanguage": "zh-CN",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "什么是预发布？",
+            "acceptedAnswer": { "@type": "Answer", "text": "预发布是新版本正式发布（GA）前的验证窗口：您可以在沙盒上先运行新版本，验证既有配置、工作流与关键流程的表现，再等待生产 Vault 统一升级。" }
+          },
+          {
+            "@type": "Question",
+            "name": "预发布什么时候开始？",
+            "acceptedAnswer": { "@type": "Answer", "text": "见发布说明页的「发布时间表」；后续版本的预发布日期将在对应版本的发布说明中公布。" }
+          },
+          {
+            "@type": "Question",
+            "name": "预发布沙盒里有什么？",
+            "acceptedAnswer": { "@type": "Answer", "text": "与普通沙盒一致，按需二选一：仅配置载荷（配置与设置，不含业务数据、文档与用户），或含数据载荷（源沙盒的完整拷贝，含用户与归属）。" }
+          },
+          {
+            "@type": "Question",
+            "name": "如何创建或刷新预发布沙盒？",
+            "acceptedAnswer": { "@type": "Answer", "text": "通过管理控制台的沙盒管理，或使用 CLI：ov vault sandbox create / ov vault sandbox refresh。两者均为异步操作，完成后会收到通知。" }
+          },
+          {
+            "@type": "Question",
+            "name": "沙盒能提前升到新版本吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "可以。目标版本高于源版本时，系统在复制后自动前向升级（clone + Upgrade）；目标版本低于源版本时会被拒绝，不会误降级。" }
+          },
+          {
+            "@type": "Question",
+            "name": "是否必须参与？",
+            "acceptedAnswer": { "@type": "Answer", "text": "否，预发布是自愿的。但我们建议在每次生产升级前，至少在沙盒上完成一轮关键流程验证。" }
+          },
+          {
+            "@type": "Question",
+            "name": "如何了解新功能？",
+            "acceptedAnswer": { "@type": "Answer", "text": "查看发布说明的「新功能」页，按产品线列出了每个版本交付的能力。" }
+          },
+          {
+            "@type": "Question",
+            "name": "预发布结束后发生什么？",
+            "acceptedAnswer": { "@type": "Answer", "text": "生产 Vault 由平台统一编排升级到新版本，现有文档与进行中的工作不受影响；客户不能自行选择跳过或延迟升级。" }
+          },
+          {
+            "@type": "Question",
+            "name": "遇到问题怎么办？",
+            "acceptedAnswer": { "@type": "Answer", "text": "先查看发布说明的「已知问题」页；未列出的问题欢迎通过 GitHub Issues 反馈。" }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/pre-release-faq.html#faq-en",
+        "inLanguage": "en-US",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a prerelease?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A prerelease is the validation window before a new version reaches general availability (GA): you can run the new version in a sandbox, validate existing configuration, workflows, and key processes, then wait for the orchestrated production upgrade." }
+          },
+          {
+            "@type": "Question",
+            "name": "When does the prerelease start?",
+            "acceptedAnswer": { "@type": "Answer", "text": "See the release schedule on the release notes page; prerelease dates for later versions will be published with each release." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is inside a prerelease sandbox?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The same as any sandbox — your choice of payload: configuration-only (configuration and settings, without business data, documents, or users), or with data (a full copy of the source sandbox, including users and ownership)." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I create or refresh a prerelease sandbox?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Use the sandbox management in the admin console, or the CLI: ov vault sandbox create / ov vault sandbox refresh. Both are asynchronous and notify you on completion." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a sandbox run a newer version than its source?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. When the target version is newer than the source, the system copies first and then upgrades forward (clone + Upgrade). Targets older than the source are rejected, so there is no accidental downgrade." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is participation required?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No, prerelease participation is voluntary. We do recommend running at least one round of key-workflow validation in a sandbox before every production upgrade." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I learn about new features?",
+            "acceptedAnswer": { "@type": "Answer", "text": "See the New Features page of the release notes, which lists the capabilities delivered in each release by product line." }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens after the prerelease?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Production Vaults are upgraded to the new version under platform orchestration. Existing documents and work in progress are unaffected; customers cannot choose to skip or delay the upgrade." }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I hit an issue?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Check the Known Issues page of the release notes first; for anything not listed, please report it via GitHub Issues." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--clock" aria-hidden="true"></i>
+          <span data-i18n="rel.pre.hero.eyebrow">发布说明 · 参考</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="rel.pre.hero.title">预发布 FAQ</h1>
+        <p class="page-hero-subtitle" data-i18n="rel.pre.hero.subtitle">新版本正式发布前如何验证？常见问题一次答完。</p>
+      </div>
+    </section>
+
+    <!-- Release sub-nav -->
+    <nav class="rel-nav" aria-label="发布说明导航">
+      <div class="container">
+        <div class="rel-nav__inner">
+          <span class="rel-nav__title" data-i18n="rel.nav.group">26R3</span>
+          <a class="rel-nav__link" href="release-26r3.html" data-i18n="rel.nav.overview">发布概览</a>
+          <a class="rel-nav__link" href="release-26r3-features.html" data-i18n="rel.nav.features">新功能</a>
+          <a class="rel-nav__link" href="release-26r3-fixes.html" data-i18n="rel.nav.fixes">已修复问题</a>
+          <a class="rel-nav__link" href="release-26r3-known-issues.html" data-i18n="rel.nav.issues">已知问题</a>
+          <span class="rel-nav__sep" aria-hidden="true"></span>
+          <a class="rel-nav__link" href="about-releases.html" data-i18n="rel.nav.about">关于版本发布</a>
+          <a class="rel-nav__link is-active" href="pre-release-faq.html" data-i18n="rel.nav.pre">预发布 FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 说明 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel.pre.intro.label">预发布</span>
+          <h2 class="section-title" data-i18n="rel.pre.intro.title">提前验证，安心升级</h2>
+          <p class="section-desc" data-i18n="rel.pre.intro.desc">预发布是新版本正式发布前的验证窗口：先在沙盒上运行新版本，确认既有配置与流程表现一致，再迎接生产升级。以下为常见问题。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-list" data-reveal>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q1">什么是预发布？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a1">预发布是新版本正式发布（GA）前的验证窗口：您可以在沙盒上先运行新版本，验证既有配置、工作流与关键流程的表现，再等待生产 Vault 统一升级。26R3.1 是 Vivarcus 的首个公开发布，后续版本的预发布时间表将在发布说明页随版本公布。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q2">预发布什么时候开始？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a2">见发布说明页的「发布时间表」；后续版本的预发布日期将在对应版本的发布说明中公布。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q3">预发布沙盒里有什么？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a3">与普通沙盒一致，按需二选一：仅配置载荷（配置与设置，不含业务数据、文档与用户），或含数据载荷（源沙盒的完整拷贝，含用户与归属）。预发布验证通常使用仅配置载荷即可。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q4">如何创建或刷新预发布沙盒？</h3>
+            <p class="rel-issue__body" data-i18n-html="rel.pre.a4">通过管理控制台的沙盒管理，或使用 CLI：<code>ov vault sandbox create</code> / <code>ov vault sandbox refresh</code>。两者均为异步操作，完成后会收到通知。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q5">沙盒能提前升到新版本吗？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a5">可以。目标版本高于源版本时，系统在复制后自动前向升级（clone + Upgrade）——这正是预发布验证所依赖的机制；目标版本低于源版本时会被拒绝，不会误降级。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q6">是否必须参与？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a6">否，预发布是自愿的。但我们建议在每次生产升级前，至少在沙盒上完成一轮关键流程验证。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q7">如何了解新功能？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a7">查看发布说明的「新功能」页，按产品线列出了每个版本交付的能力。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q8">预发布结束后发生什么？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a8">生产 Vault 由平台统一编排升级到新版本，现有文档与进行中的工作不受影响；客户不能自行选择跳过或延迟升级。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel.pre.q9">遇到问题怎么办？</h3>
+            <p class="rel-issue__body" data-i18n="rel.pre.a9">先查看发布说明的「已知问题」页；未列出的问题欢迎通过 GitHub Issues 反馈，我们会评估并纳入后续版本。</p>
+          </div>
+        </div>
+        <div class="rel-note rel-note--spaced" data-reveal data-i18n="rel.pre.note">预发布机制随发布体系持续演进，本页内容将随版本更新。</div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="rel26r3.overview.resources.title">想深入了解？</h2>
+          <p data-i18n="rel26r3.overview.resources.desc">查看帮助中心的操作文档，或申请试用体验 26R3.1。</p>
+          <div class="cta-actions">
+            <a href="release-26r3.html" class="btn btn-primary btn-lg">
+              <span data-i18n="rel.nav.overview">发布概览</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="about-releases.html" class="btn btn-outline btn-lg" data-i18n="rel.nav.about">关于版本发布</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
