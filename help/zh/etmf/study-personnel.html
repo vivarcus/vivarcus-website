@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="了解如何把人员加入研究团队、授予相关记录访问权限（URS）、按角色生成预期文档，以及 User Role Setup 记录的结构与维护。" />
+  <title>研究人员与用户角色设置 — eTMF 帮助 — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/help/zh/etmf/study-personnel.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/study-personnel.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/help/zh/etmf/study-personnel.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/help/zh/etmf/study-personnel.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/help/zh/etmf/study-personnel.html" />
+  <meta property="og:title" content="研究人员与用户角色设置 — Vivarcus" />
+  <meta property="og:description" content="了解如何把人员加入研究团队、授予相关记录访问权限（URS）、按角色生成预期文档，以及 User Role Setup 记录的结构与维护。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "研究人员与用户角色设置",
+    "description": "了解如何把人员加入研究团队、授予相关记录访问权限（URS）、按角色生成预期文档，以及 User Role Setup 记录的结构与维护。",
+    "inLanguage": "zh-CN",
+    "dateModified": "2026-08-15",
+    "mainEntityOfPage": "https://vivarcus.com/help/zh/etmf/study-personnel.html",
+    "publisher": {"@type": "Organization", "name": "Vivarcus", "url": "https://vivarcus.com/"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../../css/icons.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/help.css" />
+</head>
+<body class="help-page help-page--article">
+  <header class="help-header">
+  <div class="help-header__inner">
+    <a href="../../.." class="help-header__brand" aria-label="Vivarcus">
+      <span class="help-header__logo-dark">Vivar</span><span class="help-header__logo-accent">cus</span>
+    </a>
+    <span class="help-header__divider" aria-hidden="true">/</span>
+    <a href="../../../help/zh/index.html" class="help-header__help-label">帮助中心</a>
+    <div class="help-header__actions">
+      <a href="../../../trial.html" class="help-header__trial">试用申请</a>
+      <a href="../../../help/en/etmf/study-personnel.html" class="help-header__lang" hreflang="en-US">EN</a>
+    </div>
+  </div>
+</header>
+
+  <div class="help-layout">
+    <button class="help-sidebar-toggle" aria-expanded="false" aria-controls="help-sidebar">☰</button>
+    <aside class="help-sidebar" id="help-sidebar">
+      <p class="help-sidebar__title"><a href="index.html">eTMF 帮助</a></p>
+<nav class="help-sidebar__nav">
+<details class="help-sidebar__group">
+<summary>入门</summary>
+<ul>
+<li><a href="overview.html">什么是 eTMF 与 TMF 参考模型</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>eTMF</summary>
+<ul>
+<li><a href="tmf-homepage.html">TMF 主页</a></li>
+<li><a href="tmf-viewer.html">TMF 查看器</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>研究信息</summary>
+<ul>
+<li><a href="study-hierarchy.html">研究</a></li>
+<li><a href="study-hierarchy.html#创建研究国家地区">研究国家/地区</a></li>
+<li><a href="study-hierarchy.html#创建研究地点">研究地点</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>文档管理</summary>
+<ul>
+<li><a href="upload-documents.html">上传与匹配</a></li>
+<li><a href="review-workflow.html">审阅与批准</a></li>
+<li><a href="quality-issues.html">质量问题</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>计划</summary>
+<ul>
+<li><a href="edl.html">预期文档列表</a></li>
+<li><a href="edl.html#预期文档条目edl-item">预期文档</a></li>
+<li><a href="milestones.html">里程碑</a></li>
+<li><a href="clinical-tasks.html">临床任务</a></li>
+</ul></details>
+<details class="help-sidebar__group" open>
+<summary>管理员设置</summary>
+<ul>
+<li><a href="study-personnel.html" class="active">研究人员</a></li>
+<li><a href="study-personnel.html#用户角色设置user-role-setup" class="active">用户角色设置</a></li>
+<li><a href="document-types.html">文档类型</a></li>
+<li><a href="template-edls.html">预期文档列表的模板</a></li>
+<li><a href="template-edls.html#预期文档的模板edl-item-template">预期文档的模板</a></li>
+<li><a href="template-milestones.html#模板里程碑主集master-set">模板里程碑主集</a></li>
+<li><a href="template-milestones.html#里程碑模板集milestone-set">里程碑模板集</a></li>
+<li><a href="template-milestones.html#里程碑模板milestone">里程碑模板</a></li>
+<li><a href="models-artifacts.html">参考模型</a></li>
+<li><a href="models-artifacts.html#工件artifact">工件</a></li>
+<li><a href="template-milestones.html#里程碑依赖关系模板dependency">里程碑依赖关系模板</a></li>
+<li><a href="template-tasks.html">模板任务</a></li>
+</ul></details>
+</nav>
+    </aside>
+
+    <main class="help-main help-main--article">
+      <nav class="help-breadcrumbs" aria-label="breadcrumb">
+        <a href="../../../help/zh/index.html">帮助中心</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <a href="index.html">eTMF 帮助</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <span>研究人员与用户角色设置</span>
+      </nav>
+
+      <article class="help-article">
+        <h1>研究人员与用户角色设置</h1>
+        <p class="help-article__meta">更新于 2026-08-15</p>
+        <div class="help-article__body">
+          <h2 id="研究人员study-personnel">研究人员（Study Personnel）</h2>
+<p><strong>Study Person</strong>（研究人员）把人员（Person）挂到研究（及国家/中心）上，并指定其<strong>研究团队角色（Study Team Role）</strong>与起止日期。研究团队是研究联系人的来源，也是「按角色生成预期文档」的依据。</p>
+<p>在 <strong>Admin Setup → Study Personnel</strong> 创建：</p>
+<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>Person</strong></td><td>人员（必填），可从全局目录选择或内联创建</td></tr><tr><td><strong>Full Name</strong></td><td>自动带出</td></tr><tr><td><strong>Study</strong></td><td>所属研究（必填）</td></tr><tr><td><strong>Study Country / Study Site</strong></td><td>按研究→国家→中心级联选择</td></tr><tr><td><strong>Study Team Role</strong></td><td>团队角色（必填），如 Study Manager、Contributor、CRA 等</td></tr><tr><td><strong>Grant Access to Related Records</strong></td><td>勾选后系统为该人员创建 User Role Setup 记录，授予相关记录访问权</td></tr><tr><td><strong>Start / End Date</strong></td><td>任职起止日期</td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">注意</p><p>勾选 <strong>Grant Access to Related Records</strong> 是让团队成员实际打开研究数据的关键一步；未勾选时人员仅作为联系人登记，不获得记录访问权限。</p></div>
+<p>人员角色变化会<strong>按角色生成预期文档</strong>：详情页 <strong>Expected Documents</strong> 区展示基于其角色生成的 EDL Item。常用动作：</p>
+<div class="help-table-wrap"><table><thead><tr><th>动作</th><th>用途</th></tr></thead><tbody><tr><td><strong>Create Study Contact</strong>（含 In Bulk）</td><td>快速创建研究联系人</td></tr><tr><td><strong>Resend Study Invitation</strong>（含 In Bulk）</td><td>重发研究邀请通知</td></tr><tr><td><strong>Make Inactive</strong></td><td>人员退出团队（保留历史记录）</td></tr><tr><td><strong>Retrigger EDL Item Creation</strong></td><td>角色变化后重新生成预期文档条目</td></tr></tbody></table></div>
+<h2 id="用户角色设置user-role-setup">用户角色设置（User Role Setup）</h2>
+<p><strong>User Role Setup（URS）</strong> 是系统管理的<strong>记录级安全</strong>对象：一条记录代表「某用户在某研究/国家/中心上下文中拥有某角色」的授权。它通常<strong>由系统自动生成</strong>——例如勾选研究人员的 Grant Access to Related Records 时；管理员在 <strong>Admin Setup → User Role Setup</strong> 中查看与维护。</p>
+<div class="help-table-wrap"><table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><strong>User</strong></td><td>被授权用户</td></tr><tr><td><strong>Role</strong></td><td>授予的角色（如 study_manager、contributor）</td></tr><tr><td><strong>Study / Study Country / Study Site</strong></td><td>授权范围，级联限定</td></tr><tr><td><strong>Blinding</strong></td><td>设盲范围（如 Blinded / Unblinded）</td></tr><tr><td><strong>Name</strong></td><td>系统自动编号：<code>DAC-{######}</code></td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">注意</p><p>URS 是 Vault 记录级安全（Dynamic Access Control）的基础。修改团队访问权限时，优先调整 Study Person 的 Grant Access 与角色，而不是手工编辑 URS 记录。</p></div>
+<h2 id="常见问题">常见问题</h2>
+<div class="help-table-wrap"><table><thead><tr><th>现象</th><th>处理建议</th></tr></thead><tbody><tr><td>团队成员看不到研究数据</td><td>确认 Study Person 已勾选 <strong>Grant Access to Related Records</strong>，且团队角色与研究 Sharing 匹配</td></tr><tr><td>Expected Documents 区为空</td><td>角色未触发预期文档生成，可执行 <strong>Retrigger EDL Item Creation</strong></td></tr><tr><td>URS 记录异常</td><td>多数场景由系统维护；手工修改前先确认 Grant Access 与角色设置是否正确</td></tr></tbody></table></div>
+<h2 id="所需权限与角色">所需权限与角色</h2>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>对象</td><td>Study Person：Create、Read、Edit</td><td>维护研究团队与联系人</td></tr><tr><td>对象动作</td><td>Study Person：<strong>Create Study Contact</strong>、<strong>Resend Study Invitation</strong>、<strong>Retrigger EDL Item Creation</strong></td><td>联系人、邀请与预期文档生成</td></tr><tr><td>对象</td><td>User Role Setup：Read（Create、Edit）</td><td>查看（管理）记录级授权</td></tr></tbody></table></div>
+<p><strong>Clinical Application Administrator</strong> 可完整管理研究人员与 URS；<strong>Document Contributor</strong> 对研究人员只读。</p>
+        </div>
+      </article>
+
+      <section class="help-related"><h2>相关文章</h2><ul><li><a href="study-hierarchy.html">研究层级：创建研究、国家与中心</a></li><li><a href="edl.html">EDL 与预期文档（Expected Documents）</a></li><li><a href="overview.html">什么是 eTMF 与 TMF 参考模型</a></li></ul></section>
+    </main>
+
+    <aside class="help-toc" aria-label="本页目录">
+      <p class="help-toc__title">本页目录</p>
+      <nav class="help-toc__nav">
+        <a href="#研究人员study-personnel">研究人员（Study Personnel）</a>
+<a href="#用户角色设置user-role-setup">用户角色设置（User Role Setup）</a>
+<a href="#常见问题">常见问题</a>
+<a href="#所需权限与角色">所需权限与角色</a>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="help-footer">
+  <div class="help-footer__inner">
+    <span class="help-footer__copyright">© 2026 Vivarcus</span>
+    <nav class="help-footer__nav">
+      <a href="../../../trial.html">试用申请</a>
+      <a href="../../..">返回官网</a>
+    </nav>
+  </div>
+</footer>
+  <script src="../../../js/help.js"></script>
+</body>
+</html>

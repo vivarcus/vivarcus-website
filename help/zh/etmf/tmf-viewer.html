@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习 Create Study Binders、自动归档与 View Model 切换。" />
+  <title>TMF Viewer 与 Master File Binder — eTMF 帮助 — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/help/zh/etmf/tmf-viewer.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/tmf-viewer.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/help/zh/etmf/tmf-viewer.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/help/zh/etmf/tmf-viewer.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/help/zh/etmf/tmf-viewer.html" />
+  <meta property="og:title" content="TMF Viewer 与 Master File Binder — Vivarcus" />
+  <meta property="og:description" content="理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习 Create Study Binders、自动归档与 View Model 切换。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TMF Viewer 与 Master File Binder",
+    "description": "理解 Binder（物理归档）与 TMF Viewer（按参考模型的虚拟浏览）两套能力的分工，学习 Create Study Binders、自动归档与 View Model 切换。",
+    "inLanguage": "zh-CN",
+    "dateModified": "2026-08-15",
+    "mainEntityOfPage": "https://vivarcus.com/help/zh/etmf/tmf-viewer.html",
+    "publisher": {"@type": "Organization", "name": "Vivarcus", "url": "https://vivarcus.com/"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../../css/icons.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/help.css" />
+</head>
+<body class="help-page help-page--article">
+  <header class="help-header">
+  <div class="help-header__inner">
+    <a href="../../.." class="help-header__brand" aria-label="Vivarcus">
+      <span class="help-header__logo-dark">Vivar</span><span class="help-header__logo-accent">cus</span>
+    </a>
+    <span class="help-header__divider" aria-hidden="true">/</span>
+    <a href="../../../help/zh/index.html" class="help-header__help-label">帮助中心</a>
+    <div class="help-header__actions">
+      <a href="../../../trial.html" class="help-header__trial">试用申请</a>
+      <a href="../../../help/en/etmf/tmf-viewer.html" class="help-header__lang" hreflang="en-US">EN</a>
+    </div>
+  </div>
+</header>
+
+  <div class="help-layout">
+    <button class="help-sidebar-toggle" aria-expanded="false" aria-controls="help-sidebar">☰</button>
+    <aside class="help-sidebar" id="help-sidebar">
+      <p class="help-sidebar__title"><a href="index.html">eTMF 帮助</a></p>
+<nav class="help-sidebar__nav">
+<details class="help-sidebar__group">
+<summary>入门</summary>
+<ul>
+<li><a href="overview.html">什么是 eTMF 与 TMF 参考模型</a></li>
+</ul></details>
+<details class="help-sidebar__group" open>
+<summary>eTMF</summary>
+<ul>
+<li><a href="tmf-homepage.html">TMF 主页</a></li>
+<li><a href="tmf-viewer.html" class="active">TMF 查看器</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>研究信息</summary>
+<ul>
+<li><a href="study-hierarchy.html">研究</a></li>
+<li><a href="study-hierarchy.html#创建研究国家地区">研究国家/地区</a></li>
+<li><a href="study-hierarchy.html#创建研究地点">研究地点</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>文档管理</summary>
+<ul>
+<li><a href="upload-documents.html">上传与匹配</a></li>
+<li><a href="review-workflow.html">审阅与批准</a></li>
+<li><a href="quality-issues.html">质量问题</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>计划</summary>
+<ul>
+<li><a href="edl.html">预期文档列表</a></li>
+<li><a href="edl.html#预期文档条目edl-item">预期文档</a></li>
+<li><a href="milestones.html">里程碑</a></li>
+<li><a href="clinical-tasks.html">临床任务</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>管理员设置</summary>
+<ul>
+<li><a href="study-personnel.html">研究人员</a></li>
+<li><a href="study-personnel.html#用户角色设置user-role-setup">用户角色设置</a></li>
+<li><a href="document-types.html">文档类型</a></li>
+<li><a href="template-edls.html">预期文档列表的模板</a></li>
+<li><a href="template-edls.html#预期文档的模板edl-item-template">预期文档的模板</a></li>
+<li><a href="template-milestones.html#模板里程碑主集master-set">模板里程碑主集</a></li>
+<li><a href="template-milestones.html#里程碑模板集milestone-set">里程碑模板集</a></li>
+<li><a href="template-milestones.html#里程碑模板milestone">里程碑模板</a></li>
+<li><a href="models-artifacts.html">参考模型</a></li>
+<li><a href="models-artifacts.html#工件artifact">工件</a></li>
+<li><a href="template-milestones.html#里程碑依赖关系模板dependency">里程碑依赖关系模板</a></li>
+<li><a href="template-tasks.html">模板任务</a></li>
+</ul></details>
+</nav>
+    </aside>
+
+    <main class="help-main help-main--article">
+      <nav class="help-breadcrumbs" aria-label="breadcrumb">
+        <a href="../../../help/zh/index.html">帮助中心</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <a href="index.html">eTMF 帮助</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <span>TMF Viewer 与 Master File Binder</span>
+      </nav>
+
+      <article class="help-article">
+        <h1>TMF Viewer 与 Master File Binder</h1>
+        <p class="help-article__meta">更新于 2026-08-15</p>
+        <div class="help-article__body">
+          <h2 id="binder-与-viewer-的分工">Binder 与 Viewer 的分工</h2>
+<p>eTMF 提供两套「按参考模型找文档」的能力，分工不同：</p>
+<div class="help-table-wrap"><table><thead><tr><th></th><th>Binder（活页夹）</th><th>TMF Viewer（查看器）</th></tr></thead><tbody><tr><td>定位</td><td>Master File 的<strong>物理归档容器</strong></td><td>按 DocType → Artifact 映射计算的<strong>虚拟视图</strong></td></tr><tr><td>生成</td><td>依赖 <strong>Create Study Binders</strong>；支持 Auto-Filing / 手工挂链</td><td><strong>不依赖</strong> Binder 是否存在</td></tr><tr><td>内容</td><td>Section 树 → 文档链接（含 Filing Origin）</td><td>Artifact 树 + 文档列表，按 Study 范围计算</td></tr></tbody></table></div>
+<p>手工移入/移出 Binder <strong>不会</strong>改变 Viewer 中的位置；Viewer 的位置只跟文档分类与 Study 范围有关。</p>
+<h2 id="创建研究活页夹create-study-binders">创建研究活页夹（Create Study Binders）</h2>
+<ol><li>打开研究 → <strong>All Actions → Create Study Binders</strong>。<li><strong>Model</strong> 选择参考模型（如 <strong>TMF RM v3.0</strong>）；<strong>Filing Levels</strong> 选择研究级、国家/地区级和研究机构级主文件，确认。<li>创建后可见 <strong>Study Level File</strong>、<strong>Country Level File</strong>、<strong>Site Level File</strong>（对应已建的国家/中心）。</li></li></li></ol>
+<div class="help-note"><p class="help-note__label">注意</p><p>已有同层级 Binder 时重复创建是幂等的（可能计为 skipped）。</p></div>
+<h2 id="自动归档auto-filing">自动归档（Auto-Filing）</h2>
+<p>已批准且分类已映射到当前 Model 的文档，会以 <strong>Filing Origin = Auto-filed</strong> 挂到对应 Section 节点：</p>
+<ul><li>国家/中心级文档只落在对应层级 Binder，<strong>不会</strong>回退到 Study Level。<li>树中暂无文档时，等待几秒后刷新；仍没有则执行 <strong>Refresh Auto-Filing</strong>。<li>重复刷新<strong>不会</strong>产生重复节点。</li></li></li></ul>
+<h2 id="使用-tmf-viewer">使用 TMF Viewer</h2>
+<ol><li>顶部导航 → <strong>TMF Viewer</strong>。<li><strong>Study</strong> 选研究；<strong>View Model</strong> 选参考模型（宜与 Binder 所用 Model 一致）。<li>左侧 Artifact 树展开定位文档，右侧列表点击进入文档详情。<li>选择 Study Country / Study Site 可裁剪范围；<strong>Collapse All / Expand All</strong> 控制树展开。</li></li></li></li></ol>
+<div class="help-note"><p class="help-note__label">注意</p><p>Viewer 左侧树为空时：确认已选 Study；文档须具备已映射到当前 View Model 的 Classification。</p></div>
+<h2 id="常见问题">常见问题</h2>
+<div class="help-table-wrap"><table><thead><tr><th>现象</th><th>处理建议</th></tr></thead><tbody><tr><td>Binder 树中看不到已批准文档</td><td>确认已创建对应层级 Binder；Model 与 DocType 的 Artifact 映射一致；等待 Job 或执行 Refresh Auto-Filing</td></tr><tr><td>Refresh Auto-Filing 无变化</td><td>确认文档 Study / Country / Site 与 Binder 层级精确匹配；Classification 已映射到该 Binder 的 Model</td></tr><tr><td>Viewer 看不到刚上传的文档</td><td>确认 Document Type / Classification 已映射到 TMF RM，且文档 Study 字段正确</td></tr></tbody></table></div>
+<h2 id="所需权限与角色">所需权限与角色</h2>
+<div class="help-table-wrap"><table><thead><tr><th>类型</th><th>权限</th><th>作用</th></tr></thead><tbody><tr><td>Tab</td><td>TMF Viewer：View</td><td>访问 TMF Viewer</td></tr><tr><td>对象</td><td>Document：Read</td><td>浏览并打开文档</td></tr><tr><td>对象动作</td><td>Study：<strong>Create Study Binders</strong></td><td>生成 Master File Binder</td></tr><tr><td>对象动作</td><td>Binder：<strong>Refresh Auto-Filing</strong></td><td>手动触发自动归档</td></tr></tbody></table></div>
+<p><strong>External Inspector</strong> 等只读角色可完整使用 Viewer（虚拟浏览不依赖 Binder）；创建 Binder 与刷新归档需要编辑类权限。</p>
+        </div>
+      </article>
+
+      <section class="help-related"><h2>相关文章</h2><ul><li><a href="upload-documents.html">上传文档与文档匹配</a></li><li><a href="review-workflow.html">文档审阅、批准与升版</a></li><li><a href="overview.html">什么是 eTMF 与 TMF 参考模型</a></li></ul></section>
+    </main>
+
+    <aside class="help-toc" aria-label="本页目录">
+      <p class="help-toc__title">本页目录</p>
+      <nav class="help-toc__nav">
+        <a href="#binder-与-viewer-的分工">Binder 与 Viewer 的分工</a>
+<a href="#创建研究活页夹create-study-binders">创建研究活页夹（Create Study Binders）</a>
+<a href="#自动归档auto-filing">自动归档（Auto-Filing）</a>
+<a href="#使用-tmf-viewer">使用 TMF Viewer</a>
+<a href="#常见问题">常见问题</a>
+<a href="#所需权限与角色">所需权限与角色</a>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="help-footer">
+  <div class="help-footer__inner">
+    <span class="help-footer__copyright">© 2026 Vivarcus</span>
+    <nav class="help-footer__nav">
+      <a href="../../../trial.html">试用申请</a>
+      <a href="../../..">返回官网</a>
+    </nav>
+  </div>
+</footer>
+  <script src="../../../js/help.js"></script>
+</body>
+</html>

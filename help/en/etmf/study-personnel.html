@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to add people to the study team, grant access to related records (URS), generate expected documents by role, and how User Role Setup records are structured and maintained." />
+  <title>Study Personnel & User Role Setup — eTMF Help — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/help/en/etmf/study-personnel.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/help/zh/etmf/study-personnel.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/help/en/etmf/study-personnel.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/help/zh/etmf/study-personnel.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/help/en/etmf/study-personnel.html" />
+  <meta property="og:title" content="Study Personnel & User Role Setup — Vivarcus" />
+  <meta property="og:description" content="Learn how to add people to the study team, grant access to related records (URS), generate expected documents by role, and how User Role Setup records are structured and maintained." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Study Personnel & User Role Setup",
+    "description": "Learn how to add people to the study team, grant access to related records (URS), generate expected documents by role, and how User Role Setup records are structured and maintained.",
+    "inLanguage": "en-US",
+    "dateModified": "2026-08-15",
+    "mainEntityOfPage": "https://vivarcus.com/help/en/etmf/study-personnel.html",
+    "publisher": {"@type": "Organization", "name": "Vivarcus", "url": "https://vivarcus.com/"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../../css/icons.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/help.css" />
+</head>
+<body class="help-page help-page--article">
+  <header class="help-header">
+  <div class="help-header__inner">
+    <a href="../../..?lang=en" class="help-header__brand" aria-label="Vivarcus">
+      <span class="help-header__logo-dark">Vivar</span><span class="help-header__logo-accent">cus</span>
+    </a>
+    <span class="help-header__divider" aria-hidden="true">/</span>
+    <a href="../../../help/en/index.html" class="help-header__help-label">Help Center</a>
+    <div class="help-header__actions">
+      <a href="../../../trial.html?lang=en" class="help-header__trial">Request Trial</a>
+      <a href="../../../help/zh/etmf/study-personnel.html" class="help-header__lang" hreflang="zh-CN">中文</a>
+    </div>
+  </div>
+</header>
+
+  <div class="help-layout">
+    <button class="help-sidebar-toggle" aria-expanded="false" aria-controls="help-sidebar">☰</button>
+    <aside class="help-sidebar" id="help-sidebar">
+      <p class="help-sidebar__title"><a href="index.html">eTMF Help</a></p>
+<nav class="help-sidebar__nav">
+<details class="help-sidebar__group">
+<summary>Get Started</summary>
+<ul>
+<li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>eTMF</summary>
+<ul>
+<li><a href="tmf-homepage.html">TMF Homepage</a></li>
+<li><a href="tmf-viewer.html">TMF Viewer</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Study Info</summary>
+<ul>
+<li><a href="study-hierarchy.html">Studies</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-country">Study Countries</a></li>
+<li><a href="study-hierarchy.html#creating-a-study-site">Study Sites</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Document Management</summary>
+<ul>
+<li><a href="upload-documents.html">Upload &amp; Matching</a></li>
+<li><a href="review-workflow.html">Review &amp; Approval</a></li>
+<li><a href="quality-issues.html">Quality Issues</a></li>
+</ul></details>
+<details class="help-sidebar__group">
+<summary>Planning</summary>
+<ul>
+<li><a href="edl.html">Expected Document Lists</a></li>
+<li><a href="edl.html#expected-documents-edl-items">Expected Documents</a></li>
+<li><a href="milestones.html">Milestones</a></li>
+<li><a href="clinical-tasks.html">Clinical Tasks</a></li>
+</ul></details>
+<details class="help-sidebar__group" open>
+<summary>Admin Setup</summary>
+<ul>
+<li><a href="study-personnel.html" class="active">Study Personnel</a></li>
+<li><a href="study-personnel.html#user-role-setup" class="active">User Role Setup</a></li>
+<li><a href="document-types.html">Document Types</a></li>
+<li><a href="template-edls.html">Template Expected Document Lists</a></li>
+<li><a href="template-edls.html#template-expected-documents-edl-item-templates">Template Expected Documents</a></li>
+<li><a href="template-milestones.html#template-milestone-master-sets">Template Milestone Master Sets</a></li>
+<li><a href="template-milestones.html#template-milestone-sets">Template Milestone Sets</a></li>
+<li><a href="template-milestones.html#template-milestones">Template Milestones</a></li>
+<li><a href="models-artifacts.html">Models</a></li>
+<li><a href="models-artifacts.html#artifacts">Artifacts</a></li>
+<li><a href="template-milestones.html#template-milestone-dependencies">Template Milestone Dependencies</a></li>
+<li><a href="template-tasks.html">Template Tasks</a></li>
+</ul></details>
+</nav>
+    </aside>
+
+    <main class="help-main help-main--article">
+      <nav class="help-breadcrumbs" aria-label="breadcrumb">
+        <a href="../../../help/en/index.html">Help Center</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <a href="index.html">eTMF Help</a>
+        <span class="help-breadcrumbs__sep">/</span>
+        <span>Study Personnel & User Role Setup</span>
+      </nav>
+
+      <article class="help-article">
+        <h1>Study Personnel & User Role Setup</h1>
+        <p class="help-article__meta">Last updated 2026-08-15</p>
+        <div class="help-article__body">
+          <h2 id="study-personnel">Study Personnel</h2>
+<p>A <strong>Study Person</strong> record attaches a Person to a study (and optionally a country/site), with a <strong>Study Team Role</strong> and start/end dates. The study team is the source of study contacts and drives role-based expected-document generation.</p>
+<p>Create from <strong>Admin Setup → Study Personnel</strong>:</p>
+<div class="help-table-wrap"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Person</strong></td><td>The person (required); pick from the global directory or create inline</td></tr><tr><td><strong>Full Name</strong></td><td>Filled in automatically</td></tr><tr><td><strong>Study</strong></td><td>The owning study (required)</td></tr><tr><td><strong>Study Country / Study Site</strong></td><td>Cascading study → country → site selection</td></tr><tr><td><strong>Study Team Role</strong></td><td>Team role (required), e.g. Study Manager, Contributor, CRA</td></tr><tr><td><strong>Grant Access to Related Records</strong></td><td>When checked, the system creates a User Role Setup record granting access to related records</td></tr><tr><td><strong>Start / End Date</strong></td><td>Assignment dates</td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">Note</p><p>Checking <strong>Grant Access to Related Records</strong> is the key step that lets team members actually open study data; without it the person is registered as a contact only.</p></div>
+<p>Role changes drive role-based expected documents: the <strong>Expected Documents</strong> section on the detail page shows the EDL Items generated for that role. Common actions:</p>
+<div class="help-table-wrap"><table><thead><tr><th>Action</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Create Study Contact</strong> (and In Bulk)</td><td>Quickly create study contacts</td></tr><tr><td><strong>Resend Study Invitation</strong> (and In Bulk)</td><td>Resend the study invitation</td></tr><tr><td><strong>Make Inactive</strong></td><td>Remove the person from the team (history kept)</td></tr><tr><td><strong>Retrigger EDL Item Creation</strong></td><td>Regenerate expected documents after a role change</td></tr></tbody></table></div>
+<h2 id="user-role-setup">User Role Setup</h2>
+<p><strong>User Role Setup (URS)</strong> is a system-managed <strong>record-level security</strong> object: one record represents &quot;this user has this role in this study/country/site context&quot;. It is usually <strong>created automatically</strong> — for example when Grant Access to Related Records is checked on a Study Person; administrators review and maintain it under <strong>Admin Setup → User Role Setup</strong>.</p>
+<div class="help-table-wrap"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody><tr><td><strong>User</strong></td><td>The granted user</td></tr><tr><td><strong>Role</strong></td><td>The granted role (e.g. study_manager, contributor)</td></tr><tr><td><strong>Study / Study Country / Study Site</strong></td><td>The scope, cascading</td></tr><tr><td><strong>Blinding</strong></td><td>Blinding scope (e.g. Blinded / Unblinded)</td></tr><tr><td><strong>Name</strong></td><td>Auto-numbered: <code>DAC-{######}</code></td></tr></tbody></table></div>
+<div class="help-note"><p class="help-note__label">Note</p><p>URS underpins Vault record-level security (dynamic access control). To change team access, adjust the Study Person&#x27;s Grant Access and role rather than hand-editing URS records.</p></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Symptom</th><th>Suggestion</th></tr></thead><tbody><tr><td>Team member can&#x27;t see study data</td><td>Confirm <strong>Grant Access to Related Records</strong> is checked and the team role matches study sharing</td></tr><tr><td>Expected Documents section is empty</td><td>The role hasn&#x27;t triggered generation; run <strong>Retrigger EDL Item Creation</strong></td></tr><tr><td>Odd URS records</td><td>They are system-maintained in most cases; verify Grant Access and role setup before editing manually</td></tr></tbody></table></div>
+<h2 id="required-permissions-roles">Required Permissions &amp; Roles</h2>
+<div class="help-table-wrap"><table><thead><tr><th>Type</th><th>Permission</th><th>Controls</th></tr></thead><tbody><tr><td>Object</td><td>Study Person: Create, Read, Edit</td><td>Maintaining the study team and contacts</td></tr><tr><td>Object actions</td><td>Study Person: <strong>Create Study Contact</strong>, <strong>Resend Study Invitation</strong>, <strong>Retrigger EDL Item Creation</strong></td><td>Contacts, invitations, expected-document generation</td></tr><tr><td>Object</td><td>User Role Setup: Read (Create, Edit)</td><td>Viewing (managing) record-level grants</td></tr></tbody></table></div>
+<p><strong>Clinical Application Administrator</strong> fully manages Study Personnel and URS; <strong>Document Contributor</strong> is read-only on Study Personnel.</p>
+        </div>
+      </article>
+
+      <section class="help-related"><h2>Related articles</h2><ul><li><a href="study-hierarchy.html">Study Hierarchy: Creating Studies, Countries &amp; Sites</a></li><li><a href="edl.html">EDL &amp; Expected Documents</a></li><li><a href="overview.html">What Is eTMF &amp; the TMF Reference Model</a></li></ul></section>
+    </main>
+
+    <aside class="help-toc" aria-label="On this page">
+      <p class="help-toc__title">On this page</p>
+      <nav class="help-toc__nav">
+        <a href="#study-personnel">Study Personnel</a>
+<a href="#user-role-setup">User Role Setup</a>
+<a href="#troubleshooting">Troubleshooting</a>
+<a href="#required-permissions-roles">Required Permissions &amp; Roles</a>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="help-footer">
+  <div class="help-footer__inner">
+    <span class="help-footer__copyright">© 2026 Vivarcus</span>
+    <nav class="help-footer__nav">
+      <a href="../../../trial.html?lang=en">Request Trial</a>
+      <a href="../../..?lang=en">Back to website</a>
+    </nav>
+  </div>
+</footer>
+  <script src="../../../js/help.js"></script>
+</body>
+</html>

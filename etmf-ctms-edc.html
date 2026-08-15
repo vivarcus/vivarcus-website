@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="cmp.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="cmp.meta.desc" content="eTMF、CTMS、EDC 有什么区别？本指南用一张对比表讲清三个临床试验系统的职责、数据与协作关系，并回答先上哪个、能否一体化。" />
+  <title>eTMF vs CTMS vs EDC：三个临床试验系统有什么区别 — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/etmf-ctms-edc.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/etmf-ctms-edc.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/etmf-ctms-edc.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/etmf-ctms-edc.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/etmf-ctms-edc.html" />
+  <meta property="og:title" data-i18n-og="cmp.meta.title" content="eTMF vs CTMS vs EDC：三个临床试验系统有什么区别 — Vivarcus" />
+  <meta property="og:description" data-i18n-og="cmp.meta.desc" content="eTMF、CTMS、EDC 有什么区别？本指南用一张对比表讲清三个临床试验系统的职责、数据与协作关系，并回答先上哪个、能否一体化。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="eTMF vs CTMS vs EDC 对比指南" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="cmp.meta.title" content="eTMF vs CTMS vs EDC：三个临床试验系统有什么区别 — Vivarcus" />
+  <meta name="twitter:description" data-i18n-og="cmp.meta.desc" content="eTMF、CTMS、EDC 有什么区别？本指南用一张对比表讲清三个临床试验系统的职责、数据与协作关系，并回答先上哪个、能否一体化。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "eTMF vs CTMS vs EDC：三个临床试验系统有什么区别",
+        "description": "用一张对比表讲清 eTMF、CTMS、EDC 三个临床试验系统的职责、数据与协作关系。",
+        "url": "https://vivarcus.com/etmf-ctms-edc.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "eTMF vs CTMS vs EDC", "item": "https://vivarcus.com/etmf-ctms-edc.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/etmf-ctms-edc.html#faq-zh",
+        "inLanguage": "zh-CN",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "eTMF、CTMS、EDC 三者有什么区别？",
+            "acceptedAnswer": { "@type": "Answer", "text": "一句话：eTMF 管「证据」——试验关键文件（方案、批件、签名记录）的受控归档；CTMS 管「进度」——站点、入组、里程碑等运营状态；EDC 管「数据」——受试者病例数据的采集与清洗。三者职责互补，不互相替代。" }
+          },
+          {
+            "@type": "Question",
+            "name": "可以用一个系统同时管理 eTMF、CTMS 和 EDC 吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "分两种。一体化平台（如 Veeva Vault 或 Vivarcus）在同一技术底座上提供多个应用，数据天然互通，但各应用仍分工明确；而想用「一个模块」同时当 TMF、CTMS、EDC 用则不可行——三者数据结构、验证要求和用户角色差异太大。实践中更常见的是「CTMS + eTMF 一体化 + 与 EDC 集成」。" }
+          },
+          {
+            "@type": "Question",
+            "name": "先上哪个系统？",
+            "acceptedAnswer": { "@type": "Answer", "text": "没有标准答案，取决于最大痛点：稽查风险高、文件乱 → 先上 eTMF；多中心运营失控、汇报痛苦 → 先上 CTMS；试验尚未数字化 → 先上 EDC。多数团队的实际路径是 EDC 最先（试验立项即需要），随后 eTMF 或 CTMS。" }
+          },
+          {
+            "@type": "Question",
+            "name": "EDC 的入组数据会自动同步到 CTMS 吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "取决于系统是否集成。独立采购的 EDC 和 CTMS 之间常靠人工导出或定时 API 同步；一体化平台或预置连接器可实现自动同步，让 CTMS 的入组曲线始终与 EDC 的受试者数据一致，避免两套数字对不上。" }
+          },
+          {
+            "@type": "Question",
+            "name": "CTMS 里的里程碑和 eTMF 里的文档是什么关系？",
+            "acceptedAnswer": { "@type": "Answer", "text": "它们是同一业务事件的两面：CTMS 记录「里程碑计划何时完成」，eTMF 归档「完成它的证据文档」。例如站点启动里程碑对应伦理批件、合同等 TMF 文件。理想状态下两者关联——里程碑完成后系统提示并检查对应文档是否齐全（预期文档 / Expected Documents 机制）。" }
+          },
+          {
+            "@type": "Question",
+            "name": "三个系统都用开源或低成本方案可行吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "可行。EDC 领域已有成熟开源方案（如 REDCap）；eTMF 与 CTMS 的开源选项长期空白，Vivarcus 以开源核心补上了这两块，并提供托管部署选项，让中小 Biotech 和本土 CRO 不必支付商业系统的天价许可费。" }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/etmf-ctms-edc.html#faq-en",
+        "inLanguage": "en-US",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between eTMF, CTMS, and EDC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In one sentence: the eTMF manages evidence — controlled archiving of essential trial documents (protocols, approvals, signature records); the CTMS manages progress — operational status such as sites, enrollment, and milestones; the EDC manages data — collection and cleaning of subject clinical data. The three roles are complementary, not interchangeable." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can one system handle eTMF, CTMS, and EDC together?",
+            "acceptedAnswer": { "@type": "Answer", "text": "There are two scenarios. A unified platform (such as Veeva Vault or Vivarcus) provides multiple applications on one technical foundation with naturally connected data, but each application still has a distinct job. Using a single module as TMF, CTMS, and EDC at once does not work — the data structures, validation requirements, and user roles differ too much. In practice, unified CTMS + eTMF with an EDC integration is the common pattern." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which system should we implement first?",
+            "acceptedAnswer": { "@type": "Answer", "text": "There is no universal answer — it depends on the biggest pain point: high inspection risk and messy documents point to the eTMF first; multi-center operational chaos and painful reporting point to the CTMS; an undigitalized trial points to the EDC. Most teams adopt an EDC first (needed from study start), followed by an eTMF or CTMS." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does EDC enrollment data sync to the CTMS automatically?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It depends on integration. Independently purchased EDC and CTMS systems often rely on manual exports or scheduled API syncs; a unified platform or prebuilt connectors enable automatic sync so the CTMS enrollment curves always match the EDC subject data." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do CTMS milestones relate to eTMF documents?",
+            "acceptedAnswer": { "@type": "Answer", "text": "They are two sides of the same business event: the CTMS records when a milestone is planned and completed, while the eTMF archives the documents that evidence it. A site activation milestone, for example, corresponds to ethics approvals, contracts, and other TMF documents. Ideally the two are linked — when a milestone completes, the system prompts and checks that the corresponding documents are filed (the Expected Documents mechanism)." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is an all open-source or low-cost stack viable for the three systems?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The EDC space already has mature open-source options (such as REDCap). Open-source eTMF and CTMS have long been gaps; Vivarcus fills them with an open-source core plus a managed hosting option, so small biotechs and regional CROs can avoid steep commercial license fees." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--arrow-left-right" aria-hidden="true"></i>
+          <span data-i18n="cmp.hero.eyebrow">系统对比指南</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="cmp.hero.title">eTMF vs CTMS vs EDC</h1>
+        <p class="page-hero-subtitle" data-i18n="cmp.hero.subtitle">三个临床试验系统，各管一件事：证据、进度、数据。一张表讲清区别，再回答「先上哪个」和「能不能一体化」。</p>
+      </div>
+    </section>
+
+    <!-- One-line summary -->
+    <section class="stats-section stats-section--merge">
+      <div class="container">
+        <div class="stats-grid" data-reveal-group>
+          <div class="stat-card">
+            <div class="stat-card__value"><i class="ic ic--folder-open" aria-hidden="true"></i></div>
+            <div class="stat-card__label" data-i18n="cmp.sum.etmf">eTMF · 管证据</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value"><i class="ic ic--chart-line" aria-hidden="true"></i></div>
+            <div class="stat-card__label" data-i18n="cmp.sum.ctms">CTMS · 管进度</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value"><i class="ic ic--flask-conical" aria-hidden="true"></i></div>
+            <div class="stat-card__label" data-i18n="cmp.sum.edc">EDC · 管数据</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="cmp.table.label">对比表</span>
+          <h2 class="section-title" data-i18n="cmp.table.title">七个维度，一张表看清区别</h2>
+          <p class="section-desc" data-i18n="cmp.table.desc">收藏这张表——下次有人问「这三个系统到底什么关系」，直接发过去。</p>
+        </div>
+
+        <div class="cmp-table-wrap" data-reveal>
+          <table class="cmp-table">
+            <thead>
+              <tr>
+                <th data-i18n="cmp.table.col.dim">维度</th>
+                <th data-i18n="cmp.table.col.etmf">eTMF</th>
+                <th data-i18n="cmp.table.col.ctms">CTMS</th>
+                <th data-i18n="cmp.table.col.edc">EDC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th data-i18n="cmp.table.r1.dim">管什么</th>
+                <td data-i18n="cmp.table.r1.etmf">试验关键文件（方案、批件、签名记录）</td>
+                <td data-i18n="cmp.table.r1.ctms">运营状态（站点、入组、里程碑）</td>
+                <td data-i18n="cmp.table.r1.edc">受试者病例数据</td>
+              </tr>
+              <tr>
+                <th data-i18n="cmp.table.r2.dim">回答的问题</th>
+                <td data-i18n="cmp.table.r2.etmf">「证据在哪」</td>
+                <td data-i18n="cmp.table.r2.ctms">「进行到哪一步」</td>
+                <td data-i18n="cmp.table.r2.edc">「数据是什么」</td>
+              </tr>
+              <tr>
+                <th data-i18n="cmp.table.r3.dim">核心对象</th>
+                <td data-i18n="cmp.table.r3.etmf">文档、版本、归档结构</td>
+                <td data-i18n="cmp.table.r3.ctms">研究、站点、受试者、问题</td>
+                <td data-i18n="cmp.table.r3.edc">CRF 表单、字段、数据点</td>
+              </tr>
+              <tr>
+                <th data-i18n="cmp.table.r4.dim">关键合规要求</th>
+                <td data-i18n="cmp.table.r4.etmf">ICH GCP、21 CFR Part 11、DIA TMF 模型</td>
+                <td data-i18n="cmp.table.r4.ctms">GCP 监督义务、稽查可追溯</td>
+                <td data-i18n="cmp.table.r4.edc">21 CFR Part 11、数据完整性（ALCOA+）</td>
+              </tr>
+              <tr>
+                <th data-i18n="cmp.table.r5.dim">稽查中的角色</th>
+                <td data-i18n="cmp.table.r5.etmf">稽查的主要对象，导出 TMF Index 供审阅</td>
+                <td data-i18n="cmp.table.r5.ctms">证明监督与问题闭环的辅助证据</td>
+                <td data-i18n="cmp.table.r5.edc">数据核查与统计分析的来源</td>
+              </tr>
+              <tr>
+                <th data-i18n="cmp.table.r6.dim">主要使用者</th>
+                <td data-i18n="cmp.table.r6.etmf">TMF 专员、CRA、QA、稽查员</td>
+                <td data-i18n="cmp.table.r6.ctms">临床运营、项目经理、申办方</td>
+                <td data-i18n="cmp.table.r6.edc">研究者、CRC、数据管理、统计</td>
+              </tr>
+              <tr>
+                <th data-i18n="cmp.table.r7.dim">典型系统</th>
+                <td data-i18n="cmp.table.r7.etmf">Veeva Vault eTMF、Vivarcus eTMF</td>
+                <td data-i18n="cmp.table.r7.ctms">Veeva Vault CTMS、Vivarcus CTMS</td>
+                <td data-i18n="cmp.table.r7.edc">Medidata Rave、REDCap 等</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- How they work together -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="cmp.flow.label">协作关系</span>
+          <h2 class="section-title" data-i18n="cmp.flow.title">三者如何协作：一次站点启动的故事</h2>
+          <p class="section-desc" data-i18n="cmp.flow.desc">一个业务事件，在三个系统中各有投影。以「站点启动」为例：</p>
+        </div>
+
+        <div class="capability-grid capability-grid--bento" data-reveal-group>
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--orange">
+              <i class="ic ic--chart-line" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="cmp.flow.step1.title">1 · CTMS：里程碑完成</h3>
+            <p data-i18n="cmp.flow.step1.desc">站点激活里程碑标记完成，系统检查是否所有前置活动已结束，并提示对应的 TMF 预期文档。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--green">
+              <i class="ic ic--folder-open" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="cmp.flow.step2.title">2 · eTMF：证据归档</h3>
+            <p data-i18n="cmp.flow.step2.desc">伦理批件、合同、培训记录等文档按 DIA 模型归档、签署并锁定版本，TMF Index 自动更新。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--blue">
+              <i class="ic ic--flask-conical" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="cmp.flow.step3.title">3 · EDC：数据开始流动</h3>
+            <p data-i18n="cmp.flow.step3.desc">站点完成启动后开始录入病例数据，入组数据同步回 CTMS，入组曲线实时更新。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- One platform or separate -->
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 data-i18n="cmp.platform.title">一体化平台 vs 独立系统</h2>
+            <p data-i18n="cmp.platform.p1">
+              独立采购三个系统，需要维护三套账号、三份合同、三条集成链路，数据同步是永远的痛——CTMS 的入组数和 EDC 对不上、里程碑完成了 eTMF 里却没有对应文档，这些「对不上」在稽查时都会变成问题。
+            </p>
+            <p data-i18n-html="cmp.platform.p2">
+              一体化平台（Veeva Vault 走的是这条路，Vivarcus 也一样）把 eTMF、CTMS 等应用放在<strong>同一技术底座</strong>上：账号、权限、审计、文档一体，跨应用数据天然互通。EDC 由于历史原因常独立存在，通过标准接口集成即可。
+            </p>
+          </div>
+          <div class="about-text">
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="cmp.platform.f1">单点登录与统一权限，一套账号走全部应用</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="cmp.platform.f2">里程碑 ↔ 预期文档联动，完成即检查证据</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="cmp.platform.f3">统一审计追踪，跨应用操作一条线索可查</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="cmp.platform.f4">一份合同、一次验证、一个运维对象</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="cmp.faq.label">常见问题</span>
+          <h2 class="section-title" data-i18n="cmp.faq.title">eTMF / CTMS / EDC 常见问题</h2>
+          <p class="section-desc" data-i18n="cmp.faq.desc">关于三个系统的关系，被问得最多的问题。</p>
+        </div>
+
+        <div class="faq-grid" data-reveal-group>
+          <div class="faq-item">
+            <h3 data-i18n="cmp.faq.q1">eTMF、CTMS、EDC 三者有什么区别？</h3>
+            <p data-i18n="cmp.faq.a1">一句话：eTMF 管「证据」——试验关键文件的受控归档；CTMS 管「进度」——站点、入组、里程碑等运营状态；EDC 管「数据」——受试者病例数据的采集与清洗。三者职责互补，不互相替代。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="cmp.faq.q2">可以用一个系统同时管理三个吗？</h3>
+            <p data-i18n="cmp.faq.a2">一体化平台（如 Veeva Vault、Vivarcus）在同一底座上提供多个应用，数据天然互通，但各应用仍分工明确；用「一个模块」同时当 TMF、CTMS、EDC 则不可行。实践中更常见的是「CTMS + eTMF 一体化 + 与 EDC 集成」。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="cmp.faq.q3">先上哪个系统？</h3>
+            <p data-i18n="cmp.faq.a3">取决于最大痛点：稽查风险高、文件乱 → 先上 eTMF；多中心运营失控、汇报痛苦 → 先上 CTMS；试验尚未数字化 → 先上 EDC。多数团队的实际路径是 EDC 最先，随后 eTMF 或 CTMS。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="cmp.faq.q4">EDC 的入组数据会自动同步到 CTMS 吗？</h3>
+            <p data-i18n="cmp.faq.a4">取决于是否集成。独立采购的两者常靠人工导出或定时 API 同步；一体化平台或预置连接器可实现自动同步，让入组曲线始终与 EDC 数据一致。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="cmp.faq.q5">CTMS 里程碑和 eTMF 文档是什么关系？</h3>
+            <p data-i18n="cmp.faq.a5">它们是同一业务事件的两面：CTMS 记录「何时完成」，eTMF 归档「完成它的证据」。理想状态下两者关联——里程碑完成后系统提示并检查对应文档是否齐全（预期文档机制）。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="cmp.faq.q6">三个系统都用开源或低成本方案可行吗？</h3>
+            <p data-i18n="cmp.faq.a6">可行。EDC 已有成熟开源方案（如 REDCap）；eTMF 与 CTMS 的开源选项长期空白，Vivarcus 以开源核心补上了这两块，并提供托管部署选项。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="cmp.cta.title">想看看一体化平台长什么样？</h2>
+          <p data-i18n="cmp.cta.desc">Vivarcus 在同一底座上提供 eTMF、CTMS 与 Study Startup，开源核心，支持自建或托管部署。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="products.html" class="btn btn-outline btn-lg" data-i18n="common.cta.viewProducts">查看产品</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

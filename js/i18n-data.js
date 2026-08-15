@@ -7,6 +7,7 @@ window.I18N_DATA = {
     /* ---- Shared: Header ---- */
     'common.nav.products': '产品',
     'common.nav.about': '关于',
+    'common.nav.help': '帮助中心',
     'common.nav.trial': '试用申请',
     'common.logo.aria': 'Vivarcus 首页',
     'common.menu.aria': '菜单',
@@ -25,6 +26,11 @@ window.I18N_DATA = {
     'common.footer.productsPage': '产品介绍',
     'common.footer.about': '关于我们',
     'common.footer.trial': '试用申请',
+    'common.footer.github': 'GitHub',
+    'common.footer.guide': 'eTMF 指南',
+    'common.footer.ctmsGuide': 'CTMS 指南',
+    'common.footer.cmp': '系统对比',
+    'common.footer.help': '帮助中心',
     'common.footer.copyright': '© 2026 Vivarcus. 保留所有权利。',
 
     /* ---- Shared: CTA ---- */
@@ -317,12 +323,252 @@ window.I18N_DATA = {
     'trial.cta.title': '想先了解产品能力？',
     'trial.cta.desc': '查看 Vivarcus 临床运营解决方案的完整介绍。',
     'trial.cta.btn': '查看产品',
+
+    /* ======== etmf-guide.html ======== */
+
+    /* Meta */
+    'guide.meta.title': '什么是 eTMF？电子试验主文件完全指南 — Vivarcus',
+    'guide.meta.desc': '什么是 eTMF？本指南介绍电子试验主文件的定义、监管要求（ICH GCP、21 CFR Part 11）、DIA TMF 参考模型，以及如何选择 eTMF 系统。',
+
+    /* Hero */
+    'guide.hero.eyebrow': 'eTMF 指南',
+    'guide.hero.title': '什么是 eTMF？',
+    'guide.hero.subtitle': '电子试验主文件完全入门指南 — 定义、监管依据、DIA 标准模型与选型要点，一文讲清楚。',
+
+    /* Definition */
+    'guide.def.title': '什么是 eTMF？',
+    'guide.def.p1': 'eTMF 是「电子试验主文件」（electronic Trial Master File）的缩写，即临床试验主文件（TMF）的电子化形式。根据 ICH GCP 的定义，TMF 是「单独或共同用于评估临床试验开展过程与数据质量的关键文件集合」— 通俗地说，它是记录一项临床试验从头到尾「发生了什么、依据是什么」的完整证据档案。',
+    'guide.def.p2': 'eTMF 用一套受控的电子系统来管理这些文件：按标准结构自动归类、审阅流转、版本控制、电子签名、审计追踪，并支持随时<strong>一键导出 TMF Index</strong> 供稽查使用。稽查员远程登录系统即可核验文件，而不必等申办方从档案室一箱箱搬纸。',
+    'guide.def.p3': '需要说明的是：eTMF 管理的是试验的「证据文件」（方案、批件、知情同意、培训记录等），它不是 EDC（病例数据）、也不是 CTMS（运营状态追踪）— 三者各司其职，共同构成临床试验的数字化底座。',
+    'guide.def.arch.app': 'eTMF 证据文件',
+    'guide.def.arch.ops': 'CTMS 运营状态',
+    'guide.def.arch.edc': 'EDC 病例数据',
+
+    /* Why eTMF */
+    'guide.why.label': '监管依据',
+    'guide.why.title': '为什么 eTMF 正在成为行业标配',
+    'guide.why.desc': '不是厂商在推动，而是监管要求与稽查实践共同指向电子化。',
+    'guide.why.gcp.title': 'ICH GCP',
+    'guide.why.gcp.desc': 'ICH GCP E6(R2) 要求申办方维护 TMF 并鼓励电子化；2025 年发布的 E6(R3) 进一步强化了对电子记录与系统的预期。',
+    'guide.why.part11.title': '21 CFR Part 11',
+    'guide.why.part11.desc': '美国 FDA 对电子记录与电子签名的法规。eTMF 中的电子签名、审计追踪必须满足其要求，否则记录不被认可。',
+    'guide.why.inspection.title': '稽查实践',
+    'guide.why.inspection.desc': 'FDA、EMA、MHRA 等机构的 GCP 稽查，TMF 是必查项。稽查前 48 小时内要能导出完整 TMF Index — 纸质档案几乎无法做到。',
+    'guide.why.collab.title': '跨组织协作',
+    'guide.why.collab.desc': '申办方与 CRO 之间的 TMF 移交是高频场景。电子系统让移交从「搬仓库」变成「转权限」，随时保持稽查就绪。',
+
+    /* DIA TMF Reference Model */
+    'guide.dia.label': '标准模型',
+    'guide.dia.title': 'DIA TMF 参考模型：行业共同语言',
+    'guide.dia.desc': '选择 eTMF 系统时首先要确认的一件事：它是否遵循 DIA TMF 参考模型。',
+    'guide.dia.p1': 'DIA（药物信息协会）发布的 TMF 参考模型（TMF Reference Model）定义了 TMF 的标准组织结构。它把试验文件划分为多个层级，并给每类文件定义预期元数据（作者、日期、版本等），让全行业用同一套语言描述 TMF。',
+    'guide.dia.p2': '模型同时定义了 <strong>TMF Index</strong> 的标准导出格式（CSV），申办方与 CRO 之间按此格式移交、按此格式接受稽查 — 这也是大多数监管机构检查 TMF 时实际查看的东西。',
+    'guide.dia.f1': 'Zone（分区）：按试验级、国家/地区级、站点级组织文件',
+    'guide.dia.f2': 'Section（章节）：每个分区下按主题细分',
+    'guide.dia.f3': 'Artifact（文件）：最小单元，带标准元数据定义',
+    'guide.dia.f4': 'TMF Index：标准 CSV 导出，用于移交与稽查',
+
+    /* Selection checklist */
+    'guide.pick.label': '选型要点',
+    'guide.pick.title': '选择 eTMF 系统的 8 项核心能力清单',
+    'guide.pick.desc': '无论商业还是开源，评估任何 eTMF 方案都可以对照这张清单。',
+    'guide.pick.f1': '遵循 DIA TMF 参考模型的分类与索引，开箱即用',
+    'guide.pick.f2': '完整审计追踪：谁在何时做了什么，全部可查',
+    'guide.pick.f3': '电子签名满足 21 CFR Part 11 / EU Annex 11',
+    'guide.pick.f4': '文档生命周期与版本控制，避免版本混乱',
+    'guide.pick.f5': '一键导出 TMF Index（CSV），随时应对稽查',
+    'guide.pick.f6': '角色级权限控制，支持申办方 / CRO / 稽查员协作',
+    'guide.pick.f7': '完整度与及时性看板：缺什么文件、哪些逾期，一眼可见',
+    'guide.pick.f8': '总拥有成本可控：许可、实施、验证、运维可预期',
+
+    /* FAQ */
+    'guide.faq.label': '常见问题',
+    'guide.faq.title': 'eTMF 常见问题',
+    'guide.faq.desc': '关于电子试验主文件，被问得最多的问题。',
+    'guide.faq.q1': '什么是 eTMF？',
+    'guide.faq.a1': 'eTMF 是电子试验主文件，即用受控电子系统管理的临床试验主文件。TMF 是 ICH GCP 要求申办方维护的关键文件集合，用于证明试验符合 GCP 与适用法规；eTMF 让这些文件的收集、审阅、归档与稽查导出全部电子化。',
+    'guide.faq.q2': 'eTMF 和 TMF 有什么区别？',
+    'guide.faq.a2': 'TMF 指试验主文件本身（纸质或电子均可），eTMF 特指用受控电子系统管理的 TMF。纸质 TMF 需要物理归档、人工索引，稽查时逐箱调阅；eTMF 提供即时检索、自动索引、版本控制、审计追踪与远程稽查支持。',
+    'guide.faq.q3': '使用 eTMF 是监管强制要求吗？',
+    'guide.faq.a3': '维护 TMF 是 ICH GCP 的强制要求；E6(R2) 鼓励电子化，2025 年发布的 E6(R3) 进一步强化了电子化预期。监管不强制指定某个系统，但对文件的完整性、及时性和可检索性有明确预期，电子系统是满足这些预期最可靠的方式。',
+    'guide.faq.q4': '能用网盘或 SharePoint 代替 eTMF 系统吗？',
+    'guide.faq.a4': '不建议。网盘缺乏 DIA 结构、审计追踪、电子签名、生命周期控制与 TMF Index 导出等核心能力，稽查时人工翻找文件风险极高。',
+    'guide.faq.q5': '开源 eTMF 有哪些选择？',
+    'guide.faq.a5': '商业市场由 Veeva Vault eTMF、Phlexglobal PhlexEview 等厂商主导，价格对中小 Biotech 和本土 CRO 往往偏高。开源 eTMF 长期是空白，Vivarcus 以开源核心进入这一领域，支持自建或托管部署。',
+    'guide.faq.q6': '部署一套 eTMF 系统需要多长时间？',
+    'guide.faq.a6': '托管型 eTMF 数天至数周即可开通；自建型加上验证（IQ/OQ/PQ）与运维通常 1–3 个月。时间大头是现有 TMF 内容按 DIA 模型的迁移整理。',
+
+    /* CTA */
+    'guide.cta.title': '想看看 Vivarcus 的 eTMF 长什么样？',
+    'guide.cta.desc': '基于 DIA TMF 参考模型，开源核心，支持自建或托管部署。',
+
+    /* ======== ctms-guide.html ======== */
+
+    /* Meta */
+    'ctmsguide.meta.title': '什么是 CTMS？临床试验管理系统完全指南 — Vivarcus',
+    'ctmsguide.meta.desc': '什么是 CTMS？本指南介绍临床试验管理系统的定义、核心能力、与 eTMF / EDC 的区别，以及如何选择 CTMS 系统。',
+
+    /* Hero */
+    'ctmsguide.hero.eyebrow': 'CTMS 指南',
+    'ctmsguide.hero.title': '什么是 CTMS？',
+    'ctmsguide.hero.subtitle': '临床试验管理系统完全入门指南 — 定义、核心能力、与 eTMF / EDC 的分工与选型要点，一文讲清楚。',
+
+    /* Definition */
+    'ctmsguide.def.title': '什么是 CTMS？',
+    'ctmsguide.def.p1': 'CTMS 是「临床试验管理系统」（Clinical Trial Management System）的缩写，管理临床试验的运营层面：研究组合、站点、受试者入组、里程碑与时间线、问题与纠正措施（CAPA）。如果说 eTMF 回答「证据在哪」，EDC 回答「数据是什么」，CTMS 回答的是——<strong>「试验进行到哪一步了」</strong>。',
+    'ctmsguide.def.p2': '一个多中心试验涉及几十上百个站点、数千名受试者、严格的入组时间表和监管汇报义务。没有系统支持时，这些状态散落在 Excel、邮件和电话里，汇报靠人肉汇总，问题发现总是晚一步。CTMS 把这些运营信息集中到一个受控系统：状态实时可见、汇报自动生成、问题闭环追踪。',
+    'ctmsguide.def.p3': '对申办方而言 CTMS 还有一层特殊价值：<strong>对 CRO 的监督义务</strong>。把试验外包给 CRO 不等于把责任外包——申办方需要随时掌握试验健康状态，CTMS 正是为此设计的。',
+    'ctmsguide.def.arch.ctms': 'CTMS 进度与状态',
+    'ctmsguide.def.arch.etmf': 'eTMF 证据文件',
+    'ctmsguide.def.arch.edc': 'EDC 病例数据',
+
+    /* Why CTMS */
+    'ctmsguide.why.label': '运营挑战',
+    'ctmsguide.why.title': '为什么多中心试验离不开 CTMS',
+    'ctmsguide.why.desc': '试验规模越大，Excel 和邮件越撑不住。四个典型痛点：',
+    'ctmsguide.why.sites.title': '站点管理失控',
+    'ctmsguide.why.sites.desc': '几十个站点，各自处于启动、入组、关闭的不同阶段。没有生命周期管理，谁在等批件、谁该关闭了，全靠人记。',
+    'ctmsguide.why.enroll.title': '入组进度黑盒',
+    'ctmsguide.why.enroll.desc': '入组进度决定试验成败与成本。进度滞后一个月才被发现，意味着数百万的额外成本——实时入组曲线是基本要求。',
+    'ctmsguide.why.milestone.title': '里程碑延误',
+    'ctmsguide.why.milestone.desc': '关键里程碑（首例入组、期中分析、锁库）环环相扣。没有自动预测和提醒，一次延误会级联放大。',
+    'ctmsguide.why.cro.title': 'CRO 监督义务',
+    'ctmsguide.why.cro.desc': '申办方把运营外包给 CRO，监督责任仍在申办方。监管稽查时会问：你如何确保及时发现问题？CTMS 提供答案。',
+
+    /* Selection checklist */
+    'ctmsguide.pick.label': '选型要点',
+    'ctmsguide.pick.title': '选择 CTMS 系统的 8 项核心能力清单',
+    'ctmsguide.pick.desc': '无论商业还是开源，评估任何 CTMS 方案都可以对照这张清单。',
+    'ctmsguide.pick.f1': '研究组合仪表板：所有试验的进度与健康状况一屏掌握',
+    'ctmsguide.pick.f2': '站点生命周期管理：可行性、选择、启动、关闭全流程',
+    'ctmsguide.pick.f3': '受试者入组实时追踪：入组曲线、偏离、预测',
+    'ctmsguide.pick.f4': '里程碑自动追踪与关键节点预警',
+    'ctmsguide.pick.f5': '问题与 CAPA 闭环管理，从发现到解决全程可查',
+    'ctmsguide.pick.f6': '周期报告自动生成，不再人肉汇总 Excel',
+    'ctmsguide.pick.f7': '与 eTMF / EDC 集成，状态与文档、数据互通',
+    'ctmsguide.pick.f8': '支持自营与 CRO 外包两种运营模式，权限随模式调整',
+
+    /* FAQ */
+    'ctmsguide.faq.label': '常见问题',
+    'ctmsguide.faq.title': 'CTMS 常见问题',
+    'ctmsguide.faq.desc': '关于临床试验管理系统，被问得最多的问题。',
+    'ctmsguide.faq.q1': '什么是 CTMS？',
+    'ctmsguide.faq.a1': 'CTMS 是管理临床试验运营层面的软件系统：研究组合、站点、受试者入组、里程碑与时间线、问题与 CAPA。它管的是「进度与状态」——与 eTMF 管「证据文件」、EDC 管「病例数据」各司其职。',
+    'ctmsguide.faq.q2': 'CTMS 和 eTMF、EDC 有什么区别？',
+    'ctmsguide.faq.a2': 'CTMS 追踪运营状态（站点进度、入组数、里程碑）；eTMF 归档证据文件（方案、批件、签名记录）；EDC 采集受试者病例数据。合格的三类系统应能互通，避免重复录入。',
+    'ctmsguide.faq.q3': '团队很小，需要用 CTMS 吗？',
+    'ctmsguide.faq.a3': '如果只运行 1-2 项单中心试验，Excel 加日历也许够用；一旦出现多中心、多试验并行或需要监督 CRO，人工汇总会迅速失控。小团队反而更需要轻量、低成本、开箱即用的 CTMS。',
+    'ctmsguide.faq.q4': '用 Excel 管理临床试验够吗？',
+    'ctmsguide.faq.a4': '短期内可行，但风险显著：版本混乱、状态滞后、汇报靠人肉汇总、缺乏审计追踪，也无法满足对 CRO 的监督义务。多数团队在稽查或里程碑延误后才意识到需要系统化。',
+    'ctmsguide.faq.q5': '开源 CTMS 有哪些选择？',
+    'ctmsguide.faq.a5': '商业市场由 Veeva Vault CTMS、Medidata 等厂商主导，价格对中小 Biotech 和本土 CRO 往往偏高。开源 CTMS 长期缺少成熟方案，Vivarcus 以开源核心提供 CTMS 能力，并与 eTMF、Study Startup 天然打通。',
+    'ctmsguide.faq.q6': '实施一个 CTMS 需要多长时间？',
+    'ctmsguide.faq.a6': '托管型 CTMS 数天至数周即可开通；自建型加上验证（IQ/OQ/PQ）与运维通常 1-3 个月。时间的主要部分是梳理自家运营流程并配置到系统中。',
+
+    /* CTA */
+    'ctmsguide.cta.title': '想看看 Vivarcus 的 CTMS 长什么样？',
+    'ctmsguide.cta.desc': '开源核心，支持自建或托管部署，与 eTMF、Study Startup 天然打通。',
+
+    /* ======== etmf-ctms-edc.html ======== */
+
+    /* Meta */
+    'cmp.meta.title': 'eTMF vs CTMS vs EDC：三个临床试验系统有什么区别 — Vivarcus',
+    'cmp.meta.desc': 'eTMF、CTMS、EDC 有什么区别？本指南用一张对比表讲清三个临床试验系统的职责、数据与协作关系，并回答先上哪个、能否一体化。',
+
+    /* Hero */
+    'cmp.hero.eyebrow': '系统对比指南',
+    'cmp.hero.title': 'eTMF vs CTMS vs EDC',
+    'cmp.hero.subtitle': '三个临床试验系统，各管一件事：证据、进度、数据。一张表讲清区别，再回答「先上哪个」和「能不能一体化」。',
+
+    /* One-line summary */
+    'cmp.sum.etmf': 'eTMF · 管证据',
+    'cmp.sum.ctms': 'CTMS · 管进度',
+    'cmp.sum.edc': 'EDC · 管数据',
+
+    /* Comparison table */
+    'cmp.table.label': '对比表',
+    'cmp.table.title': '七个维度，一张表看清区别',
+    'cmp.table.desc': '收藏这张表——下次有人问「这三个系统到底什么关系」，直接发过去。',
+    'cmp.table.col.dim': '维度',
+    'cmp.table.col.etmf': 'eTMF',
+    'cmp.table.col.ctms': 'CTMS',
+    'cmp.table.col.edc': 'EDC',
+    'cmp.table.r1.dim': '管什么',
+    'cmp.table.r1.etmf': '试验关键文件（方案、批件、签名记录）',
+    'cmp.table.r1.ctms': '运营状态（站点、入组、里程碑）',
+    'cmp.table.r1.edc': '受试者病例数据',
+    'cmp.table.r2.dim': '回答的问题',
+    'cmp.table.r2.etmf': '「证据在哪」',
+    'cmp.table.r2.ctms': '「进行到哪一步」',
+    'cmp.table.r2.edc': '「数据是什么」',
+    'cmp.table.r3.dim': '核心对象',
+    'cmp.table.r3.etmf': '文档、版本、归档结构',
+    'cmp.table.r3.ctms': '研究、站点、受试者、问题',
+    'cmp.table.r3.edc': 'CRF 表单、字段、数据点',
+    'cmp.table.r4.dim': '关键合规要求',
+    'cmp.table.r4.etmf': 'ICH GCP、21 CFR Part 11、DIA TMF 模型',
+    'cmp.table.r4.ctms': 'GCP 监督义务、稽查可追溯',
+    'cmp.table.r4.edc': '21 CFR Part 11、数据完整性（ALCOA+）',
+    'cmp.table.r5.dim': '稽查中的角色',
+    'cmp.table.r5.etmf': '稽查的主要对象，导出 TMF Index 供审阅',
+    'cmp.table.r5.ctms': '证明监督与问题闭环的辅助证据',
+    'cmp.table.r5.edc': '数据核查与统计分析的来源',
+    'cmp.table.r6.dim': '主要使用者',
+    'cmp.table.r6.etmf': 'TMF 专员、CRA、QA、稽查员',
+    'cmp.table.r6.ctms': '临床运营、项目经理、申办方',
+    'cmp.table.r6.edc': '研究者、CRC、数据管理、统计',
+    'cmp.table.r7.dim': '典型系统',
+    'cmp.table.r7.etmf': 'Veeva Vault eTMF、Vivarcus eTMF',
+    'cmp.table.r7.ctms': 'Veeva Vault CTMS、Vivarcus CTMS',
+    'cmp.table.r7.edc': 'Medidata Rave、REDCap 等',
+
+    /* How they work together */
+    'cmp.flow.label': '协作关系',
+    'cmp.flow.title': '三者如何协作：一次站点启动的故事',
+    'cmp.flow.desc': '一个业务事件，在三个系统中各有投影。以「站点启动」为例：',
+    'cmp.flow.step1.title': '1 · CTMS：里程碑完成',
+    'cmp.flow.step1.desc': '站点激活里程碑标记完成，系统检查是否所有前置活动已结束，并提示对应的 TMF 预期文档。',
+    'cmp.flow.step2.title': '2 · eTMF：证据归档',
+    'cmp.flow.step2.desc': '伦理批件、合同、培训记录等文档按 DIA 模型归档、签署并锁定版本，TMF Index 自动更新。',
+    'cmp.flow.step3.title': '3 · EDC：数据开始流动',
+    'cmp.flow.step3.desc': '站点完成启动后开始录入病例数据，入组数据同步回 CTMS，入组曲线实时更新。',
+
+    /* One platform or separate */
+    'cmp.platform.title': '一体化平台 vs 独立系统',
+    'cmp.platform.p1': '独立采购三个系统，需要维护三套账号、三份合同、三条集成链路，数据同步是永远的痛——CTMS 的入组数和 EDC 对不上、里程碑完成了 eTMF 里却没有对应文档，这些「对不上」在稽查时都会变成问题。',
+    'cmp.platform.p2': '一体化平台（Veeva Vault 走的是这条路，Vivarcus 也一样）把 eTMF、CTMS 等应用放在<strong>同一技术底座</strong>上：账号、权限、审计、文档一体，跨应用数据天然互通。EDC 由于历史原因常独立存在，通过标准接口集成即可。',
+    'cmp.platform.f1': '单点登录与统一权限，一套账号走全部应用',
+    'cmp.platform.f2': '里程碑 ↔ 预期文档联动，完成即检查证据',
+    'cmp.platform.f3': '统一审计追踪，跨应用操作一条线索可查',
+    'cmp.platform.f4': '一份合同、一次验证、一个运维对象',
+
+    /* FAQ */
+    'cmp.faq.label': '常见问题',
+    'cmp.faq.title': 'eTMF / CTMS / EDC 常见问题',
+    'cmp.faq.desc': '关于三个系统的关系，被问得最多的问题。',
+    'cmp.faq.q1': 'eTMF、CTMS、EDC 三者有什么区别？',
+    'cmp.faq.a1': '一句话：eTMF 管「证据」——试验关键文件的受控归档；CTMS 管「进度」——站点、入组、里程碑等运营状态；EDC 管「数据」——受试者病例数据的采集与清洗。三者职责互补，不互相替代。',
+    'cmp.faq.q2': '可以用一个系统同时管理三个吗？',
+    'cmp.faq.a2': '一体化平台（如 Veeva Vault、Vivarcus）在同一底座上提供多个应用，数据天然互通，但各应用仍分工明确；用「一个模块」同时当 TMF、CTMS、EDC 则不可行。实践中更常见的是「CTMS + eTMF 一体化 + 与 EDC 集成」。',
+    'cmp.faq.q3': '先上哪个系统？',
+    'cmp.faq.a3': '取决于最大痛点：稽查风险高、文件乱 → 先上 eTMF；多中心运营失控、汇报痛苦 → 先上 CTMS；试验尚未数字化 → 先上 EDC。多数团队的实际路径是 EDC 最先，随后 eTMF 或 CTMS。',
+    'cmp.faq.q4': 'EDC 的入组数据会自动同步到 CTMS 吗？',
+    'cmp.faq.a4': '取决于是否集成。独立采购的两者常靠人工导出或定时 API 同步；一体化平台或预置连接器可实现自动同步，让入组曲线始终与 EDC 数据一致。',
+    'cmp.faq.q5': 'CTMS 里程碑和 eTMF 文档是什么关系？',
+    'cmp.faq.a5': '它们是同一业务事件的两面：CTMS 记录「何时完成」，eTMF 归档「完成它的证据」。理想状态下两者关联——里程碑完成后系统提示并检查对应文档是否齐全（预期文档机制）。',
+    'cmp.faq.q6': '三个系统都用开源或低成本方案可行吗？',
+    'cmp.faq.a6': '可行。EDC 已有成熟开源方案（如 REDCap）；eTMF 与 CTMS 的开源选项长期空白，Vivarcus 以开源核心补上了这两块，并提供托管部署选项。',
+
+    /* CTA */
+    'cmp.cta.title': '想看看一体化平台长什么样？',
+    'cmp.cta.desc': 'Vivarcus 在同一底座上提供 eTMF、CTMS 与 Study Startup，开源核心，支持自建或托管部署。',
   },
 
   en: {
     /* ---- Shared: Header ---- */
     'common.nav.products': 'Products',
     'common.nav.about': 'About',
+    'common.nav.help': 'Help Center',
     'common.nav.trial': 'Request Demo',
     'common.logo.aria': 'Vivarcus Home',
     'common.menu.aria': 'Menu',
@@ -341,6 +587,11 @@ window.I18N_DATA = {
     'common.footer.productsPage': 'Products',
     'common.footer.about': 'About Us',
     'common.footer.trial': 'Request Demo',
+    'common.footer.github': 'GitHub',
+    'common.footer.guide': 'eTMF Guide',
+    'common.footer.ctmsGuide': 'CTMS Guide',
+    'common.footer.cmp': 'System Comparison',
+    'common.footer.help': 'Help Center',
     'common.footer.copyright': '© 2026 Vivarcus. All rights reserved.',
 
     /* ---- Shared: CTA ---- */
@@ -633,5 +884,244 @@ window.I18N_DATA = {
     'trial.cta.title': 'Want to Explore Product Capabilities First?',
     'trial.cta.desc': 'Check out the full product overview and feature lists.',
     'trial.cta.btn': 'View Products',
+
+    /* ======== etmf-guide.html ======== */
+
+    /* Meta */
+    'guide.meta.title': 'What Is an eTMF? Complete Guide to the Electronic Trial Master File — Vivarcus',
+    'guide.meta.desc': 'What is an eTMF? Learn the definition, regulatory requirements (ICH GCP, 21 CFR Part 11), the DIA TMF Reference Model, and how to choose an eTMF system.',
+
+    /* Hero */
+    'guide.hero.eyebrow': 'eTMF Guide',
+    'guide.hero.title': 'What Is an eTMF?',
+    'guide.hero.subtitle': 'A complete introduction to the electronic Trial Master File — definition, regulatory basis, the DIA reference model, and what to look for in a system.',
+
+    /* Definition */
+    'guide.def.title': 'What Is an eTMF?',
+    'guide.def.p1': 'eTMF stands for electronic Trial Master File — the electronic form of the clinical Trial Master File (TMF). Under ICH GCP, the TMF is the collection of essential documents that individually and collectively permit the evaluation of the conduct of a clinical trial and the quality of the data produced — in plain terms, it is the complete evidence archive of what happened during a trial and on what basis.',
+    'guide.def.p2': 'An eTMF manages these documents in a controlled electronic system: automatic classification into a standard structure, review workflows, version control, electronic signatures, audit trails — and the ability to <strong>export a TMF Index on demand</strong> for inspections. Inspectors can review documents remotely instead of waiting for boxes of paper.',
+    'guide.def.p3': 'One clarification: an eTMF holds the evidence documents of a trial (protocols, approvals, informed consent, training records, and more). It is not an EDC (clinical data) or a CTMS (operational tracking) — each plays its own role in the digital foundation of a clinical trial.',
+    'guide.def.arch.app': 'eTMF — Evidence Documents',
+    'guide.def.arch.ops': 'CTMS — Operational Status',
+    'guide.def.arch.edc': 'EDC — Clinical Data',
+
+    /* Why eTMF */
+    'guide.why.label': 'Regulatory Basis',
+    'guide.why.title': 'Why eTMF Is Becoming the Industry Standard',
+    'guide.why.desc': 'It is not vendor pressure — regulatory requirements and inspection practice both point to electronic.',
+    'guide.why.gcp.title': 'ICH GCP',
+    'guide.why.gcp.desc': 'ICH GCP E6(R2) requires sponsors to maintain a TMF and encourages electronic maintenance; E6(R3), published in 2025, further strengthens expectations for electronic records and systems.',
+    'guide.why.part11.title': '21 CFR Part 11',
+    'guide.why.part11.desc': 'The US FDA regulation for electronic records and signatures. Electronic signatures and audit trails in an eTMF must comply, or the records will not be accepted.',
+    'guide.why.inspection.title': 'Inspection Practice',
+    'guide.why.inspection.desc': 'The TMF is a required review item in GCP inspections by the FDA, EMA, MHRA, and others. Exporting a complete TMF Index within tight deadlines is nearly impossible with paper archives.',
+    'guide.why.collab.title': 'Cross-Org Collaboration',
+    'guide.why.collab.desc': 'TMF handovers between sponsors and CROs happen constantly. Electronic systems turn a warehouse move into a permission transfer, keeping the trial inspection-ready at all times.',
+
+    /* DIA TMF Reference Model */
+    'guide.dia.label': 'Standard Model',
+    'guide.dia.title': 'The DIA TMF Reference Model: A Common Language',
+    'guide.dia.desc': 'The first thing to confirm when evaluating an eTMF system: does it follow the DIA TMF Reference Model?',
+    'guide.dia.p1': 'The TMF Reference Model published by DIA (Drug Information Association) defines the standard structure of a TMF. It organizes trial documents into hierarchical levels and defines expected metadata (author, date, version, and more) for each document type, giving the whole industry a common language.',
+    'guide.dia.p2': 'The model also defines the standard <strong>TMF Index</strong> export format (CSV), used for sponsor–CRO handovers and for inspections — this is what most regulatory agencies actually review when they inspect a TMF.',
+    'guide.dia.f1': 'Zones: documents organized at trial, country/region, and site levels',
+    'guide.dia.f2': 'Sections: thematic subdivision within each zone',
+    'guide.dia.f3': 'Artifacts: the smallest unit, with standard metadata definitions',
+    'guide.dia.f4': 'TMF Index: standard CSV export for handovers and inspections',
+
+    /* Selection checklist */
+    'guide.pick.label': 'Selection Criteria',
+    'guide.pick.title': 'An 8-Point Checklist for Choosing an eTMF System',
+    'guide.pick.desc': 'Commercial or open source — evaluate any eTMF against this checklist.',
+    'guide.pick.f1': 'DIA TMF Reference Model classification and indexing, out of the box',
+    'guide.pick.f2': 'Complete audit trails: who did what and when, always retrievable',
+    'guide.pick.f3': 'Electronic signatures compliant with 21 CFR Part 11 / EU Annex 11',
+    'guide.pick.f4': 'Document lifecycle and version control, no version chaos',
+    'guide.pick.f5': 'One-click TMF Index (CSV) export, inspection-ready at any time',
+    'guide.pick.f6': 'Role-based permissions supporting sponsor / CRO / inspector collaboration',
+    'guide.pick.f7': 'Completeness and timeliness dashboards: missing or overdue documents at a glance',
+    'guide.pick.f8': 'Predictable total cost of ownership: licensing, implementation, validation, operations',
+
+    /* FAQ */
+    'guide.faq.label': 'FAQ',
+    'guide.faq.title': 'eTMF Frequently Asked Questions',
+    'guide.faq.desc': 'The questions we hear most often about the electronic Trial Master File.',
+    'guide.faq.q1': 'What is an eTMF?',
+    'guide.faq.a1': 'The eTMF (electronic Trial Master File) is the TMF managed in a controlled electronic system. The TMF is the set of essential documents ICH GCP requires sponsors to maintain, demonstrating that a trial was conducted in compliance with GCP and applicable regulations. An eTMF makes the collection, review, filing, and inspection export of these documents fully electronic.',
+    'guide.faq.q2': 'What is the difference between eTMF and TMF?',
+    'guide.faq.a2': 'TMF refers to the trial master file itself (paper or electronic); eTMF specifically means a TMF managed in a controlled electronic system. Paper TMFs require physical archiving and manual indexes; an eTMF provides instant retrieval, automatic indexing, version control, audit trails, and remote inspection support.',
+    'guide.faq.q3': 'Is using an eTMF a regulatory requirement?',
+    'guide.faq.a3': 'Maintaining a TMF is mandatory under ICH GCP. E6(R2) encourages electronic maintenance, and E6(R3), published in 2025, further strengthens electronic expectations. Regulators do not mandate a specific system, but they have clear expectations for completeness, timeliness, and retrievability — electronic systems meet these most reliably.',
+    'guide.faq.q4': 'Can a shared drive or SharePoint replace an eTMF system?',
+    'guide.faq.a4': 'Not recommended. Shared drives lack DIA-aligned structure, audit trails, electronic signatures, lifecycle control, and TMF Index export — manually locating files during an inspection is extremely risky.',
+    'guide.faq.q5': 'What open-source eTMF options are available?',
+    'guide.faq.a5': 'The commercial market is dominated by Veeva Vault eTMF, Phlexglobal PhlexEview, and others, often priced steeply for small biotechs and regional CROs. Open-source eTMF has long been a gap; Vivarcus enters this space with an open-source core supporting both self-hosted and managed deployments.',
+    'guide.faq.q6': 'How long does it take to deploy an eTMF system?',
+    'guide.faq.a6': 'Hosted eTMFs can go live within days to weeks; self-hosted deployments with validation (IQ/OQ/PQ) and operations typically take 1–3 months. The largest time cost is usually migrating and organizing existing TMF content to the DIA model.',
+
+    /* CTA */
+    'guide.cta.title': 'Want to See Vivarcus eTMF in Action?',
+    'guide.cta.desc': 'Built on the DIA TMF Reference Model, with an open-source core. Self-hosted or managed.',
+
+    /* ======== ctms-guide.html ======== */
+
+    /* Meta */
+    'ctmsguide.meta.title': 'What Is a CTMS? Complete Guide to Clinical Trial Management Systems — Vivarcus',
+    'ctmsguide.meta.desc': 'What is a CTMS? Learn the definition, core capabilities, how it differs from eTMF and EDC, and how to choose a clinical trial management system.',
+
+    /* Hero */
+    'ctmsguide.hero.eyebrow': 'CTMS Guide',
+    'ctmsguide.hero.title': 'What Is a CTMS?',
+    'ctmsguide.hero.subtitle': 'A complete introduction to the Clinical Trial Management System — definition, core capabilities, how it divides work with eTMF and EDC, and what to look for in a system.',
+
+    /* Definition */
+    'ctmsguide.def.title': 'What Is a CTMS?',
+    'ctmsguide.def.p1': 'CTMS stands for Clinical Trial Management System — software for managing the operational side of clinical trials: study portfolios, sites, subject enrollment, milestones and timelines, and issues with corrective actions (CAPA). If the eTMF answers "where is the evidence" and the EDC answers "what is the data", the CTMS answers <strong>"where does the trial stand"</strong>.',
+    'ctmsguide.def.p2': 'A multi-center trial involves dozens or hundreds of sites, thousands of subjects, strict enrollment timelines, and regulatory reporting obligations. Without a system, this status lives in spreadsheets, emails, and phone calls — reporting is manual consolidation, and problems are always spotted one step too late. A CTMS brings operational information into one controlled system: real-time status, automated reports, closed-loop issue tracking.',
+    'ctmsguide.def.p3': 'For sponsors a CTMS has one more special value: <strong>oversight of CROs</strong>. Outsourcing operations to a CRO does not outsource responsibility — sponsors must stay on top of trial health at all times, and a CTMS is designed for exactly that.',
+    'ctmsguide.def.arch.ctms': 'CTMS — Progress & Status',
+    'ctmsguide.def.arch.etmf': 'eTMF — Evidence Documents',
+    'ctmsguide.def.arch.edc': 'EDC — Clinical Data',
+
+    /* Why CTMS */
+    'ctmsguide.why.label': 'Operational Challenges',
+    'ctmsguide.why.title': 'Why Multi-Center Trials Depend on a CTMS',
+    'ctmsguide.why.desc': 'The bigger the trial, the less spreadsheets and email can cope. Four typical pain points:',
+    'ctmsguide.why.sites.title': 'Site Management Chaos',
+    'ctmsguide.why.sites.desc': 'Dozens of sites, each at a different stage of startup, enrollment, or closeout. Without lifecycle management, who is waiting for approval and who should be closed is tracked in heads, not systems.',
+    'ctmsguide.why.enroll.title': 'Enrollment Blind Spots',
+    'ctmsguide.why.enroll.desc': 'Enrollment pace decides trial success and cost. Finding out a month late means millions in extra spend — real-time enrollment curves are a baseline requirement.',
+    'ctmsguide.why.milestone.title': 'Milestone Delays',
+    'ctmsguide.why.milestone.desc': 'Key milestones (first subject in, interim analysis, database lock) are tightly linked. Without automatic forecasting and alerts, one delay cascades.',
+    'ctmsguide.why.cro.title': 'CRO Oversight Duties',
+    'ctmsguide.why.cro.desc': 'When sponsors outsource operations to a CRO, oversight responsibility stays with the sponsor. Inspectors ask: how do you ensure problems are caught in time? A CTMS is the answer.',
+
+    /* Selection checklist */
+    'ctmsguide.pick.label': 'Selection Criteria',
+    'ctmsguide.pick.title': 'An 8-Point Checklist for Choosing a CTMS',
+    'ctmsguide.pick.desc': 'Commercial or open source — evaluate any CTMS against this checklist.',
+    'ctmsguide.pick.f1': 'Study portfolio dashboard: progress and health of all trials in one view',
+    'ctmsguide.pick.f2': 'Site lifecycle management: feasibility, selection, startup, closeout',
+    'ctmsguide.pick.f3': 'Real-time subject enrollment tracking: curves, deviations, forecasts',
+    'ctmsguide.pick.f4': 'Automatic milestone tracking with key-date alerts',
+    'ctmsguide.pick.f5': 'Closed-loop issue and CAPA management, fully traceable',
+    'ctmsguide.pick.f6': 'Automated periodic reports, no more manual Excel consolidation',
+    'ctmsguide.pick.f7': 'Integration with eTMF / EDC, keeping status, documents, and data in sync',
+    'ctmsguide.pick.f8': 'Support for both in-house and outsourced (CRO) operating models, with permissions that adapt',
+
+    /* FAQ */
+    'ctmsguide.faq.label': 'FAQ',
+    'ctmsguide.faq.title': 'CTMS Frequently Asked Questions',
+    'ctmsguide.faq.desc': 'The questions we hear most often about the Clinical Trial Management System.',
+    'ctmsguide.faq.q1': 'What is a CTMS?',
+    'ctmsguide.faq.a1': 'A CTMS is software for managing the operational side of clinical trials: study portfolios, sites, subject enrollment, milestones and timelines, and issues with CAPA. It tracks progress and status — complementing the eTMF, which manages evidence documents, and the EDC, which captures clinical data.',
+    'ctmsguide.faq.q2': 'What is the difference between CTMS, eTMF, and EDC?',
+    'ctmsguide.faq.a2': 'The CTMS tracks operational status (site progress, enrollment numbers, milestones); the eTMF archives evidence documents (protocols, approvals, signature records); the EDC captures subject clinical data. Well-designed systems interoperate and avoid duplicate entry.',
+    'ctmsguide.faq.q3': 'Do small teams need a CTMS?',
+    'ctmsguide.faq.a3': 'For one or two single-site trials, spreadsheets and calendars may be enough. But with multiple sites, parallel trials, or CRO oversight duties, manual consolidation quickly breaks down. Small teams often need a lightweight, low-cost, ready-to-use CTMS even more than large ones.',
+    'ctmsguide.faq.q4': 'Is Excel enough for managing clinical trials?',
+    'ctmsguide.faq.a4': 'It works in the short term but carries real risks: version chaos, stale status, manual reporting, no audit trail, and inadequate CRO oversight. Most teams only realize this after an inspection or a missed milestone.',
+    'ctmsguide.faq.q5': 'What open-source CTMS options are available?',
+    'ctmsguide.faq.a5': 'The commercial market is dominated by vendors such as Veeva Vault CTMS and Medidata, often priced steeply for small biotechs and regional CROs. Mature open-source CTMS options have long been scarce; Vivarcus provides CTMS capabilities with an open-source core and native integration with eTMF and Study Startup.',
+    'ctmsguide.faq.q6': 'How long does it take to implement a CTMS?',
+    'ctmsguide.faq.a6': 'Hosted CTMS systems can be provisioned and configured within days to weeks; self-hosted deployments with validation (IQ/OQ/PQ) and operations typically take 1–3 months. The main time cost is mapping your own operational processes into the system.',
+
+    /* CTA */
+    'ctmsguide.cta.title': 'Want to See Vivarcus CTMS in Action?',
+    'ctmsguide.cta.desc': 'Open-source core, self-hosted or managed, with native integration to eTMF and Study Startup.',
+
+    /* ======== etmf-ctms-edc.html ======== */
+
+    /* Meta */
+    'cmp.meta.title': 'eTMF vs CTMS vs EDC: How the Three Clinical Trial Systems Differ — Vivarcus',
+    'cmp.meta.desc': 'What is the difference between eTMF, CTMS, and EDC? One comparison table explains the roles, data, and collaboration of the three clinical trial systems, and answers which to implement first and whether they can be unified.',
+
+    /* Hero */
+    'cmp.hero.eyebrow': 'System Comparison Guide',
+    'cmp.hero.title': 'eTMF vs CTMS vs EDC',
+    'cmp.hero.subtitle': 'Three clinical trial systems, one job each: evidence, progress, data. One table explains the differences — plus which to implement first and whether they can be unified.',
+
+    /* One-line summary */
+    'cmp.sum.etmf': 'eTMF · Evidence',
+    'cmp.sum.ctms': 'CTMS · Progress',
+    'cmp.sum.edc': 'EDC · Data',
+
+    /* Comparison table */
+    'cmp.table.label': 'Comparison Table',
+    'cmp.table.title': 'Seven Dimensions, One Table',
+    'cmp.table.desc': 'Bookmark this table — next time someone asks how the three systems relate, just send it over.',
+    'cmp.table.col.dim': 'Dimension',
+    'cmp.table.col.etmf': 'eTMF',
+    'cmp.table.col.ctms': 'CTMS',
+    'cmp.table.col.edc': 'EDC',
+    'cmp.table.r1.dim': 'Manages',
+    'cmp.table.r1.etmf': 'Essential trial documents (protocols, approvals, signature records)',
+    'cmp.table.r1.ctms': 'Operational status (sites, enrollment, milestones)',
+    'cmp.table.r1.edc': 'Subject clinical data',
+    'cmp.table.r2.dim': 'Answers',
+    'cmp.table.r2.etmf': 'Where is the evidence',
+    'cmp.table.r2.ctms': 'Where does the trial stand',
+    'cmp.table.r2.edc': 'What is the data',
+    'cmp.table.r3.dim': 'Core objects',
+    'cmp.table.r3.etmf': 'Documents, versions, archive structure',
+    'cmp.table.r3.ctms': 'Studies, sites, subjects, issues',
+    'cmp.table.r3.edc': 'CRF forms, fields, data points',
+    'cmp.table.r4.dim': 'Key compliance',
+    'cmp.table.r4.etmf': 'ICH GCP, 21 CFR Part 11, DIA TMF model',
+    'cmp.table.r4.ctms': 'GCP oversight duties, traceability for inspections',
+    'cmp.table.r4.edc': '21 CFR Part 11, data integrity (ALCOA+)',
+    'cmp.table.r5.dim': 'Role in inspections',
+    'cmp.table.r5.etmf': 'The primary object of review, exports a TMF Index',
+    'cmp.table.r5.ctms': 'Supporting evidence of oversight and issue closure',
+    'cmp.table.r5.edc': 'Source for data verification and statistical analysis',
+    'cmp.table.r6.dim': 'Main users',
+    'cmp.table.r6.etmf': 'TMF specialists, CRAs, QA, inspectors',
+    'cmp.table.r6.ctms': 'Clinical operations, project managers, sponsors',
+    'cmp.table.r6.edc': 'Investigators, CRCs, data management, biostatistics',
+    'cmp.table.r7.dim': 'Typical systems',
+    'cmp.table.r7.etmf': 'Veeva Vault eTMF, Vivarcus eTMF',
+    'cmp.table.r7.ctms': 'Veeva Vault CTMS, Vivarcus CTMS',
+    'cmp.table.r7.edc': 'Medidata Rave, REDCap, and others',
+
+    /* How they work together */
+    'cmp.flow.label': 'How They Work Together',
+    'cmp.flow.title': 'Collaboration in Action: A Site Activation Story',
+    'cmp.flow.desc': 'One business event, projected across three systems. Take site activation as an example:',
+    'cmp.flow.step1.title': '1 · CTMS: Milestone Completed',
+    'cmp.flow.step1.desc': 'The site activation milestone is marked complete; the system checks that all prerequisite activities are done and prompts for the corresponding TMF expected documents.',
+    'cmp.flow.step2.title': '2 · eTMF: Evidence Filed',
+    'cmp.flow.step2.desc': 'Ethics approvals, contracts, and training records are filed, signed, and version-locked per the DIA model; the TMF Index updates automatically.',
+    'cmp.flow.step3.title': '3 · EDC: Data Starts Flowing',
+    'cmp.flow.step3.desc': 'The site begins entering subject data; enrollment data syncs back to the CTMS and the enrollment curve updates in real time.',
+
+    /* One platform or separate */
+    'cmp.platform.title': 'Unified Platform vs Separate Systems',
+    'cmp.platform.p1': 'Buying three separate systems means three sets of accounts, three contracts, and three integration paths. Data sync is a permanent headache — CTMS enrollment numbers that do not match the EDC, milestones completed without corresponding documents in the eTMF. Every mismatch becomes a problem at inspection time.',
+    'cmp.platform.p2': 'A unified platform (the path Veeva Vault took, and Vivarcus as well) puts eTMF, CTMS, and other applications on <strong>one technical foundation</strong>: shared accounts, permissions, audit, and documents, with cross-application data natively connected. The EDC, for historical reasons, often stays separate and integrates through standard interfaces.',
+    'cmp.platform.f1': 'Single sign-on and unified permissions — one account across all applications',
+    'cmp.platform.f2': 'Milestone ↔ expected document linkage — completion triggers evidence checks',
+    'cmp.platform.f3': 'One audit trail — cross-application actions traceable in a single thread',
+    'cmp.platform.f4': 'One contract, one validation, one thing to operate',
+
+    /* FAQ */
+    'cmp.faq.label': 'FAQ',
+    'cmp.faq.title': 'eTMF / CTMS / EDC Frequently Asked Questions',
+    'cmp.faq.desc': 'The questions we hear most often about how the three systems relate.',
+    'cmp.faq.q1': 'What is the difference between eTMF, CTMS, and EDC?',
+    'cmp.faq.a1': 'In one sentence: the eTMF manages evidence — controlled archiving of essential trial documents; the CTMS manages progress — operational status such as sites, enrollment, and milestones; the EDC manages data — collection and cleaning of subject clinical data. The three roles are complementary, not interchangeable.',
+    'cmp.faq.q2': 'Can one system manage all three?',
+    'cmp.faq.a2': 'A unified platform (such as Veeva Vault or Vivarcus) provides multiple applications on one foundation with naturally connected data, but each application still has a distinct job. Using a single module as TMF, CTMS, and EDC at once does not work. In practice, unified CTMS + eTMF with an EDC integration is the common pattern.',
+    'cmp.faq.q3': 'Which system should we implement first?',
+    'cmp.faq.a3': 'It depends on the biggest pain point: high inspection risk and messy documents point to the eTMF; multi-center operational chaos and painful reporting point to the CTMS; an undigitalized trial points to the EDC. Most teams adopt an EDC first, followed by an eTMF or CTMS.',
+    'cmp.faq.q4': 'Does EDC enrollment data sync to the CTMS automatically?',
+    'cmp.faq.a4': 'It depends on integration. Independently purchased systems often rely on manual exports or scheduled API syncs; a unified platform or prebuilt connectors enable automatic sync so enrollment curves always match EDC data.',
+    'cmp.faq.q5': 'How do CTMS milestones relate to eTMF documents?',
+    'cmp.faq.a5': 'They are two sides of the same business event: the CTMS records when something completes, and the eTMF archives the evidence. Ideally they are linked — when a milestone completes, the system prompts and checks that the corresponding documents are filed (the expected documents mechanism).',
+    'cmp.faq.q6': 'Is an all open-source or low-cost stack viable for the three systems?',
+    'cmp.faq.a6': 'Yes. The EDC space already has mature open-source options (such as REDCap). Open-source eTMF and CTMS have long been gaps; Vivarcus fills them with an open-source core plus a managed hosting option.',
+
+    /* CTA */
+    'cmp.cta.title': 'Want to See a Unified Platform in Action?',
+    'cmp.cta.desc': 'Vivarcus offers eTMF, CTMS, and Study Startup on one foundation, with an open-source core. Self-hosted or managed.',
   },
 };

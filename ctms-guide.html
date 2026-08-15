@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="ctmsguide.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="ctmsguide.meta.desc" content="什么是 CTMS？本指南介绍临床试验管理系统的定义、核心能力、与 eTMF / EDC 的区别，以及如何选择 CTMS 系统。" />
+  <title>什么是 CTMS？临床试验管理系统完全指南 — Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/ctms-guide.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/ctms-guide.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/ctms-guide.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/ctms-guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/ctms-guide.html" />
+  <meta property="og:title" data-i18n-og="ctmsguide.meta.title" content="什么是 CTMS？临床试验管理系统完全指南 — Vivarcus" />
+  <meta property="og:description" data-i18n-og="ctmsguide.meta.desc" content="什么是 CTMS？本指南介绍临床试验管理系统的定义、核心能力、与 eTMF / EDC 的区别，以及如何选择 CTMS 系统。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="什么是 CTMS？临床试验管理系统完全指南" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="ctmsguide.meta.title" content="什么是 CTMS？临床试验管理系统完全指南 — Vivarcus" />
+  <meta name="twitter:description" data-i18n-og="ctmsguide.meta.desc" content="什么是 CTMS？本指南介绍临床试验管理系统的定义、核心能力、与 eTMF / EDC 的区别，以及如何选择 CTMS 系统。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "什么是 CTMS？临床试验管理系统完全指南",
+        "description": "什么是 CTMS？本指南介绍临床试验管理系统的定义、核心能力、与 eTMF / EDC 的区别与选型要点。",
+        "url": "https://vivarcus.com/ctms-guide.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "CTMS 指南", "item": "https://vivarcus.com/ctms-guide.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/ctms-guide.html#faq-zh",
+        "inLanguage": "zh-CN",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "什么是 CTMS？",
+            "acceptedAnswer": { "@type": "Answer", "text": "CTMS（Clinical Trial Management System，临床试验管理系统）是管理临床试验运营层面的软件系统：研究组合、站点、受试者入组、里程碑与时间线、问题与 CAPA。它管的是「进度与状态」——与 eTMF 管「证据文件」、EDC 管「病例数据」各司其职。" }
+          },
+          {
+            "@type": "Question",
+            "name": "CTMS 和 eTMF、EDC 有什么区别？",
+            "acceptedAnswer": { "@type": "Answer", "text": "三者职责不同：CTMS 追踪运营状态（站点进度、入组数、里程碑）；eTMF 归档证据文件（方案、批件、签名记录）；EDC 采集受试者病例数据。合格的三类系统应能互通——CTMS 里的里程碑关联 eTMF 里的文档，入组数据来自 EDC，避免重复录入。" }
+          },
+          {
+            "@type": "Question",
+            "name": "团队很小，需要用 CTMS 吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "如果只运行 1-2 项单中心试验，Excel 加日历也许够用；一旦出现多中心、多试验并行或需要监督 CRO，人工汇总会迅速失控。规模小的团队反而更需要轻量、低成本、开箱即用的 CTMS，而不是为复杂系统支付天价实施费。" }
+          },
+          {
+            "@type": "Question",
+            "name": "用 Excel 管理临床试验够吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "短期内可行，但风险显著：版本混乱、状态滞后、汇报靠人肉汇总、缺乏审计追踪，也无法满足申办方对 CRO 的监督义务。多数团队在稽查或里程碑延误后才意识到需要系统化。一个低成本 CTMS 即可避免这些问题。" }
+          },
+          {
+            "@type": "Question",
+            "name": "开源 CTMS 有哪些选择？",
+            "acceptedAnswer": { "@type": "Answer", "text": "商业 CTMS 市场由 Veeva Vault CTMS、Medidata 等厂商主导，价格对中小 Biotech 和本土 CRO 往往偏高。开源 CTMS 长期缺少成熟的方案，Vivarcus 以开源核心提供 CTMS 能力，支持自建或托管部署，并与 eTMF、Study Startup 天然打通。" }
+          },
+          {
+            "@type": "Question",
+            "name": "实施一个 CTMS 需要多长时间？",
+            "acceptedAnswer": { "@type": "Answer", "text": "托管型 CTMS 数天至数周即可开通并完成基础配置；自建型加上验证（IQ/OQ/PQ）与运维通常 1-3 个月。时间的主要部分是梳理自家的运营流程（站点、里程碑、报告口径）并配置到系统中，而非软件本身。" }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vivarcus.com/ctms-guide.html#faq-en",
+        "inLanguage": "en-US",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a CTMS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A CTMS (Clinical Trial Management System) is software for managing the operational side of clinical trials: study portfolios, sites, subject enrollment, milestones and timelines, and issues with CAPA. It tracks progress and status — complementing the eTMF, which manages evidence documents, and the EDC, which captures clinical data." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between CTMS, eTMF, and EDC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each has a distinct role: the CTMS tracks operational status (site progress, enrollment numbers, milestones); the eTMF archives evidence documents (protocols, approvals, signature records); the EDC captures subject clinical data. Well-designed systems interoperate — milestones in the CTMS link to documents in the eTMF, and enrollment data flows from the EDC, avoiding duplicate entry." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do small teams need a CTMS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "For one or two single-site trials, spreadsheets and calendars may be enough. But with multiple sites, parallel trials, or CRO oversight duties, manual consolidation quickly breaks down. Small teams often need a lightweight, low-cost, ready-to-use CTMS more than an expensive enterprise system." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Excel enough for managing clinical trials?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It works in the short term but carries real risks: version chaos, stale status, manual reporting, no audit trail, and inadequate sponsor oversight of CROs. Most teams only realize this after an inspection or a missed milestone. A low-cost CTMS avoids these problems." }
+          },
+          {
+            "@type": "Question",
+            "name": "What open-source CTMS options are available?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The commercial CTMS market is dominated by vendors such as Veeva Vault CTMS and Medidata, often priced steeply for small biotechs and regional CROs. Mature open-source CTMS options have long been scarce; Vivarcus provides CTMS capabilities with an open-source core, supporting self-hosted or managed deployments and integrating natively with eTMF and Study Startup." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to implement a CTMS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hosted CTMS systems can be provisioned and configured within days to weeks; self-hosted deployments with validation (IQ/OQ/PQ) and operations typically take 1–3 months. The main time cost is mapping your own operational processes (sites, milestones, reporting metrics) into the system, not the software itself." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--chart-line" aria-hidden="true"></i>
+          <span data-i18n="ctmsguide.hero.eyebrow">CTMS 指南</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="ctmsguide.hero.title">什么是 CTMS？</h1>
+        <p class="page-hero-subtitle" data-i18n="ctmsguide.hero.subtitle">临床试验管理系统完全入门指南 — 定义、核心能力、与 eTMF / EDC 的分工与选型要点，一文讲清楚。</p>
+      </div>
+    </section>
+
+    <!-- Definition -->
+    <section class="about-intro" data-reveal>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 data-i18n="ctmsguide.def.title">什么是 CTMS？</h2>
+            <p data-i18n-html="ctmsguide.def.p1">
+              CTMS 是「临床试验管理系统」（Clinical Trial Management System）的缩写，管理临床试验的运营层面：研究组合、站点、受试者入组、里程碑与时间线、问题与纠正措施（CAPA）。
+              如果说 eTMF 回答「证据在哪」，EDC 回答「数据是什么」，CTMS 回答的是——<strong>「试验进行到哪一步了」</strong>。
+            </p>
+            <p data-i18n="ctmsguide.def.p2">
+              一个多中心试验涉及几十上百个站点、数千名受试者、严格的入组时间表和监管汇报义务。没有系统支持时，这些状态散落在 Excel、邮件和电话里，汇报靠人肉汇总，问题发现总是晚一步。
+              CTMS 把这些运营信息集中到一个受控系统：状态实时可见、汇报自动生成、问题闭环追踪。
+            </p>
+            <p data-i18n-html="ctmsguide.def.p3">
+              对申办方而言 CTMS 还有一层特殊价值：<strong>对 CRO 的监督义务</strong>。把试验外包给 CRO 不等于把责任外包——申办方需要随时掌握试验健康状态，CTMS 正是为此设计的。
+            </p>
+          </div>
+          <div class="about-visual">
+            <div class="arch-layer arch-layer--app">
+              <i class="ic ic--chart-line" aria-hidden="true"></i>
+              <span data-i18n="ctmsguide.def.arch.ctms">CTMS 进度与状态</span>
+            </div>
+            <div class="arch-layer arch-layer--vault">
+              <i class="ic ic--folder-open" aria-hidden="true"></i>
+              <span data-i18n="ctmsguide.def.arch.etmf">eTMF 证据文件</span>
+            </div>
+            <div class="arch-layer arch-layer--domain">
+              <i class="ic ic--flask-conical" aria-hidden="true"></i>
+              <span data-i18n="ctmsguide.def.arch.edc">EDC 病例数据</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why CTMS matters -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="ctmsguide.why.label">运营挑战</span>
+          <h2 class="section-title" data-i18n="ctmsguide.why.title">为什么多中心试验离不开 CTMS</h2>
+          <p class="section-desc" data-i18n="ctmsguide.why.desc">试验规模越大，Excel 和邮件越撑不住。四个典型痛点：</p>
+        </div>
+
+        <div class="capability-grid capability-grid--bento" data-reveal-group>
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--blue">
+              <i class="ic ic--building-2" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="ctmsguide.why.sites.title">站点管理失控</h3>
+            <p data-i18n="ctmsguide.why.sites.desc">几十个站点，各自处于启动、入组、关闭的不同阶段。没有生命周期管理，谁在等批件、谁该关闭了，全靠人记。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--orange">
+              <i class="ic ic--gauge" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="ctmsguide.why.enroll.title">入组进度黑盒</h3>
+            <p data-i18n="ctmsguide.why.enroll.desc">入组进度决定试验成败与成本。进度滞后一个月才被发现，意味着数百万的额外成本——实时入组曲线是基本要求。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--purple">
+              <i class="ic ic--clock" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="ctmsguide.why.milestone.title">里程碑延误</h3>
+            <p data-i18n="ctmsguide.why.milestone.desc">关键里程碑（首例入组、期中分析、锁库）环环相扣。没有自动预测和提醒，一次延误会级联放大。</p>
+          </div>
+
+          <div class="capability-card">
+            <div class="capability-card__icon capability-card__icon--teal">
+              <i class="ic ic--network" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="ctmsguide.why.cro.title">CRO 监督义务</h3>
+            <p data-i18n="ctmsguide.why.cro.desc">申办方把运营外包给 CRO，监督责任仍在申办方。监管稽查时会问：你如何确保及时发现问题？CTMS 提供答案。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selection checklist -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="ctmsguide.pick.label">选型要点</span>
+          <h2 class="section-title" data-i18n="ctmsguide.pick.title">选择 CTMS 系统的 8 项核心能力清单</h2>
+          <p class="section-desc" data-i18n="ctmsguide.pick.desc">无论商业还是开源，评估任何 CTMS 方案都可以对照这张清单。</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f1">研究组合仪表板：所有试验的进度与健康状况一屏掌握</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f2">站点生命周期管理：可行性、选择、启动、关闭全流程</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f3">受试者入组实时追踪：入组曲线、偏离、预测</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f4">里程碑自动追踪与关键节点预警</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about-text">
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f5">问题与 CAPA 闭环管理，从发现到解决全程可查</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f6">周期报告自动生成，不再人肉汇总 Excel</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f7">与 eTMF / EDC 集成，状态与文档、数据互通</span>
+              </li>
+              <li>
+                <span class="feature-list__check"><i class="ic ic--check" aria-hidden="true"></i></span>
+                <span data-i18n="ctmsguide.pick.f8">支持自营与 CRO 外包两种运营模式，权限随模式调整</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="ctmsguide.faq.label">常见问题</span>
+          <h2 class="section-title" data-i18n="ctmsguide.faq.title">CTMS 常见问题</h2>
+          <p class="section-desc" data-i18n="ctmsguide.faq.desc">关于临床试验管理系统，被问得最多的问题。</p>
+        </div>
+
+        <div class="faq-grid" data-reveal-group>
+          <div class="faq-item">
+            <h3 data-i18n="ctmsguide.faq.q1">什么是 CTMS？</h3>
+            <p data-i18n="ctmsguide.faq.a1">CTMS 是管理临床试验运营层面的软件系统：研究组合、站点、受试者入组、里程碑与时间线、问题与 CAPA。它管的是「进度与状态」——与 eTMF 管「证据文件」、EDC 管「病例数据」各司其职。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="ctmsguide.faq.q2">CTMS 和 eTMF、EDC 有什么区别？</h3>
+            <p data-i18n="ctmsguide.faq.a2">CTMS 追踪运营状态（站点进度、入组数、里程碑）；eTMF 归档证据文件（方案、批件、签名记录）；EDC 采集受试者病例数据。合格的三类系统应能互通，避免重复录入。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="ctmsguide.faq.q3">团队很小，需要用 CTMS 吗？</h3>
+            <p data-i18n="ctmsguide.faq.a3">如果只运行 1-2 项单中心试验，Excel 加日历也许够用；一旦出现多中心、多试验并行或需要监督 CRO，人工汇总会迅速失控。小团队反而更需要轻量、低成本、开箱即用的 CTMS。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="ctmsguide.faq.q4">用 Excel 管理临床试验够吗？</h3>
+            <p data-i18n="ctmsguide.faq.a4">短期内可行，但风险显著：版本混乱、状态滞后、汇报靠人肉汇总、缺乏审计追踪，也无法满足对 CRO 的监督义务。多数团队在稽查或里程碑延误后才意识到需要系统化。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="ctmsguide.faq.q5">开源 CTMS 有哪些选择？</h3>
+            <p data-i18n="ctmsguide.faq.a5">商业市场由 Veeva Vault CTMS、Medidata 等厂商主导，价格对中小 Biotech 和本土 CRO 往往偏高。开源 CTMS 长期缺少成熟方案，Vivarcus 以开源核心提供 CTMS 能力，并与 eTMF、Study Startup 天然打通。</p>
+          </div>
+          <div class="faq-item">
+            <h3 data-i18n="ctmsguide.faq.q6">实施一个 CTMS 需要多长时间？</h3>
+            <p data-i18n="ctmsguide.faq.a6">托管型 CTMS 数天至数周即可开通；自建型加上验证（IQ/OQ/PQ）与运维通常 1-3 个月。时间的主要部分是梳理自家运营流程并配置到系统中。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="ctmsguide.cta.title">想看看 Vivarcus 的 CTMS 长什么样？</h2>
+          <p data-i18n="ctmsguide.cta.desc">开源核心，支持自建或托管部署，与 eTMF、Study Startup 天然打通。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="products.html" class="btn btn-outline btn-lg" data-i18n="common.cta.viewProducts">查看产品</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

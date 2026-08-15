@@ -1,0 +1,423 @@
+[
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "clinical-tasks",
+  "title": "Clinical Tasks",
+  "description": "Learn the Clinical User Task object types, how to create tasks, and the Open → Investigating / Implementing / Escalated → Resolved state flow with automatic metrics.",
+  "headings": [
+   "What Is a Clinical Task",
+   "Task Types (Object Types)",
+   "Creating a Task",
+   "States & Actions",
+   "Validation Rules",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "document-types",
+  "title": "Document Types",
+  "description": "Learn the Type → Subtype → Classification document taxonomy, numbering rules, seeded categories, and mapping to TMF reference model artifacts.",
+  "headings": [
+   "The Three-Level Taxonomy",
+   "Seeded Document Types",
+   "Document Numbering",
+   "Mapping to Reference Model Artifacts",
+   "Use in EDL Templates",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "edl",
+  "title": "EDL & Expected Documents",
+  "description": "Learn the concepts of Expected Document Lists (EDLs) and EDL Items, the matching rules, the recommended path of creating documents from EDL Items, and the Match Documents / Update Related Expected Documents actions.",
+  "headings": [
+   "What Is an EDL",
+   "Recommended Path: Create Documents from an EDL Item",
+   "Matching Rules",
+   "Common Actions",
+   "Checking Completeness",
+   "Expected Documents (EDL Items)",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "milestones",
+  "title": "Planning & Completing Milestones",
+  "description": "Learn the three milestone states, planning actions, completion order under dependency constraints, and how to view a milestone's expected documents.",
+  "headings": [
+   "Milestone States",
+   "Planning (Plan Milestone)",
+   "Completing Milestones (with Dependency Constraints)",
+   "Viewing Related Expected Documents",
+   "Relationship to the TMF Homepage",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "models-artifacts",
+  "title": "Models & Artifacts",
+  "description": "Learn the TMF reference Model and Artifact hierarchy, the seeded models and artifact tree, and how document-type-to-artifact mapping drives auto-filing and the TMF Viewer.",
+  "headings": [
+   "Models",
+   "Artifacts",
+   "Relationship to Document Filing",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "overview",
+  "title": "What Is eTMF & the TMF Reference Model",
+  "description": "Learn the core concepts of Vivarcus eTMF: the study hierarchy, Expected Document Lists (EDLs), milestones, the TMF Reference Model, and the five-step manage–collect–review–change–inspect workflow.",
+  "headings": [
+   "What Is eTMF",
+   "Core Concepts",
+   "The TMF Reference Model",
+   "A Typical Workflow",
+   "Before You Start",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "quality-issues",
+  "title": "Quality Issues",
+  "description": "A Quality Issue records document defects and tracks remediation from discovery to closure. Learn the four states, creation paths, the two-way link with documents, and the TMF Homepage statistics view.",
+  "headings": [
+   "What Is a Quality Issue",
+   "State Flow",
+   "Creating a Quality Issue",
+   "Two-Way Linkage",
+   "Viewing on the TMF Homepage",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "review-workflow",
+  "title": "Document Review, Approval & Versioning",
+  "description": "Learn the full controlled document lifecycle: submit for review, content review, QC, approval, electronic signature, and versioning when amendments occur.",
+  "headings": [
+   "The Document Lifecycle",
+   "Submitting for Review",
+   "Review, QC & Approval",
+   "Versioning Documents",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "study-hierarchy",
+  "title": "Study Hierarchy: Creating Studies, Countries & Sites",
+  "description": "Learn how to create a Study, configure milestone master sets and template EDLs, run Plan Study and Ready to Enroll, and create study countries and sites.",
+  "headings": [
+   "The Three-Level Structure",
+   "Creating a Study",
+   "Configuring and Activating a Study",
+   "Creating a Study Country",
+   "Creating a Study Site",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "study-personnel",
+  "title": "Study Personnel & User Role Setup",
+  "description": "Learn how to add people to the study team, grant access to related records (URS), generate expected documents by role, and how User Role Setup records are structured and maintained.",
+  "headings": [
+   "Study Personnel",
+   "User Role Setup",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "template-edls",
+  "title": "Template EDLs & Template Expected Documents",
+  "description": "Learn the Template Expected Document List hierarchy, the key fields of Template Expected Documents, and how template changes propagate to existing studies.",
+  "headings": [
+   "Concept: Template → Study",
+   "Creating a Template EDL",
+   "Template Expected Documents (EDL Item Templates)",
+   "How Template Changes Affect Studies",
+   "Applying to a Study",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "template-milestones",
+  "title": "Milestone Templates (Master Sets / Sets / Milestones / Dependencies)",
+  "description": "Learn the four-level milestone template structure — Template Milestone Master Set, Template Milestone Set, Template Milestone, and Template Milestone Dependency — and how it drives study milestone generation.",
+  "headings": [
+   "The Four-Level Structure",
+   "Template Milestone Master Sets",
+   "Template Milestone Sets",
+   "Template Milestones",
+   "Template Milestone Dependencies",
+   "Applying to a Study",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "template-tasks",
+  "title": "Template Tasks",
+  "description": "Learn how a Template Task predefines work for a template milestone and becomes a Clinical User Task once the study is generated.",
+  "headings": [
+   "What Is a Template Task",
+   "Key Fields",
+   "Relationship to Runtime Tasks",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "tmf-homepage",
+  "title": "TMF Homepage: Completeness & Inspection Readiness",
+  "description": "The TMF Homepage consolidates completeness, timeliness, quality issues and tasks into one health dashboard. Learn the semantics of each widget, the Study selector, and the inspection-readiness checklist.",
+  "headings": [
+   "Overview",
+   "Widget Overview",
+   "Completeness Semantics",
+   "Timeliness",
+   "Quality Issues & Tasks",
+   "Inspection Readiness Checklist",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "tmf-viewer",
+  "title": "TMF Viewer & Master File Binders",
+  "description": "Understand the division of labor between Binders (physical filing) and the TMF Viewer (virtual browsing by reference model), and learn Create Study Binders, auto-filing, and View Model switching.",
+  "headings": [
+   "Binder vs Viewer",
+   "Creating Study Binders",
+   "Auto-Filing",
+   "Using the TMF Viewer",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "etmf",
+  "app_label": "eTMF Help",
+  "slug": "upload-documents",
+  "title": "Uploading & Matching Documents",
+  "description": "Learn the recommended path of creating documents from EDL Items, the three creation methods (Upload / Placeholder / From Template), and the alternative path of creating from the document library.",
+  "headings": [
+   "Creating Documents from an EDL Item (Recommended)",
+   "Three Creation Methods",
+   "Creating from the Document Library (Alternative)",
+   "What Happens After Saving",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "clinical-tasks",
+  "title": "Monitoring Follow Up Items & CTMS Clinical Tasks",
+  "description": "Learn the CTMS Clinical Tasks lists, how to create and link Monitoring Follow Up Items to monitoring events, and how Seed Follow Up Items supports visit reporting.",
+  "headings": [
+   "Relationship to eTMF Clinical Tasks",
+   "Monitoring Follow Up Items",
+   "Seed Follow Up Items & Visit Reporting",
+   "Link to Milestone Completeness",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "dashboards",
+  "title": "Operational Dashboards: Study Management & CRA Homepage",
+  "description": "Learn the widget composition of the two CTMS workbenches and the three-level scope selector: Study Management Homepage for study managers, CRA Homepage for monitors.",
+  "headings": [
+   "Two Workbenches",
+   "Study Management Homepage",
+   "CRA Homepage",
+   "Division of Labor with the TMF Homepage",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "global-directory",
+  "title": "Global Directory",
+  "description": "Learn the four master-data sub-tabs of the Global Directory — Organizations, Products, Study Product Roles, and Personnel — and how the study hierarchy references them.",
+  "headings": [
+   "Organizations",
+   "Products",
+   "Study Product Roles",
+   "Personnel",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "issue-management",
+  "title": "Issues & Protocol Deviations",
+  "description": "Learn the four Issue types (Protocol Deviation / Observation / Protocol Violation / Risk Mitigation Action), creation and advancement paths, team prerequisites for Start PD Review, and comparison with eTMF quality issues.",
+  "headings": [
+   "Issue Types & Common Actions",
+   "Creating a Protocol Deviation",
+   "Advancing a Deviation (Formal Path)",
+   "Quick Closure: Observation",
+   "Risk Mitigation Actions (RMA)",
+   "Assign Risk Mitigation",
+   "Comparison with eTMF Quality Issues",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "monitoring-visits",
+  "title": "Monitoring Visits (Monitoring Events)",
+  "description": "Learn how to create the four visit types (PSV/SIV/IMV/COV) and advance the full lifecycle: Expected → Planning → Confirmed → In Progress → Final.",
+  "headings": [
+   "Visit Types",
+   "Visit States (Main Path)",
+   "Creating a Monitoring Visit",
+   "Advancing the Full Lifecycle",
+   "Viewing on Dashboards",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "overview",
+  "title": "What Is CTMS & the Study Operations Loop",
+  "description": "CTMS manages processes: studies, sites, subjects, monitoring and issues. Learn the seven-stage loop (start–sites–team–subjects–monitor–deviations–dashboards) and the division of labor with eTMF.",
+  "headings": [
+   "What Is CTMS",
+   "The Seven-Stage Loop",
+   "The Shared Study Hierarchy",
+   "A Typical Journey",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "site-lifecycle",
+  "title": "Site Lifecycle: Candidate to Active",
+  "description": "Learn the full country and site lifecycle: Select Country, Qualify Site, Select Site, Initiate Site, plus the On Hold and Will Not Participate exception paths.",
+  "headings": [
+   "Site State Main Path",
+   "Creating & Selecting a Country",
+   "Main Path: Candidate → Qualifying → Initiating → Active",
+   "Exception Path: On Hold",
+   "Exception Path: Will Not Participate",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "site-sae-tracking",
+  "title": "Site SAE Tracking",
+  "description": "Learn how to register serious adverse events (SAEs) at study sites in Site Monitoring, including required fields, links to monitoring events, and maintenance responsibilities.",
+  "headings": [
+   "What Is SAE Tracking",
+   "Registering an SAE",
+   "States & Maintenance",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "study-lifecycle",
+  "title": "Study Lifecycle: Create, Plan & Activate",
+  "description": "Learn the full CTMS study journey from Candidate to Active: configuring recruitment planning, filling recruitment milestone dates, setting enrollment metric Planned values, Plan Subject Recruitment and Ready to Enroll.",
+  "headings": [
+   "State Flow",
+   "Creating a Study",
+   "Configuring & Running Plan Study",
+   "Filling Recruitment Milestone Dates",
+   "Setting Enrollment Metric Planned Values",
+   "Plan Subject Recruitment",
+   "Activating the Study",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "study-metrics",
+  "title": "Milestone Tracking & Enrollment Metrics",
+  "description": "Learn Study Management's Milestone Tracking and Enrollment Metrics: from Plan Study generation to scheduling and completion, metric seeding, and Metrics Over Time gates.",
+  "headings": [
+   "Milestone Tracking",
+   "Enrollment Metrics",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "study-personnel",
+  "title": "Study Personnel & Communication (Team / Organizations / Communication Log)",
+  "description": "Learn the three sub-tabs of Study Personnel & Communication: the study team (Study Personnel), Study Organizations, and the Study Communication Log — fields and creation entry points.",
+  "headings": [
+   "Study Personnel",
+   "Study Organizations",
+   "Study Communication Log",
+   "Troubleshooting",
+   "Required Permissions & Roles"
+  ]
+ },
+ {
+  "app": "ctms",
+  "app_label": "CTMS Help",
+  "slug": "subjects",
+  "title": "Subject Registration & Status Tracking",
+  "description": "Learn the subject status flow (Consented → In Screening → Enrolled), registration fields, and how to record exception paths such as screen failures.",
+  "headings": [
+   "Common Subject States",
+   "Registering & Enrolling",
+   "Screen Failure (Exception Path)",
+   "Subject Visits",
+   "Relationship to Deviations & Visits",
+   "Required Permissions & Roles"
+  ]
+ }
+]
