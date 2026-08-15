@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="方案偏离（PD）决策树：这个偏离要不要报伦理、要不要写 CAPA？四步是/否问答给出处置路径，附重要偏离判定参考与 PD 日志模板。CRA/CRC 高频困惑点，30 秒出结论。" />
+  <title>方案偏离决策树：要不要报伦理/写 CAPA | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/pd-decision-tree.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/pd-decision-tree.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/pd-decision-tree.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/pd-decision-tree.html" />
+  <meta property="og:title" content="方案偏离决策树：要不要报伦理/写 CAPA | Vivarcus" />
+  <meta property="og:description" content="方案偏离（PD）决策树：四步是/否问答给出处置路径（报伦理/报申办方/启动 CAPA），附重要偏离判定参考与 PD 日志模板。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="方案偏离决策树 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <style>
+    .pd-wrap { padding: 2rem 0 3rem; max-width: 44rem; margin: 0 auto; }
+    .pd-q { border: 1px solid var(--border, #d8dde4); border-radius: 10px; padding: 1.3rem 1.4rem; margin-bottom: 1rem; }
+    .pd-q h2 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+    .pd-q p { margin: 0 0 1rem; font-size: 0.9rem; opacity: 0.78; line-height: 1.7; }
+    .pd-q .pd-hint { font-size: 0.82rem; opacity: 0.6; margin: 0.5rem 0 0; }
+    .pd-btn { margin-right: 0.6rem; padding: 0.5rem 1.4rem; border-radius: 8px; border: 1px solid var(--border, #d8dde4); background: transparent; cursor: pointer; font-size: 0.95rem; }
+    .pd-btn:hover { border-color: var(--accent, #2563eb); color: var(--accent, #2563eb); }
+    .pd-btn--yes { border-color: var(--accent, #2563eb); color: var(--accent, #2563eb); font-weight: 600; }
+    .pd-result { border: 1px solid var(--accent, #2563eb); border-radius: 10px; padding: 1.3rem 1.4rem; margin-bottom: 1rem; background: var(--bg-soft, #f6f8fa); display: none; }
+    .pd-result h2 { margin: 0 0 0.6rem; font-size: 1.1rem; }
+    .pd-result ol { margin: 0 0 0.8rem; padding-left: 1.2rem; line-height: 1.9; }
+    .pd-reset { font-size: 0.85rem; opacity: 0.7; cursor: pointer; border: none; background: none; text-decoration: underline; padding: 0; }
+    .pd-ref { font-size: 0.88rem; opacity: 0.8; line-height: 1.8; }
+    .pd-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.9rem 0 1.4rem; }
+    .pd-table th, .pd-table td { text-align: left; padding: 0.5rem 0.7rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .pd-table th { font-size: 0.78rem; opacity: 0.6; font-weight: 600; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--route" aria-hidden="true"></i>
+          <span>行业资源 · 交互工具</span>
+        </span>
+        <h1 class="page-hero-title">方案偏离决策树</h1>
+        <p class="page-hero-subtitle">发生偏离后先问自己四个问题：要不要报伦理、要不要报申办方、要不要写 CAPA。30 秒出处置路径。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0.5rem;">
+      <div class="container">
+        <div class="pd-wrap">
+
+          <div class="pd-q" id="pd-q1">
+            <h2>问题 1/4：是否影响受试者安全或权益？</h2>
+            <p>包括：导致受试者暴露于额外风险（如剂量错误、违反暂停标准）、影响知情同意有效性、延误安全性报告等。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('major')">是</button>
+            <button class="pd-btn" onclick="pdShow('q2')">否</button>
+          </div>
+
+          <div class="pd-q" id="pd-q2" style="display:none;">
+            <h2>问题 2/4：是否影响数据完整性或结果可靠性？</h2>
+            <p>例如：评估/检查漏项影响疗效或安全终点、样本处理错误、记录缺失导致无法溯源。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('major')">是</button>
+            <button class="pd-btn" onclick="pdShow('q3')">否</button>
+          </div>
+
+          <div class="pd-q" id="pd-q3" style="display:none;">
+            <h2>问题 3/4：是否为系统性/重复性偏离？</h2>
+            <p>同类偏离在本中心已发生 ≥3 次，或同一操作环节反复出现。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('capa')">是</button>
+            <button class="pd-btn" onclick="pdShow('q4')">否</button>
+          </div>
+
+          <div class="pd-q" id="pd-q4" style="display:none;">
+            <h2>问题 4/4：是否违反方案或法规的明确条款？</h2>
+            <p>包括：入排标准、访视窗口、ICF 签署要求、SAE 报告时限等有明文规定的项目。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('report')">是</button>
+            <button class="pd-btn pd-btn--no" onclick="pdResult('minor')">否</button>
+          </div>
+
+          <div class="pd-result" id="pd-result">
+            <h2 id="pd-result-title"></h2>
+            <ol id="pd-result-steps"></ol>
+            <button class="pd-reset" onclick="pdReset()">↺ 重新判断</button>
+          </div>
+
+          <h2 class="section-title" style="margin-top:2.5rem;">重要偏离判定参考</h2>
+          <p class="pd-ref">判定以研究方案与公司 SOP 的定义为准；下表为通用参考框架：</p>
+          <div style="overflow-x:auto;"><table class="pd-table">
+            <thead><tr><th>可能构成重要偏离的情形</th><th>举例</th></tr></thead>
+            <tbody>
+              <tr><td>影响受试者安全、权益或数据完整性</td><td>未签 ICF 即开始研究程序、SAE 未按时限报告</td></tr>
+              <tr><td>系统性/重复性偏离</td><td>同一中心反复超访视窗口</td></tr>
+              <tr><td>故意违反方案或法规</td><td>隐瞒 AE、伪造记录</td></tr>
+              <tr><td>导致受试者暴露于额外风险</td><td>剂量错误、违反暂停标准</td></tr>
+            </tbody>
+          </table></div>
+
+          <p class="pd-ref" style="margin-top:1.2rem;">
+            记录偏离请使用 <a href="template-protocol-deviation-log.html">方案偏离日志模板</a>；
+            偏离趋势是监查与稽查的重点，同类偏离 ≥3 次应启动 CAPA。
+            更新于 2026-08-15。本工具为通用参考，不构成法律意见；最终判定以研究方案、公司 SOP 与现行 GCP 为准。
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2>偏离登记到闭环，Vivarcus eTMF 里是结构化流程</h2>
+          <p>PD 记录、分级、CAPA 与报告在系统里一条链路，稽查时不用从 Excel 里翻历史。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="template-protocol-deviation-log.html" class="btn btn-outline btn-lg">PD 日志模板</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function pdShow(id) {
+      document.querySelectorAll('.pd-q').forEach(function (q) { q.style.display = 'none'; });
+      document.getElementById('pd-' + id).style.display = 'block';
+    }
+    function pdResult(path) {
+      document.querySelectorAll('.pd-q').forEach(function (q) { q.style.display = 'none'; });
+      var r = document.getElementById('pd-result');
+      var t = document.getElementById('pd-result-title');
+      var s = document.getElementById('pd-result-steps');
+      var steps = {
+        major: {
+          title: '处置：重要偏离路径——立即报告 PI 评估',
+          list: [
+            '48 小时内登记方案偏离日志（客观描述 + 分级）',
+            '报告 PI 评估是否需报伦理委员会（涉及受试者安全/权益时通常需要）',
+            '涉及安全性的按 SAE 路径另行报告（获知后 24 小时内报申办方）',
+            '根因分析并记录纠正与预防措施（CAPA），下次监查访视复核闭环',
+          ],
+        },
+        capa: {
+          title: '处置：系统性偏离——启动 CAPA',
+          list: [
+            '48 小时内登记本次偏离，标注"同类第 N 次"',
+            '启动 CAPA：找根因、定措施、指定责任人与完成时限',
+            '汇总同类偏离做趋势分析，评估是否需要培训或流程修订',
+            'CAPA 完成情况在后续监查访视中持续复核',
+          ],
+        },
+        report: {
+          title: '处置：违反明确条款——按方案与法规要求报告',
+          list: [
+            '48 小时内登记方案偏离日志，注明所违反的方案/法规条款',
+            '报告 PI 确认；涉及 ICF、时限或入排条款的，评估是否需要报伦理委员会',
+            '按方案规定时限报告申办方',
+            '记录处置结论并纳入趋势观察（同类再发生则启动 CAPA）',
+          ],
+        },
+        minor: {
+          title: '处置：次要偏离——记录并观察',
+          list: [
+            '48 小时内登记方案偏离日志，PI 签字确认',
+            '无需报伦理与 CAPA，但纳入趋势观察',
+            '同类偏离达到 3 次时升级：启动 CAPA（见"系统性偏离"路径）',
+          ],
+        },
+      };
+      t.textContent = steps[path].title;
+      s.innerHTML = steps[path].list.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+      r.style.display = 'block';
+      r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    function pdReset() {
+      document.getElementById('pd-result').style.display = 'none';
+      document.querySelectorAll('.pd-q').forEach(function (q) { q.style.display = 'none'; });
+      document.getElementById('pd-q1').style.display = 'block';
+      document.getElementById('pd-q1').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>

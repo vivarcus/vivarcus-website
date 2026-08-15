@@ -69,6 +69,21 @@ PAGES = [
      "SAE 报告模板：受试者信息、事件描述、严重性标准、相关性评估、报告时限记录（24 小时/7 天/15 天）与签署。不替代官方法规表格。",
      "模板库 · 报告模板", "SAE 报告模板（严重不良事件报告表）",
      "SAE 报告最关键三件事：时限（获知后 24 小时内报告）、诊断（写诊断不写症状）、签名（PI 本人签署）。"),
+    ("11-site-initiation-checklist.md", "template-site-initiation-checklist.html",
+     "中心启动检查清单模板（Site Initiation Checklist）| Vivarcus",
+     "中心启动检查清单模板：启动前准备（合同/伦理/人员/物资）、启动访视当日培训逐项核对、入组前确认。打印即用，与启动访视报告配套。",
+     "模板库 · 检查清单", "中心启动检查清单模板",
+     "启动访视最怕培训走过场、签名事后补。本清单一页纸：启动前自查 + 当日逐项打勾 + 入组前确认。"),
+    ("12-monitoring-visit-checklist.md", "template-monitoring-visit-checklist.html",
+     "监查访视检查清单模板（Monitoring Visit Checklist）| Vivarcus",
+     "监查访视检查清单模板：访视前准备、访视中逐项核对（ICF/入排/SDV/药物/安全性/偏离/ISF）、访视后收尾。与 MVR 报告模板配套，勾完照抄成稿。",
+     "模板库 · 检查清单", "监查访视检查清单模板",
+     "访视前/中/后三阶段勾选式核对，直接对应监查访视报告的章节——避免只打勾不写证据。"),
+    ("13-closeout-checklist.md", "template-closeout-checklist.html",
+     "关中心检查清单模板（Close-out Checklist）| Vivarcus",
+     "关中心检查清单模板：数据清理、药物清点、生物样本、文件归档、通知收尾五类逐项关闭。关中心访视前 2 周先自查，稽查高发环节提前堵漏。",
+     "模板库 · 检查清单", "关中心检查清单模板",
+     "关中心是稽查高发环节：数据没清干净、药物对不上账、伦理没结题通知最常见。关中心前 2 周先用本清单自查。"),
 ]
 
 HEAD = """<!DOCTYPE html>
@@ -210,7 +225,13 @@ FOOT = """
           <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
           <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
           <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
-          <a href="ich-e6r3.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
           <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
           <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
           <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
@@ -317,6 +338,24 @@ PAGE_GUIDES = {
         "研究中心向申办方报告 SAE 时",
         "避免报告超时、用症状代替诊断或缺少 PI 签署",
         '<a href="template-monitoring-visit-report.html">监查访视报告</a> · <a href="template-audit-readiness-checklist.html">稽查准备清单</a>',
+    ),
+    "template-site-initiation-checklist.html": (
+        "CRA、CRO 项目团队",
+        "中心启动前 1-2 周与启动访视当日",
+        "避免培训走过场、参训签名事后补、授权分工未落地",
+        '<a href="template-site-initiation-report.html">中心启动访视报告</a> · <a href="template-training-log.html">培训记录表</a>',
+    ),
+    "template-monitoring-visit-checklist.html": (
+        "CRA",
+        "每次常规监查访视前后",
+        "避免抽查无证据、遗漏药物/安全/偏离核对项",
+        '<a href="template-monitoring-visit-report.html">监查访视报告模板</a> · <a href="template-mvr-example.html">填写示例与常见错误</a>',
+    ),
+    "template-closeout-checklist.html": (
+        "CRA、PM、中心研究团队",
+        "关中心访视前 2 周与访视当日",
+        "避免数据未清理、药物不平账、伦理未结题",
+        '<a href="template-closeout-visit-report.html">关中心访视报告</a> · <a href="template-tmf-index.html">TMF 文件清单</a>',
     ),
 }
 

@@ -44,6 +44,7 @@ HEAD = """<!DOCTYPE html>
     .content-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
     .content-note p { margin: 0.25rem 0; }
     .content-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+@@EXTRA_STYLE@@
   </style>
 </head>
 <body>
@@ -138,7 +139,13 @@ FOOT = """
           <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
           <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
           <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
-          <a href="ich-e6r3.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
           <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
           <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
           <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
@@ -183,6 +190,8 @@ def inline(s):
     s = esc(s)
     for rx, rep in INLINE_RE:
         s = rx.sub(rep, s)
+    # external links open in a new tab
+    s = re.sub(r'(<a href="https?://[^"]+")', r'\1 target="_blank" rel="noopener"', s)
     return s
 
 
@@ -297,11 +306,12 @@ def convert(md_text):
     return "\n".join(out)
 
 
-def render_page(meta, body, cta_title, cta_desc, cta_secondary_href, cta_secondary_label):
-    """meta: dict(title, desc, file, eyebrow, hero, subtitle)"""
+def render_page(meta, body, cta_title, cta_desc, cta_secondary_href, cta_secondary_label, extra_style=""):
+    """meta: dict(title, desc, file, eyebrow, hero, subtitle); extra_style: page-specific CSS injected after the base style"""
     html = HEAD.replace("@@TITLE@@", meta["title"]).replace("@@DESC@@", meta["desc"]) \
         .replace("@@FILE@@", meta["file"]).replace("@@EYEBROW@@", meta["eyebrow"]) \
         .replace("@@HERO@@", meta["hero"]).replace("@@SUBTITLE@@", meta["subtitle"]) \
+        .replace("@@EXTRA_STYLE@@", extra_style) \
         .replace("@@BODY@@", body)
     html += CTA.replace("@@CTA_TITLE@@", cta_title).replace("@@CTA_DESC@@", cta_desc) \
         .replace("@@CTA_SECONDARY_HREF@@", cta_secondary_href) \

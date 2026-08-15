@@ -30,6 +30,19 @@ PAGES = [
         "cta_secondary_href": "tmf-reference.html",
         "cta_secondary_label": "TMF 分类参考",
     },
+    {
+        "src": "gcp-2026-essentials.md",
+        "file": "gcp-2026.html",
+        "title": "2026 版 GCP 要点：数据治理、保存期限与关键变化 | Vivarcus",
+        "desc": "2026 版 GCP（2026-09-01 施行）中文要点：82→54 条六章结构、新增第五章数据治理（元数据与稽查轨迹、盲态完整性、计算机化系统）、保存期限与关键变化对照、9/1 前落地清单。",
+        "eyebrow": "法规库 · 中国法规",
+        "hero": "2026 版 GCP 要点",
+        "subtitle": "9 月 1 日施行：82 → 54 条、新增第五章数据治理。这一页把关键变化、保存期限与落地清单整理成速查表。",
+        "cta_title": "第五十一条到五十三条，Vivarcus eTMF 里已经内置",
+        "cta_desc": "稽查轨迹、元数据管理、受控数据更正、权限分层与电子签名——对应 2026 GCP 数据治理章，开箱即用。",
+        "cta_secondary_href": "ich-e6r3.html",
+        "cta_secondary_label": "ICH E6(R3) 要点",
+    },
 ]
 
 

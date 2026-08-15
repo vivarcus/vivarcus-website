@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026 版 GCP（2026-09-01 施行）中文要点：82→54 条六章结构、新增第五章数据治理（元数据与稽查轨迹、盲态完整性、计算机化系统）、保存期限与关键变化对照、9/1 前落地清单。" />
+  <title>2026 版 GCP 要点：数据治理、保存期限与关键变化 | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/gcp-2026.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/gcp-2026.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/gcp-2026.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/gcp-2026.html" />
+  <meta property="og:title" content="2026 版 GCP 要点：数据治理、保存期限与关键变化 | Vivarcus" />
+  <meta property="og:description" content="2026 版 GCP（2026-09-01 施行）中文要点：82→54 条六章结构、新增第五章数据治理（元数据与稽查轨迹、盲态完整性、计算机化系统）、保存期限与关键变化对照、9/1 前落地清单。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="2026 版 GCP 要点：数据治理、保存期限与关键变化 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <style>
+    .content-wrap { padding: 1.5rem 0 3rem; }
+    .content-inner { max-width: 56rem; }
+    .content-inner h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .content-inner h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .content-inner h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .content-inner p { line-height: 1.8; }
+    .content-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .content-table th, .content-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .content-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .content-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .content-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .content-note p { margin: 0.25rem 0; }
+    .content-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--book-open" aria-hidden="true"></i>
+          <span>法规库 · 中国法规</span>
+        </span>
+        <h1 class="page-hero-title">2026 版 GCP 要点</h1>
+        <p class="page-hero-subtitle">9 月 1 日施行：82 → 54 条、新增第五章数据治理。这一页把关键变化、保存期限与落地清单整理成速查表。</p>
+      </div>
+    </section>
+
+    <section class="section content-wrap">
+      <div class="container content-inner">
+<aside class="content-note"><p>更新于 2026-08-15｜来源：<a href="https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html" target="_blank" rel="noopener">NMPA 官方公告 2026 年第 50 号</a>（2026-06-08 发布，含全文附件与官方问答）</p><p>免责：本文解读为编者自产，非法律意见；正式引用请以官方文本为准。</p></aside>
+<h2>一、一句话背景</h2>
+<p>《药物临床试验质量管理规范（2026 年修订）》由 NMPA 会同国家卫生健康委、国家中医药局、国家疾控局联合发布，<strong>2026-09-01 施行</strong>，同日起 2020 年版（2020 年第 57 号公告）废止。新版全面吸收 ICH E6(R3) 理念，条文从 82 条精简为 <strong>54 条</strong>，并新增「数据治理」专章。</p>
+<p>配套动作：国家药监局核查中心 2026-06-08 同步发布《药品注册核查要点与判定原则（药物临床试验）》《药物临床试验机构监督检查要点与判定原则》修订稿征求意见（征求意见至 7/4），新增数据治理等核查要点——<strong>检查尺度与规范同频更新</strong>。</p>
+<h2>二、整体变化：82 → 54 条，六章结构</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>章</th><th>标题</th><th>条款</th><th>变化要点</th>
+</tr></thead><tbody>
+<tr><td>第一章</td><td>总则</td><td>第 1-13 条</td><td>理念升级：质量源于设计、符合目的、风险相称</td></tr>
+<tr><td>第二章</td><td>伦理审查委员会</td><td>第 14-17 条</td><td>第十六条明确伦理记录保存期限</td></tr>
+<tr><td>第三章</td><td>主要研究者和药物临床试验机构</td><td>第 18-31 条</td><td>第十九条：主要研究者为现场最终责任人；第二十九条：必备记录保存期限</td></tr>
+<tr><td>第四章</td><td>申办者</td><td>第 32-50 条</td><td>第三十二条：申办者为相关活动最终责任人，可委托不可转移；覆盖质量管理与风险控制、服务供应商委托等</td></tr>
+<tr><td>第五章</td><td><strong>数据治理（新增）</strong></td><td>第 51-53 条</td><td>元数据与稽查轨迹、盲态完整性、计算机化系统要求入条款</td></tr>
+<tr><td>第六章</td><td>附则</td><td>第 54 条</td><td>术语定义："试验参与者，即受试者"</td></tr>
+</tbody></table></div>
+<p>理念转变的实质：从"发现问题后纠正"转向<strong>"在设计阶段预防问题发生"</strong>——这与 ICH E6(R3) 原则 6（质量源于设计）和原则 7（风险相称）一脉相承。</p>
+<h2>三、新增第五章「数据治理」逐条要点</h2>
+<h3>第五十一条：数据治理总体责任</h3>
+<ul><li>申办者、主要研究者和临床试验机构<strong>在各自职责范围内共同承担</strong>数据治理责任，贯穿数据全生命周期</li><li><strong>从任何来源获取的数据（含计算机化系统直接采集）应附带元数据，包括稽查轨迹</strong></li><li>制定数据和元数据审核规程；更正数据错误的流程须确保更正过程可追溯</li><li>系统间数据传输须经验证流程，保证可靠性、可追溯性、安全性</li><li>统计分析前按预定程序对数据集做最终确认</li></ul>
+<p><strong>落点</strong>：eTMF/CTMS 须具备稽查轨迹、元数据管理与受控的数据更正流程；TMF 中归档数据管理计划（DMP）与数据清理记录。</p>
+<h3>第五十二条：盲态完整性</h3>
+<ul><li>盲法试验各阶段保持盲态完整性</li><li>实施前确定并记录可访问非盲信息的角色、职责和流程</li><li>记录揭盲或意外破盲情况，评估影响并采取必要措施</li></ul>
+<p><strong>落点</strong>：系统权限模型须支持按盲态分层；破盲事件记录归档 TMF 并与 SAE 报告关联。</p>
+<h3>第五十三条：计算机化系统</h3>
+<ul><li>系统设置、安装、使用须有 SOP，使用人员经培训</li><li>数据安全覆盖全生命周期；及时备份并有故障应急措施</li><li>系统须可靠验证、符合预期用途，试验期间保持验证有效状态</li><li>建立系统问题记录、评估与管理流程，定期审查识别系统性问题</li><li><strong>具备完善的用户管理、权限管理和稽查轨迹</strong>；电子签名符合国家规定</li><li>用户权限符合职责职能、盲法设置和所属组织</li></ul>
+<p><strong>落点</strong>：eTMF 系统验证文件（validation package）归档；用户权限设计与授权分工表一致；电子签名可追溯。</p>
+<h2>四、关键变化对照（2020 版 → 2026 版）</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>变化点</th><th>2020 版</th><th>2026 版</th>
+</tr></thead><tbody>
+<tr><td>条文数量</td><td>82 条</td><td>54 条（六章）</td></tr>
+<tr><td>数据治理</td><td>无专章</td><td>新增第五章（第 51-53 条）：元数据、稽查轨迹、盲态完整性、计算机化系统</td></tr>
+<tr><td>术语</td><td>「受试者」</td><td>「试验参与者」（第五十四条定义：即受试者）——ICF、方案等文件措辞需同步</td></tr>
+<tr><td>监管理念</td><td>问题纠正导向</td><td>设计阶段预防（质量源于设计、风险相称，吸收 ICH E6(R3)）</td></tr>
+<tr><td>责任界定</td><td>分散表述</td><td>集中明确：主要研究者=现场最终责任人（第十九条）；申办者=相关活动最终责任人（第三十二条），可委托不可转移</td></tr>
+</tbody></table></div>
+<p><strong>保存期限</strong>（稽查高频知识点）：伦理审查记录至少保存至试验药物获批上市后 5 年、未获批或未用于注册的至试验终止后 5 年（第十六条）；临床试验必备记录同口径（第二十九条第（三）款）。</p>
+<h2>五、与 ICH E6(R3) 的对应</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>2026 版 GCP</th><th>E6(R3) 对应</th>
+</tr></thead><tbody>
+<tr><td>第五章「数据治理」（第 51-53 条）</td><td>Annex 1 Data Governance + 原则 9.4（记录完整性与可追溯性）/ 9.5（必备记录保存）</td></tr>
+<tr><td>理念条款（第一章）</td><td>原则 6（质量源于设计）、原则 7（风险相称）</td></tr>
+<tr><td>责任条款（第十九、三十二条）</td><td>原则 10.1（可委托但责任保留）</td></tr>
+<tr><td>术语「试验参与者」</td><td>participants（R3 术语表）</td></tr>
+</tbody></table></div>
+<p>详细解读见 <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>。</p>
+<h2>六、9/1 前落地行动清单</h2>
+<ol><li><strong>文件措辞</strong>：ICF、方案、SOP 中的「受试者」表述核对是否需同步为「试验参与者」</li><li><strong>系统能力</strong>：确认 eTMF/CTMS 具备稽查轨迹、元数据、权限分层（盲态）与电子签名（对应 51/52/53 条）</li><li><strong>保存期限台账</strong>：按第十六条、第二十九条建立记录保存期限台账与到期处置流程</li><li><strong>培训与记录</strong>：完成新版 GCP 培训，留存记录（培训早于执行）</li><li><strong>外包合同</strong>：与 CRO/供应商协议复核责任条款（第三十二条：责任不随委托转移）</li><li><strong>核查准备</strong>：对照核查中心新核查要点（征求意见稿）自查数据治理与稽查轨迹部分</li></ol>
+<h2>七、来源与说明</h2>
+<ul><li><a href="https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html" target="_blank" rel="noopener">中国 2026 版 GCP 官方公告</a>（国家药监局等四部门公告 2026 年第 50 号，含全文附件与官方问答）</li><li><a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>（本库对应条目，含 ICH 官方 PDF 链接）</li><li>配套核查要点修订征求意见稿：国家药监局核查中心 2026-06-08 发布</li><li>本文为编者整理，条款理解有疑问时以官方文本为准</li></ul>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2>第五十一条到五十三条，Vivarcus eTMF 里已经内置</h2>
+          <p>稽查轨迹、元数据管理、受控数据更正、权限分层与电子签名——对应 2026 GCP 数据治理章，开箱即用。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="ich-e6r3.html" class="btn btn-outline btn-lg">ICH E6(R3) 要点</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

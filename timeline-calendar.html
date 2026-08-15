@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="临床试验时限计算器：输入基准日期，自动计算 SAE 24 小时报告、SUSAR 7/15 天递交、伦理年度审查、必备记录保存 5 年等关键时限，可打印对照表。时限出处标注法规依据。" />
+  <title>临床试验时限日历：SAE 24h / SUSAR 7·15 天 / 保存期限 | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/timeline-calendar.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/timeline-calendar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/timeline-calendar.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/timeline-calendar.html" />
+  <meta property="og:title" content="临床试验时限日历：SAE 24h / SUSAR 7·15 天 / 保存期限 | Vivarcus" />
+  <meta property="og:description" content="输入基准日期，自动计算 SAE 24 小时报告、SUSAR 7/15 天递交、伦理年度审查、必备记录保存 5 年等关键时限，可打印。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="临床试验时限计算器 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <style>
+    .tl-wrap { padding: 2rem 0 3rem; max-width: 44rem; margin: 0 auto; }
+    .tl-input { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .tl-input input[type="date"] { padding: 0.55rem 0.9rem; border: 1px solid var(--border, #d8dde4); border-radius: 8px; font-size: 1rem; background: transparent; }
+    .tl-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .tl-table th, .tl-table td { text-align: left; padding: 0.55rem 0.7rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .tl-table th { font-size: 0.78rem; opacity: 0.6; font-weight: 600; white-space: nowrap; }
+    .tl-deadline { font-weight: 600; font-family: ui-monospace, monospace; white-space: nowrap; }
+    .tl-overdue { color: #dc2626; }
+    .tl-basis { font-size: 0.78rem; opacity: 0.6; }
+    .tl-print { float: right; font-size: 0.85rem; }
+    .tl-note { font-size: 0.86rem; opacity: 0.78; line-height: 1.8; margin-top: 1.4rem; }
+    @media print { .site-header, .site-footer, .cta-section, .page-hero, .tl-print { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--calendar" aria-hidden="true"></i>
+          <span>行业资源 · 交互工具</span>
+        </span>
+        <h1 class="page-hero-title">临床试验时限日历</h1>
+        <p class="page-hero-subtitle">输入一个基准日期，自动算出 SAE 报告、SUSAR 递交、伦理审查与保存期限等关键时限，打印出来贴工位。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0.5rem;">
+      <div class="container">
+        <div class="tl-wrap">
+
+          <div class="tl-input">
+            <label for="tl-base" style="font-weight:600;">基准日期：</label>
+            <input type="date" id="tl-base" value="2026-08-15" onchange="tlCalc()" />
+            <span style="font-size:0.85rem;opacity:0.65;">（默认今天，可改为事件发生日）</span>
+            <button class="tl-print pd-btn" onclick="window.print()">🖨 打印对照表</button>
+          </div>
+
+          <div style="overflow-x:auto;"><table class="tl-table">
+            <thead><tr><th>时限事件</th><th>截止日期</th><th>时限依据</th></tr></thead>
+            <tbody id="tl-body"></tbody>
+          </table></div>
+
+          <p class="tl-note">
+            <strong>说明</strong>：计算采用自然日；截止日为休息日的，实际提交要求以申办方 SOP 与监管要求为准。
+            时限依据：SAE 24 小时、SUSAR 7/15 天为行业通行标准（以现行 GCP 与方案为准）；
+            保存期限见 <a href="gcp-2026.html">2026 版 GCP 要点</a>（第十六条、第二十九条）。
+            更新于 2026-08-15。本工具为通用参考，不构成法律意见。
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2>时限提醒别靠人记，Vivarcus eTMF 里有系统台账</h2>
+          <p>SAE 时限、文件到期、保存期限——结构化跟踪，超期自动预警，稽查时导出即证据。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="gcp-2026.html" class="btn btn-outline btn-lg">2026 GCP 要点</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var TL_EVENTS = [
+      { name: 'SAE 首次报告申办方', add: { hours: 24 }, basis: '获知后 24 小时内（行业通行，以方案为准）' },
+      { name: '方案偏离记录', add: { hours: 48 }, basis: '建议 48 小时内登记（行业惯例）' },
+      { name: 'SUSAR 递交（致死/危及生命）', add: { days: 7 }, basis: '7 天内（以现行要求为准）' },
+      { name: 'SUSAR 递交（其他）', add: { days: 15 }, basis: '15 天内（以现行要求为准）' },
+      { name: '伦理委员会年度审查', add: { months: 12 }, basis: '批件载明的跟踪审查频率（通常每年）' },
+      { name: '培训到期复训（GCP/SOP）', add: { months: 12 }, basis: '按公司 SOP 的复训周期' },
+      { name: '必备记录保存（获批上市情形）', add: { years: 5 }, basis: '2026 GCP 第十六/二十九条：上市后至少 5 年' },
+      { name: '必备记录保存（未获批/未注册情形）', add: { years: 5 }, basis: '2026 GCP 第十六/二十九条：终止后至少 5 年' },
+    ];
+
+    function addTime(date, spec) {
+      var d = new Date(date);
+      if (spec.hours) d.setHours(d.getHours() + spec.hours);
+      if (spec.days) d.setDate(d.getDate() + spec.days);
+      if (spec.months) {
+        var m = new Date(d);
+        m.setMonth(d.getMonth() + spec.months);
+        if (m.getDate() !== d.getDate()) m.setDate(0); // 月末溢出：钳制到目标月最后一天
+        d = m;
+      }
+      if (spec.years) {
+        var y = new Date(d);
+        y.setFullYear(d.getFullYear() + spec.years);
+        if (y.getDate() !== d.getDate()) y.setDate(0); // 闰日溢出：钳制到 2/28（或 2/29）
+        d = y;
+      }
+      return d;
+    }
+
+    function fmt(d, withTime) {
+      var y = d.getFullYear();
+      var m = String(d.getMonth() + 1).padStart(2, '0');
+      var day = String(d.getDate()).padStart(2, '0');
+      if (withTime) {
+        var hh = String(d.getHours()).padStart(2, '0');
+        var mm = String(d.getMinutes()).padStart(2, '0');
+        return y + '-' + m + '-' + day + ' ' + hh + ':' + mm;
+      }
+      return y + '-' + m + '-' + day;
+    }
+
+    function tlCalc() {
+      var base = new Date(document.getElementById('tl-base').value + 'T00:00:00');
+      var now = new Date();
+      var rows = TL_EVENTS.map(function (e) {
+        var d = addTime(base, e.add);
+        var withTime = !!e.add.hours;
+        var overdue = d < now;
+        return '<tr><td>' + e.name + '<div class="tl-basis">' + e.basis + '</div></td>'
+          + '<td class="tl-deadline' + (overdue ? ' tl-overdue' : '') + '">' + fmt(d, withTime)
+          + (overdue ? '（已过）' : '') + '</td>'
+          + '<td class="tl-basis">' + (withTime ? '自然日 24 小时制' : '自然日') + '</td></tr>';
+      });
+      document.getElementById('tl-body').innerHTML = rows.join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', tlCalc);
+  </script>
+</body>
+</html>

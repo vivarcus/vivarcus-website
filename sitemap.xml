@@ -74,111 +74,166 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/tmf-reference.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/ctcae.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/ctcae.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/ctcae.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/ctcae.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/pd-decision-tree.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/pd-decision-tree.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/pd-decision-tree.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/pd-decision-tree.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/timeline-calendar.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/timeline-calendar.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/timeline-calendar.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/timeline-calendar.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/templates.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/templates.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/templates.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/templates.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-monitoring-visit-report.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-monitoring-visit-report.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-monitoring-visit-report.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-monitoring-visit-report.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-mvr-example.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-mvr-example.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-mvr-example.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-mvr-example.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-site-initiation-report.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-site-initiation-report.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-site-initiation-report.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-site-initiation-report.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-closeout-visit-report.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-closeout-visit-report.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-closeout-visit-report.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-closeout-visit-report.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-protocol-deviation-log.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-protocol-deviation-log.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-protocol-deviation-log.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-protocol-deviation-log.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-icf-checklist.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-icf-checklist.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-icf-checklist.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-icf-checklist.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-tmf-index.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-tmf-index.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-tmf-index.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-tmf-index.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-sop-framework.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-sop-framework.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-sop-framework.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-sop-framework.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-audit-readiness-checklist.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-audit-readiness-checklist.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-audit-readiness-checklist.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-audit-readiness-checklist.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-training-log.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-training-log.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-training-log.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-training-log.html" />
   </url>
-
   <url>
     <loc>https://vivarcus.com/template-sae-report.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-sae-report.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-sae-report.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-sae-report.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/template-site-initiation-checklist.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-site-initiation-checklist.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-site-initiation-checklist.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-site-initiation-checklist.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/template-monitoring-visit-checklist.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-monitoring-visit-checklist.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-monitoring-visit-checklist.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-monitoring-visit-checklist.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/template-closeout-checklist.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-closeout-checklist.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-closeout-checklist.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-closeout-checklist.html" />
   </url>
   <url>
     <loc>https://vivarcus.com/ich-e6r3.html</loc>
@@ -186,9 +241,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/ich-e6r3.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/ich-e6r3.html?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/ich-e6r3.html" />
   </url>
-
+  <url>
+    <loc>https://vivarcus.com/regulations.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/regulations.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/regulations.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/regulations.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/whitepaper.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/whitepaper.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/whitepaper.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/whitepaper.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/gcp-2026.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/gcp-2026.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/gcp-2026.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/gcp-2026.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/glossary.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/glossary.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/glossary.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/glossary.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/tmf-checker.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/tmf-checker.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/tmf-checker.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/tmf-checker.html" />
+  </url>
   <url>
     <loc>https://vivarcus.com/help/zh/index.html</loc>
     <lastmod>2026-08-15</lastmod>

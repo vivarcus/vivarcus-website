@@ -52,6 +52,150 @@
       "lastmod": "2026-08-15",
       "changefreq": "monthly",
       "priority": "0.8"
+    },
+    {
+      "loc": "/ctcae.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/pd-decision-tree.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/timeline-calendar.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/templates.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/template-monitoring-visit-report.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-mvr-example.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-site-initiation-report.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-closeout-visit-report.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-protocol-deviation-log.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-icf-checklist.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-tmf-index.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-sop-framework.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-audit-readiness-checklist.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-training-log.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-sae-report.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-site-initiation-checklist.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-monitoring-visit-checklist.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-closeout-checklist.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/ich-e6r3.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/regulations.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/whitepaper.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/gcp-2026.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/glossary.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/tmf-checker.html",
+      "lastmod": "2026-08-15",
+      "changefreq": "monthly",
+      "priority": "0.7"
     }
   ],
   "home": {
