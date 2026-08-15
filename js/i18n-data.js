@@ -31,6 +31,7 @@ window.I18N_DATA = {
     'common.footer.guide': 'eTMF 指南',
     'common.footer.ctmsGuide': 'CTMS 指南',
     'common.footer.cmp': '系统对比',
+    'common.footer.tmfReference': 'TMF 分类参考',
     'common.footer.help': '帮助中心',
     'common.footer.copyright': '© 2026 Vivarcus. 保留所有权利。',
 
@@ -368,6 +369,9 @@ window.I18N_DATA = {
     'guide.dia.f2': 'Section（章节）：每个分区下按主题细分',
     'guide.dia.f3': 'Artifact（文件）：最小单元，带标准元数据定义',
     'guide.dia.f4': 'TMF Index：标准 CSV 导出，用于移交与稽查',
+    'guide.dia.link': '查看 TMF 分类参考（v3.0 中文对照）',
+    'tmf.meta.title': 'TMF 文件分类参考 | Vivarcus',
+    'tmf.meta.desc': 'TMF 文件分类参考：DIA TMF 参考模型 v3.0 中文对照（12 个区域、49 个分区、252 个文件项），附临床试验预期文档清单（EDL）按部门分类。TMF 必备文件查这份就够。',
 
     /* Selection checklist */
     'guide.pick.label': '选型要点',
@@ -947,6 +951,7 @@ window.I18N_DATA = {
     'common.footer.guide': 'eTMF Guide',
     'common.footer.ctmsGuide': 'CTMS Guide',
     'common.footer.cmp': 'System Comparison',
+    'common.footer.tmfReference': 'TMF Reference',
     'common.footer.help': 'Help Center',
     'common.footer.copyright': '© 2026 Vivarcus. All rights reserved.',
 
@@ -1284,6 +1289,9 @@ window.I18N_DATA = {
     'guide.dia.f2': 'Sections: thematic subdivision within each zone',
     'guide.dia.f3': 'Artifacts: the smallest unit, with standard metadata definitions',
     'guide.dia.f4': 'TMF Index: standard CSV export for handovers and inspections',
+    'guide.dia.link': 'Browse the TMF Reference (v3.0)',
+    'tmf.meta.title': 'TMF File Classification Reference | Vivarcus',
+    'tmf.meta.desc': 'TMF file classification reference: the DIA TMF Reference Model v3.0 with Chinese–English mapping (12 zones, 49 sections, 252 artifacts), plus the expected document list (EDL) by department.',
 
     /* Selection checklist */
     'guide.pick.label': 'Selection Criteria',

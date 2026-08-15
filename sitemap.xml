@@ -65,6 +65,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/etmf-ctms-edc.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/tmf-reference.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/tmf-reference.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/tmf-reference.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/tmf-reference.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/help/zh/index.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
