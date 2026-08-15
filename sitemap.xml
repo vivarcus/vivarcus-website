@@ -290,6 +290,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/tmf-checker.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/edl-generator.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/edl-generator.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/edl-generator.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/edl-generator.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/help/zh/index.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
