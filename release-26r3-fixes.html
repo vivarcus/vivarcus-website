@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="rel26r3.fixes.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="rel26r3.fixes.meta.desc" content="Vivarcus 26R3.1 发布前修复的 20 项问题，覆盖平台、eTMF、CTMS、工作流、AI 与本地化。" />
+  <title>26R3 已修复问题 — Vivarcus 发布说明</title>
+  <link rel="canonical" href="https://vivarcus.com/release-26r3-fixes.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/release-26r3-fixes.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/release-26r3-fixes.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/release-26r3-fixes.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/release-26r3-fixes.html" />
+  <meta property="og:title" data-i18n-og="rel26r3.fixes.meta.title" content="26R3 已修复问题 — Vivarcus 发布说明" />
+  <meta property="og:description" data-i18n-og="rel26r3.fixes.meta.desc" content="Vivarcus 26R3.1 发布前修复的 20 项问题，覆盖平台、eTMF、CTMS、工作流、AI 与本地化。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vivarcus 26R3.1 已修复问题" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="rel26r3.fixes.meta.title" content="26R3 已修复问题 — Vivarcus 发布说明" />
+  <meta name="twitter:description" data-i18n-og="rel26r3.fixes.meta.desc" content="Vivarcus 26R3.1 发布前修复的 20 项问题。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "26R3 已修复问题",
+        "description": "Vivarcus 26R3.1 发布前修复的 20 项问题，覆盖平台、eTMF、CTMS、工作流、AI 与本地化。",
+        "url": "https://vivarcus.com/release-26r3-fixes.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "发布说明", "item": "https://vivarcus.com/release-26r3.html" },
+          { "@type": "ListItem", "position": 3, "name": "已修复问题", "item": "https://vivarcus.com/release-26r3-fixes.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--circle-check" aria-hidden="true"></i>
+          <span data-i18n="rel26r3.fixes.hero.eyebrow">发布说明 · 已修复问题</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="rel26r3.fixes.hero.title">26R3.1 已修复问题</h1>
+        <p class="page-hero-subtitle" data-i18n="rel26r3.fixes.hero.subtitle">发布前收敛阶段修复的 20 项问题。</p>
+      </div>
+    </section>
+
+    <!-- Release sub-nav -->
+    <nav class="rel-nav" aria-label="发布说明导航">
+      <div class="container">
+        <div class="rel-nav__inner">
+          <span class="rel-nav__title" data-i18n="rel.nav.group">26R3</span>
+          <a class="rel-nav__link" href="release-26r3.html" data-i18n="rel.nav.overview">发布概览</a>
+          <a class="rel-nav__link" href="release-26r3-features.html" data-i18n="rel.nav.features">新功能</a>
+          <a class="rel-nav__link is-active" href="release-26r3-fixes.html" data-i18n="rel.nav.fixes">已修复问题</a>
+          <a class="rel-nav__link" href="release-26r3-known-issues.html" data-i18n="rel.nav.issues">已知问题</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 说明 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel26r3.fixes.intro.label">说明</span>
+          <h2 class="section-title" data-i18n="rel26r3.fixes.intro.title">发布前收敛</h2>
+          <p class="section-desc" data-i18n="rel26r3.fixes.intro.desc">以下问题在 26R3.1 发布前已修复并随本版本交付，按领域分组。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 平台与查询 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--platform" data-i18n="rel26r3.fixes.badge.platform">平台与查询</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.p1">会话过期恢复</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.p1d">登录会话过期后，界面自动清除登录态并跳回登录页，不再白屏或无限转圈。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.p2">多标签页会话</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.p2d">用 Ctrl+点击在新标签页打开页面不再被踢回登录页，登录态在标签页间保持。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.p3">页面无限刷新</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.p3d">修复研究管理、TMF 首页与工作流启动对话框的无限刷新循环，页面加载恢复正常。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.p4">Vault Owner 操作权限</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.p4d">Vault Owner 现在可以查看并执行对象与文档的生命周期操作，此前工具栏为空。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.p5">日期录入体验</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.p5d">日期字段支持直接键入或粘贴，日历弹层不再裁切、跳动或遮挡输入框。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- eTMF 文档 -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--etmf" data-i18n="rel26r3.fixes.badge.etmf">eTMF 文档</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.e1">TMF 查看器终态过滤</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.e1d">eTMF 文档查看器不再显示已取代、已作废、已删除等终态文档，列表符合 eTMF 规范。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.e2">Binder 归档锁定</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.e2d">Binder 获批后结构与版本绑定编辑被锁定，须先创建草稿才能修改，防止误改已归档内容。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.e3">Binder 详情页</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.e3d">补齐签名区与工作流时间线，选择父级章节时子文档一并列出，并支持对象记录与 Binder 视图切换。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTMS 临床运营 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--ctms" data-i18n="rel26r3.fixes.badge.ctms">CTMS 临床运营</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.c1">显示名称修复</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.c1d">研究管理与 CRA 工作台不再把中心状态、监查类型等显示为内部 ID，正确显示选项标签与生命周期状态。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.c2">受试者详情字段</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.c2d">受试者详情页补上「初始知情同意日期」字段。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.c3">Finalize 权限</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.c3d">审查通过状态下 Owner 可以执行 Finalize，不再误报无权限。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.c4">记录页打开失败</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.c4d">修复 Select Site 与 Monitoring Event 记录页无法打开的问题。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 工作流与生命周期 -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--admin" data-i18n="rel26r3.fixes.badge.workflow">工作流与生命周期</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.w1">未认领任务转派</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.w1d">未认领的审批任务在时间线上直接显示可指派人员，便于转派处理。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.w2">审计日志文案</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.w2d">审计日志显示阶段标签与规范的电子签名文案。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.w3">配置包导入状态</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.w3d">修复入站配置包导入后列表与 Validate 状态不可见、Review &amp; Deploy 后状态不同步的问题。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vault AI -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--ctms" data-i18n="rel26r3.fixes.badge.ai">Vault AI</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.a1">对话体验</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.a1d">文档翻译不再反复询问目标语言；多轮对话保留查询上下文；查询失败时给出易懂提示而非解析器报错。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 本地化 -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--startup" data-i18n="rel26r3.fixes.badge.l10n">本地化</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.l1">中文术语修正</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.l1d">修正受试者状态 Consented 的中文误译，统一试用手册状态用词。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.l2">工作流界面翻译</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.l2d">补齐 PD Review 工作流启动对话框与审查任务的中文翻译。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 环境与部署 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--platform" data-i18n="rel26r3.fixes.badge.env">环境与部署</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.v1">沙盒创建修复</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.v1d">修复升级 ADCV 26.02.0 后无法创建沙盒的问题。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.fixes.v2">操作自动恢复</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.fixes.v2d">服务重启后自动恢复中断的沙盒创建/刷新操作，不再残留卡死状态。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 反馈说明 -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-note" data-reveal data-i18n="rel26r3.fixes.note">问题清单基于开发记录整理，编号仅为展示顺序；如您在使用中遇到未列出的问题，欢迎通过 GitHub Issues 反馈。</div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="rel26r3.overview.resources.title">想深入了解？</h2>
+          <p data-i18n="rel26r3.overview.resources.desc">查看帮助中心的操作文档，或申请试用体验 26R3.1。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="release-26r3.html" class="btn btn-outline btn-lg" data-i18n="rel.nav.overview">发布概览</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

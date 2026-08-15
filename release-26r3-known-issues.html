@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="rel26r3.issues.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="rel26r3.issues.meta.desc" content="Vivarcus 26R3.1 的已知限制：搜索范围、本地化覆盖、Vault AI 部署前提、通知入口、管理控制台分期与高级字段类型。" />
+  <title>26R3 已知问题 — Vivarcus 发布说明</title>
+  <link rel="canonical" href="https://vivarcus.com/release-26r3-known-issues.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/release-26r3-known-issues.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/release-26r3-known-issues.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/release-26r3-known-issues.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/release-26r3-known-issues.html" />
+  <meta property="og:title" data-i18n-og="rel26r3.issues.meta.title" content="26R3 已知问题 — Vivarcus 发布说明" />
+  <meta property="og:description" data-i18n-og="rel26r3.issues.meta.desc" content="Vivarcus 26R3.1 的已知限制：搜索范围、本地化覆盖、Vault AI 部署前提、通知入口、管理控制台分期与高级字段类型。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vivarcus 26R3.1 已知问题" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="rel26r3.issues.meta.title" content="26R3 已知问题 — Vivarcus 发布说明" />
+  <meta name="twitter:description" data-i18n-og="rel26r3.issues.meta.desc" content="Vivarcus 26R3.1 的已知限制与说明。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "26R3 已知问题",
+        "description": "Vivarcus 26R3.1 的已知限制：搜索范围、本地化覆盖、Vault AI 部署前提、通知入口、管理控制台分期与高级字段类型。",
+        "url": "https://vivarcus.com/release-26r3-known-issues.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "发布说明", "item": "https://vivarcus.com/release-26r3.html" },
+          { "@type": "ListItem", "position": 3, "name": "已知问题", "item": "https://vivarcus.com/release-26r3-known-issues.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--diamond" aria-hidden="true"></i>
+          <span data-i18n="rel26r3.issues.hero.eyebrow">发布说明 · 已知问题</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="rel26r3.issues.hero.title">26R3.1 已知问题</h1>
+        <p class="page-hero-subtitle" data-i18n="rel26r3.issues.hero.subtitle">当前版本的已知限制与说明，均不影响核心功能使用。</p>
+      </div>
+    </section>
+
+    <!-- Release sub-nav -->
+    <nav class="rel-nav" aria-label="发布说明导航">
+      <div class="container">
+        <div class="rel-nav__inner">
+          <span class="rel-nav__title" data-i18n="rel.nav.group">26R3</span>
+          <a class="rel-nav__link" href="release-26r3.html" data-i18n="rel.nav.overview">发布概览</a>
+          <a class="rel-nav__link" href="release-26r3-features.html" data-i18n="rel.nav.features">新功能</a>
+          <a class="rel-nav__link" href="release-26r3-fixes.html" data-i18n="rel.nav.fixes">已修复问题</a>
+          <a class="rel-nav__link is-active" href="release-26r3-known-issues.html" data-i18n="rel.nav.issues">已知问题</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 说明 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel26r3.issues.intro.label">说明</span>
+          <h2 class="section-title" data-i18n="rel26r3.issues.intro.title">透明披露，持续改进</h2>
+          <p class="section-desc" data-i18n="rel26r3.issues.intro.desc">以下限制为 26R3.1 的已知情况，已列入后续版本规划。状态随版本更新。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 已知问题清单 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-list" data-reveal>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel26r3.issues.i1.title">搜索为单对象范围</h3>
+            <p class="rel-issue__body" data-i18n="rel26r3.issues.i1.body">首版搜索限定在单个对象内，暂不提供跨对象搜索、相关性排序与管理员可配置的默认搜索页。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel26r3.issues.i2.title">本地化覆盖仍在扩展</h3>
+            <p class="rel-issue__body" data-i18n="rel26r3.issues.i2.body">中文界面覆盖范围持续扩展中；每种语言当前仅支持一套翻译（不支持 Label Sets），文档内容的多语言自动处理不在范围内。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel26r3.issues.i3.title">Vault AI 需配置外部 LLM</h3>
+            <p class="rel-issue__body" data-i18n="rel26r3.issues.i3.body">平台不捆绑托管模型：启用 AI 助手与 Query Agent 前，部署方需配置 LLM 连接（默认连接或 BYO Bedrock / Azure / Google）与相应凭据。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel26r3.issues.i4.title">通知发送入口有限</h3>
+            <p class="rel-issue__body" data-i18n="rel26r3.issues.i4.body">首版仅 SDK Action 可发送通知，Record Trigger 发送将在后续版本放开；邮件抑制名单开关页尚未提供。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel26r3.issues.i5.title">管理控制台分期交付</h3>
+            <p class="rel-issue__body" data-i18n="rel26r3.issues.i5.body">Configuration 等高级页面将在后续版本提供，当前可通过 CLI 或 API 完成同等配置。</p>
+          </div>
+          <div class="rel-issue">
+            <h3 class="rel-issue__title" data-i18n="rel26r3.issues.i6.title">部分高级字段类型后续提供</h3>
+            <p class="rel-issue__body" data-i18n="rel26r3.issues.i6.body">汇总计算字段（Rollup）首版仅支持注册，计算能力与 raw 类型对象的高级操作将在后续版本提供。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 反馈说明 -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-note" data-reveal data-i18n-html="rel26r3.issues.note">如发现未列出的问题，欢迎通过 <strong>GitHub Issues</strong> 反馈，我们会评估并纳入后续版本。</div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="rel26r3.overview.resources.title">想深入了解？</h2>
+          <p data-i18n="rel26r3.overview.resources.desc">查看帮助中心的操作文档，或申请试用体验 26R3.1。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="release-26r3.html" class="btn btn-outline btn-lg" data-i18n="rel.nav.overview">发布概览</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

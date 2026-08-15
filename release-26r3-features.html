@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="rel26r3.features.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="rel26r3.features.meta.desc" content="Vivarcus 26R3.1 新功能一览：平台核心、eTMF、CTMS、Study Startup 与管理运维，共 40 项能力。" />
+  <title>26R3 新功能 — Vivarcus 发布说明</title>
+  <link rel="canonical" href="https://vivarcus.com/release-26r3-features.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/release-26r3-features.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/release-26r3-features.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/release-26r3-features.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/release-26r3-features.html" />
+  <meta property="og:title" data-i18n-og="rel26r3.features.meta.title" content="26R3 新功能 — Vivarcus 发布说明" />
+  <meta property="og:description" data-i18n-og="rel26r3.features.meta.desc" content="Vivarcus 26R3.1 新功能一览：平台核心、eTMF、CTMS、Study Startup 与管理运维，共 40 项能力。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vivarcus 26R3.1 新功能" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-og="rel26r3.features.meta.title" content="26R3 新功能 — Vivarcus 发布说明" />
+  <meta name="twitter:description" data-i18n-og="rel26r3.features.meta.desc" content="Vivarcus 26R3.1 新功能一览：共 40 项能力。" />
+  <meta name="twitter:image" content="https://vivarcus.com/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "26R3 新功能",
+        "description": "Vivarcus 26R3.1 新功能一览：平台核心、eTMF、CTMS、Study Startup 与管理运维，共 40 项能力。",
+        "url": "https://vivarcus.com/release-26r3-features.html",
+        "isPartOf": { "@type": "WebSite", "name": "Vivarcus", "url": "https://vivarcus.com/" },
+        "inLanguage": ["zh-CN", "en-US"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://vivarcus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "发布说明", "item": "https://vivarcus.com/release-26r3.html" },
+          { "@type": "ListItem", "position": 3, "name": "新功能", "item": "https://vivarcus.com/release-26r3-features.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--sparkles" aria-hidden="true"></i>
+          <span data-i18n="rel26r3.features.hero.eyebrow">发布说明 · 新功能</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="rel26r3.features.hero.title">26R3.1 新功能</h1>
+        <p class="page-hero-subtitle" data-i18n="rel26r3.features.hero.subtitle">首个公开发布带来的 40 项平台能力，按产品线分类。</p>
+      </div>
+    </section>
+
+    <!-- Release sub-nav -->
+    <nav class="rel-nav" aria-label="发布说明导航">
+      <div class="container">
+        <div class="rel-nav__inner">
+          <span class="rel-nav__title" data-i18n="rel.nav.group">26R3</span>
+          <a class="rel-nav__link" href="release-26r3.html" data-i18n="rel.nav.overview">发布概览</a>
+          <a class="rel-nav__link is-active" href="release-26r3-features.html" data-i18n="rel.nav.features">新功能</a>
+          <a class="rel-nav__link" href="release-26r3-fixes.html" data-i18n="rel.nav.fixes">已修复问题</a>
+          <a class="rel-nav__link" href="release-26r3-known-issues.html" data-i18n="rel.nav.issues">已知问题</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 总览 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label" data-i18n="rel26r3.features.intro.label">总览</span>
+          <h2 class="section-title" data-i18n="rel26r3.features.intro.title">首个公开发布，五大板块</h2>
+          <p class="section-desc" data-i18n="rel26r3.features.intro.desc">26R3.1 是 Vivarcus 的首个公开发布。以下能力均随本版本首次交付；后续版本的新增与增强将逐版记录在本栏目。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 平台核心 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--platform" data-i18n="rel26r3.features.badge.platform">平台核心</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p1">对象模型与元数据驱动 UI</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p1d">以 MDL 声明式配置对象、字段与页面布局，业务应用无需编写代码即可搭建与演进。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p2">生命周期与工作流</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p2d">状态机、审批流与任务分配全部可配置，业务推进到哪一步由系统自动路由。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p3">安全与权限</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p3d">基于角色的访问控制与精细化权限，支持单点登录集成。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p4">审计追踪</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p4d">完整的审计日志与变更追踪，满足监管审计要求。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p5">电子签名</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p5d">受控文档电子签名，满足 21 CFR Part 11 要求。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p6">报告与仪表板</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p6d">多维数据看板与自定义报告，实时掌握试验进度、文档状态与运营指标。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p7">任务与通知</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p7d">用户任务与任务仪表板，SDK 可触发站内通知。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p8">公开 API 与查询语言</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p8d">REST API 与 VQL 查询语言，标准接口与现有系统对接。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p9">命令行与 SDK</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p9d">ov CLI 覆盖配置、数据与验收自动化；SDK 支持扩展开发。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p10">Vault AI</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p10d">AI 助手 Tab 与 Query Agent，用自然语言查询数据，支持 TOLABEL() 标签筛选。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p11">沙盒与环境管理</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p11d">沙盒环境创建、刷新与配置导入导出，发布列车（ADCV）统一管理版本。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.p12">跨组织协同</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.p12d">集团与事业部两级管理，申办方与 CRO 之间共享文档与协作。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- eTMF 文档管理 -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--etmf" data-i18n="rel26r3.features.badge.etmf">eTMF 文档管理</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e1">TMF 首页与浏览器</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e1d">按研究层级浏览主文件，快速定位文档与结构缺口。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e2">文档上传与自动归档</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e2d">批量上传文档并自动归档到正确分类，全程版本控制。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e3">DIA TMF 分类与文档类型</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e3d">基于 DIA TMF 参考模型的标准分类与文档类型体系。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e4">EDL 预期文档</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e4d">预期文档清单（EDL）与模板化管理，提前发现文档缺口。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e5">里程碑</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e5d">研究里程碑与预期文档联动，及时预警延迟风险。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e6">审阅工作流</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e6d">文档审阅与批准流程，支持指派审阅人并记录完整意见。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e7">质量问题</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e7d">质量问题与纠正措施追踪，闭环管理从发现到解决。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.e8">研究层级与人员</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.e8d">研究、国家、中心层级建模与研究人员目录管理。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTMS 临床运营 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--ctms" data-i18n="rel26r3.features.badge.ctms">CTMS 临床运营</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c1">研究生命周期</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c1d">从启动到关闭的研究全生命周期管理，里程碑自动追踪。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c2">站点生命周期</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c2d">站点从可行性评估到关闭的全流程状态管理。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c3">受试者追踪</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c3d">受试者入组进度与偏离实时监控。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c4">临床任务</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c4d">临床任务分配与追踪，工作不遗漏。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c5">监测访视</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c5d">监测访视计划、执行与发现记录一体化管理。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c6">SAE 追踪</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c6d">严重不良事件记录与追踪。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c7">问题管理</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c7d">问题与 CAPA 闭环追踪，从发现到解决全程留痕。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c8">研究指标</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c8d">入组、里程碑、文档等多维指标自动汇总。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c9">仪表板</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c9d">研究组合与单研究仪表板，进度与健康状态一目了然。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.c10">全球目录</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.c10d">机构、中心与人员信息的全局统一目录。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study Startup -->
+    <section class="section">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--startup" data-i18n="rel26r3.features.badge.startup">Study Startup</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.s1">中心可行性</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.s1d">可行性问卷调查与评分，科学筛选研究站点。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.s2">启动活动看板</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.s2d">启动活动甘特图与看板，可视化追踪每个站点的启动进度。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.s3">文档包管理</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.s3d">启动文档包管理与追踪，确保准备就绪。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.s4">与 eTMF / CTMS 打通</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.s4d">站点信息与文档数据同源，无需重复录入。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 管理与运维 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="rel-sec" data-reveal>
+          <div class="rel-sec__head">
+            <span class="rel-badge rel-badge--admin" data-i18n="rel26r3.features.badge.admin">管理与运维</span>
+          </div>
+          <div class="rel-list">
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.a1">管理控制台</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.a1d">基础管理控制台，覆盖用户、角色与核心设置（部分高级页面随后续版本提供）。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.a2">用户与组</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.a2d">用户、组与集团-事业部组织管理。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.a3">配置打包与发布载荷</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.a3d">配置以声明式载荷打包、校验与部署，跨环境一致交付。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.a4">发布编排</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.a4d">vctl 发布命令与发布列车管理，升级可追溯、可回滚。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.a5">数据集成</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.a5d">直接数据 API 与第三方集成接口，预置连接器开箱即用。</p>
+            </div>
+            <div class="rel-row">
+              <div class="rel-row__name" data-i18n="rel26r3.features.a6">多租户与数据隔离</div>
+              <p class="rel-row__desc" data-i18n="rel26r3.features.a6d">POD 级部署隔离，各事业部数据相互独立。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="rel26r3.overview.resources.title">想深入了解？</h2>
+          <p data-i18n="rel26r3.overview.resources.desc">查看帮助中心的操作文档，或申请试用体验 26R3.1。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="release-26r3.html" class="btn btn-outline btn-lg" data-i18n="rel.nav.overview">发布概览</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
+          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
