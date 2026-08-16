@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="gl.meta.title">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CRA 术语词典：临床试验常用缩写中英对照（TMF/eTMF/ISF/EDL/ICF/SIV/COV/SDV/SAE/SUSAR/PD/CAPA/IND/NDA 等 50+ 词条），按文件、角色、安全、数据、流程、法规分类，新人快速上手。" />
+  <meta name="description" data-i18n-meta="gl.meta.desc" content="CRA 术语词典：临床试验常用缩写中英对照（TMF/eTMF/ISF/EDL/ICF/SIV/COV/SDV/SAE/SUSAR/PD/CAPA/IND/NDA 等 50+ 词条），按文件、角色、安全、数据、流程、法规分类，新人快速上手。" />
   <title>CRA 术语词典：临床试验缩写中英对照（50+ 词条）| Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/glossary.html" />
   <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/glossary.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/glossary.html?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/glossary.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/glossary.html" />
-  <meta property="og:title" content="CRA 术语词典：临床试验缩写中英对照（50+ 词条）| Vivarcus" />
-  <meta property="og:description" content="临床试验常用缩写中英对照：TMF/eTMF/ISF/EDL/ICF/SIV/COV/SDV/SAE/SUSAR/PD/CAPA/IND/NDA 等，按文件、角色、安全、数据、流程、法规分类。" />
+  <meta property="og:title" data-i18n-og="gl.meta.title" content="CRA 术语词典：临床试验缩写中英对照（50+ 词条）| Vivarcus" />
+  <meta property="og:description" data-i18n-og="gl.meta.desc" content="临床试验常用缩写中英对照：TMF/eTMF/ISF/EDL/ICF/SIV/COV/SDV/SAE/SUSAR/PD/CAPA/IND/NDA 等，按文件、角色、安全、数据、流程、法规分类。" />
   <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <meta property="og:image:alt" content="CRA 术语词典 | Vivarcus" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -30,6 +32,7 @@
     .gl-table td:first-child { font-family: ui-monospace, monospace; font-weight: 600; white-space: nowrap; }
     .gl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .gl-note { font-size: 0.86rem; opacity: 0.75; line-height: 1.8; margin-top: 2rem; }
+    html[lang="en-US"] .gl-zh { display: none; }
   </style>
 </head>
 <body>
@@ -67,127 +70,125 @@
       <div class="container">
         <span class="page-hero-eyebrow">
           <i class="ic ic--book-open" aria-hidden="true"></i>
-          <span>行业资源 · 术语词典</span>
+          <span data-i18n="gl.hero.eyebrow">行业资源 · 术语词典</span>
         </span>
-        <h1 class="page-hero-title">CRA 术语词典</h1>
-        <p class="page-hero-subtitle">临床试验常用缩写中英对照，按文件、角色、安全、数据、流程、法规分类。新人面试前背一遍，开会时不再查手机。</p>
+        <h1 class="page-hero-title" data-i18n="gl.hero.title">CRA 术语词典</h1>
+        <p class="page-hero-subtitle" data-i18n="gl.hero.subtitle">临床试验常用缩写中英对照，按文件、角色、安全、数据、流程、法规分类。新人面试前背一遍，开会时不再查手机。</p>
       </div>
     </section>
 
     <section class="section gl-wrap">
       <div class="container">
-        <h2 class="section-title">试验文件</h2>
+        <h2 class="section-title" data-i18n="gl.sec.files">试验文件</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>TMF</td><td>Trial Master File</td><td>试验主文件</td><td>临床试验必备文件的总集合，合规证据链核心</td></tr>
-            <tr><td>eTMF</td><td>electronic TMF</td><td>电子试验主文件</td><td>TMF 的电子化管理系统（不止是网盘文件夹）</td></tr>
-            <tr><td>ISF</td><td>Investigator Site File</td><td>研究者文件夹</td><td>必备文件在研究中心保存的那一份</td></tr>
-            <tr><td>EDL</td><td>Expected Document List</td><td>预期文档清单</td><td>"这个试验应该收齐哪些文件"的清单</td></tr>
-            <tr><td>ICF</td><td>Informed Consent Form</td><td>知情同意书</td><td>受试者自愿参加试验的书面同意</td></tr>
-            <tr><td>CRF</td><td>Case Report Form</td><td>病例报告表</td><td>按方案收集受试者数据的表格</td></tr>
-            <tr><td>eCRF</td><td>electronic CRF</td><td>电子病例报告表</td><td>EDC 系统里的数据录入界面</td></tr>
-            <tr><td>IB</td><td>Investigator's Brochure</td><td>研究者手册</td><td>试验药物的临床前与临床资料汇编</td></tr>
-            <tr><td>CSR</td><td>Clinical Study Report</td><td>临床研究报告</td><td>试验结束后的完整总结报告，NDA 材料基础</td></tr>
-            <tr><td>SOP</td><td>Standard Operating Procedure</td><td>标准操作规程</td><td>规范"谁、做什么、怎么做"的文件</td></tr>
+            <tr><td>TMF</td><td>Trial Master File</td><td class="gl-zh">试验主文件</td><td data-i18n="gl.term.tmf">临床试验必备文件的总集合，合规证据链核心</td></tr>
+            <tr><td>eTMF</td><td>electronic TMF</td><td class="gl-zh">电子试验主文件</td><td data-i18n="gl.term.etmf">TMF 的电子化管理系统（不止是网盘文件夹）</td></tr>
+            <tr><td>ISF</td><td>Investigator Site File</td><td class="gl-zh">研究者文件夹</td><td data-i18n="gl.term.isf">必备文件在研究中心保存的那一份</td></tr>
+            <tr><td>EDL</td><td>Expected Document List</td><td class="gl-zh">预期文档清单</td><td data-i18n="gl.term.edl">"这个试验应该收齐哪些文件"的清单</td></tr>
+            <tr><td>ICF</td><td>Informed Consent Form</td><td class="gl-zh">知情同意书</td><td data-i18n="gl.term.icf">受试者自愿参加试验的书面同意</td></tr>
+            <tr><td>CRF</td><td>Case Report Form</td><td class="gl-zh">病例报告表</td><td data-i18n="gl.term.crf">按方案收集受试者数据的表格</td></tr>
+            <tr><td>eCRF</td><td>electronic CRF</td><td class="gl-zh">电子病例报告表</td><td data-i18n="gl.term.ecrf">EDC 系统里的数据录入界面</td></tr>
+            <tr><td>IB</td><td>Investigator's Brochure</td><td class="gl-zh">研究者手册</td><td data-i18n="gl.term.ib">试验药物的临床前与临床资料汇编</td></tr>
+            <tr><td>CSR</td><td>Clinical Study Report</td><td class="gl-zh">临床研究报告</td><td data-i18n="gl.term.csr">试验结束后的完整总结报告，NDA 材料基础</td></tr>
+            <tr><td>SOP</td><td>Standard Operating Procedure</td><td class="gl-zh">标准操作规程</td><td data-i18n="gl.term.sop">规范"谁、做什么、怎么做"的文件</td></tr>
           </tbody>
         </table></div>
 
-        <h2 class="section-title">角色与组织</h2>
+        <h2 class="section-title" data-i18n="gl.sec.roles">角色与组织</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>PI</td><td>Principal Investigator</td><td>主要研究者</td><td>研究中心负责人，现场最终责任人</td></tr>
-            <tr><td>Sub-I</td><td>Sub-Investigator</td><td>助理研究者</td><td>PI 授权执行试验相关医疗活动的研究者</td></tr>
-            <tr><td>CRC</td><td>Clinical Research Coordinator</td><td>临床研究协调员</td><td>中心的日常执行者：随访、录入、资料整理</td></tr>
-            <tr><td>CRA</td><td>Clinical Research Associate</td><td>临床监查员</td><td>代表申办方监查中心，核对数据与合规</td></tr>
-            <tr><td>PM</td><td>Project Manager</td><td>项目经理</td><td>项目整体进度、预算与质量的负责人</td></tr>
-            <tr><td>CTM</td><td>Clinical Trial Manager</td><td>临床研究经理</td><td>申办方/CRO 侧的临床运营管理角色</td></tr>
-            <tr><td>CTA</td><td>Clinical Trial Assistant</td><td>临床研究助理</td><td>项目支持角色：文件、物流、会议</td></tr>
-            <tr><td>CRO</td><td>Contract Research Organization</td><td>合同研究组织</td><td>受申办方委托执行试验的外包机构</td></tr>
-            <tr><td>SMO</td><td>Site Management Organization</td><td>现场管理组织</td><td>向中心派驻 CRC、做现场管理的机构</td></tr>
-            <tr><td>IRB/IEC</td><td>Institutional Review Board / Independent Ethics Committee</td><td>机构审查委员会 / 独立伦理委员会</td><td>审查试验伦理与受试者权益的独立机构</td></tr>
-            <tr><td>DSMB</td><td>Data Safety Monitoring Board</td><td>数据监查委员会</td><td>独立委员会，定期评估安全性数据（也称 DMC）</td></tr>
-            <tr><td>QA/QC</td><td>Quality Assurance / Quality Control</td><td>质量保证 / 质量控制</td><td>QA 管体系与稽查；QC 管过程与检查</td></tr>
+            <tr><td>PI</td><td>Principal Investigator</td><td class="gl-zh">主要研究者</td><td data-i18n="gl.term.pi">研究中心负责人，现场最终责任人</td></tr>
+            <tr><td>Sub-I</td><td>Sub-Investigator</td><td class="gl-zh">助理研究者</td><td data-i18n="gl.term.sub_i">PI 授权执行试验相关医疗活动的研究者</td></tr>
+            <tr><td>CRC</td><td>Clinical Research Coordinator</td><td class="gl-zh">临床研究协调员</td><td data-i18n="gl.term.crc">中心的日常执行者：随访、录入、资料整理</td></tr>
+            <tr><td>CRA</td><td>Clinical Research Associate</td><td class="gl-zh">临床监查员</td><td data-i18n="gl.term.cra">代表申办方监查中心，核对数据与合规</td></tr>
+            <tr><td>PM</td><td>Project Manager</td><td class="gl-zh">项目经理</td><td data-i18n="gl.term.pm">项目整体进度、预算与质量的负责人</td></tr>
+            <tr><td>CTM</td><td>Clinical Trial Manager</td><td class="gl-zh">临床研究经理</td><td data-i18n="gl.term.ctm">申办方/CRO 侧的临床运营管理角色</td></tr>
+            <tr><td>CTA</td><td>Clinical Trial Assistant</td><td class="gl-zh">临床研究助理</td><td data-i18n="gl.term.cta">项目支持角色：文件、物流、会议</td></tr>
+            <tr><td>CRO</td><td>Contract Research Organization</td><td class="gl-zh">合同研究组织</td><td data-i18n="gl.term.cro">受申办方委托执行试验的外包机构</td></tr>
+            <tr><td>SMO</td><td>Site Management Organization</td><td class="gl-zh">现场管理组织</td><td data-i18n="gl.term.smo">向中心派驻 CRC、做现场管理的机构</td></tr>
+            <tr><td>IRB/IEC</td><td>Institutional Review Board / Independent Ethics Committee</td><td class="gl-zh">机构审查委员会 / 独立伦理委员会</td><td data-i18n="gl.term.irb_iec">审查试验伦理与受试者权益的独立机构</td></tr>
+            <tr><td>DSMB</td><td>Data Safety Monitoring Board</td><td class="gl-zh">数据监查委员会</td><td data-i18n="gl.term.dsmb">独立委员会，定期评估安全性数据（也称 DMC）</td></tr>
+            <tr><td>QA/QC</td><td>Quality Assurance / Quality Control</td><td class="gl-zh">质量保证 / 质量控制</td><td data-i18n="gl.term.qa_qc">QA 管体系与稽查；QC 管过程与检查</td></tr>
           </tbody>
         </table></div>
 
-        <h2 class="section-title">安全性</h2>
+        <h2 class="section-title" data-i18n="gl.sec.safety">安全性</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>AE</td><td>Adverse Event</td><td>不良事件</td><td>试验期间发生的任何不良医学事件</td></tr>
-            <tr><td>SAE</td><td>Serious Adverse Event</td><td>严重不良事件</td><td>致死、危及生命、住院等严重后果，获知后 24 小时内报告</td></tr>
-            <tr><td>SUSAR</td><td>Suspected Unexpected Serious Adverse Reaction</td><td>可疑且非预期严重不良反应</td><td>需按 7/15 天时限向监管部门递交</td></tr>
-            <tr><td>ADR</td><td>Adverse Drug Reaction</td><td>药物不良反应</td><td>与药物相关的有害反应</td></tr>
-            <tr><td>PV</td><td>Pharmacovigilance</td><td>药物警戒</td><td>药物安全性监测、评估与预防体系</td></tr>
-            <tr><td>DSUR</td><td>Development Safety Update Report</td><td>研发期间安全性更新报告</td><td>申办方定期递交的安全性汇总报告</td></tr>
+            <tr><td>AE</td><td>Adverse Event</td><td class="gl-zh">不良事件</td><td data-i18n="gl.term.ae">试验期间发生的任何不良医学事件</td></tr>
+            <tr><td>SAE</td><td>Serious Adverse Event</td><td class="gl-zh">严重不良事件</td><td data-i18n="gl.term.sae">致死、危及生命、住院等严重后果，获知后 24 小时内报告</td></tr>
+            <tr><td>SUSAR</td><td>Suspected Unexpected Serious Adverse Reaction</td><td class="gl-zh">可疑且非预期严重不良反应</td><td data-i18n="gl.term.susar">需按 7/15 天时限向监管部门递交</td></tr>
+            <tr><td>ADR</td><td>Adverse Drug Reaction</td><td class="gl-zh">药物不良反应</td><td data-i18n="gl.term.adr">与药物相关的有害反应</td></tr>
+            <tr><td>PV</td><td>Pharmacovigilance</td><td class="gl-zh">药物警戒</td><td data-i18n="gl.term.pv">药物安全性监测、评估与预防体系</td></tr>
+            <tr><td>DSUR</td><td>Development Safety Update Report</td><td class="gl-zh">研发期间安全性更新报告</td><td data-i18n="gl.term.dsur">申办方定期递交的安全性汇总报告</td></tr>
           </tbody>
         </table></div>
 
-        <h2 class="section-title">数据与系统</h2>
+        <h2 class="section-title" data-i18n="gl.sec.data">数据与系统</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>EDC</td><td>Electronic Data Capture</td><td>电子数据采集</td><td>临床试验数据录入与管理系统</td></tr>
-            <tr><td>SDV</td><td>Source Data Verification</td><td>源数据核对</td><td>把 CRF 与源文件逐项比对的过程</td></tr>
-            <tr><td>PD</td><td>Protocol Deviation</td><td>方案偏离</td><td>未按方案执行的事件，需记录、分级与报告</td></tr>
-            <tr><td>CAPA</td><td>Corrective and Preventive Action</td><td>纠正与预防措施</td><td>问题闭环的标准动作：纠正 + 防止再发生</td></tr>
-            <tr><td>DMP</td><td>Data Management Plan</td><td>数据管理计划</td><td>数据从采集到锁库的管理方案</td></tr>
-            <tr><td>SAP</td><td>Statistical Analysis Plan</td><td>统计分析计划</td><td>锁库前定稿的统计方法与数据集定义</td></tr>
-            <tr><td>CDISC</td><td>Clinical Data Interchange Standards Consortium</td><td>临床数据交换标准协会</td><td>SDTM/ADaM 等递交数据标准的制定者</td></tr>
-            <tr><td>MedDRA</td><td>Medical Dictionary for Regulatory Activities</td><td>医学用语词典</td><td>AE 编码用的国际标准术语集</td></tr>
+            <tr><td>EDC</td><td>Electronic Data Capture</td><td class="gl-zh">电子数据采集</td><td data-i18n="gl.term.edc">临床试验数据录入与管理系统</td></tr>
+            <tr><td>SDV</td><td>Source Data Verification</td><td class="gl-zh">源数据核对</td><td data-i18n="gl.term.sdv">把 CRF 与源文件逐项比对的过程</td></tr>
+            <tr><td>PD</td><td>Protocol Deviation</td><td class="gl-zh">方案偏离</td><td data-i18n="gl.term.pd">未按方案执行的事件，需记录、分级与报告</td></tr>
+            <tr><td>CAPA</td><td>Corrective and Preventive Action</td><td class="gl-zh">纠正与预防措施</td><td data-i18n="gl.term.capa">问题闭环的标准动作：纠正 + 防止再发生</td></tr>
+            <tr><td>DMP</td><td>Data Management Plan</td><td class="gl-zh">数据管理计划</td><td data-i18n="gl.term.dmp">数据从采集到锁库的管理方案</td></tr>
+            <tr><td>SAP</td><td>Statistical Analysis Plan</td><td class="gl-zh">统计分析计划</td><td data-i18n="gl.term.sap">锁库前定稿的统计方法与数据集定义</td></tr>
+            <tr><td>CDISC</td><td>Clinical Data Interchange Standards Consortium</td><td class="gl-zh">临床数据交换标准协会</td><td data-i18n="gl.term.cdisc">SDTM/ADaM 等递交数据标准的制定者</td></tr>
+            <tr><td>MedDRA</td><td>Medical Dictionary for Regulatory Activities</td><td class="gl-zh">医学用语词典</td><td data-i18n="gl.term.meddra">AE 编码用的国际标准术语集</td></tr>
           </tbody>
         </table></div>
 
-        <h2 class="section-title">流程与访视</h2>
+        <h2 class="section-title" data-i18n="gl.sec.visits">流程与访视</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>PSV</td><td>Pre-Study Visit</td><td>中心筛选访视</td><td>评估中心是否具备开展试验的条件</td></tr>
-            <tr><td>SIV</td><td>Site Initiation Visit</td><td>中心启动访视</td><td>培训到位、文件就绪，宣布中心可入组</td></tr>
-            <tr><td>SMV</td><td>Site Monitoring Visit</td><td>常规监查访视</td><td>按监查计划定期到中心的核查访视</td></tr>
-            <tr><td>COV</td><td>Close-out Visit</td><td>关中心访视</td><td>数据、药物、文件全部收尾关闭</td></tr>
-            <tr><td>FPI</td><td>First Patient In</td><td>首例入组</td><td>试验入组进度的重要里程碑</td></tr>
-            <tr><td>LPI/LPO</td><td>Last Patient In / Out</td><td>末例入组 / 末例出组</td><td>LPI 后入组关闭；LPO 即末例完成</td></tr>
-            <tr><td>LPLV</td><td>Last Patient Last Visit</td><td>末例末次访视</td><td>全部受试者完成末次访视，进入清理锁库阶段</td></tr>
-            <tr><td>DBL</td><td>Database Lock</td><td>数据库锁定</td><td>数据清理完成后的只读状态，锁定后修改须留痕</td></tr>
+            <tr><td>PSV</td><td>Pre-Study Visit</td><td class="gl-zh">中心筛选访视</td><td data-i18n="gl.term.psv">评估中心是否具备开展试验的条件</td></tr>
+            <tr><td>SIV</td><td>Site Initiation Visit</td><td class="gl-zh">中心启动访视</td><td data-i18n="gl.term.siv">培训到位、文件就绪，宣布中心可入组</td></tr>
+            <tr><td>SMV</td><td>Site Monitoring Visit</td><td class="gl-zh">常规监查访视</td><td data-i18n="gl.term.smv">按监查计划定期到中心的核查访视</td></tr>
+            <tr><td>COV</td><td>Close-out Visit</td><td class="gl-zh">关中心访视</td><td data-i18n="gl.term.cov">数据、药物、文件全部收尾关闭</td></tr>
+            <tr><td>FPI</td><td>First Patient In</td><td class="gl-zh">首例入组</td><td data-i18n="gl.term.fpi">试验入组进度的重要里程碑</td></tr>
+            <tr><td>LPI/LPO</td><td>Last Patient In / Out</td><td class="gl-zh">末例入组 / 末例出组</td><td data-i18n="gl.term.lpi_lpo">LPI 后入组关闭；LPO 即末例完成</td></tr>
+            <tr><td>LPLV</td><td>Last Patient Last Visit</td><td class="gl-zh">末例末次访视</td><td data-i18n="gl.term.lplv">全部受试者完成末次访视，进入清理锁库阶段</td></tr>
+            <tr><td>DBL</td><td>Database Lock</td><td class="gl-zh">数据库锁定</td><td data-i18n="gl.term.dbl">数据清理完成后的只读状态，锁定后修改须留痕</td></tr>
           </tbody>
         </table></div>
 
-        <h2 class="section-title">法规与监管</h2>
+        <h2 class="section-title" data-i18n="gl.sec.regs">法规与监管</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>GCP</td><td>Good Clinical Practice</td><td>药物临床试验质量管理规范</td><td>临床试验的设计、实施与记录标准（2026 版 9/1 施行）</td></tr>
-            <tr><td>ICH</td><td>International Council for Harmonisation</td><td>人用药品技术要求国际协调理事会</td><td>GCP 等技术指南（E6/E8 等）的制定机构</td></tr>
-            <tr><td>NMPA</td><td>National Medical Products Administration</td><td>国家药品监督管理局</td><td>中国药品监管机构</td></tr>
-            <tr><td>CDE</td><td>Center for Drug Evaluation</td><td>药品审评中心</td><td>NMPA 下属，负责 IND/NDA 技术审评</td></tr>
-            <tr><td>IND</td><td>Investigational New Drug</td><td>临床试验申请</td><td>开展临床试验前向监管提交的申请</td></tr>
-            <tr><td>NDA</td><td>New Drug Application</td><td>新药上市申请</td><td>申请药物上市的注册申请</td></tr>
-            <tr><td>BLA</td><td>Biologics License Application</td><td>生物制品许可申请</td><td>生物制品的上市申请</td></tr>
-            <tr><td>FDA/EMA</td><td>Food and Drug Administration / European Medicines Agency</td><td>美国 FDA / 欧洲 EMA</td><td>国际申报时最常打交道的两大监管机构</td></tr>
+            <tr><td>GCP</td><td>Good Clinical Practice</td><td class="gl-zh">药物临床试验质量管理规范</td><td data-i18n="gl.term.gcp">临床试验的设计、实施与记录标准（2026 版 9/1 施行）</td></tr>
+            <tr><td>ICH</td><td>International Council for Harmonisation</td><td class="gl-zh">人用药品技术要求国际协调理事会</td><td data-i18n="gl.term.ich">GCP 等技术指南（E6/E8 等）的制定机构</td></tr>
+            <tr><td>NMPA</td><td>National Medical Products Administration</td><td class="gl-zh">国家药品监督管理局</td><td data-i18n="gl.term.nmpa">中国药品监管机构</td></tr>
+            <tr><td>CDE</td><td>Center for Drug Evaluation</td><td class="gl-zh">药品审评中心</td><td data-i18n="gl.term.cde">NMPA 下属，负责 IND/NDA 技术审评</td></tr>
+            <tr><td>IND</td><td>Investigational New Drug</td><td class="gl-zh">临床试验申请</td><td data-i18n="gl.term.ind">开展临床试验前向监管提交的申请</td></tr>
+            <tr><td>NDA</td><td>New Drug Application</td><td class="gl-zh">新药上市申请</td><td data-i18n="gl.term.nda">申请药物上市的注册申请</td></tr>
+            <tr><td>BLA</td><td>Biologics License Application</td><td class="gl-zh">生物制品许可申请</td><td data-i18n="gl.term.bla">生物制品的上市申请</td></tr>
+            <tr><td>FDA/EMA</td><td>Food and Drug Administration / European Medicines Agency</td><td class="gl-zh">美国 FDA / 欧洲 EMA</td><td data-i18n="gl.term.fda_ema">国际申报时最常打交道的两大监管机构</td></tr>
           </tbody>
         </table></div>
 
-        <h2 class="section-title">设计与统计</h2>
+        <h2 class="section-title" data-i18n="gl.sec.design">设计与统计</h2>
         <div class="gl-scroll"><table class="gl-table">
-          <thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话说明</th></tr></thead>
+          <thead><tr><th data-i18n="gl.col.abbr">缩写</th><th data-i18n="gl.col.full">全称</th><th class="gl-zh" data-i18n="gl.col.zh">中文</th><th data-i18n="gl.col.note">一句话说明</th></tr></thead>
           <tbody>
-            <tr><td>ITT</td><td>Intent-to-Treat</td><td>意向治疗</td><td>按随机分组分析全部受试者的原则</td></tr>
-            <tr><td>PP</td><td>Per-Protocol</td><td>符合方案</td><td>只分析完全依从方案的受试者子集</td></tr>
-            <tr><td>FAS</td><td>Full Analysis Set</td><td>全分析集</td><td>尽可能接近 ITT 的分析人群</td></tr>
-            <tr><td>RBM</td><td>Risk-Based Monitoring</td><td>基于风险的监查</td><td>E6(R3) 原则 7：监查资源向风险点倾斜</td></tr>
-            <tr><td>QbD</td><td>Quality by Design</td><td>质量源于设计</td><td>E6(R3) 原则 6：在设计阶段前瞻识别关键质量因素</td></tr>
-            <tr><td>DCT</td><td>Decentralized Clinical Trial</td><td>去中心化临床试验</td><td>远程访视、药物直达等分散式试验模式</td></tr>
-            <tr><td>DHT</td><td>Digital Health Technology</td><td>数字健康技术</td><td>可穿戴、传感器等数据采集技术</td></tr>
+            <tr><td>ITT</td><td>Intent-to-Treat</td><td class="gl-zh">意向治疗</td><td data-i18n="gl.term.itt">按随机分组分析全部受试者的原则</td></tr>
+            <tr><td>PP</td><td>Per-Protocol</td><td class="gl-zh">符合方案</td><td data-i18n="gl.term.pp">只分析完全依从方案的受试者子集</td></tr>
+            <tr><td>FAS</td><td>Full Analysis Set</td><td class="gl-zh">全分析集</td><td data-i18n="gl.term.fas">尽可能接近 ITT 的分析人群</td></tr>
+            <tr><td>RBM</td><td>Risk-Based Monitoring</td><td class="gl-zh">基于风险的监查</td><td data-i18n="gl.term.rbm">E6(R3) 原则 7：监查资源向风险点倾斜</td></tr>
+            <tr><td>QbD</td><td>Quality by Design</td><td class="gl-zh">质量源于设计</td><td data-i18n="gl.term.qbd">E6(R3) 原则 6：在设计阶段前瞻识别关键质量因素</td></tr>
+            <tr><td>DCT</td><td>Decentralized Clinical Trial</td><td class="gl-zh">去中心化临床试验</td><td data-i18n="gl.term.dct">远程访视、药物直达等分散式试验模式</td></tr>
+            <tr><td>DHT</td><td>Digital Health Technology</td><td class="gl-zh">数字健康技术</td><td data-i18n="gl.term.dht">可穿戴、传感器等数据采集技术</td></tr>
           </tbody>
         </table></div>
 
-        <p class="gl-note">
-          更新于 2026-08-15。词条释义为编者整理，用于快速理解，不构成法律或培训意见；
-          法规相关表述以官方文本为准（见 <a href="regulations.html">法规库</a>）。
-          配套资源：<a href="templates.html">模板库</a> · <a href="tmf-reference.html">TMF 文件分类参考</a>。
+        <p class="gl-note" data-i18n-html="gl.note">
+          更新于 2026-08-15。词条释义为编者整理，用于快速理解，不构成法律或培训意见； 法规相关表述以官方文本为准（见 <a href="regulations.html">法规库</a>）。 配套资源：<a href="templates.html">模板库</a> · <a href="tmf-reference.html">TMF 文件分类参考</a>。
         </p>
       </div>
     </section>
@@ -195,14 +196,14 @@
     <section class="cta-section" data-reveal>
       <div class="container">
         <div class="cta-content">
-          <h2>这些词条背后的流程，Vivarcus eTMF 里已经结构化</h2>
-          <p>EDL、SDV、PD、CAPA 不只是缩写——在系统里它们是自动生成、可追踪、可闭环的流程。</p>
+          <h2 data-i18n="gl.cta.title">这些词条背后的流程，Vivarcus eTMF 里已经结构化</h2>
+          <p data-i18n="gl.cta.desc">EDL、SDV、PD、CAPA 不只是缩写——在系统里它们是自动生成、可追踪、可闭环的流程。</p>
           <div class="cta-actions">
             <a href="trial.html" class="btn btn-primary btn-lg">
               <span data-i18n="common.nav.trial">试用申请</span>
               <i class="ic ic--arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="templates.html" class="btn btn-outline btn-lg">全部模板</a>
+            <a href="templates.html" class="btn btn-outline btn-lg" data-i18n="gl.cta.secondary">全部模板</a>
           </div>
         </div>
       </div>

@@ -2,9 +2,11 @@
 """Generate the whitepaper page from docs/marketing/whitepaper-china-tmf.md.
 
 Run from repo root:  python3 website/tools/build_whitepaper.py
-Content source of truth: docs/marketing/whitepaper-china-tmf.md
-Generated page: website/whitepaper.html (zh-only; site chrome keeps common i18n)
+Content source of truth: docs/marketing/whitepaper-china-tmf.md (+ .en.md twin)
+Generated page: website/whitepaper.html (bilingual: zh body inline, en body
+embedded as JSON and swapped at runtime; hero/meta/CTA keys live in js/i18n-data.js)
 """
+import json
 import os
 import sys
 
@@ -13,6 +15,7 @@ import sitegen  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = os.path.join(ROOT, "docs", "marketing", "whitepaper-china-tmf.md")
+SRC_EN = os.path.join(ROOT, "docs", "marketing", "whitepaper-china-tmf.en.md")
 OUT = os.path.join(ROOT, "website", "whitepaper.html")
 
 META = {
@@ -28,14 +31,33 @@ CTA_DESC = "EDL 自动生成、文档生命周期与稽查轨迹、完整性/及
 CTA_SECONDARY_HREF = "regulations.html"
 CTA_SECONDARY_LABEL = "法规库"
 
+BODY_SWAP = """  <script type="application/json" id="body-data-en">%s</script>
+  <script>
+    (function () {
+      var el = document.querySelector('.content-inner');
+      var zhHTML = el.innerHTML;
+      var enHTML = JSON.parse(document.getElementById('body-data-en').textContent);
+      function applyBody() {
+        var en = !!(window.I18N && I18N.getLang() === 'en');
+        el.innerHTML = en ? enHTML : zhHTML;
+      }
+      applyBody();
+      window.addEventListener('langchange', applyBody);
+    })();
+  </script>
+"""
 
-def main():
-    with open(SRC, encoding="utf-8") as f:
+
+def body_from(md_path):
+    """Read a whitepaper markdown source and convert the public-facing part.
+
+    Drops the md subtitle line (moved into the page hero) and any internal
+    sections below the "附：" marker — the public page must never carry
+    the internal checklist.
+    """
+    with open(md_path, encoding="utf-8") as f:
         lines = f.read().split("\n")
 
-    # Drop the md subtitle line (moved into the page hero) and any internal
-    # sections below the "附：" marker — the public page must never carry
-    # the internal checklist.
     kept = []
     for line in lines:
         stripped = line.strip()
@@ -45,9 +67,17 @@ def main():
             break
         kept.append(line)
 
-    body = sitegen.convert("\n".join(kept))
+    return sitegen.convert("\n".join(kept))
+
+
+def main():
+    body = body_from(SRC)
+    body_en = body_from(SRC_EN)
     html = sitegen.render_page(META, body, CTA_TITLE, CTA_DESC,
-                               CTA_SECONDARY_HREF, CTA_SECONDARY_LABEL)
+                               CTA_SECONDARY_HREF, CTA_SECONDARY_LABEL,
+                               i18n="whitepaper")
+    swap = BODY_SWAP % json.dumps(body_en, ensure_ascii=False)
+    html = html.replace("</body>", swap + "</body>")
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(html)
     print("%-20s %8d bytes" % (META["file"], os.path.getsize(OUT)))

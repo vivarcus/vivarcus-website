@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CDE 可视化页 static page builder (zh-only).
+"""CDE 可视化页 static page builder (bilingual zh/en).
 
 Zero-dependency (Python 3 stdlib only) build script:
   source data:  cde_data.py（平台信息统计官方口径）+ cde_indications.py（检索归类）
@@ -7,6 +7,12 @@ generates:
   website/cde-trials.html   (static page, committed to git)
 
 Run: cd website && python3 tools/build_cde_trends.py
+
+i18n 约定：
+- 静态 UI 文案（标题/表头/chips/notes）走站点 i18n-data.js 的 cde.* key（data-i18n / data-i18n-html）
+- 含计算值的文案（KPI 说明、SVG 标签、表格数据名）由本脚本同时生成 zh/en 两种文本，
+  带 data-l-zh/data-l-en（text）或 data-l-html-zh/data-l-html-en（html）属性，页面 JS 按语言切换
+- 图表悬浮 tooltip 与排名重渲染由页面 JS 按 I18N.getLang() 判定语言
 
 图表约定（dataviz 方法）：
 - 内联 SVG，颜色走 .viz-root CSS 变量（浅色为站内品牌色 azure/brand/teal，
@@ -29,6 +35,42 @@ except ImportError:
     INDICATION_RANKING, BE_COUNT, TRIALS_CRAWLED = [], 0, 0
 
 
+# ---------- English labels (editorial translations of the zh data names) ----------
+
+EN_LABELS = {
+    "化学药物": "Chemical drugs",
+    "生物制品": "Biological products",
+    "中药/天然药物": "TCM/natural products",
+    "国内试验": "Domestic trials",
+    "国际多中心试验": "International multi-center trials",
+    "其他": "Other",
+    "肿瘤": "Oncology",
+    "感染": "Infectious diseases",
+    "糖尿病及代谢": "Diabetes & metabolism",
+    "心血管": "Cardiovascular",
+    "消化/肝病": "Gastrointestinal/liver",
+    "中枢神经": "CNS",
+    "自身免疫": "Autoimmune",
+    "呼吸": "Respiratory",
+    "疼痛/麻醉": "Pain/anesthesia",
+    "血液病": "Hematology",
+    "生殖/泌尿": "Reproductive/urology",
+    "皮肤": "Dermatology",
+    "眼科": "Ophthalmology",
+    "疫苗/预防": "Vaccines/prevention",
+    "骨/肌肉": "Musculoskeletal",
+    "中医证候": "TCM syndromes",
+    "健康受试者研究": "Healthy subject studies",
+    "影像诊断": "Diagnostic imaging",
+}
+
+EN_ANNOTATION = "2015–2016 dip: 722 self-inspection campaign"
+
+
+def en_of(zh):
+    return EN_LABELS.get(zh, zh)
+
+
 # ---------- helpers ----------
 
 def fmt(n):
@@ -37,6 +79,12 @@ def fmt(n):
 
 def pct(v, total):
     return f"{v / total * 100:.1f}%"
+
+
+def bilang(zh):
+    """Emit data-l-zh/data-l-en attributes for an element whose text has
+    a zh and an en variant (used on SVG <text> and table cells)."""
+    return f'data-l-zh="{zh}" data-l-en="{en_of(zh)}"'
 
 
 # ---------- SVG chart builders ----------
@@ -83,14 +131,17 @@ def trend_svg():
                  f'class="viz-note" text-anchor="middle">{values[-1]:,}</text>')
     # annotation: 722 dip
     i_dip = 2  # 2015
-    parts.append(f'<text x="{X(i_dip + 0.5):.1f}" y="{Y(1300):.1f}" class="viz-note">'
+    parts.append(f'<text x="{X(i_dip + 0.5):.1f}" y="{Y(1300):.1f}" class="viz-note" '
+                 f'data-l-zh="2015-2016 回落：722 自查核查" data-l-en="{EN_ANNOTATION}">'
                  f'2015-2016 回落：722 自查核查</text>')
     # hit areas (per year)
     for i in range(n):
         parts.append(f'<rect x="{X(i) - step / 2:.1f}" y="{y0}" width="{step:.1f}" '
                      f'height="{y1 - y0}" class="viz-hit" data-t="trend" data-i="{i}"/>')
     return ('<svg viewBox="0 0 960 372" class="viz-svg" data-trend="1" role="img" '
-            'aria-label="2013 至 2026 年平台登记公示试验数量折线图">\n'
+            'aria-label="2013 至 2026 年平台登记公示试验数量折线图" '
+            'data-l-aria-zh="2013 至 2026 年平台登记公示试验数量折线图" '
+            'data-l-aria-en="Registered published trials by year, 2013 to 2026">\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
@@ -107,21 +158,26 @@ def stacked_bar_svg(data):
         gap = 2 if i < len(data) - 1 else 0
         parts.append(f'<rect x="{cx:.1f}" y="{y}" width="{max(w - gap, 1):.1f}" height="{bar_h}" '
                      f'class="viz-seg {seg_colors[i]}" data-t="stack" data-i="{i}"/>')
-        label = f"{name} {fmt(v)} · {pct(v, total)}"
-        fits = w > 6.5 * len(label) + 40
+        label_zh = f"{name} {fmt(v)} · {pct(v, total)}"
+        label_en = f"{en_of(name)} {fmt(v)} · {pct(v, total)}"
+        fits = w > 6.5 * len(label_zh) + 40
         if fits:
             parts.append(f'<text x="{cx + w / 2:.1f}" y="{y + bar_h / 2 + 4:.1f}" '
-                         f'class="viz-seg-label {seg_inks[i]}" text-anchor="middle">{label}</text>')
+                         f'class="viz-seg-label {seg_inks[i]}" text-anchor="middle" '
+                         f'data-l-zh="{label_zh}" data-l-en="{label_en}">{label_zh}</text>')
         cx += w
     # external label for segments that didn't fit
     cx = x
     for i, (name, v) in enumerate(data):
         w = bar_w * v / total
-        label = f"{name} {fmt(v)} · {pct(v, total)}"
-        if w <= 6.5 * len(label) + 40:
-            parts.append(f'<text x="{cx + w + 10:.1f}" y="{y + bar_h / 2 + 4:.1f}" class="viz-seg-label-ext">{label}</text>')
+        label_zh = f"{name} {fmt(v)} · {pct(v, total)}"
+        label_en = f"{en_of(name)} {fmt(v)} · {pct(v, total)}"
+        if w <= 6.5 * len(label_zh) + 40:
+            parts.append(f'<text x="{cx + w + 10:.1f}" y="{y + bar_h / 2 + 4:.1f}" class="viz-seg-label-ext" '
+                         f'data-l-zh="{label_zh}" data-l-en="{label_en}">{label_zh}</text>')
         cx += w
-    return ('<svg viewBox="0 0 960 96" class="viz-svg" role="img" aria-label="药物类别分布堆叠条形图">\n'
+    return ('<svg viewBox="0 0 960 96" class="viz-svg" role="img" aria-label="药物类别分布堆叠条形图" '
+            'data-l-aria-zh="药物类别分布堆叠条形图" data-l-aria-en="Stacked bar chart of drug category distribution">\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
@@ -134,17 +190,19 @@ def scope_bars_svg(data):
     parts = []
     for i, (name, v) in enumerate(data):
         y = y0 + i * (row_h + gap)
-        parts.append(f'<text x="{label_w - 14}" y="{y + 16}" class="viz-tick" text-anchor="end">{name}</text>')
+        parts.append(f'<text x="{label_w - 14}" y="{y + 16}" class="viz-tick" text-anchor="end" '
+                     f'data-l-zh="{name}" data-l-en="{en_of(name)}">{name}</text>')
         w = max(bar_max * v / maxv, 2)
         parts.append(f'<rect x="{x}" y="{y}" width="{w:.1f}" height="22" rx="4" '
                      f'class="viz-bar" data-t="scope" data-i="{i}"/>')
         parts.append(f'<text x="{x + w + 10:.1f}" y="{y + 16}" class="viz-label">{fmt(v)} · {pct(v, total)}</text>')
     h = y0 + len(data) * (row_h + gap) - gap + 6
-    return (f'<svg viewBox="0 0 960 {h}" class="viz-svg" role="img" aria-label="试验范围条形图">\n'
+    return (f'<svg viewBox="0 0 960 {h}" class="viz-svg" role="img" aria-label="试验范围条形图" '
+            'data-l-aria-zh="试验范围条形图" data-l-aria-en="Bar chart of trial scope">\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
-def ranking_svg(ranking, topn=20):
+def ranking_svg(ranking, topn=20, lang="zh"):
     """Indication ranking; emphasis: top category in series hue, rest de-emphasized."""
     data = ranking[:topn]
     maxv = max(v for _, v in data)
@@ -154,13 +212,17 @@ def ranking_svg(ranking, topn=20):
     for i, (name, v) in enumerate(data):
         y = y0 + i * (row_h + gap)
         cls = "viz-bar" if i == 0 else "viz-bar viz-bar-gray"
-        parts.append(f'<text x="{label_w - 14}" y="{y + 16}" class="viz-tick" text-anchor="end">{name}</text>')
+        label = name if lang == "zh" else en_of(name)
+        parts.append(f'<text x="{label_w - 14}" y="{y + 16}" class="viz-tick" text-anchor="end">{label}</text>')
         w = max(bar_max * v / maxv, 2)
         parts.append(f'<rect x="{x}" y="{y}" width="{w:.1f}" height="20" rx="4" '
                      f'class="{cls}" data-t="rank" data-i="{i}" data-idx="rank-{i}"/>')
         parts.append(f'<text x="{x + w + 10:.1f}" y="{y + 15}" class="viz-label">{fmt(v)}</text>')
     h = y0 + len(data) * (row_h + gap) - gap + 6
-    return (f'<svg viewBox="0 0 960 {h}" class="viz-svg viz-ranking" role="img" aria-label="适应症排名条形图">\n'
+    aria_zh = "适应症排名条形图"
+    aria_en = "Bar chart of indication ranking"
+    return (f'<svg viewBox="0 0 960 {h}" class="viz-svg viz-ranking" role="img" aria-label="{aria_zh}" '
+            f'data-l-aria-zh="{aria_zh}" data-l-aria-en="{aria_en}">\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
@@ -169,6 +231,9 @@ def ranking_svg(ranking, topn=20):
 PAGE_JS = """<script>
     var CDE_DATA = JSON.parse(document.getElementById('cde-data').textContent);
     var TIP = document.getElementById('viz-tooltip');
+
+    function curLang() { return !!(window.I18N && I18N.getLang() === 'en') ? 'en' : 'zh'; }
+    function nameOf(entry) { return curLang() === 'en' ? entry[1] : entry[0]; }
 
     function showTip(html, x, y) {
       TIP.innerHTML = html;
@@ -190,20 +255,26 @@ PAGE_JS = """<script>
         var left = svgPos.left - rootPos.left + x;
         var top = svgPos.top - rootPos.top + y;
         var t = el.dataset.t, html = '';
+        var en = curLang() === 'en';
         if (t === 'trend') {
           var d = CDE_DATA.yearly[i];
-          html = '<strong>' + d[0] + ' 年</strong><br>' + d[1].toLocaleString() + ' 项' +
-                 (d[0] === '2026' ? '<br><span class="viz-tip-note">截至 2026-08-15（未完年）</span>' : '');
+          html = '<strong>' + d[0] + (en ? '' : ' 年') + '</strong><br>' + d[1].toLocaleString() +
+                 (en ? ' trials' : ' 项') +
+                 (d[0] === '2026' ? (en ? '<br><span class="viz-tip-note">As of 2026-08-15 (partial year)</span>'
+                                          : '<br><span class="viz-tip-note">截至 2026-08-15（未完年）</span>') : '');
           highlightTrend(svg, i);
         } else if (t === 'stack') {
           var seg = CDE_DATA.drug_type[i];
-          html = '<strong>' + seg[0] + '</strong><br>' + seg[1].toLocaleString() + ' 项 · ' + seg[2];
+          html = '<strong>' + nameOf(seg) + '</strong><br>' + seg[2].toLocaleString() +
+                 (en ? ' trials · ' : ' 项 · ') + seg[3];
         } else if (t === 'scope') {
           var s = CDE_DATA.scope[i];
-          html = '<strong>' + s[0] + '</strong><br>' + s[1].toLocaleString() + ' 项 · ' + s[2];
+          html = '<strong>' + nameOf(s) + '</strong><br>' + s[2].toLocaleString() +
+                 (en ? ' trials · ' : ' 项 · ') + s[3];
         } else if (t === 'rank') {
           var rk = CDE_DATA.ranking[i];
-          html = '<strong>' + rk[0] + '</strong><br>' + rk[1].toLocaleString() + ' 项';
+          html = '<strong>' + nameOf(rk) + '</strong><br>' + rk[2].toLocaleString() +
+                 (en ? ' trials' : ' 项');
         }
         showTip(html, left, top);
       });
@@ -228,25 +299,44 @@ PAGE_JS = """<script>
       svg.querySelectorAll('.viz-crosshair').forEach(function (l) { l.remove(); });
     }
 
+    /* Swap [data-l-zh]/[data-l-en] text and [data-l-html-zh]/[data-l-html-en] html */
+    function applyLocal() {
+      var en = curLang() === 'en';
+      document.querySelectorAll('[data-l-zh]').forEach(function (el) {
+        var v = en ? el.getAttribute('data-l-en') : el.getAttribute('data-l-zh');
+        if (v !== null) el.textContent = v;
+      });
+      document.querySelectorAll('[data-l-html-zh]').forEach(function (el) {
+        var v = en ? el.getAttribute('data-l-html-en') : el.getAttribute('data-l-html-zh');
+        if (v !== null) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-l-aria-zh]').forEach(function (el) {
+        var v = en ? el.getAttribute('data-l-aria-en') : el.getAttribute('data-l-aria-zh');
+        if (v !== null) el.setAttribute('aria-label', v);
+      });
+    }
+
     function renderRanking(topn) {
       var svg = document.getElementById('viz-ranking');
       if (!svg) return;
       var data = CDE_DATA.ranking.slice(0, topn);
       var labelW = 150, x = 150, y0 = 14, rowH = 30, gap = 10, barMax = 640;
-      var maxv = data.length ? data[0][1] : 1;
+      var maxv = data.length ? data[0][2] : 1;
       var html = [];
       data.forEach(function (r, i) {
         var y = y0 + i * (rowH + gap);
-        var w = Math.max(barMax * r[1] / maxv, 2);
+        var w = Math.max(barMax * r[2] / maxv, 2);
         var cls = i === 0 ? 'viz-bar' : 'viz-bar viz-bar-gray';
-        html.push('<text x="' + (labelW - 14) + '" y="' + (y + 16) + '" class="viz-tick" text-anchor="end">' + esc(r[0]) + '</text>');
+        html.push('<text x="' + (labelW - 14) + '" y="' + (y + 16) + '" class="viz-tick" text-anchor="end">' + esc(nameOf(r)) + '</text>');
         html.push('<rect x="' + x + '" y="' + y + '" width="' + w.toFixed(1) + '" height="20" rx="4" class="' + cls +
                   '" data-t="rank" data-i="' + i + '"></rect>');
-        html.push('<text x="' + (x + w + 10) + '" y="' + (y + 15) + '" class="viz-label">' + r[1].toLocaleString() + '</text>');
+        html.push('<text x="' + (x + w + 10) + '" y="' + (y + 15) + '" class="viz-label">' + r[2].toLocaleString() + '</text>');
       });
       var h = y0 + data.length * (rowH + gap) - gap + 6;
       svg.setAttribute('viewBox', '0 0 960 ' + h);
       svg.innerHTML = html.join('');
+      var newSvg = svg.querySelector('svg');
+      if (newSvg) bindSvgHover(newSvg);
     }
 
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
@@ -258,6 +348,13 @@ PAGE_JS = """<script>
       if (toggle) {
         toggle.addEventListener('change', function () { renderRanking(parseInt(toggle.value, 10)); });
       }
+      applyLocal();
+      if (toggle) renderRanking(parseInt(toggle.value, 10));
+    });
+    window.addEventListener('langchange', function () {
+      applyLocal();
+      var toggle = document.getElementById('rank-toggle');
+      if (toggle) renderRanking(parseInt(toggle.value, 10));
     });
   </script>"""
 
@@ -350,34 +447,51 @@ def build_page():
     peak_year, peak_val = max(YEARLY, key=lambda p: p[1])
     first_val = YEARLY[0][1]
     growth = f"约 {peak_val / first_val:.0f} 倍"
+    growth_en = f"about {peak_val / first_val:.0f}x"
     bio_val = dict(DRUG_TYPE)["生物制品"]
     intl_val = dict(SCOPE)["国际多中心试验"]
+    bio_pct = pct(bio_val, drug_total)
+    intl_pct = pct(intl_val, scope_total)
+
+    def bilang_html(zh, en):
+        """Emit data-l-html-zh/data-l-html-en attributes (HTML-escaped — the
+        values may contain quotes, e.g. href attributes inside note text)."""
+        esc = lambda s: s.replace("&", "&amp;").replace('"', "&quot;")
+        return f'data-l-html-zh="{esc(zh)}" data-l-html-en="{esc(en)}"'
 
     kpi_html = f"""
         <div class="viz-kpis">
           <div class="viz-kpi">
             <div class="viz-kpi-value">{fmt(TOTAL)}</div>
-            <div class="viz-kpi-caption">平台登记（已公示）试验总数<br />截至 {AS_OF}</div>
+            <div class="viz-kpi-caption" {bilang_html(
+                f'平台登记（已公示）试验总数<br />截至 {AS_OF}',
+                f'Total registered (published) trials<br />As of {AS_OF}')}>平台登记（已公示）试验总数<br />截至 {AS_OF}</div>
           </div>
           <div class="viz-kpi">
             <div class="viz-kpi-value">{fmt(peak_val)}</div>
-            <div class="viz-kpi-caption">{peak_year} 年登记峰值<br />较 2013 年 {growth}</div>
+            <div class="viz-kpi-caption" {bilang_html(
+                f'{peak_year} 年登记峰值<br />较 2013 年 {growth}',
+                f'Registration peak in {peak_year}<br />{growth_en} vs 2013')}>{peak_year} 年登记峰值<br />较 2013 年 {growth}</div>
           </div>
           <div class="viz-kpi">
             <div class="viz-kpi-value">{fmt(bio_val)}</div>
-            <div class="viz-kpi-caption">生物制品（分类口径）<br />占比 {pct(bio_val, drug_total)}</div>
+            <div class="viz-kpi-caption" {bilang_html(
+                f'生物制品（分类口径）<br />占比 {bio_pct}',
+                f'Biological products (category basis)<br />{bio_pct} of total')}>生物制品（分类口径）<br />占比 {bio_pct}</div>
           </div>
           <div class="viz-kpi">
             <div class="viz-kpi-value">{fmt(intl_val)}</div>
-            <div class="viz-kpi-caption">国际多中心试验<br />占比 {pct(intl_val, scope_total)}</div>
+            <div class="viz-kpi-caption" {bilang_html(
+                f'国际多中心试验<br />占比 {intl_pct}',
+                f'International multi-center trials<br />{intl_pct} of total')}>国际多中心试验<br />占比 {intl_pct}</div>
           </div>
         </div>"""
 
     drug_table = "".join(
-        f"<tr><td>{n}</td><td>{fmt(v)}</td><td>{pct(v, drug_total)}</td></tr>"
+        f'<tr><td {bilang(n)}>{n}</td><td>{fmt(v)}</td><td>{pct(v, drug_total)}</td></tr>'
         for n, v in DRUG_TYPE)
     scope_table = "".join(
-        f"<tr><td>{n}</td><td>{fmt(v)}</td><td>{pct(v, scope_total)}</td></tr>"
+        f'<tr><td {bilang(n)}>{n}</td><td>{fmt(v)}</td><td>{pct(v, scope_total)}</td></tr>'
         for n, v in SCOPE)
 
     # 适应症排名区块（抓取数据就绪时输出；图表剔除「其他」，表格保留全量）
@@ -391,25 +505,31 @@ def build_page():
         be_pct = BE_COUNT / TRIALS_CRAWLED * 100 if TRIALS_CRAWLED else 0
         ranking_html = f"""
         <div class="viz-chart">
-          <h3>适应症排名（非 BE 注册试验，编者归类）</h3>
-          <p class="viz-chart-sub">全部 {fmt(TRIALS_CRAWLED)} 项登记中，生物等效性（BE）试验 {fmt(BE_COUNT)} 项（{be_pct:.1f}%）；本图统计其余 {fmt(nonbe)} 项非 BE 注册试验的适应症大类，未归类 {fmt(other_n)} 项见表格。最高位以品牌色强调，其余降阶为灰。</p>
+          <h3 data-i18n="cde.chart.rank.title">适应症排名（非 BE 注册试验，编者归类）</h3>
+          <p class="viz-chart-sub" {bilang_html(
+              f'全部 {fmt(TRIALS_CRAWLED)} 项登记中，生物等效性（BE）试验 {fmt(BE_COUNT)} 项（{be_pct:.1f}%）；本图统计其余 {fmt(nonbe)} 项非 BE 注册试验的适应症大类，未归类 {fmt(other_n)} 项见表格。最高位以品牌色强调，其余降阶为灰。',
+              f'Of all {fmt(TRIALS_CRAWLED)} registrations, bioequivalence (BE) trials account for {fmt(BE_COUNT)} ({be_pct:.1f}%); this chart covers indication categories of the remaining {fmt(nonbe)} non-BE registration trials, with {fmt(other_n)} unclassified trials shown in the table. The top category is highlighted in the brand color; the rest step down to gray.')}>全部 {fmt(TRIALS_CRAWLED)} 项登记中，生物等效性（BE）试验 {fmt(BE_COUNT)} 项（{be_pct:.1f}%）；本图统计其余 {fmt(nonbe)} 项非 BE 注册试验的适应症大类，未归类 {fmt(other_n)} 项见表格。最高位以品牌色强调，其余降阶为灰。</p>
           <div class="viz-rank-controls no-print">
-            <label for="rank-toggle">显示</label>
+            <label for="rank-toggle" data-i18n="cde.rank.show">显示</label>
             <select id="rank-toggle">
-              <option value="10">前 10</option>
-              <option value="20" selected>前 20</option>
+              <option value="10" data-i18n="cde.rank.top10">前 10</option>
+              <option value="20" selected data-i18n="cde.rank.top20">前 20</option>
             </select>
           </div>
           <div id="viz-ranking">{ranking_svg(ranking_chart, rank_topn)}</div>
         </div>"""
         ranking_table = "".join(
-            f"<tr><td>{i + 1}</td><td>{n}</td><td>{fmt(v)}</td></tr>"
+            f'<tr><td>{i + 1}</td><td {bilang(n)}>{n}</td><td>{fmt(v)}</td></tr>'
             for i, (n, v) in enumerate(INDICATION_RANKING))
 
     body = f"""
         <aside class="content-note">
-          <p><strong>数据来源：</strong><a href="https://www.chinadrugtrials.org.cn/" target="_blank" rel="noopener">药物临床试验登记与信息公示平台</a>（CDE）「信息统计」与检索结果，截至 {AS_OF}；平台登记（已公示）试验总数 {fmt(TOTAL)} 项。</p>
-          <p><strong>口径说明：</strong>趋势、药物类别与试验范围为平台官方统计口径；药物类别与试验范围两项分类统计合计约 {fmt(drug_total)} 项，与总数之差为平台未归类部分。适应症排名为检索结果逐条归类（<strong>编者整理，非官方统计</strong>）。本页不构成投资或商业决策依据。</p>
+          <p {bilang_html(
+              f'<strong>数据来源：</strong><a href="https://www.chinadrugtrials.org.cn/" target="_blank" rel="noopener">药物临床试验登记与信息公示平台</a>（CDE）「信息统计」与检索结果，截至 {AS_OF}；平台登记（已公示）试验总数 {fmt(TOTAL)} 项。',
+              f'<strong>Data source:</strong> the <a href="https://www.chinadrugtrials.org.cn/" target="_blank" rel="noopener">Drug Clinical Trial Registration and Public Disclosure Platform</a> (CDE) "Information Statistics" and search results, as of {AS_OF}; the platform has {fmt(TOTAL)} registered (published) trials in total.')}><strong>数据来源：</strong><a href="https://www.chinadrugtrials.org.cn/" target="_blank" rel="noopener">药物临床试验登记与信息公示平台</a>（CDE）「信息统计」与检索结果，截至 {AS_OF}；平台登记（已公示）试验总数 {fmt(TOTAL)} 项。</p>
+          <p {bilang_html(
+              f'<strong>口径说明：</strong>趋势、药物类别与试验范围为平台官方统计口径；药物类别与试验范围两项分类统计合计约 {fmt(drug_total)} 项，与总数之差为平台未归类部分。适应症排名为检索结果逐条归类（<strong>编者整理，非官方统计</strong>）。本页不构成投资或商业决策依据。',
+              f'<strong>Scope notes:</strong> trends, drug categories and trial scope follow the platform\'s official statistics; the two category tallies add up to about {fmt(drug_total)} trials, the difference from the total being the platform\'s unclassified portion. The indication ranking is compiled entry-by-entry from search results (<strong>editorial classification, not official statistics</strong>). This page does not constitute investment or business advice.')}><strong>口径说明：</strong>趋势、药物类别与试验范围为平台官方统计口径；药物类别与试验范围两项分类统计合计约 {fmt(drug_total)} 项，与总数之差为平台未归类部分。适应症排名为检索结果逐条归类（<strong>编者整理，非官方统计</strong>）。本页不构成投资或商业决策依据。</p>
         </aside>
 
         <div class="viz-root" id="viz-root">
@@ -417,37 +537,43 @@ def build_page():
           {kpi_html}
 
           <div class="viz-chart">
-            <h3>登记试验逐年趋势（2013–2026）</h3>
-            <p class="viz-chart-sub">2013 年平台启用以来登记量增长 {growth}；2026 年为截至 {AS_OF} 的部分年份。悬浮查看各年数量。</p>
+            <h3 data-i18n="cde.chart.trend.title">登记试验逐年趋势（2013–2026）</h3>
+            <p class="viz-chart-sub" {bilang_html(
+                f'2013 年平台启用以来登记量增长 {growth}；2026 年为截至 {AS_OF} 的部分年份。悬浮查看各年数量。',
+                f'Registrations have grown {growth_en} since the platform launched in 2013; 2026 is a partial year as of {AS_OF}. Hover for yearly counts.')}>2013 年平台启用以来登记量增长 {growth}；2026 年为截至 {AS_OF} 的部分年份。悬浮查看各年数量。</p>
             {trend_svg()}
           </div>
 
           <div class="viz-chart">
-            <h3>药物类别分布</h3>
-            <p class="viz-chart-sub">化学药物仍是主体，生物制品占 {pct(bio_val, drug_total)}——创新药结构变化的直观信号。</p>
+            <h3 data-i18n="cde.chart.drug.title">药物类别分布</h3>
+            <p class="viz-chart-sub" {bilang_html(
+                f'化学药物仍是主体，生物制品占 {bio_pct}——创新药结构变化的直观信号。',
+                f'Chemical drugs remain the majority; biological products account for {bio_pct} — a direct signal of the changing innovative-drug mix.')}>化学药物仍是主体，生物制品占 {bio_pct}——创新药结构变化的直观信号。</p>
             {stacked_bar_svg(DRUG_TYPE)}
             <div class="viz-chips">
-              <span class="viz-chip c1"><i></i>化学药物</span>
-              <span class="viz-chip c2"><i></i>生物制品</span>
-              <span class="viz-chip c3"><i></i>中药/天然药物</span>
+              <span class="viz-chip c1"><i></i><span data-i18n="cde.chip.chem">化学药物</span></span>
+              <span class="viz-chip c2"><i></i><span data-i18n="cde.chip.bio">生物制品</span></span>
+              <span class="viz-chip c3"><i></i><span data-i18n="cde.chip.tcm">中药/天然药物</span></span>
             </div>
-            <table class="viz-table"><thead><tr><th>类别</th><th>数量</th><th>占比（分类口径）</th></tr></thead>
+            <table class="viz-table"><thead><tr><th data-i18n="cde.th.cat">类别</th><th data-i18n="cde.th.count">数量</th><th data-i18n="cde.th.pctCat">占比（分类口径）</th></tr></thead>
             <tbody>{drug_table}</tbody></table>
           </div>
 
           <div class="viz-chart">
-            <h3>试验范围：国内试验 vs 国际多中心</h3>
-            <p class="viz-chart-sub">{pct(intl_val, scope_total)} 的国际多中心试验——中国创新药全球化与全球新药进中国的共同入口。</p>
+            <h3 data-i18n="cde.chart.scope.title">试验范围：国内试验 vs 国际多中心</h3>
+            <p class="viz-chart-sub" {bilang_html(
+                f'{intl_pct} 的国际多中心试验——中国创新药全球化与全球新药进中国的共同入口。',
+                f'{intl_pct} international multi-center trials — the shared gateway for Chinese innovative drugs going global and global new drugs entering China.')}>{intl_pct} 的国际多中心试验——中国创新药全球化与全球新药进中国的共同入口。</p>
             {scope_bars_svg(SCOPE)}
-            <table class="viz-table"><thead><tr><th>范围</th><th>数量</th><th>占比</th></tr></thead>
+            <table class="viz-table"><thead><tr><th data-i18n="cde.th.scope">范围</th><th data-i18n="cde.th.count">数量</th><th data-i18n="cde.th.pct">占比</th></tr></thead>
             <tbody>{scope_table}</tbody></table>
           </div>
           {ranking_html}
-          {('<h3 style="margin-top:2rem;">适应症归类明细</h3><table class="viz-table"><thead><tr><th>#</th><th>大类</th><th>数量</th></tr></thead><tbody>'
+          {('<h3 style="margin-top:2rem;" data-i18n="cde.rank.detail">适应症归类明细</h3><table class="viz-table"><thead><tr><th data-i18n="cde.th.no">#</th><th data-i18n="cde.th.rankCat">大类</th><th data-i18n="cde.th.count">数量</th></tr></thead><tbody>'
             + ranking_table + '</tbody></table>') if ranking_table else ''}
         </div>
 
-        <p class="ctcae-related" style="margin-top:2.4rem;font-size:0.9rem;">
+        <p class="ctcae-related" style="margin-top:2.4rem;font-size:0.9rem;" data-i18n-html="cde.related">
           相关资源：<a href="whitepaper.html">中国 TMF 管理白皮书</a> ·
           <a href="gcp-2026.html">2026 版 GCP 要点</a> ·
           <a href="tmf-reference.html">TMF 分类参考</a> ·
@@ -457,9 +583,9 @@ def build_page():
 """
     chart_data = {
         "yearly": YEARLY,
-        "drug_type": [[n, v, pct(v, drug_total)] for n, v in DRUG_TYPE],
-        "scope": [[n, v, pct(v, scope_total)] for n, v in SCOPE],
-        "ranking": ranking_chart[:20],
+        "drug_type": [[n, en_of(n), v, pct(v, drug_total)] for n, v in DRUG_TYPE],
+        "scope": [[n, en_of(n), v, pct(v, scope_total)] for n, v in SCOPE],
+        "ranking": [[n, en_of(n), v] for n, v in ranking_chart[:20]],
     }
     body = body.replace("{cde_data_json}", json.dumps(chart_data, ensure_ascii=False))
 
@@ -479,6 +605,7 @@ def build_page():
         cta_secondary_href="whitepaper.html",
         cta_secondary_label="中国 TMF 管理白皮书",
         extra_style=EXTRA_STYLE,
+        i18n="cde",
     )
     html = html.replace("</body>",
                         '  <script src="js/tools.js"></script>\n' + PAGE_JS + "</body>")

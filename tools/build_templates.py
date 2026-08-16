@@ -87,21 +87,23 @@ PAGES = [
 ]
 
 HEAD = """<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="@@I18N@@.meta.title">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="@@DESC@@" />
+  <meta name="description" data-i18n-meta="@@I18N@@.meta.desc" content="@@DESC@@" />
   <title>@@TITLE@@</title>
   <link rel="canonical" href="https://vivarcus.com/@@FILE@@" />
   <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/@@FILE@@" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/@@FILE@@?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/@@FILE@@" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/@@FILE@@" />
-  <meta property="og:title" content="@@TITLE@@" />
-  <meta property="og:description" content="@@DESC@@" />
+  <meta property="og:title" data-i18n-og="@@I18N@@.meta.title" content="@@TITLE@@" />
+  <meta property="og:description" data-i18n-og="@@I18N@@.meta.desc" content="@@DESC@@" />
   <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <meta property="og:image:alt" content="@@TITLE@@" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -167,18 +169,33 @@ HEAD = """<!DOCTYPE html>
       <div class="container">
         <span class="page-hero-eyebrow">
           <i class="ic ic--folder-open" aria-hidden="true"></i>
-          <span>@@EYEBROW@@</span>
+          <span data-i18n="@@I18N@@.hero.eyebrow">@@EYEBROW@@</span>
         </span>
-        <h1 class="page-hero-title">@@HERO@@</h1>
-        <p class="page-hero-subtitle">@@SUBTITLE@@</p>
+        <h1 class="page-hero-title" data-i18n="@@I18N@@.hero.title">@@HERO@@</h1>
+        <p class="page-hero-subtitle" data-i18n="@@I18N@@.hero.subtitle">@@SUBTITLE@@</p>
       </div>
     </section>
 
     <section class="section template-wrap">
       <div class="container template-content">
-        <p class="template-back"><a href="templates.html">&larr; 返回模板库</a></p>
+        <p class="template-back"><a href="templates.html" data-i18n="tpl.common.back">&larr; 返回模板库</a></p>
+<div id="tpl-content">
 @@GUIDE@@
 @@BODY@@
+</div>
+        <script type="application/json" id="tpl-data-en">{"guide": @@GUIDE_EN_JSON@@, "body": @@BODY_EN_JSON@@}</script>
+        <script>
+          (function () {
+            var el = document.getElementById('tpl-content');
+            var zhHTML = el.innerHTML;
+            var data = JSON.parse(document.getElementById('tpl-data-en').textContent);
+            function apply() {
+              var en = !!(window.I18N && I18N.getLang() === 'en');
+              el.innerHTML = en ? (data.guide + data.body) : zhHTML;
+            }
+            window.addEventListener('langchange', apply);
+          })();
+        </script>
       </div>
     </section>
 """
@@ -186,14 +203,14 @@ HEAD = """<!DOCTYPE html>
 CTA = """    <section class="cta-section" data-reveal>
       <div class="container">
         <div class="cta-content">
-          <h2>@@CTA_TITLE@@</h2>
-          <p>@@CTA_DESC@@</p>
+          <h2 data-i18n="@@I18N@@.cta.title">@@CTA_TITLE@@</h2>
+          <p data-i18n="@@I18N@@.cta.desc">@@CTA_DESC@@</p>
           <div class="cta-actions">
             <a href="trial.html" class="btn btn-primary btn-lg">
               <span data-i18n="common.nav.trial">试用申请</span>
               <i class="ic ic--arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="templates.html" class="btn btn-outline btn-lg">全部模板</a>
+            <a href="templates.html" class="btn btn-outline btn-lg" data-i18n="tpl.common.ctaSecondary">全部模板</a>
           </div>
         </div>
       </div>
@@ -364,14 +381,216 @@ PAGE_GUIDES = {
 }
 
 
+# English metadata per page (prefix -> i18n-data.js keys). Source: hand-maintained, see js/i18n-data.js.
+EN_META = {
+    "template-monitoring-visit-report.html": ("tpl.mvr",
+        "Monitoring Visit Report Template (MVR) — Free Clinical Trial Template | Vivarcus",
+        "Monitoring visit report (MVR) template: visit information, informed consent, SDV, drug management, safety reporting, findings and CAPA — full field structure, with worked example and common error reference. Free to use.",
+        "Template Library · Visit Report",
+        "Monitoring Visit Report Template (MVR)",
+        "The MVR is direct evidence of monitoring quality. This template covers visit information, open items, informed consent, SDV, drug management, safety reporting and finding closure — ready to copy and use."),
+    "template-mvr-example.html": ("tpl.mvrex",
+        "Monitoring Visit Report Worked Example & Top 10 Common Errors | Vivarcus",
+        "MVR worked example: a complete filled-in sample (annotated line by line on why it is written this way) + TOP 10 common errors side by side + pre-submission self-check list.",
+        "Template Library · Worked Example",
+        "MVR Worked Example & Common Errors",
+        "The blank template answers \"what fields exist\"; this page answers \"how to fill them in correctly\" — a fictional example annotated line by line, plus an auditor’s-eye view of common errors."),
+    "template-site-initiation-report.html": ("tpl.sivr",
+        "Site Initiation Visit Report Template (SIV) | Vivarcus",
+        "Site initiation visit report template (SIV): training content checklist, attendance signature sheet, site qualification and facilities check, document readiness, open items and initiation conclusion.",
+        "Template Library · Visit Report",
+        "Site Initiation Visit Report Template (SIV)",
+        "The initiation training signature sheet is a must-check audit item. This template covers training topic verification, attendance signatures, qualification/facility checks and the initiation conclusion — for on-site and remote initiations alike."),
+    "template-closeout-visit-report.html": ("tpl.covr",
+        "Close-out Visit Report Template (COV) | Vivarcus",
+        "Close-out visit report template (COV): data cleanup verification, drug reconciliation, biospecimen handling, document archiving, ethics close-out notification and the archiving statement — item-by-item checks for audit hotspots.",
+        "Template Library · Visit Report",
+        "Close-out Visit Report Template (COV)",
+        "Close-out is an audit hotspot: uncleaned data, unbalanced drug accountability and missing ethics close-out are the most common findings. This template verifies each item before the archiving statement is signed."),
+    "template-protocol-deviation-log.html": ("tpl.pdlog",
+        "Protocol Deviation Log Template | Vivarcus",
+        "Protocol deviation log template (PD Log): deviation description, major-deviation determination reference, root cause analysis and CAPA, reporting records. PD logs are must-check audit documents — every entry must close the loop.",
+        "Template Library · Log Form",
+        "Protocol Deviation Log Template (PD Log)",
+        "The common PD log audit problem is not \"no record\" but \"no analysis, no CAPA, no closure\". This template includes a major-deviation determination reference and management requirements."),
+    "template-icf-checklist.html": ("tpl.icf",
+        "Informed Consent Review Checklist Template (ICF) | Vivarcus",
+        "Informed consent review checklist template (ICF): version and ethics approval verification, required elements, special situations (vulnerable groups/minors/witness), language readability and signature page checks.",
+        "Template Library · Checklist",
+        "Informed Consent Review Checklist Template (ICF)",
+        "ICF issues carry the highest findings in inspections: mixed versions and consent signed after study procedures are the most common. This checklist covers required elements and special situations."),
+    "template-tmf-index.html": ("tpl.tmfidx",
+        "TMF Index Template (EDL) — Essential Documents Index | Vivarcus",
+        "TMF index template (simplified EDL): essential document index organized by pre-study / ongoing / end-of-study stages, marking core items and responsible parties, with self-check methods.",
+        "Template Library · Document List",
+        "TMF Index Template (Simplified EDL)",
+        "A three-stage essential document index for building the TMF/ISF structure, verifying site initiation documents and pre-audit completeness self-checks — with audit core items marked."),
+    "template-sop-framework.html": ("tpl.sop",
+        "SOP Framework Template: Standard Operating Procedure Writing Guide | Vivarcus",
+        "SOP framework template: document control page, purpose/scope/responsibilities, flowchart, procedure steps, records and forms, revision history — with an SOP writing self-check list.",
+        "Template Library · System Document",
+        "SOP Framework Template",
+        "One of the most common audit findings is \"SOP inconsistent with actual practice\". This template provides SOP structure standards and a pre-release self-check list."),
+    "template-audit-readiness-checklist.html": ("tpl.audit",
+        "Audit Readiness Checklist Template | Vivarcus",
+        "Audit readiness checklist template: site-level (staff authorization/informed consent/ISF/data quality/safety/drug management) and project-level self-check lists, plus common audit finding TOPs and on-site cooperation preparation.",
+        "Template Library · Checklist",
+        "Audit Readiness Checklist Template",
+        "In the 2-4 weeks before an audit, follow the three steps: site self-check → project consolidation → remediation closure. Print this list and tick each item — the checklist itself is valid evidence of audit preparation."),
+    "template-training-log.html": ("tpl.train",
+        "Clinical Trial Training Log Template | Vivarcus",
+        "Clinical trial training log template: training basics, attendance signature sheet, effectiveness evaluation and make-up training arrangement. Training records are must-check audit items; signatures must be made in person on the spot.",
+        "Template Library · Log Form",
+        "Training Log Template",
+        "Training records carry two must-check timeline logics: training before first task execution, and retraining after a document version upgrade. This template handles on-the-spot signatures, version linkage and due retraining."),
+    "template-sae-report.html": ("tpl.sae",
+        "SAE Report Template: Serious Adverse Event Form | Vivarcus",
+        "SAE report template: subject information, event description, seriousness criteria, causality assessment, reporting timeline record (24 hours / 7 days / 15 days) and signatures. Does not replace official regulatory forms.",
+        "Template Library · Report Template",
+        "SAE Report Template (Serious Adverse Event Form)",
+        "The three most critical things about SAE reporting: timeline (report within 24 hours of awareness), diagnosis (write the diagnosis, not the symptom) and signature (signed by the PI personally)."),
+    "template-site-initiation-checklist.html": ("tpl.sivc",
+        "Site Initiation Checklist Template | Vivarcus",
+        "Site initiation checklist template: pre-initiation preparation (contract/ethics/staff/supplies), item-by-item training verification on initiation day, and pre-enrollment confirmation. Print and use; pairs with the initiation visit report.",
+        "Template Library · Checklist",
+        "Site Initiation Checklist Template",
+        "The biggest initiation visit risks are going-through-the-motions training and backfilled signatures. One page: pre-initiation self-check + same-day item-by-item ticks + pre-enrollment confirmation."),
+    "template-monitoring-visit-checklist.html": ("tpl.mvc",
+        "Monitoring Visit Checklist Template | Vivarcus",
+        "Monitoring visit checklist template: pre-visit preparation, in-visit item-by-item verification (ICF/inclusion-exclusion/SDV/drug/safety/deviations/ISF) and post-visit wrap-up. Pairs with the MVR template — tick it and copy into the report.",
+        "Template Library · Checklist",
+        "Monitoring Visit Checklist Template",
+        "A three-stage (before/during/after) tick-style checklist that maps directly to the monitoring visit report sections — avoiding checkmarks without evidence."),
+    "template-closeout-checklist.html": ("tpl.covc",
+        "Close-out Checklist Template | Vivarcus",
+        "Close-out checklist template: five categories item-by-item closure — data cleanup, drug reconciliation, biospecimens, document archiving and notifications. Self-check 2 weeks before the close-out visit to plug audit hotspots early.",
+        "Template Library · Checklist",
+        "Close-out Checklist Template",
+        "Close-out is an audit hotspot: uncleaned data, drug accountability gaps and missing ethics close-out notifications are the most common. Self-check with this list 2 weeks before the close-out visit."),
+}
+
+# English CTA overrides (others fall back to EN default)
+EN_CTA_TITLES = {
+    "template-tmf-index.html": "This checklist is built into Vivarcus eTMF",
+    "template-audit-readiness-checklist.html": "This self-check is built into Vivarcus eTMF",
+    "template-sop-framework.html": "These processes are built into Vivarcus",
+}
+EN_CTA_DESCS = {
+    "template-tmf-index.html": "Auto-generated EDLs, documents auto-filed to the right reference model nodes — an order of magnitude faster than maintaining an Excel checklist by hand.",
+    "template-audit-readiness-checklist.html": "Completeness, timeliness and quality metrics are visible in real time — export the checklist before an audit instead of last-minute scrambling.",
+    "template-sop-framework.html": "Processes, roles and timelines run structurally inside the system — SOPs and practice stay consistent by design.",
+}
+EN_DEFAULT_CTA_TITLE = "These templates are built into Vivarcus eTMF"
+EN_DEFAULT_CTA_DESC = "The forms work as-is; filing, version control and issue closure can be handed to the system for ongoing management."
+
+# English guide blocks (audience, timing, risk, related_html) — rendered into the en body JSON
+EN_GUIDES = {
+    "template-monitoring-visit-report.html": (
+        "CRA, CRO project managers",
+        "After routine or remote monitoring visits",
+        "Avoid checkmarks without sampling scope, findings without owners or due dates",
+        '<a href="template-mvr-example.html"><strong>See the worked example and TOP 10 common errors first</strong></a> · <a href="template-icf-checklist.html">ICF Review Checklist</a>',
+    ),
+    "template-mvr-example.html": (
+        "CRA, PM, quality reviewers",
+        "Before drafting or reviewing an MVR",
+        "Avoid subjective judgment instead of evidence, broken chains on open items",
+        '<a href="template-monitoring-visit-report.html">Companion blank MVR template</a> · <a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a>',
+    ),
+    "template-site-initiation-report.html": (
+        "CRA, CRO project team",
+        "After the site initiation visit",
+        "Avoid missing training signatures, staff authorizations or essential documents",
+        '<a href="template-training-log.html">Training Log</a> · <a href="template-tmf-index.html">TMF Index</a>',
+    ),
+    "template-closeout-visit-report.html": (
+        "CRA, PM, site study team",
+        "At routine close-out or early termination",
+        "Avoid unclosed loops in data, drug, ethics close-out and archiving",
+        '<a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a> · <a href="template-tmf-index.html">TMF Index</a>',
+    ),
+    "template-protocol-deviation-log.html": (
+        "CRA, CRC, PI, project managers",
+        "Promptly after a protocol deviation is identified",
+        "Avoid recording events only, without grading, root cause analysis and CAPA",
+        '<a href="template-monitoring-visit-report.html">Monitoring Visit Report</a> · <a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a>',
+    ),
+    "template-icf-checklist.html": (
+        "CRA, auditors, ICF reviewers",
+        "At ICF finalization, monitoring spot-checks or audit self-checks",
+        "Avoid version mixing, missing signature elements and timeline logic errors",
+        '<a href="template-monitoring-visit-report.html">Monitoring Visit Report</a> · <a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a>',
+    ),
+    "template-tmf-index.html": (
+        "Sponsors, CRA, TMF managers",
+        "When building the library, initiating a site or doing completeness self-checks",
+        "Avoid missing documents, unclear responsibilities and inconsistent filing locations",
+        '<a href="tmf-reference.html">TMF Reference</a> · <a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a>',
+    ),
+    "template-sop-framework.html": (
+        "QA, PM, process owners",
+        "When creating or revising an SOP",
+        "Avoid unclear responsibilities, unexecutable processes and SOP-practice drift",
+        '<a href="template-training-log.html">Training Log</a> · <a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a>',
+    ),
+    "template-audit-readiness-checklist.html": (
+        "QA, PM, CRA, site study team",
+        "2-4 weeks before an audit or regulatory inspection",
+        "Avoid last-minute scrambling, hard-to-retrieve documents and unclosed remediation items",
+        '<a href="template-icf-checklist.html">ICF Review Checklist</a> · <a href="template-tmf-index.html">TMF Index</a> · <a href="audit-findings.html">Audit Findings Classification</a>',
+    ),
+    "template-training-log.html": (
+        "Study team and training organizers",
+        "At protocol, SOP, system or site initiation training",
+        "Avoid task execution before training and no retraining after document upgrades",
+        '<a href="template-site-initiation-report.html">Site Initiation Visit Report</a> · <a href="template-sop-framework.html">SOP Framework</a>',
+    ),
+    "template-sae-report.html": (
+        "PI, CRC, CRA, safety team",
+        "When a site reports an SAE to the sponsor",
+        "Avoid late reporting, symptom-for-diagnosis and missing PI signatures",
+        '<a href="template-monitoring-visit-report.html">Monitoring Visit Report</a> · <a href="template-audit-readiness-checklist.html">Audit Readiness Checklist</a>',
+    ),
+    "template-site-initiation-checklist.html": (
+        "CRA, CRO project team",
+        "1-2 weeks before initiation and on initiation day",
+        "Avoid superficial training, backfilled attendance signatures and unassigned authorizations",
+        '<a href="template-site-initiation-report.html">Site Initiation Visit Report</a> · <a href="template-training-log.html">Training Log</a>',
+    ),
+    "template-monitoring-visit-checklist.html": (
+        "CRA",
+        "Before and after every routine monitoring visit",
+        "Avoid evidence-less spot checks and missed drug/safety/deviation verification items",
+        '<a href="template-monitoring-visit-report.html">Monitoring Visit Report Template</a> · <a href="template-mvr-example.html">Worked Example & Common Errors</a>',
+    ),
+    "template-closeout-checklist.html": (
+        "CRA, PM, site study team",
+        "2 weeks before the close-out visit and on the visit day",
+        "Avoid uncleaned data, unbalanced drug accountability and unclosed ethics notifications",
+        '<a href="template-closeout-visit-report.html">Close-out Visit Report</a> · <a href="template-tmf-index.html">TMF Index</a>',
+    ),
+}
+
+
+def en_page_guide(out_file):
+    audience, timing, risk, related = EN_GUIDES[out_file]
+    return (
+        '<div class="template-guide" aria-label="Template usage notes">'
+        '<div class="template-guide-item"><strong>Who it’s for</strong><span>%s</span></div>'
+        '<div class="template-guide-item"><strong>When to use</strong><span>%s</span></div>'
+        '<div class="template-guide-item"><strong>Key pitfalls to avoid</strong><span>%s</span></div>'
+        '</div><p class="template-related"><strong>Companion resources:</strong> %s</p>'
+    ) % (audience, timing, risk, related)
+
+
 def page_guide(out_file):
     audience, timing, risk, related = PAGE_GUIDES[out_file]
     return (
         '<div class="template-guide" aria-label="模板使用说明">'
-        '<div class="template-guide-item"><strong>适合谁</strong><span>%s</span></div>'
-        '<div class="template-guide-item"><strong>何时使用</strong><span>%s</span></div>'
-        '<div class="template-guide-item"><strong>重点避免</strong><span>%s</span></div>'
-        '</div><p class="template-related"><strong>配套资源：</strong>%s</p>'
+        '<div class="template-guide-item"><strong data-i18n="tpl.common.who">适合谁</strong><span>%s</span></div>'
+        '<div class="template-guide-item"><strong data-i18n="tpl.common.when">何时使用</strong><span>%s</span></div>'
+        '<div class="template-guide-item"><strong data-i18n="tpl.common.avoid">重点避免</strong><span>%s</span></div>'
+        '</div><p class="template-related"><strong data-i18n="tpl.common.relatedLabel">配套资源：</strong>%s</p>'
     ) % (audience, timing, risk, related)
 
 
@@ -521,6 +740,11 @@ def rewrite_links(body):
     return re.sub(r'href="([^"]+\.md)"', repl, body)
 
 
+def _js_json(s):
+    import json
+    return json.dumps(s, ensure_ascii=False)
+
+
 def build_page(spec):
     src, out_file, title, desc, eyebrow, hero, subtitle = spec
     with open(os.path.join(MD_DIR, src), encoding="utf-8") as f:
@@ -532,13 +756,24 @@ def build_page(spec):
         body,
     )
 
+    prefix, en_title, en_desc, en_eyebrow, en_hero, en_subtitle = EN_META[out_file]
+    en_src = src[:-3] + ".en.md"
+    with open(os.path.join(MD_DIR, en_src), encoding="utf-8") as f:
+        en_body = rewrite_links(convert(f.read()))
+    en_body = en_body.replace("v0.1 草稿", "Reference version")
+    en_guide = en_page_guide(out_file)
+
     html = HEAD.replace("@@TITLE@@", title).replace("@@DESC@@", desc) \
         .replace("@@FILE@@", out_file).replace("@@EYEBROW@@", eyebrow) \
         .replace("@@HERO@@", hero).replace("@@SUBTITLE@@", subtitle) \
+        .replace("@@I18N@@", prefix) \
         .replace("@@GUIDE@@", page_guide(out_file)) \
-        .replace("@@BODY@@", body)
+        .replace("@@BODY@@", body) \
+        .replace("@@GUIDE_EN_JSON@@", _js_json(en_guide)) \
+        .replace("@@BODY_EN_JSON@@", _js_json(en_body))
     html += CTA.replace("@@CTA_TITLE@@", CTA_TITLES.get(out_file, DEFAULT_CTA_TITLE)) \
-        .replace("@@CTA_DESC@@", CTA_DESCS.get(out_file, DEFAULT_CTA_DESC))
+        .replace("@@CTA_DESC@@", CTA_DESCS.get(out_file, DEFAULT_CTA_DESC)) \
+        .replace("@@I18N@@", prefix)
     html += FOOT
     path = os.path.join(OUT_DIR, out_file)
     with open(path, "w", encoding="utf-8") as f:

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="pd.meta.title">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="方案偏离（PD）决策树：这个偏离要不要报伦理、要不要写 CAPA？四步是/否问答给出处置路径，附重要偏离判定参考与 PD 日志模板。CRA/CRC 高频困惑点，30 秒出结论。" />
+  <meta name="description" data-i18n-meta="pd.meta.desc" content="方案偏离（PD）决策树：这个偏离要不要报伦理、要不要写 CAPA？四步是/否问答给出处置路径，附重要偏离判定参考与 PD 日志模板。CRA/CRC 高频困惑点，30 秒出结论。" />
   <title>方案偏离决策树：要不要报伦理/写 CAPA | Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/pd-decision-tree.html" />
   <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/pd-decision-tree.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/pd-decision-tree.html?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/pd-decision-tree.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/pd-decision-tree.html" />
-  <meta property="og:title" content="方案偏离决策树：要不要报伦理/写 CAPA | Vivarcus" />
-  <meta property="og:description" content="方案偏离（PD）决策树：四步是/否问答给出处置路径（报伦理/报申办方/启动 CAPA），附重要偏离判定参考与 PD 日志模板。" />
+  <meta property="og:title" data-i18n-og="pd.meta.title" content="方案偏离决策树：要不要报伦理/写 CAPA | Vivarcus" />
+  <meta property="og:description" data-i18n-og="pd.meta.desc" content="方案偏离（PD）决策树：四步是/否问答给出处置路径（报伦理/报申办方/启动 CAPA），附重要偏离判定参考与 PD 日志模板。" />
   <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <meta property="og:image:alt" content="方案偏离决策树 | Vivarcus" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -76,10 +78,10 @@
       <div class="container">
         <span class="page-hero-eyebrow">
           <i class="ic ic--route" aria-hidden="true"></i>
-          <span>行业资源 · 交互工具</span>
+          <span data-i18n="pd.hero.eyebrow">行业资源 · 交互工具</span>
         </span>
-        <h1 class="page-hero-title">方案偏离决策树</h1>
-        <p class="page-hero-subtitle">发生偏离后先问自己四个问题：要不要报伦理、要不要报申办方、要不要写 CAPA。30 秒出处置路径。</p>
+        <h1 class="page-hero-title" data-i18n="pd.hero.title">方案偏离决策树</h1>
+        <p class="page-hero-subtitle" data-i18n="pd.hero.subtitle">发生偏离后先问自己四个问题：要不要报伦理、要不要报申办方、要不要写 CAPA。30 秒出处置路径。</p>
       </div>
     </section>
 
@@ -88,55 +90,53 @@
         <div class="pd-wrap">
 
           <div class="pd-q" id="pd-q1">
-            <h2>问题 1/4：是否影响受试者安全或权益？</h2>
-            <p>包括：导致受试者暴露于额外风险（如剂量错误、违反暂停标准）、影响知情同意有效性、延误安全性报告等。</p>
-            <button class="pd-btn pd-btn--yes" onclick="pdResult('major')">是</button>
-            <button class="pd-btn" onclick="pdShow('q2')">否</button>
+            <h2 data-i18n="pd.q1.t">问题 1/4：是否影响受试者安全或权益？</h2>
+            <p data-i18n="pd.q1.d">包括：导致受试者暴露于额外风险（如剂量错误、违反暂停标准）、影响知情同意有效性、延误安全性报告等。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('major')" data-i18n="pd.btn.yes">是</button>
+            <button class="pd-btn" onclick="pdShow('q2')" data-i18n="pd.btn.no">否</button>
           </div>
 
           <div class="pd-q" id="pd-q2" style="display:none;">
-            <h2>问题 2/4：是否影响数据完整性或结果可靠性？</h2>
-            <p>例如：评估/检查漏项影响疗效或安全终点、样本处理错误、记录缺失导致无法溯源。</p>
-            <button class="pd-btn pd-btn--yes" onclick="pdResult('major')">是</button>
-            <button class="pd-btn" onclick="pdShow('q3')">否</button>
+            <h2 data-i18n="pd.q2.t">问题 2/4：是否影响数据完整性或结果可靠性？</h2>
+            <p data-i18n="pd.q2.d">例如：评估/检查漏项影响疗效或安全终点、样本处理错误、记录缺失导致无法溯源。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('major')" data-i18n="pd.btn.yes">是</button>
+            <button class="pd-btn" onclick="pdShow('q3')" data-i18n="pd.btn.no">否</button>
           </div>
 
           <div class="pd-q" id="pd-q3" style="display:none;">
-            <h2>问题 3/4：是否为系统性/重复性偏离？</h2>
-            <p>同类偏离在本中心已发生 ≥3 次，或同一操作环节反复出现。</p>
-            <button class="pd-btn pd-btn--yes" onclick="pdResult('capa')">是</button>
-            <button class="pd-btn" onclick="pdShow('q4')">否</button>
+            <h2 data-i18n="pd.q3.t">问题 3/4：是否为系统性/重复性偏离？</h2>
+            <p data-i18n="pd.q3.d">同类偏离在本中心已发生 ≥3 次，或同一操作环节反复出现。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('capa')" data-i18n="pd.btn.yes">是</button>
+            <button class="pd-btn" onclick="pdShow('q4')" data-i18n="pd.btn.no">否</button>
           </div>
 
           <div class="pd-q" id="pd-q4" style="display:none;">
-            <h2>问题 4/4：是否违反方案或法规的明确条款？</h2>
-            <p>包括：入排标准、访视窗口、ICF 签署要求、SAE 报告时限等有明文规定的项目。</p>
-            <button class="pd-btn pd-btn--yes" onclick="pdResult('report')">是</button>
-            <button class="pd-btn pd-btn--no" onclick="pdResult('minor')">否</button>
+            <h2 data-i18n="pd.q4.t">问题 4/4：是否违反方案或法规的明确条款？</h2>
+            <p data-i18n="pd.q4.d">包括：入排标准、访视窗口、ICF 签署要求、SAE 报告时限等有明文规定的项目。</p>
+            <button class="pd-btn pd-btn--yes" onclick="pdResult('report')" data-i18n="pd.btn.yes">是</button>
+            <button class="pd-btn pd-btn--no" onclick="pdResult('minor')" data-i18n="pd.btn.no">否</button>
           </div>
 
           <div class="pd-result" id="pd-result">
             <h2 id="pd-result-title"></h2>
             <ol id="pd-result-steps"></ol>
-            <button class="pd-reset" onclick="pdReset()">↺ 重新判断</button>
+            <button class="pd-reset" onclick="pdReset()" data-i18n="pd.reset">↺ 重新判断</button>
           </div>
 
-          <h2 class="section-title" style="margin-top:2.5rem;">重要偏离判定参考</h2>
-          <p class="pd-ref">判定以研究方案与公司 SOP 的定义为准；下表为通用参考框架：</p>
+          <h2 class="section-title" style="margin-top:2.5rem;" data-i18n="pd.ref.title">重要偏离判定参考</h2>
+          <p class="pd-ref" data-i18n="pd.ref.intro">判定以研究方案与公司 SOP 的定义为准；下表为通用参考框架：</p>
           <div style="overflow-x:auto;"><table class="pd-table">
-            <thead><tr><th>可能构成重要偏离的情形</th><th>举例</th></tr></thead>
+            <thead><tr><th data-i18n="pd.ref.c1">可能构成重要偏离的情形</th><th data-i18n="pd.ref.c2">举例</th></tr></thead>
             <tbody>
-              <tr><td>影响受试者安全、权益或数据完整性</td><td>未签 ICF 即开始研究程序、SAE 未按时限报告</td></tr>
-              <tr><td>系统性/重复性偏离</td><td>同一中心反复超访视窗口</td></tr>
-              <tr><td>故意违反方案或法规</td><td>隐瞒 AE、伪造记录</td></tr>
-              <tr><td>导致受试者暴露于额外风险</td><td>剂量错误、违反暂停标准</td></tr>
+              <tr><td data-i18n="pd.ref.r1c1">影响受试者安全、权益或数据完整性</td><td data-i18n="pd.ref.r1c2">未签 ICF 即开始研究程序、SAE 未按时限报告</td></tr>
+              <tr><td data-i18n="pd.ref.r2c1">系统性/重复性偏离</td><td data-i18n="pd.ref.r2c2">同一中心反复超访视窗口</td></tr>
+              <tr><td data-i18n="pd.ref.r3c1">故意违反方案或法规</td><td data-i18n="pd.ref.r3c2">隐瞒 AE、伪造记录</td></tr>
+              <tr><td data-i18n="pd.ref.r4c1">导致受试者暴露于额外风险</td><td data-i18n="pd.ref.r4c2">剂量错误、违反暂停标准</td></tr>
             </tbody>
           </table></div>
 
-          <p class="pd-ref" style="margin-top:1.2rem;">
-            记录偏离请使用 <a href="template-protocol-deviation-log.html">方案偏离日志模板</a>；
-            偏离趋势是监查与稽查的重点，同类偏离 ≥3 次应启动 CAPA。
-            更新于 2026-08-15。本工具为通用参考，不构成法律意见；最终判定以研究方案、公司 SOP 与现行 GCP 为准。
+          <p class="pd-ref" style="margin-top:1.2rem;" data-i18n-html="pd.note">
+            记录偏离请使用 <a href="template-protocol-deviation-log.html">方案偏离日志模板</a>； 偏离趋势是监查与稽查的重点，同类偏离 ≥3 次应启动 CAPA。 更新于 2026-08-15。本工具为通用参考，不构成法律意见；最终判定以研究方案、公司 SOP 与现行 GCP 为准。
           </p>
 
         </div>
@@ -146,14 +146,14 @@
     <section class="cta-section" data-reveal>
       <div class="container">
         <div class="cta-content">
-          <h2>偏离登记到闭环，Vivarcus eTMF 里是结构化流程</h2>
-          <p>PD 记录、分级、CAPA 与报告在系统里一条链路，稽查时不用从 Excel 里翻历史。</p>
+          <h2 data-i18n="pd.cta.title">偏离登记到闭环，Vivarcus eTMF 里是结构化流程</h2>
+          <p data-i18n="pd.cta.desc">PD 记录、分级、CAPA 与报告在系统里一条链路，稽查时不用从 Excel 里翻历史。</p>
           <div class="cta-actions">
             <a href="trial.html" class="btn btn-primary btn-lg">
               <span data-i18n="common.nav.trial">试用申请</span>
               <i class="ic ic--arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="template-protocol-deviation-log.html" class="btn btn-outline btn-lg">PD 日志模板</a>
+            <a href="template-protocol-deviation-log.html" class="btn btn-outline btn-lg" data-i18n="pd.cta.secondary">PD 日志模板</a>
           </div>
         </div>
       </div>
@@ -221,54 +221,41 @@
       document.querySelectorAll('.pd-q').forEach(function (q) { q.style.display = 'none'; });
       document.getElementById('pd-' + id).style.display = 'block';
     }
+    var pdLastPath = null;
     function pdResult(path) {
+      pdLastPath = path;
       document.querySelectorAll('.pd-q').forEach(function (q) { q.style.display = 'none'; });
+      var en = !!(window.I18N && I18N.getLang() === 'en');
       var r = document.getElementById('pd-result');
       var t = document.getElementById('pd-result-title');
       var s = document.getElementById('pd-result-steps');
       var steps = {
         major: {
-          title: '处置：重要偏离路径——立即报告 PI 评估',
-          list: [
-            '48 小时内登记方案偏离日志（客观描述 + 分级）',
-            '报告 PI 评估是否需报伦理委员会（涉及受试者安全/权益时通常需要）',
-            '涉及安全性的按 SAE 路径另行报告（获知后 24 小时内报申办方）',
-            '根因分析并记录纠正与预防措施（CAPA），下次监查访视复核闭环',
-          ],
+          zh: { title: "处置：重要偏离路径——立即报告 PI 评估", list: ["48 小时内登记方案偏离日志（客观描述 + 分级）", "报告 PI 评估是否需报伦理委员会（涉及受试者安全/权益时通常需要）", "涉及安全性的按 SAE 路径另行报告（获知后 24 小时内报申办方）", "根因分析并记录纠正与预防措施（CAPA），下次监查访视复核闭环"] },
+          en: { title: "Action: Major Deviation Path — Report Immediately for PI Assessment", list: ["Register in the PD log within 48 hours (objective description + grading)", "Report to the PI to assess whether the ethics committee must be notified (usually yes when subject safety/rights are involved)", "Safety-related deviations follow the SAE path separately (report to the sponsor within 24 hours of awareness)", "Perform root cause analysis and record corrective and preventive actions (CAPA); verify closure at the next monitoring visit"] },
         },
         capa: {
-          title: '处置：系统性偏离——启动 CAPA',
-          list: [
-            '48 小时内登记本次偏离，标注"同类第 N 次"',
-            '启动 CAPA：找根因、定措施、指定责任人与完成时限',
-            '汇总同类偏离做趋势分析，评估是否需要培训或流程修订',
-            'CAPA 完成情况在后续监查访视中持续复核',
-          ],
+          zh: { title: "处置：系统性偏离——启动 CAPA", list: ["48 小时内登记本次偏离，标注\"同类第 N 次\"", "启动 CAPA：找根因、定措施、指定责任人与完成时限", "汇总同类偏离做趋势分析，评估是否需要培训或流程修订", "CAPA 完成情况在后续监查访视中持续复核"] },
+          en: { title: "Action: Systematic Deviation — Initiate CAPA", list: ["Register this deviation within 48 hours, marked \"occurrence #N of the same type\"", "Initiate CAPA: find the root cause, define actions, assign owner and due date", "Consolidate similar deviations for trend analysis; assess whether training or process revision is needed", "CAPA completion is verified at subsequent monitoring visits"] },
         },
         report: {
-          title: '处置：违反明确条款——按方案与法规要求报告',
-          list: [
-            '48 小时内登记方案偏离日志，注明所违反的方案/法规条款',
-            '报告 PI 确认；涉及 ICF、时限或入排条款的，评估是否需要报伦理委员会',
-            '按方案规定时限报告申办方',
-            '记录处置结论并纳入趋势观察（同类再发生则启动 CAPA）',
-          ],
+          zh: { title: "处置：违反明确条款——按方案与法规要求报告", list: ["48 小时内登记方案偏离日志，注明所违反的方案/法规条款", "报告 PI 确认；涉及 ICF、时限或入排条款的，评估是否需要报伦理委员会", "按方案规定时限报告申办方", "记录处置结论并纳入趋势观察（同类再发生则启动 CAPA）"] },
+          en: { title: "Action: Explicit Requirement Violation — Report per Protocol and Regulations", list: ["Register in the PD log within 48 hours, noting the violated protocol/regulatory clause", "Report to the PI for confirmation; if ICF, timelines or inclusion/exclusion clauses are involved, assess whether the ethics committee must be notified", "Report to the sponsor within the timeline required by the protocol", "Record the disposition and add to trend observation (initiate CAPA if the same type recurs)"] },
         },
         minor: {
-          title: '处置：次要偏离——记录并观察',
-          list: [
-            '48 小时内登记方案偏离日志，PI 签字确认',
-            '无需报伦理与 CAPA，但纳入趋势观察',
-            '同类偏离达到 3 次时升级：启动 CAPA（见"系统性偏离"路径）',
-          ],
+          zh: { title: "处置：次要偏离——记录并观察", list: ["48 小时内登记方案偏离日志，PI 签字确认", "无需报伦理与 CAPA，但纳入趋势观察", "同类偏离达到 3 次时升级：启动 CAPA（见\"系统性偏离\"路径）"] },
+          en: { title: "Action: Minor Deviation — Record and Observe", list: ["Register in the PD log within 48 hours, signed off by the PI", "No ethics committee report or CAPA needed, but add to trend observation", "Escalate when the same type reaches 3 occurrences: initiate CAPA (see the Systematic Deviation path)"] },
         },
       };
-      t.textContent = steps[path].title;
-      s.innerHTML = steps[path].list.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+      var sp = steps[path][en ? 'en' : 'zh'];
+      t.textContent = sp.title;
+      s.innerHTML = sp.list.map(function (x) { return '<li>' + x + '</li>'; }).join('');
       r.style.display = 'block';
       r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+    window.addEventListener('langchange', function () { if (pdLastPath) pdResult(pdLastPath); });
     function pdReset() {
+      pdLastPath = null;
       document.getElementById('pd-result').style.display = 'none';
       document.querySelectorAll('.pd-q').forEach(function (q) { q.style.display = 'none'; });
       document.getElementById('pd-q1').style.display = 'block';

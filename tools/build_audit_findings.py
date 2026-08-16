@@ -17,7 +17,10 @@ import json
 from pathlib import Path
 
 import sitegen
-from audit_findings_data import CHAPTERS, FINDINGS, SEVERITY, TOPICS
+from audit_findings_data import (
+    CHAPTERS, CHAPTERS_EN, CLAUSE_EN, FINDINGS, SEVERITY, SEVERITY_EN,
+    TOPICS, TOPICS_EN,
+)
 
 ROOT = Path(__file__).resolve().parent.parent  # website/
 
@@ -31,6 +34,8 @@ PAGE_JS = """<script>
 
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    function isEn() { return !!(window.I18N && I18N.getLang() === 'en'); }
 
     function currentControls() {
       var severities = [];
@@ -49,10 +54,34 @@ PAGE_JS = """<script>
       if (c.topic !== 'all' && f.topic !== c.topic) return false;
       if (c.severities.indexOf(f.severity) === -1) return false;
       if (c.q) {
-        var hay = (f.finding + ' ' + f.check + ' ' + f.clause + ' ' + f.e6).toLowerCase();
+        var hay = (f.finding + ' ' + f.check + ' ' + f.clause + ' ' + f.e6 +
+                   ' ' + (f.finding_en || '') + ' ' + (f.check_en || '')).toLowerCase();
         if (hay.indexOf(c.q) === -1) return false;
       }
       return true;
+    }
+
+    function renderSelectOptions() {
+      var en = isEn();
+      var ch = document.getElementById('af-chapter');
+      var html = '<option value="all" selected>' + (en ? 'All Chapters' : '全部章节') + '</option>';
+      AF_DATA.chapters.forEach(function (c) {
+        html += '<option value="' + c.key + '">' + esc(en ? c.label_en : c.label) + '</option>';
+      });
+      ch.innerHTML = html;
+      var tp = document.getElementById('af-topic');
+      html = '<option value="all" selected>' + (en ? 'All Topics' : '全部主题') + '</option>';
+      AF_DATA.topics.forEach(function (t) {
+        html += '<option value="' + t.key + '">' + esc(en ? t.label_en : t.label) + '（' + t.count + '）</option>';
+      });
+      tp.innerHTML = html;
+      var sevBox = document.querySelector('#af-controls .af-sevs');
+      html = '';
+      Object.keys(AF_DATA.sev).forEach(function (k) {
+        html += '<label><input type="checkbox" name="af-sev" value="' + k + '" checked /> ' +
+                esc(en ? AF_DATA.sev_en[k] : AF_DATA.sev[k]) + '</label>';
+      });
+      sevBox.innerHTML = html;
     }
 
     // 过滤后的行（主题顺序），同时供预览与 CSV 导出使用
@@ -69,44 +98,51 @@ PAGE_JS = """<script>
     }
 
     function sevBadge(s) {
+      var en = isEn();
       var cls = s === 'critical' ? 'af-sev-critical' : (s === 'major' ? 'af-sev-major' : 'af-sev-minor');
-      return '<span class="af-badge ' + cls + '">' + esc(AF_DATA.sev[s] || s) + '</span>';
+      return '<span class="af-badge ' + cls + '">' + esc((en ? AF_DATA.sev_en : AF_DATA.sev)[s] || s) + '</span>';
     }
 
     function renderPreview() {
       var c = currentControls();
+      var en = isEn();
       var rows = filteredRows(c);
       var nCritical = rows.filter(function (r) { return r.finding.severity === 'critical'; }).length;
       var nHot = rows.filter(function (r) { return r.finding.hot; }).length;
+      var head = en
+        ? '<th>#</th><th>Finding</th><th>Clause (2026 GCP)</th><th>E6(R3)</th><th>Severity</th><th>Self-Check Point</th>'
+        : '<th>#</th><th>发现描述</th><th>条款定位（2026 GCP）</th><th>E6(R3)</th><th>严重程度</th><th>自查落点</th>';
       var html = '', idx = 0, curTopic = null;
       rows.forEach(function (r) {
         if (curTopic !== r.topic.key) {
           if (curTopic !== null) html += '</tbody></table></div>';
           curTopic = r.topic.key;
-          html += '<h3 class="af-topic-head">' + esc(r.topic.label) +
+          html += '<h3 class="af-topic-head">' + esc(en ? r.topic.label_en : r.topic.label) +
                   ' <span class="af-topic-count">' +
-                  rows.filter(function (x) { return x.topic.key === curTopic; }).length + ' 条</span></h3>';
-          html += '<div class="af-scroll"><table class="af-table"><thead><tr>' +
-            '<th>#</th><th>发现描述</th><th>条款定位（2026 GCP）</th><th>E6(R3)</th><th>严重程度</th><th>自查落点</th>' +
+                  rows.filter(function (x) { return x.topic.key === curTopic; }).length + (en ? ' items' : ' 条') + '</span></h3>';
+          html += '<div class="af-scroll"><table class="af-table"><thead><tr>' + head +
             '</tr></thead><tbody>';
         }
         idx++;
         var f = r.finding;
         html += '<tr>' +
           '<td class="af-idx">' + idx + '</td>' +
-          '<td class="af-finding">' + esc(f.finding) +
-            (f.hot ? ' <span class="af-badge af-hot">高频</span>' : '') + '</td>' +
-          '<td class="af-clause">' + esc(f.clause) + '</td>' +
-          '<td class="af-e6">' + esc(f.e6) + '</td>' +
+          '<td class="af-finding">' + esc(en ? f.finding_en : f.finding) +
+            (f.hot ? ' <span class="af-badge af-hot">' + (en ? 'HOT' : '高频') + '</span>' : '') + '</td>' +
+          '<td class="af-clause">' + esc(en ? (f.clause_en || f.clause) : f.clause) + '</td>' +
+          '<td class="af-e6">' + esc(en ? (f.e6_en || f.e6) : f.e6) + '</td>' +
           '<td>' + sevBadge(f.severity) + '</td>' +
-          '<td class="af-check">' + esc(f.check) + '</td>' +
+          '<td class="af-check">' + esc(en ? f.check_en : f.check) + '</td>' +
           '</tr>';
       });
       html += '</tbody></table></div>';
       var list = document.getElementById('af-preview');
-      list.innerHTML = html || '<p class="af-empty">当前筛选条件下没有条目。请放宽筛选条件或清空搜索词。</p>';
-      document.getElementById('af-stats').textContent =
-        '共 ' + rows.length + ' 条 · 严重 ' + nCritical + ' · 高频 ' + nHot;
+      list.innerHTML = html || ('<p class="af-empty">' + (en
+        ? 'No findings under the current filters. Please relax the filters or clear the search term.'
+        : '当前筛选条件下没有条目。请放宽筛选条件或清空搜索词。') + '</p>');
+      document.getElementById('af-stats').textContent = en
+        ? 'Total ' + rows.length + ' · Critical ' + nCritical + ' · HOT ' + nHot
+        : '共 ' + rows.length + ' 条 · 严重 ' + nCritical + ' · 高频 ' + nHot;
     }
 
     function csvCell(s) {
@@ -117,18 +153,22 @@ PAGE_JS = """<script>
 
     function downloadCsv() {
       var c = currentControls();
+      var en = isEn();
       var rows = filteredRows(c);
       if (!rows.length) { renderPreview(); return; }
-      var lines = ['\\uFEFF序号,主题,发现描述,条款定位（2026 GCP）,E6(R3) 映射,严重程度,自查落点'];
+      var header = en
+        ? '\\uFEFFNo.,Topic,Finding,Clause (2026 GCP),E6(R3) Mapping,Severity,Self-Check Point'
+        : '\\uFEFF序号,主题,发现描述,条款定位（2026 GCP）,E6(R3) 映射,严重程度,自查落点';
+      var lines = [header];
       rows.forEach(function (r, i) {
         lines.push([
           i + 1,
-          r.topic.label,
-          r.finding.finding,
-          r.finding.clause,
-          r.finding.e6,
-          AF_DATA.sev[r.finding.severity] || '',
-          r.finding.check,
+          en ? r.topic.label_en : r.topic.label,
+          en ? r.finding.finding_en : r.finding.finding,
+          en ? (r.finding.clause_en || r.finding.clause) : r.finding.clause,
+          en ? (r.finding.e6_en || r.finding.e6) : r.finding.e6,
+          (en ? AF_DATA.sev_en : AF_DATA.sev)[r.finding.severity] || '',
+          en ? r.finding.check_en : r.finding.check,
         ].map(csvCell).join(','));
       });
       var now = new Date();
@@ -144,7 +184,15 @@ PAGE_JS = """<script>
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
     }
 
-    document.addEventListener('DOMContentLoaded', renderPreview);
+    document.addEventListener('DOMContentLoaded', function () {
+      renderSelectOptions();
+      renderPreview();
+    });
+
+    window.addEventListener('langchange', function () {
+      renderSelectOptions();
+      renderPreview();
+    });
 
     document.addEventListener('change', function (e) {
       if (!e.target) return;
@@ -224,69 +272,77 @@ def build_page():
     topics = [{"key": k, "label": v, "count": sum(1 for f in FINDINGS if f["topic"] == k)}
               for k, v in TOPICS if any(f["topic"] == k for f in FINDINGS)]
 
+    sev_map = dict(SEVERITY)
+    sev_map_en = dict(SEVERITY_EN)
+    clause_en = dict(CLAUSE_EN)
+    for f in FINDINGS:
+        f["clause_en"] = clause_en.get(f["clause"], "")
+    topics = [dict(t, label_en=dict(TOPICS_EN)[t["key"]]) for t in topics]
+
     data = {
         "findings": FINDINGS,
         "topics": topics,
-        "chapters": [{"key": k, "label": v} for k, v in CHAPTERS],
-        "sev": SEV,
+        "chapters": [{"key": k, "label": v, "label_en": dict(CHAPTERS_EN)[k]} for k, v in CHAPTERS],
+        "sev": sev_map,
+        "sev_en": sev_map_en,
     }
 
     body = f"""
         <aside class="content-note">
-          <p><strong>依据：</strong>2026 版 GCP（2026-09-01 施行，NMPA 公告 2026 年第 50 号）+ ICH E6(R3)。条款定位原则：已公开解读的条文标具体条号，其余锚定「章 · 主题」；详见 <a href="gcp-2026.html">2026 版 GCP 要点</a> 与 <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>。</p>
-          <p><strong>免责声明：</strong>发现库与严重程度分级为编者归纳的稽查实践参考，不构成合规结论；正式检查以现行法规、方案与公司 SOP 为准。</p>
+          <p data-i18n-html="af.note.basis"><strong>依据：</strong>2026 版 GCP（2026-09-01 施行，NMPA 公告 2026 年第 50 号）+ ICH E6(R3)。条款定位原则：已公开解读的条文标具体条号，其余锚定「章 · 主题」；详见 <a href="gcp-2026.html">2026 版 GCP 要点</a> 与 <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a>。</p>
+          <p data-i18n-html="af.note.disclaimer"><strong>免责声明：</strong>发现库与严重程度分级为编者归纳的稽查实践参考，不构成合规结论；正式检查以现行法规、方案与公司 SOP 为准。</p>
         </aside>
 
         <div class="af-howto no-print">
-          <div class="af-howto-item"><strong>① 选范围</strong>按章、主题、严重程度筛选，或搜索关键词（如「稽查轨迹」「时限」）。</div>
-          <div class="af-howto-item"><strong>② 对照自查</strong>逐条看「自查落点」，把有风险的条目记下来，高频发现优先。</div>
-          <div class="af-howto-item"><strong>③ 导出整改</strong>下载 CSV 作为整改清单底稿，逐条闭环后归档。</div>
+          <div class="af-howto-item" data-i18n-html="af.howto.1"><strong>① 选范围</strong>按章、主题、严重程度筛选，或搜索关键词（如「稽查轨迹」「时限」）。</div>
+          <div class="af-howto-item" data-i18n-html="af.howto.2"><strong>② 对照自查</strong>逐条看「自查落点」，把有风险的条目记下来，高频发现优先。</div>
+          <div class="af-howto-item" data-i18n-html="af.howto.3"><strong>③ 导出整改</strong>下载 CSV 作为整改清单底稿，逐条闭环后归档。</div>
         </div>
 
         <div class="af-controls no-print" id="af-controls">
           <div class="af-field">
-            <label for="af-chapter">章</label>
+            <label for="af-chapter" data-i18n="af.field.chapter">章</label>
             <select id="af-chapter">
               <option value="all" selected>全部章节</option>
               {{chapter_options}}
             </select>
           </div>
           <div class="af-field">
-            <label for="af-topic">主题</label>
+            <label for="af-topic" data-i18n="af.field.topic">主题</label>
             <select id="af-topic">
               <option value="all" selected>全部主题</option>
               {{topic_options}}
             </select>
           </div>
           <div class="af-field">
-            <span class="af-field-label">严重程度</span>
+            <span class="af-field-label" data-i18n="af.field.sev">严重程度</span>
             <div class="af-sevs">
               {{severity_options}}
             </div>
           </div>
           <div class="af-field">
-            <label for="af-search">搜索</label>
-            <input type="text" id="af-search" placeholder="关键词：如「时限」「授权」「备份」" />
+            <label for="af-search" data-i18n="af.field.search">搜索</label>
+            <input type="text" id="af-search" data-i18n-placeholder="af.search.placeholder" placeholder="关键词：如「时限」「授权」「备份」" />
           </div>
         </div>
 
         <div class="af-toolbar no-print">
           <span class="af-stats" id="af-stats"></span>
-          <button type="button" class="btn btn-primary" id="af-csv-btn">下载对照表（CSV）</button>
-          <button type="button" class="btn btn-outline" id="af-print-btn">打印 / 导出 PDF</button>
+          <button type="button" class="btn btn-primary" id="af-csv-btn" data-i18n="af.btn.csv">下载对照表（CSV）</button>
+          <button type="button" class="btn btn-outline" id="af-print-btn" data-i18n="af.btn.print">打印 / 导出 PDF</button>
         </div>
 
         <div id="af-preview" class="af-preview"></div>
 
-        <p class="af-legend">分级说明：<strong>严重</strong>=影响受试者权益/安全或数据可靠性的系统性发现；<strong>主要</strong>=违反 GCP/方案/SOP、需整改计划；<strong>一般</strong>=文档瑕疵或局部偏离。<strong>高频</strong>=稽查/核查中反复出现的发现，自查优先。</p>
+        <p class="af-legend" data-i18n-html="af.legend">分级说明：<strong>严重</strong>=影响受试者权益/安全或数据可靠性的系统性发现；<strong>主要</strong>=违反 GCP/方案/SOP、需整改计划；<strong>一般</strong>=文档瑕疵或局部偏离。<strong>高频</strong>=稽查/核查中反复出现的发现，自查优先。</p>
 
         <p class="ctcae-related" style="margin-top:2.4rem;font-size:0.9rem;">
-          相关资源：<a href="gcp-2026.html">2026 版 GCP 要点</a> ·
-          <a href="ich-e6r3.html">ICH E6(R3) 中文要点</a> ·
-          <a href="template-audit-readiness-checklist.html">稽查准备清单模板</a> ·
-          <a href="tmf-checker.html">TMF 完整性自查器</a> ·
-          <a href="pd-decision-tree.html">PD 决策树</a> ·
-          <a href="timeline-calendar.html">时限日历</a>
+          <span data-i18n="af.related">相关资源：</span><a href="gcp-2026.html" data-i18n="af.related.gcp">2026 版 GCP 要点</a> ·
+          <a href="ich-e6r3.html" data-i18n="af.related.e6r3">ICH E6(R3) 中文要点</a> ·
+          <a href="template-audit-readiness-checklist.html" data-i18n="af.related.audit">稽查准备清单模板</a> ·
+          <a href="tmf-checker.html" data-i18n="af.related.checker">TMF 完整性自查器</a> ·
+          <a href="pd-decision-tree.html" data-i18n="af.related.pd">PD 决策树</a> ·
+          <a href="timeline-calendar.html" data-i18n="af.related.tl">时限日历</a>
         </p>
         <script type="application/json" id="af-data">{{af_data_json}}</script>
 """
@@ -319,6 +375,7 @@ def build_page():
         cta_secondary_href="template-audit-readiness-checklist.html",
         cta_secondary_label="稽查准备清单模板",
         extra_style=EXTRA_STYLE,
+        i18n="af",
     )
     html = html.replace("</body>",
                         '  <script src="js/tools.js"></script>\n' + PAGE_JS + "</body>")

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="tl.meta.title">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="临床试验时限计算器：输入基准日期，自动计算 SAE 24 小时报告、SUSAR 7/15 天递交、伦理年度审查、必备记录保存 5 年等关键时限，可打印对照表。时限出处标注法规依据。" />
+  <meta name="description" data-i18n-meta="tl.meta.desc" content="临床试验时限计算器：输入基准日期，自动计算 SAE 24 小时报告、SUSAR 7/15 天递交、伦理年度审查、必备记录保存 5 年等关键时限，可打印对照表。时限出处标注法规依据。" />
   <title>临床试验时限日历：SAE 24h / SUSAR 7·15 天 / 保存期限 | Vivarcus</title>
   <link rel="canonical" href="https://vivarcus.com/timeline-calendar.html" />
   <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/timeline-calendar.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/timeline-calendar.html?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/timeline-calendar.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vivarcus" />
   <meta property="og:url" content="https://vivarcus.com/timeline-calendar.html" />
-  <meta property="og:title" content="临床试验时限日历：SAE 24h / SUSAR 7·15 天 / 保存期限 | Vivarcus" />
-  <meta property="og:description" content="输入基准日期，自动计算 SAE 24 小时报告、SUSAR 7/15 天递交、伦理年度审查、必备记录保存 5 年等关键时限，可打印。" />
+  <meta property="og:title" data-i18n-og="tl.meta.title" content="临床试验时限日历：SAE 24h / SUSAR 7·15 天 / 保存期限 | Vivarcus" />
+  <meta property="og:description" data-i18n-og="tl.meta.desc" content="输入基准日期，自动计算 SAE 24 小时报告、SUSAR 7/15 天递交、伦理年度审查、必备记录保存 5 年等关键时限，可打印。" />
   <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
   <meta property="og:image:alt" content="临床试验时限计算器 | Vivarcus" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -72,10 +74,10 @@
       <div class="container">
         <span class="page-hero-eyebrow">
           <i class="ic ic--calendar" aria-hidden="true"></i>
-          <span>行业资源 · 交互工具</span>
+          <span data-i18n="tl.hero.eyebrow">行业资源 · 交互工具</span>
         </span>
-        <h1 class="page-hero-title">临床试验时限日历</h1>
-        <p class="page-hero-subtitle">输入一个基准日期，自动算出 SAE 报告、SUSAR 递交、伦理审查与保存期限等关键时限，打印出来贴工位。</p>
+        <h1 class="page-hero-title" data-i18n="tl.hero.title">临床试验时限日历</h1>
+        <p class="page-hero-subtitle" data-i18n="tl.hero.subtitle">输入一个基准日期，自动算出 SAE 报告、SUSAR 递交、伦理审查与保存期限等关键时限，打印出来贴工位。</p>
       </div>
     </section>
 
@@ -84,22 +86,19 @@
         <div class="tl-wrap">
 
           <div class="tl-input">
-            <label for="tl-base" style="font-weight:600;">基准日期：</label>
+            <label for="tl-base" style="font-weight:600;" data-i18n="tl.input.label">基准日期：</label>
             <input type="date" id="tl-base" value="2026-08-15" onchange="tlCalc()" />
-            <span style="font-size:0.85rem;opacity:0.65;">（默认今天，可改为事件发生日）</span>
-            <button class="tl-print pd-btn" onclick="window.print()">🖨 打印对照表</button>
+            <span style="font-size:0.85rem;opacity:0.65;" data-i18n="tl.input.hint">（默认今天，可改为事件发生日）</span>
+            <button class="tl-print pd-btn" onclick="window.print()" data-i18n="tl.input.print">🖨 打印对照表</button>
           </div>
 
           <div style="overflow-x:auto;"><table class="tl-table">
-            <thead><tr><th>时限事件</th><th>截止日期</th><th>时限依据</th></tr></thead>
+            <thead><tr><th data-i18n="tl.col.event">时限事件</th><th data-i18n="tl.col.deadline">截止日期</th><th data-i18n="tl.col.basis">时限依据</th></tr></thead>
             <tbody id="tl-body"></tbody>
           </table></div>
 
-          <p class="tl-note">
-            <strong>说明</strong>：计算采用自然日；截止日为休息日的，实际提交要求以申办方 SOP 与监管要求为准。
-            时限依据：SAE 24 小时、SUSAR 7/15 天为行业通行标准（以现行 GCP 与方案为准）；
-            保存期限见 <a href="gcp-2026.html">2026 版 GCP 要点</a>（第十六条、第二十九条）。
-            更新于 2026-08-15。本工具为通用参考，不构成法律意见。
+          <p class="tl-note" data-i18n-html="tl.note">
+            <strong>说明</strong>：计算采用自然日；截止日为休息日的，实际提交要求以申办方 SOP 与监管要求为准。 时限依据：SAE 24 小时、SUSAR 7/15 天为行业通行标准（以现行 GCP 与方案为准）； 保存期限见 <a href="gcp-2026.html">2026 版 GCP 要点</a>（第十六条、第二十九条）。 更新于 2026-08-15。本工具为通用参考，不构成法律意见。
           </p>
 
         </div>
@@ -109,14 +108,14 @@
     <section class="cta-section" data-reveal>
       <div class="container">
         <div class="cta-content">
-          <h2>时限提醒别靠人记，Vivarcus eTMF 里有系统台账</h2>
-          <p>SAE 时限、文件到期、保存期限——结构化跟踪，超期自动预警，稽查时导出即证据。</p>
+          <h2 data-i18n="tl.cta.title">时限提醒别靠人记，Vivarcus eTMF 里有系统台账</h2>
+          <p data-i18n="tl.cta.desc">SAE 时限、文件到期、保存期限——结构化跟踪，超期自动预警，稽查时导出即证据。</p>
           <div class="cta-actions">
             <a href="trial.html" class="btn btn-primary btn-lg">
               <span data-i18n="common.nav.trial">试用申请</span>
               <i class="ic ic--arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="gcp-2026.html" class="btn btn-outline btn-lg">2026 GCP 要点</a>
+            <a href="gcp-2026.html" class="btn btn-outline btn-lg" data-i18n="tl.cta.secondary">2026 GCP 要点</a>
           </div>
         </div>
       </div>
@@ -181,14 +180,14 @@
   <script src="js/main.js"></script>
   <script>
     var TL_EVENTS = [
-      { name: 'SAE 首次报告申办方', add: { hours: 24 }, basis: '获知后 24 小时内（行业通行，以方案为准）' },
-      { name: '方案偏离记录', add: { hours: 48 }, basis: '建议 48 小时内登记（行业惯例）' },
-      { name: 'SUSAR 递交（致死/危及生命）', add: { days: 7 }, basis: '7 天内（以现行要求为准）' },
-      { name: 'SUSAR 递交（其他）', add: { days: 15 }, basis: '15 天内（以现行要求为准）' },
-      { name: '伦理委员会年度审查', add: { months: 12 }, basis: '批件载明的跟踪审查频率（通常每年）' },
-      { name: '培训到期复训（GCP/SOP）', add: { months: 12 }, basis: '按公司 SOP 的复训周期' },
-      { name: '必备记录保存（获批上市情形）', add: { years: 5 }, basis: '2026 GCP 第十六/二十九条：上市后至少 5 年' },
-      { name: '必备记录保存（未获批/未注册情形）', add: { years: 5 }, basis: '2026 GCP 第十六/二十九条：终止后至少 5 年' },
+      { add: {"hours": 24}, zh: { name: "SAE 首次报告申办方", basis: "获知后 24 小时内（行业通行，以方案为准）" }, en: { name: "SAE initial report to sponsor", basis: "Within 24 hours of awareness (industry standard; per protocol)" } },
+      { add: {"hours": 48}, zh: { name: "方案偏离记录", basis: "建议 48 小时内登记（行业惯例）" }, en: { name: "Protocol deviation log entry", basis: "Recommended within 48 hours (industry practice)" } },
+      { add: {"days": 7}, zh: { name: "SUSAR 递交（致死/危及生命）", basis: "7 天内（以现行要求为准）" }, en: { name: "SUSAR submission (fatal/life-threatening)", basis: "Within 7 days (per current requirements)" } },
+      { add: {"days": 15}, zh: { name: "SUSAR 递交（其他）", basis: "15 天内（以现行要求为准）" }, en: { name: "SUSAR submission (other)", basis: "Within 15 days (per current requirements)" } },
+      { add: {"months": 12}, zh: { name: "伦理委员会年度审查", basis: "批件载明的跟踪审查频率（通常每年）" }, en: { name: "Ethics committee annual review", basis: "Per continuing review frequency stated in approval (usually annually)" } },
+      { add: {"months": 12}, zh: { name: "培训到期复训（GCP/SOP）", basis: "按公司 SOP 的复训周期" }, en: { name: "Refresher training due (GCP/SOP)", basis: "Per company SOP retraining cycle" } },
+      { add: {"years": 5}, zh: { name: "必备记录保存（获批上市情形）", basis: "2026 GCP 第十六/二十九条：上市后至少 5 年" }, en: { name: "Essential records retention (approved/marketed)", basis: "2026 GCP Articles 16/29: at least 5 years after marketing approval" } },
+      { add: {"years": 5}, zh: { name: "必备记录保存（未获批/未注册情形）", basis: "2026 GCP 第十六/二十九条：终止后至少 5 年" }, en: { name: "Essential records retention (not approved/not filed)", basis: "2026 GCP Articles 16/29: at least 5 years after termination" } },
     ];
 
     function addTime(date, spec) {
@@ -225,19 +224,22 @@
     function tlCalc() {
       var base = new Date(document.getElementById('tl-base').value + 'T00:00:00');
       var now = new Date();
+      var en = !!(window.I18N && I18N.getLang() === 'en');
       var rows = TL_EVENTS.map(function (e) {
         var d = addTime(base, e.add);
         var withTime = !!e.add.hours;
         var overdue = d < now;
-        return '<tr><td>' + e.name + '<div class="tl-basis">' + e.basis + '</div></td>'
+        var ev = e[en ? 'en' : 'zh'];
+        return '<tr><td>' + ev.name + '<div class="tl-basis">' + ev.basis + '</div></td>'
           + '<td class="tl-deadline' + (overdue ? ' tl-overdue' : '') + '">' + fmt(d, withTime)
-          + (overdue ? '（已过）' : '') + '</td>'
-          + '<td class="tl-basis">' + (withTime ? '自然日 24 小时制' : '自然日') + '</td></tr>';
+          + (overdue ? (en ? ' (overdue)' : '（已过）') : '') + '</td>'
+          + '<td class="tl-basis">' + (withTime ? (en ? 'Calendar days, 24-hour clock' : '自然日 24 小时制') : (en ? 'Calendar days' : '自然日')) + '</td></tr>';
       });
       document.getElementById('tl-body').innerHTML = rows.join('');
     }
 
     document.addEventListener('DOMContentLoaded', tlCalc);
+    window.addEventListener('langchange', tlCalc);
   </script>
 </body>
 </html>

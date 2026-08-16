@@ -310,8 +310,9 @@ def convert(md_text):
     return "\n".join(out)
 
 
-def render_page(meta, body, cta_title, cta_desc, cta_secondary_href, cta_secondary_label, extra_style=""):
-    """meta: dict(title, desc, file, eyebrow, hero, subtitle); extra_style: page-specific CSS injected after the base style"""
+def render_page(meta, body, cta_title, cta_desc, cta_secondary_href, cta_secondary_label, extra_style="", i18n=None):
+    """meta: dict(title, desc, file, eyebrow, hero, subtitle); extra_style: page-specific CSS injected after the base style.
+    i18n: optional key prefix, e.g. "ctcae" — adds data-i18n chrome attributes (values live in js/i18n-data.js)."""
     html = HEAD.replace("@@TITLE@@", meta["title"]).replace("@@DESC@@", meta["desc"]) \
         .replace("@@FILE@@", meta["file"]).replace("@@EYEBROW@@", meta["eyebrow"]) \
         .replace("@@HERO@@", meta["hero"]).replace("@@SUBTITLE@@", meta["subtitle"]) \
@@ -321,4 +322,33 @@ def render_page(meta, body, cta_title, cta_desc, cta_secondary_href, cta_seconda
         .replace("@@CTA_SECONDARY_HREF@@", cta_secondary_href) \
         .replace("@@CTA_SECONDARY_LABEL@@", cta_secondary_label)
     html += FOOT
+    if i18n:
+        p = i18n
+        html = html.replace('<html lang="zh-CN">',
+                            '<html lang="zh-CN" data-i18n-title="%s.meta.title">' % p, 1)
+        html = html.replace('<meta name="description" content="',
+                            '<meta name="description" data-i18n-meta="%s.meta.desc" content="' % p, 1)
+        html = html.replace('<meta property="og:title" content="',
+                            '<meta property="og:title" data-i18n-og="%s.meta.title" content="' % p, 1)
+        html = html.replace('<meta property="og:description" content="',
+                            '<meta property="og:description" data-i18n-og="%s.meta.desc" content="' % p, 1)
+        html = html.replace('<link rel="alternate" hreflang="x-default" href="https://vivarcus.com/%s" />' % meta["file"],
+                            '<link rel="alternate" hreflang="en-US" href="https://vivarcus.com/%s?lang=en" />\n'
+                            '  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/%s" />' % (meta["file"], meta["file"]), 1)
+        html = html.replace('<meta property="og:locale" content="zh_CN" />',
+                            '<meta property="og:locale" content="zh_CN" />\n'
+                            '  <meta property="og:locale:alternate" content="en_US" />', 1)
+        html = html.replace('<span>@@EYEBROW@@</span>'.replace('@@EYEBROW@@', meta["eyebrow"]),
+                            '<span data-i18n="%s.hero.eyebrow">%s</span>' % (p, meta["eyebrow"]), 1)
+        html = html.replace('<h1 class="page-hero-title">%s</h1>' % meta["hero"],
+                            '<h1 class="page-hero-title" data-i18n="%s.hero.title">%s</h1>' % (p, meta["hero"]), 1)
+        html = html.replace('<p class="page-hero-subtitle">%s</p>' % meta["subtitle"],
+                            '<p class="page-hero-subtitle" data-i18n="%s.hero.subtitle">%s</p>' % (p, meta["subtitle"]), 1)
+        html = html.replace('<h2>%s</h2>' % cta_title,
+                            '<h2 data-i18n="%s.cta.title">%s</h2>' % (p, cta_title), 1)
+        html = html.replace('<p>%s</p>' % cta_desc,
+                            '<p data-i18n="%s.cta.desc">%s</p>' % (p, cta_desc), 1)
+        html = html.replace('<a href="%s" class="btn btn-outline btn-lg">%s</a>' % (cta_secondary_href, cta_secondary_label),
+                            '<a href="%s" class="btn btn-outline btn-lg" data-i18n="%s.cta.secondary">%s</a>'
+                            % (cta_secondary_href, p, cta_secondary_label), 1)
     return html

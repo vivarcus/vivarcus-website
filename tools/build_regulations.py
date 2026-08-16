@@ -2,9 +2,11 @@
 """Generate regulation library pages from docs/marketing/regulations/*.md.
 
 Run from repo root:  python3 website/tools/build_regulations.py
-Content source of truth: docs/marketing/regulations/*.md
-Generated pages: website/*.html (zh-only; site chrome keeps common i18n)
+Content source of truth: docs/marketing/regulations/*.md (+ .en.md English twins)
+Generated pages: website/*.html (bilingual: zh body inline, en body embedded as
+JSON and swapped at runtime; hero/meta/CTA keys live in js/i18n-data.js)
 """
+import json
 import os
 import re
 import sys
@@ -19,7 +21,9 @@ OUT_DIR = os.path.join(ROOT, "website")
 PAGES = [
     {
         "src": "ich-e6r3-essentials.md",
+        "src_en": "ich-e6r3-essentials.en.md",
         "file": "ich-e6r3.html",
+        "prefix": "ichr3",
         "title": "ICH E6(R3) 中文要点：11 条原则与对临床运营的影响 | Vivarcus",
         "desc": "ICH E6(R3) GCP 中文要点：11 条原则逐条解读、与 2026 版 GCP 对应关系、数据治理与稽查轨迹要求、附录 C 必备记录表，附临床运营落地清单。",
         "eyebrow": "法规库 · ICH",
@@ -32,7 +36,9 @@ PAGES = [
     },
     {
         "src": "gcp-2026-essentials.md",
+        "src_en": "gcp-2026-essentials.en.md",
         "file": "gcp-2026.html",
+        "prefix": "gcp2026",
         "title": "2026 版 GCP 要点：数据治理、保存期限与关键变化 | Vivarcus",
         "desc": "2026 版 GCP（2026-09-01 施行）中文要点：82→54 条六章结构、新增第五章数据治理（元数据与稽查轨迹、盲态完整性、计算机化系统）、保存期限与关键变化对照、9/1 前落地清单。",
         "eyebrow": "法规库 · 中国法规",
@@ -45,7 +51,9 @@ PAGES = [
     },
     {
         "src": "audit-trail-essentials.md",
+        "src_en": "audit-trail-essentials.en.md",
         "file": "audit-trail.html",
+        "prefix": "audittrail",
         "title": "稽查轨迹专题：2026 GCP 第 51/53 条与 ICH E6(R3) 要求 | Vivarcus",
         "desc": "稽查轨迹合规专题：ICH E6(R3) 术语表定义与 Annex 1 第 4.2.3 节逐项要求、2026 版 GCP 第 51/53 条对照、系统层/流程层/文件层 10 项落地自查清单。",
         "eyebrow": "法规库 · 专题",
@@ -57,6 +65,24 @@ PAGES = [
         "cta_secondary_label": "2026 版 GCP 要点",
     },
 ]
+
+# Runtime body swap: zh body stays in the DOM; the EN body (from the .en.md twin)
+# is embedded as JSON and swapped into .content-inner on load / langchange.
+BODY_SWAP = """  <script type="application/json" id="body-data-en">%s</script>
+  <script>
+    (function () {
+      var el = document.querySelector('.content-inner');
+      var zhHTML = el.innerHTML;
+      var enHTML = JSON.parse(document.getElementById('body-data-en').textContent);
+      function applyBody() {
+        var en = !!(window.I18N && I18N.getLang() === 'en');
+        el.innerHTML = en ? enHTML : zhHTML;
+      }
+      applyBody();
+      window.addEventListener('langchange', applyBody);
+    })();
+  </script>
+"""
 
 
 def rewrite_links(body):
@@ -72,7 +98,13 @@ def main():
         html = sitegen.render_page(
             {k: spec[k] for k in ("title", "desc", "file", "eyebrow", "hero", "subtitle")},
             body, spec["cta_title"], spec["cta_desc"],
-            spec["cta_secondary_href"], spec["cta_secondary_label"])
+            spec["cta_secondary_href"], spec["cta_secondary_label"],
+            i18n=spec["prefix"])
+        src_en = os.path.join(MD_DIR, spec["src_en"])
+        with open(src_en, encoding="utf-8") as f:
+            body_en = rewrite_links(sitegen.convert(f.read()))
+        swap = BODY_SWAP % json.dumps(body_en, ensure_ascii=False)
+        html = html.replace("</body>", swap + "</body>")
         path = os.path.join(OUT_DIR, spec["file"])
         with open(path, "w", encoding="utf-8") as f:
             f.write(html)

@@ -19,7 +19,9 @@ from pathlib import Path
 
 import sitegen
 from edl_data import (
-    DEPT_LABEL, LEVEL_LABEL, OTHER_DEPT, PHASE_NOTES, REQ_LABEL, read_edl,
+    DEPT_LABEL, DEPT_LABEL_EN, LEVEL_LABEL, LEVEL_LABEL_EN, OTHER_DEPT,
+    OTHER_DEPT_EN, PHASE_NOTES, PHASE_NOTES_EN, REQ_LABEL, REQ_LABEL_EN,
+    read_edl,
 )
 
 ROOT = Path(__file__).resolve().parent.parent  # website/
@@ -30,6 +32,8 @@ PAGE_JS = """<script>
 
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    function isEn() { return !!(window.I18N && I18N.getLang() === 'en'); }
 
     function currentControls() {
       var type = document.getElementById('edl-type').value;
@@ -45,8 +49,10 @@ PAGE_JS = """<script>
 
     function renderPhaseOptions(type) {
       var sel = document.getElementById('edl-phase');
+      var en = isEn();
       var opts = type === 'drug'
-        ? [['phase_i', 'I 期'], ['phase_ii', 'II 期'], ['phase_iii', 'III 期'], ['phase_iv', 'IV 期']]
+        ? [['phase_i', en ? 'Phase I' : 'I 期'], ['phase_ii', en ? 'Phase II' : 'II 期'],
+           ['phase_iii', en ? 'Phase III' : 'III 期'], ['phase_iv', en ? 'Phase IV' : 'IV 期']]
         : [['none', '—']];
       sel.innerHTML = opts.map(function (o) {
         return '<option value="' + o[0] + '">' + o[1] + '</option>';
@@ -54,8 +60,19 @@ PAGE_JS = """<script>
       sel.disabled = type !== 'drug';
     }
 
+    function renderDeptOptions() {
+      var sel = document.getElementById('edl-dept');
+      var en = isEn();
+      var html = '<option value="all" selected>' + (en ? 'All Departments' : '全部部门') + '</option>';
+      EDL_DATA.depts.forEach(function (d) {
+        html += '<option value="' + d.key + '">' + esc(en ? d.label_en : d.label) + '</option>';
+      });
+      sel.innerHTML = html;
+    }
+
     function phaseNote(c) {
-      return EDL_DATA.phase_notes[c.type + ':' + c.phase] || '';
+      var notes = isEn() ? EDL_DATA.phase_notes_en : EDL_DATA.phase_notes;
+      return notes[c.type + ':' + c.phase] || '';
     }
 
     function inScope(item, c) {
@@ -77,20 +94,23 @@ PAGE_JS = """<script>
 
     function renderPreview() {
       var c = currentControls();
+      var en = isEn();
       document.getElementById('edl-phase-note').textContent = phaseNote(c);
       var rows = filteredRows(c);
       var nReq = rows.filter(function (r) { return r.item.requiredness === 'required__v'; }).length;
       var deptN = {};
       rows.forEach(function (r) { deptN[r.dept.key] = (deptN[r.dept.key] || 0) + 1; });
       var html = '', idx = 0, curDept = null;
+      var head = en
+        ? '<th>#</th><th>Item Name</th><th>Requirement</th><th>Level</th><th>Count</th><th>Milestone</th>'
+        : '<th>#</th><th>条目名称</th><th>要求</th><th>层级</th><th>数量</th><th>里程碑</th>';
       rows.forEach(function (r) {
         if (curDept !== r.dept.key) {
           if (curDept !== null) html += '</tbody></table>';
           curDept = r.dept.key;
-          html += '<h3 class="edl-dept-head">' + esc(r.dept.label) +
-                  ' <span class="edl-dept-count">' + deptN[r.dept.key] + ' 条</span></h3>';
-          html += '<div class="edl-scroll"><table class="edl-table"><thead><tr>' +
-            '<th>#</th><th>条目名称</th><th>要求</th><th>层级</th><th>数量</th><th>里程碑</th>' +
+          html += '<h3 class="edl-dept-head">' + esc(en ? r.dept.label_en : r.dept.label) +
+                  ' <span class="edl-dept-count">' + deptN[r.dept.key] + (en ? ' items' : ' 条') + '</span></h3>';
+          html += '<div class="edl-scroll"><table class="edl-table"><thead><tr>' + head +
             '</tr></thead><tbody>';
         }
         idx++;
@@ -98,18 +118,21 @@ PAGE_JS = """<script>
         var reqCls = item.requiredness === 'required__v' ? 'edl-req' : (item.requiredness === 'pending_decision__v' ? 'edl-pending' : '');
         html += '<tr>' +
           '<td class="edl-idx">' + idx + '</td>' +
-          '<td class="edl-name">' + esc(item.name) + '</td>' +
-          '<td><span class="edl-badge ' + reqCls + '">' + esc(EDL_DATA.req[item.requiredness] || '—') + '</span></td>' +
-          '<td class="edl-level">' + esc(EDL_DATA.level[item.level] || '—') + '</td>' +
+          '<td class="edl-name">' + esc(en ? item.name_en : item.name) + '</td>' +
+          '<td><span class="edl-badge ' + reqCls + '">' + esc((en ? EDL_DATA.req_en : EDL_DATA.req)[item.requiredness] || '—') + '</span></td>' +
+          '<td class="edl-level">' + esc((en ? EDL_DATA.level_en : EDL_DATA.level)[item.level] || '—') + '</td>' +
           '<td class="edl-count">' + (item.count && item.count !== '0' ? esc(item.count) : '') + '</td>' +
-          '<td class="edl-ms">' + esc(item.milestone) + '</td>' +
+          '<td class="edl-ms">' + esc(en ? (item.milestone_en || item.milestone) : item.milestone) + '</td>' +
           '</tr>';
       });
       html += '</tbody></table></div>';
       var list = document.getElementById('edl-preview');
-      list.innerHTML = html || '<p class="edl-empty">当前筛选条件下没有条目。请勾选至少一个检查范围。</p>';
-      document.getElementById('edl-stats').textContent =
-        '共 ' + rows.length + ' 条 · 其中必需 ' + nReq + ' 条';
+      list.innerHTML = html || ('<p class="edl-empty">' + (en
+        ? 'No items under the current filters. Please select at least one scope.'
+        : '当前筛选条件下没有条目。请勾选至少一个检查范围。') + '</p>');
+      document.getElementById('edl-stats').textContent = en
+        ? 'Total ' + rows.length + ' items · Required ' + nReq
+        : '共 ' + rows.length + ' 条 · 其中必需 ' + nReq + ' 条';
     }
 
     function csvCell(s) {
@@ -120,18 +143,22 @@ PAGE_JS = """<script>
 
     function downloadCsv() {
       var c = currentControls();
+      var en = isEn();
       var rows = filteredRows(c);
       if (!rows.length) { renderPreview(); return; }
-      var lines = ['\\uFEFF序号,部门,条目名称,要求,层级,预期数量,里程碑'];
+      var header = en
+        ? '\\uFEFFNo.,Department,Item Name,Requirement,Level,Expected Count,Milestone'
+        : '\\uFEFF序号,部门,条目名称,要求,层级,预期数量,里程碑';
+      var lines = [header];
       rows.forEach(function (r, i) {
         lines.push([
           i + 1,
-          r.dept.label,
-          r.item.name,
-          EDL_DATA.req[r.item.requiredness] || '',
-          EDL_DATA.level[r.item.level] || '',
+          en ? r.dept.label_en : r.dept.label,
+          en ? r.item.name_en : r.item.name,
+          (en ? EDL_DATA.req_en : EDL_DATA.req)[r.item.requiredness] || '',
+          (en ? EDL_DATA.level_en : EDL_DATA.level)[r.item.level] || '',
           r.item.count || '',
-          r.item.milestone || '',
+          en ? (r.item.milestone_en || r.item.milestone) : r.item.milestone || '',
         ].map(csvCell).join(','));
       });
       var typeLabel = { drug: 'drug', device: 'device', be: 'be' }[c.type];
@@ -151,6 +178,13 @@ PAGE_JS = """<script>
 
     document.addEventListener('DOMContentLoaded', function () {
       renderPhaseOptions('drug');
+      renderDeptOptions();
+      renderPreview();
+    });
+
+    window.addEventListener('langchange', function () {
+      renderPhaseOptions(document.getElementById('edl-type').value);
+      renderDeptOptions();
       renderPreview();
     });
 
@@ -218,49 +252,54 @@ def build_page():
 
     dept_labels = dict(DEPT_LABEL)
     dept_labels[OTHER_DEPT] = "其他"
+    dept_labels_en = dict(DEPT_LABEL_EN)
+    dept_labels_en[OTHER_DEPT] = OTHER_DEPT_EN
     dept_counts = {d: 0 for d in dept_labels}
     for it in items:
         dept_counts[it["dept"]] = dept_counts.get(it["dept"], 0) + 1
-    depts = [{"key": d, "label": dept_labels[d], "count": dept_counts[d]}
+    depts = [{"key": d, "label": dept_labels[d], "label_en": dept_labels_en[d], "count": dept_counts[d]}
              for d in dept_labels if dept_counts[d]]
 
     data = {
         "items": items,
         "depts": depts,
         "req": REQ_LABEL,
+        "req_en": REQ_LABEL_EN,
         "level": LEVEL_LABEL,
+        "level_en": LEVEL_LABEL_EN,
         "phase_notes": PHASE_NOTES,
+        "phase_notes_en": PHASE_NOTES_EN,
     }
 
     body = f"""
         <aside class="content-note">
-          <p><strong>数据来源：</strong>本清单与 <a href="tmf-reference.html">TMF 分类参考</a>、<a href="tmf-checker.html">TMF 完整性自查器</a>同源（TMF 参考模型 v3.0 / Vivarcus 标准 EDL 模板，{n_items} 条，其中必需 {n_req} 条）。</p>
-          <p><strong>免责声明：</strong>研究类型与阶段为编者整理参考，不改变清单条目；正式项目请以申办方 EDL 与方案为准。本工具为参考，不构成合规结论。</p>
+          <p data-i18n-html="edl.note.source"><strong>数据来源：</strong>本清单与 <a href="tmf-reference.html">TMF 分类参考</a>、<a href="tmf-checker.html">TMF 完整性自查器</a>同源（TMF 参考模型 v3.0 / Vivarcus 标准 EDL 模板，{n_items} 条，其中必需 {n_req} 条）。</p>
+          <p data-i18n-html="edl.note.disclaimer"><strong>免责声明：</strong>研究类型与阶段为编者整理参考，不改变清单条目；正式项目请以申办方 EDL 与方案为准。本工具为参考，不构成合规结论。</p>
         </aside>
 
         <div class="edl-controls no-print" id="edl-controls">
           <div class="edl-field">
-            <label for="edl-type">研究类型</label>
+            <label for="edl-type" data-i18n="edl.field.type">研究类型</label>
             <select id="edl-type">
-              <option value="drug" selected>药物临床试验</option>
-              <option value="device">医疗器械试验</option>
-              <option value="be">BE 试验</option>
+              <option value="drug" selected data-i18n="edl.opt.drug">药物临床试验</option>
+              <option value="device" data-i18n="edl.opt.device">医疗器械试验</option>
+              <option value="be" data-i18n="edl.opt.be">BE 试验</option>
             </select>
           </div>
           <div class="edl-field">
-            <label for="edl-phase">阶段</label>
+            <label for="edl-phase" data-i18n="edl.field.phase">阶段</label>
             <select id="edl-phase"></select>
           </div>
           <div class="edl-field">
-            <span class="edl-field-label">检查范围</span>
+            <span class="edl-field-label" data-i18n="edl.field.scope">检查范围</span>
             <div class="edl-levels">
-              <label><input type="checkbox" name="edl-level" value="study_level__v" checked /> 研究</label>
-              <label><input type="checkbox" name="edl-level" value="country_level__v" checked /> 国家/地区</label>
-              <label><input type="checkbox" name="edl-level" value="site_level__v" checked /> 中心</label>
+              <label><input type="checkbox" name="edl-level" value="study_level__v" checked /> <span data-i18n="edl.level.study">研究</span></label>
+              <label><input type="checkbox" name="edl-level" value="country_level__v" checked /> <span data-i18n="edl.level.country">国家/地区</span></label>
+              <label><input type="checkbox" name="edl-level" value="site_level__v" checked /> <span data-i18n="edl.level.site">中心</span></label>
             </div>
           </div>
           <div class="edl-field">
-            <label for="edl-dept">部门</label>
+            <label for="edl-dept" data-i18n="edl.field.dept">部门</label>
             <select id="edl-dept">
               <option value="all" selected>全部部门</option>
               {{dept_options}}
@@ -271,17 +310,17 @@ def build_page():
 
         <div class="edl-toolbar no-print">
           <span class="edl-stats" id="edl-stats"></span>
-          <button type="button" class="btn btn-primary" id="edl-csv-btn">下载 TMF Index（CSV）</button>
-          <button type="button" class="btn btn-outline" id="edl-print-btn">打印 / 导出 PDF</button>
+          <button type="button" class="btn btn-primary" id="edl-csv-btn" data-i18n="edl.btn.csv">下载 TMF Index（CSV）</button>
+          <button type="button" class="btn btn-outline" id="edl-print-btn" data-i18n="edl.btn.print">打印 / 导出 PDF</button>
         </div>
 
         <div id="edl-preview" class="edl-preview"></div>
 
         <p class="ctcae-related" style="margin-top:2.4rem;font-size:0.9rem;">
-          相关资源：<a href="tmf-reference.html">TMF 分类参考</a> ·
-          <a href="tmf-checker.html">TMF 完整性自查器</a> ·
-          <a href="template-tmf-index.html">TMF 文件清单模板</a> ·
-          <a href="glossary.html">术语词典</a>
+          <span data-i18n="edl.related">相关资源：</span><a href="tmf-reference.html" data-i18n="edl.related.tmfref">TMF 分类参考</a> ·
+          <a href="tmf-checker.html" data-i18n="edl.related.checker">TMF 完整性自查器</a> ·
+          <a href="template-tmf-index.html" data-i18n="edl.related.tmfindex">TMF 文件清单模板</a> ·
+          <a href="glossary.html" data-i18n="edl.related.glossary">术语词典</a>
         </p>
         <script type="application/json" id="edl-data">{{edl_data_json}}</script>
 """
@@ -306,6 +345,7 @@ def build_page():
         cta_secondary_href="tmf-checker.html",
         cta_secondary_label="TMF 完整性自查器",
         extra_style=EXTRA_STYLE,
+        i18n="edl",
     )
     html = html.replace("</body>",
                         '  <script src="js/tools.js"></script>\n' + PAGE_JS + "</body>")

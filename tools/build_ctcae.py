@@ -36,47 +36,59 @@ def read_terms():
             "en": r["term_en"],
             "grades": [r["g1"], r["g2"], r["g3"], r["g4"], r["g5"]],
             "note": r["note"],
+            "grades_en": [r["g1_en"], r["g2_en"], r["g3_en"], r["g4_en"], r["g5_en"]],
+            "note_en": r["note_en"],
         })
     return socs
 
 
 PAGE_JS = """<script>
     var CTC_DATA = JSON.parse(document.getElementById('ctcae-data').textContent);
-    var GRADE_HEADERS = ['1 轻度', '2 中度', '3 重度', '4 危及生命', '5 死亡'];
+    var GRADE_HEADERS_ZH = ['1 轻度', '2 中度', '3 重度', '4 危及生命', '5 死亡'];
+    var GRADE_HEADERS_EN = ['1 Mild', '2 Moderate', '3 Severe', '4 Life-threatening', '5 Death'];
 
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
+    function isEn() { return !!(window.I18N && I18N.getLang() === 'en'); }
+
     function renderList() {
+      var en = isEn();
+      var headers = en ? GRADE_HEADERS_EN : GRADE_HEADERS_ZH;
       var html = '';
       CTC_DATA.socs.forEach(function (soc) {
         var terms = '';
         soc.terms.forEach(function (t) {
+          var grades = en ? t.grades_en : t.grades;
           var chips = '';
           for (var g = 0; g < 5; g++) {
-            if (t.grades[g]) chips += '<span class="ctcae-chip g' + (g + 1) + '">' + (g + 1) + '</span>';
+            if (grades[g]) chips += '<span class="ctcae-chip g' + (g + 1) + '">' + (g + 1) + '</span>';
           }
           var cells = '';
-          for (var c = 0; c < 5; c++) cells += '<td>' + esc(t.grades[c] || '—') + '</td>';
-          var note = t.note ? '<p class="ctcae-term-note">注：' + esc(t.note) + '</p>' : '';
-          var hay = (t.zh + ' ' + t.en + ' ' + soc.soc_zh + ' ' + (t.note || '')).toLowerCase();
+          for (var c = 0; c < 5; c++) cells += '<td>' + esc(grades[c] || '—') + '</td>';
+          var noteText = en ? t.note_en : t.note;
+          var note = noteText ? '<p class="ctcae-term-note">' + (en ? 'Note: ' : '注：') + esc(noteText) + '</p>' : '';
+          var hay = (t.zh + ' ' + t.en + ' ' + soc.soc_zh + ' ' + soc.soc_en + ' ' + (t.note || '') + ' ' + (t.note_en || '')).toLowerCase();
+          var termName = en ? esc(t.en) : ('<span class="ctcae-term-zh">' + esc(t.zh) + '</span> ' +
+                         '<span class="ctcae-term-en">' + esc(t.en) + '</span>');
           terms += '<details class="ctcae-term" data-search="' + esc(hay) + '"><summary>' +
-                   '<span class="ctcae-term-zh">' + esc(t.zh) + '</span> ' +
-                   '<span class="ctcae-term-en">' + esc(t.en) + '</span>' + chips + '</summary>' +
+                   termName + chips + '</summary>' +
                    '<div class="ctcae-scroll"><table class="ctcae-grade"><thead><tr><th>' +
-                   GRADE_HEADERS.join('</th><th>') +
+                   headers.join('</th><th>') +
                    '</th></tr></thead><tbody><tr>' + cells + '</tr></tbody></table></div>' +
                    note + '</details>';
         });
-        html += '<details class="ctcae-soc"><summary>' + esc(soc.soc_zh) +
-                ' <span class="ctcae-soc-en">' + esc(soc.soc_en) + '</span>' +
-                '<span class="ctcae-count">· ' + soc.terms.length + ' 条</span></summary>' +
+        var socName = en ? esc(soc.soc_en) : (esc(soc.soc_zh) +
+                ' <span class="ctcae-soc-en">' + esc(soc.soc_en) + '</span>');
+        html += '<details class="ctcae-soc"><summary>' + socName +
+                '<span class="ctcae-count">· ' + soc.terms.length + (en ? ' terms' : ' 条') + '</span></summary>' +
                 '<div class="ctcae-soc-body">' + terms + '</div></details>';
       });
       document.getElementById('ctcae-list').innerHTML = html;
     }
 
     document.addEventListener('DOMContentLoaded', renderList);
+    window.addEventListener('langchange', renderList);
 
     // 客户端搜索：命中条目自动展开所属系统；无命中系统隐藏（事件委托，重渲染后仍有效）
     document.addEventListener('input', function (e) {
@@ -147,34 +159,36 @@ def build_page():
 
     body = f"""
         <aside class="content-note">
-          <p><strong>版本与范围：</strong>NCI CTCAE v5.0（2017-11-27 发布）。本页收录肿瘤试验高频使用的<strong>精选常用条目</strong>（{n_terms} 条，覆盖 {n_socs} 个系统），非全量版本。</p>
-          <p><strong>免责声明：</strong>中文为本站自产整理、非官方译本；正式使用请以 NCI CTCAE v5.0 英文原文及方案、伦理委员会要求为准。</p>
+          <p data-i18n-html="ctcae.note.version"><strong>版本与范围：</strong>NCI CTCAE v5.0（2017-11-27 发布）。本页收录肿瘤试验高频使用的<strong>精选常用条目</strong>（{n_terms} 条，覆盖 {n_socs} 个系统），非全量版本。</p>
+          <p data-i18n-html="ctcae.note.disclaimer"><strong>免责声明：</strong>中文为本站自产整理、非官方译本；正式使用请以 NCI CTCAE v5.0 英文原文及方案、伦理委员会要求为准。</p>
         </aside>
 
         <div class="ctcae-search">
           <input id="ctcae-search-input" type="search"
+                 data-i18n-placeholder="ctcae.search.placeholder"
                  placeholder="搜索中文名、英文名或系统…（如：贫血、neutropenia、心脏）"
+                 data-i18n-aria="ctcae.search.aria"
                  aria-label="搜索 CTCAE 术语" />
         </div>
 
-        <p class="ctcae-legend">
+        <p class="ctcae-legend" data-i18n-html="ctcae.legend">
           <strong>分级总则：</strong>1 轻度：无症状或轻微；2 中度：需要较小、局部或非侵入性治疗；影响工具性日常生活活动；
           3 重度：具有重要医学意义但不会立即危及生命；影响自理性日常生活活动；4 危及生命：需要紧急治疗；5 死亡：与不良事件相关的死亡。
           级别描述中的分号指「或者」；「—」表示该等级不存在；并非所有条目都包含全部 5 个等级。
           工具性日常生活活动指做饭、购买衣物、使用电话、理财等；自理性日常生活活动指洗澡、穿脱衣、吃饭、如厕、服药等。
         </p>
 
-        <h2 class="section-title">按系统（SOC）浏览</h2>
+        <h2 class="section-title" data-i18n="ctcae.browse.title">按系统（SOC）浏览</h2>
         <div id="ctcae-list"></div>
         <script type="application/json" id="ctcae-data">{{ctcae_data_json}}</script>
 
         <p class="ctcae-related">
-          相关资源：<a href="glossary.html">术语词典</a> ·
-          <a href="template-sae-report.html">SAE 报告模板</a> ·
-          <a href="tmf-reference.html">TMF 分类参考</a>
+          <span data-i18n="ctcae.related">相关资源：</span><a href="glossary.html" data-i18n="ctcae.related.glossary">术语词典</a> ·
+          <a href="template-sae-report.html" data-i18n="ctcae.related.sae">SAE 报告模板</a> ·
+          <a href="tmf-reference.html" data-i18n="ctcae.related.tmfref">TMF 分类参考</a>
         </p>
 """
-    body = body.replace("{ctcae_data_json}", json.dumps({"socs": socs}, ensure_ascii=False))
+    body = body.replace("{ctcae_data_json}", json.dumps({"socs": socs}, ensure_ascii=False, separators=(",", ": ")))
 
     meta = {
         "title": "CTCAE 分级速查器：CTCAE 5.0 常用不良事件分级中文对照 | Vivarcus",
@@ -192,6 +206,7 @@ def build_page():
         cta_secondary_href="glossary.html",
         cta_secondary_label="术语词典",
         extra_style=EXTRA_STYLE,
+        i18n="ctcae",
     )
     html = html.replace("</body>", PAGE_JS + "</body>")
     out = ROOT / "ctcae.html"
