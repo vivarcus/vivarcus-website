@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="ss.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="ss.meta.desc" content="临床试验样本量计算器：两独立样本率比较与均数比较（优效性检验），支持单/双侧检验水准、把握度、分配比与脱落率调整，展示计算公式与出处。仅供初步估算，正式方案须经统计师确认。" />
+  <title>样本量计算器：两样本率/均数比较（优效性） | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/sample-size-calculator.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/sample-size-calculator.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/sample-size-calculator.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/sample-size-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/sample-size-calculator.html" />
+  <meta property="og:title" data-i18n-og="ss.meta.title" content="样本量计算器：两样本率/均数比较（优效性） | Vivarcus" />
+  <meta property="og:description" data-i18n-og="ss.meta.desc" content="两独立样本率与均数比较（优效性检验），支持检验水准、把握度、分配比与脱落率调整，展示公式与出处。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="样本量计算器 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .ss-wrap { padding: 2rem 0 3rem; max-width: 48rem; margin: 0 auto; }
+    .ss-modes { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .ss-mode { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.5rem 1rem; border: 1px solid var(--border, #d8dde4); border-radius: 999px; font-size: 0.9rem; cursor: pointer; }
+    .ss-mode input { accent-color: var(--accent, #2563eb); }
+    .ss-fields { display: flex; gap: 0.7rem 1.2rem; align-items: flex-end; flex-wrap: wrap; margin-bottom: 1rem; }
+    .ss-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.82rem; }
+    .ss-field label { font-weight: 600; opacity: 0.85; }
+    .ss-field input, .ss-field select { padding: 0.5rem 0.7rem; border: 1px solid var(--border, #d8dde4); border-radius: 8px; font-size: 0.95rem; background: transparent; width: 8.5rem; }
+    .ss-calc { margin-bottom: 1.2rem; }
+    .ss-out { border: 1px solid var(--border, #d8dde4); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1rem 0 1.4rem; background: var(--bg-soft, #f6f8fa); }
+    .ss-out h3 { margin: 0 0 0.7rem; font-size: 1rem; }
+    .ss-out p { margin: 0.35rem 0; line-height: 1.7; }
+    .ss-big { font-size: 1.15rem; font-weight: 700; }
+    .ss-formula { font-family: ui-monospace, monospace; font-size: 0.86rem; overflow-x: auto; white-space: nowrap; }
+    .ss-warn { color: #b45309; }
+    .ss-err { color: #dc2626; font-weight: 600; }
+    .ss-section { margin-top: 1.6rem; }
+    .ss-section h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .ss-section ul { margin: 0.3rem 0; padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.8; opacity: 0.85; }
+    .ss-note { font-size: 0.86rem; opacity: 0.78; line-height: 1.8; margin-top: 1.6rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--chart-line" aria-hidden="true"></i>
+          <span data-i18n="ss.hero.eyebrow">行业资源 · 交互工具</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="ss.hero.title">样本量计算器</h1>
+        <p class="page-hero-subtitle" data-i18n="ss.hero.subtitle">两独立样本率/均数比较（优效性检验），展示公式推导与出处。仅供方案构思阶段粗略估算。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0.5rem;">
+      <div class="container">
+        <div class="ss-wrap">
+
+          <div class="ss-modes">
+            <label class="ss-mode"><input type="radio" name="ss-mode" value="prop" checked onchange="ssMode()" /> <span data-i18n="ss.mode.prop">两独立样本率比较</span></label>
+            <label class="ss-mode"><input type="radio" name="ss-mode" value="mean" onchange="ssMode()" /> <span data-i18n="ss.mode.mean">两独立样本均数比较</span></label>
+          </div>
+
+          <div class="ss-fields" id="ss-prop-fields">
+            <div class="ss-field">
+              <label for="ss-p1" data-i18n="ss.f.p1">试验组预期率 p₁</label>
+              <input type="number" id="ss-p1" value="0.80" min="0.01" max="0.99" step="0.01" onchange="ssCalc()" />
+            </div>
+            <div class="ss-field">
+              <label for="ss-p2" data-i18n="ss.f.p2">对照组率 p₂</label>
+              <input type="number" id="ss-p2" value="0.60" min="0.01" max="0.99" step="0.01" onchange="ssCalc()" />
+            </div>
+            <p style="font-size:0.82rem;opacity:0.65;margin:0;padding-bottom:0.55rem;" data-i18n="ss.mode.propDesc">优效性检验：试验组预期率 vs 对照组率</p>
+          </div>
+
+          <div class="ss-fields" id="ss-mean-fields" style="display:none;">
+            <div class="ss-field">
+              <label for="ss-delta" data-i18n="ss.f.delta">临床有意义差值 δ</label>
+              <input type="number" id="ss-delta" value="1" min="0.01" step="0.1" onchange="ssCalc()" />
+            </div>
+            <div class="ss-field">
+              <label for="ss-sigma" data-i18n="ss.f.sigma">共同标准差 σ</label>
+              <input type="number" id="ss-sigma" value="3" min="0.01" step="0.1" onchange="ssCalc()" />
+            </div>
+            <p style="font-size:0.82rem;opacity:0.65;margin:0;padding-bottom:0.55rem;" data-i18n="ss.mode.meanDesc">优效性检验：两组均数差 δ、共同标准差 σ</p>
+          </div>
+
+          <div class="ss-fields">
+            <div class="ss-field">
+              <label for="ss-alpha" data-i18n="ss.f.alpha">检验水准 α</label>
+              <select id="ss-alpha" onchange="ssCalc()">
+                <option value="t|0.05" selected data-i18n="ss.a.t05">0.05（双侧）</option>
+                <option value="t|0.01" data-i18n="ss.a.t01">0.01（双侧）</option>
+                <option value="t|0.10" data-i18n="ss.a.t10">0.10（双侧）</option>
+                <option value="o|0.05" data-i18n="ss.a.o05">0.05（单侧）</option>
+                <option value="o|0.025" data-i18n="ss.a.o025">0.025（单侧）</option>
+              </select>
+            </div>
+            <div class="ss-field">
+              <label for="ss-power" data-i18n="ss.f.power">把握度 1−β</label>
+              <select id="ss-power" onchange="ssCalc()">
+                <option value="0.80" selected>0.80</option>
+                <option value="0.85">0.85</option>
+                <option value="0.90">0.90</option>
+                <option value="0.95">0.95</option>
+              </select>
+            </div>
+            <div class="ss-field">
+              <label for="ss-ratio" data-i18n="ss.f.ratio">分配比 r = n₁/n₂</label>
+              <input type="number" id="ss-ratio" value="1" min="0.1" max="10" step="0.1" onchange="ssCalc()" />
+            </div>
+            <div class="ss-field">
+              <label for="ss-dropout" data-i18n="ss.f.dropout">预期脱落率（%）</label>
+              <input type="number" id="ss-dropout" value="20" min="0" max="50" step="1" onchange="ssCalc()" />
+            </div>
+            <div class="ss-calc">
+              <button class="btn btn-primary" onclick="ssCalc()" data-i18n="ss.btn.calc">计算样本量</button>
+            </div>
+          </div>
+
+          <div class="ss-out" id="ss-out"></div>
+
+          <div class="ss-section">
+            <h2 data-i18n="ss.assume.title">假设与适用条件</h2>
+            <ul data-i18n-html="ss.assume">
+              <li>两独立样本、正态近似；率比较要求每组期望事件数 n·p 与 n·(1−p) 均 ≥ 5，否则近似不可靠（计算结果会提示）。</li>
+              <li>针对优效性检验设计；非劣效/等效性检验的公式与界值不同，需统计师确认。</li>
+              <li>均数比较假设结局近似正态分布、两组方差相同（共同 σ）。</li>
+              <li>样本量不含脱落；按输入脱落率上浮后的数字为计划入组数。</li>
+            </ul>
+          </div>
+
+          <div class="ss-section">
+            <h2 data-i18n="ss.ref.title">公式出处</h2>
+            <ul data-i18n-html="ss.ref">
+              <li>Chow S-C, Shao J, Wang H. <i>Sample Size Calculations in Clinical Research</i>. 2nd ed. Chapman &amp; Hall/CRC, 2008（第 3–4 章）。</li>
+              <li>ICH E9: <i>Statistical Principles for Clinical Trials</i>（Section 3.5, Sample Size）。</li>
+              <li>现行《药物临床试验质量管理规范》与 CDE 相关指导原则。</li>
+            </ul>
+          </div>
+
+          <p class="ss-note" data-i18n-html="ss.disclaimer">
+            <strong>免责声明</strong>：本工具采用正态近似公式，供方案构思阶段的粗略估算；正式方案的样本量须由生物统计师确认。本工具不构成统计咨询或法律意见。更新于 2026-08-16。
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="ss.cta.title">方案设计工具链，Vivarcus 帮你收进一个系统</h2>
+          <p data-i18n="ss.cta.desc">方案、访视计划、TMF 清单、时限提醒——从构思到稽查，一套系统全流程落点。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="whitepaper.html" class="btn btn-outline btn-lg" data-i18n="ss.cta.secondary">中国 TMF 白皮书</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* 逆正态分布函数（Acklam 有理逼近，公共领域算法） */
+    function invNormal(p) {
+      var a = [-39.6968302866538, 220.946098424521, -275.928510446969, 138.357751867269, -30.6647980661472, 2.50662827745924];
+      var b = [-54.4760987982241, 161.585836858041, -155.698979859887, 66.8013118877197, -13.2806815528857];
+      var c = [-0.00778489400243029, -0.322396458041136, -2.40075827716184, -2.54973253934373, 4.37466414146497, 2.93816398269878];
+      var d = [0.00778469570904146, 0.32246712907004, 2.445134137143, 3.75440866190742];
+      var pl = 0.02425, ph = 1 - pl, q, r;
+      if (p < pl) {
+        q = Math.sqrt(-2 * Math.log(p));
+        return (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+      } else if (p <= ph) {
+        q = p - 0.5; r = q * q;
+        return (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q / (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
+      } else {
+        q = Math.sqrt(-2 * Math.log(1 - p));
+        return -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+      }
+    }
+
+    var SS_L = {
+      zh: {
+        outTitle: '计算结果',
+        perGroup: '每组样本量',
+        total: '总样本量',
+        planned: '按 {d}% 脱落率计划入组',
+        plannedTotal: '计划入组合计',
+        zValues: '中间量',
+        za: 'Z₁₋α（{side}）',
+        zb: 'Z₁₋β',
+        formulaProp: '公式（两样本率，分配比 r = n₁/n₂）：',
+        formulaPropSym: 'n₂ = [Z·√(p̄·q̄·(1+1/r)) + Z₁₋β·√(p₁·q₁/r + p₂·q₂)]² / (p₁ − p₂)²，其中 p̄ = (p₁ + r·p₂)/(1+r)，q̄ = 1 − p̄',
+        formulaMean: '公式（两样本均数，分配比 r = n₁/n₂）：',
+        formulaMeanSym: 'n₂ = (Z + Z₁₋β)² · σ² · (1 + 1/r) / δ²',
+        warnSmall: '⚠ 正态近似不佳：存在期望事件数小于 5（本设计事件数偏低），建议用精确方法（如 Fisher/精确二项）并经统计师确认。',
+        errP: 'p₁、p₂ 须在 0 与 1 之间。',
+        errP2: 'p₁ 须大于 p₂。',
+        errDelta: 'δ 须大于 0。',
+        errSigma: 'σ 须大于 0。',
+        errOther: '输入有误，请检查参数。',
+        side2: '双侧 α',
+        side1: '单侧 α'
+      },
+      en: {
+        outTitle: 'Results',
+        perGroup: 'Sample size per group',
+        total: 'Total sample size',
+        planned: 'Planned enrollment at {d}% dropout',
+        plannedTotal: 'Planned total',
+        zValues: 'Intermediate values',
+        za: 'Z₁₋α ({side})',
+        zb: 'Z₁₋β',
+        formulaProp: 'Formula (two proportions, allocation r = n₁/n₂):',
+        formulaPropSym: 'n₂ = [Z·√(p̄·q̄·(1+1/r)) + Z₁₋β·√(p₁·q₁/r + p₂·q₂)]² / (p₁ − p₂)², where p̄ = (p₁ + r·p₂)/(1+r), q̄ = 1 − p̄',
+        formulaMean: 'Formula (two means, allocation r = n₁/n₂):',
+        formulaMeanSym: 'n₂ = (Z + Z₁₋β)² · σ² · (1 + 1/r) / δ²',
+        warnSmall: '⚠ Normal approximation unreliable: some expected event count is below 5. Use exact methods (e.g., Fisher/exact binomial) and confirm with a statistician.',
+        errP: 'p₁ and p₂ must be between 0 and 1.',
+        errP2: 'p₁ must be greater than p₂.',
+        errDelta: 'δ must be greater than 0.',
+        errSigma: 'σ must be greater than 0.',
+        errOther: 'Invalid input, please check parameters.',
+        side2: 'two-sided α',
+        side1: 'one-sided α'
+      }
+    };
+
+    function ssMode() {
+      var mean = document.querySelector('input[name="ss-mode"]:checked').value === 'mean';
+      document.getElementById('ss-prop-fields').style.display = mean ? 'none' : 'flex';
+      document.getElementById('ss-mean-fields').style.display = mean ? 'flex' : 'none';
+      ssCalc();
+    }
+
+    function ssCalc() {
+      var en = !!(window.I18N && I18N.getLang() === 'en');
+      var L = en ? SS_L.en : SS_L.zh;
+      var out = document.getElementById('ss-out');
+      var mode = document.querySelector('input[name="ss-mode"]:checked').value;
+      var alphaEnc = document.getElementById('ss-alpha').value.split('|');
+      var twoSided = alphaEnc[0] === 't';
+      var alpha = parseFloat(alphaEnc[1]);
+      var power = parseFloat(document.getElementById('ss-power').value);
+      var r = parseFloat(document.getElementById('ss-ratio').value);
+      var dropout = parseFloat(document.getElementById('ss-dropout').value) / 100;
+      if (!isFinite(r) || r <= 0) r = 1;
+      if (!isFinite(dropout) || dropout < 0) dropout = 0;
+      if (dropout >= 1) dropout = 0.99;
+      var za = invNormal(1 - (twoSided ? alpha / 2 : alpha));
+      var zb = invNormal(power);
+      var zaStr = za.toFixed(5), zbStr = zb.toFixed(5);
+
+      var err = '', n1 = 0, n2 = 0, warnSmall = false, formulaSym = '', subst = '';
+      if (mode === 'prop') {
+        var p1 = parseFloat(document.getElementById('ss-p1').value);
+        var p2 = parseFloat(document.getElementById('ss-p2').value);
+        formulaSym = L.formulaPropSym;
+        if (!(p1 > 0 && p1 < 1 && p2 > 0 && p2 < 1)) err = L.errP;
+        else if (p1 <= p2) err = L.errP2;
+        else {
+          var q1 = 1 - p1, q2 = 1 - p2;
+          var pbar = (p1 + r * p2) / (1 + r), qbar = 1 - pbar;
+          n2 = Math.pow(za * Math.sqrt(pbar * qbar * (1 + 1 / r)) + zb * Math.sqrt(p1 * q1 / r + p2 * q2), 2) / Math.pow(p1 - p2, 2);
+          n1 = r * n2;
+          warnSmall = Math.min(n1 * p1, n1 * q1, n2 * p2, n2 * q2) < 5;
+          subst = 'n₂ = [' + zaStr + '·√(' + pbar.toFixed(3) + '·' + qbar.toFixed(3) + '·' + (1 + 1 / r).toFixed(3) + ') + ' + zbStr
+            + '·√(' + (p1 * q1 / r).toFixed(3) + ' + ' + (p2 * q2).toFixed(3) + ')]² / (' + (p1 - p2).toFixed(3) + ')²';
+        }
+      } else {
+        var delta = parseFloat(document.getElementById('ss-delta').value);
+        var sigma = parseFloat(document.getElementById('ss-sigma').value);
+        formulaSym = L.formulaMeanSym;
+        if (!(delta > 0)) err = L.errDelta;
+        else if (!(sigma > 0)) err = L.errSigma;
+        else {
+          n2 = Math.pow(za + zb, 2) * sigma * sigma * (1 + 1 / r) / (delta * delta);
+          n1 = r * n2;
+          subst = 'n₂ = (' + zaStr + ' + ' + zbStr + ')² · ' + sigma.toFixed(2) + '² · ' + (1 + 1 / r).toFixed(2) + ' / ' + delta.toFixed(2) + '²';
+        }
+      }
+
+      if (err) {
+        out.innerHTML = '<p class="ss-err">' + err + '</p>';
+        return;
+      }
+
+      var n1c = Math.ceil(n1 - 1e-9), n2c = Math.ceil(n2 - 1e-9);
+      var total = n1c + n2c;
+      var p1c = Math.ceil(n1c / (1 - dropout) - 1e-9), p2c = Math.ceil(n2c / (1 - dropout) - 1e-9);
+      var sep = en ? ': ' : '：', comma = en ? ', ' : '，', po = en ? ' (' : '（', pc = en ? ')' : '）';
+      var zaLabel = L.za.replace('{side}', twoSided ? L.side2 : L.side1);
+      var html = '<h3>' + L.outTitle + '</h3>'
+        + '<p class="ss-big">' + L.perGroup + sep + 'n₁ = ' + n1c + comma + 'n₂ = ' + n2c + '</p>'
+        + '<p>' + L.total + sep + total + '</p>'
+        + '<p>' + L.planned.replace('{d}', (dropout * 100)) + sep + 'n₁ = ' + p1c + comma + 'n₂ = ' + p2c + po + L.plannedTotal + ' ' + (p1c + p2c) + pc + '</p>'
+        + '<p style="font-size:0.82rem;opacity:0.7;">' + L.zValues + sep + zaLabel + ' = ' + zaStr + comma + L.zb + ' = ' + zbStr + '</p>'
+        + '<p style="font-size:0.85rem;margin-top:0.7rem;">' + L['formula' + (mode === 'prop' ? 'Prop' : 'Mean')] + '</p>'
+        + '<p class="ss-formula">' + subst + ' = ' + n2c + '</p>'
+        + '<p class="ss-formula" style="white-space:normal;">' + formulaSym + '</p>'
+        + (warnSmall ? '<p class="ss-warn">' + L.warnSmall + '</p>' : '');
+      out.innerHTML = html;
+    }
+
+    document.addEventListener('DOMContentLoaded', ssCalc);
+    window.addEventListener('langchange', ssCalc);
+  </script>
+</body>
+</html>

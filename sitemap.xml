@@ -326,6 +326,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/cde-trials.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/visit-calculator.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/visit-calculator.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/visit-calculator.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/visit-calculator.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/sample-size-calculator.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/sample-size-calculator.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/sample-size-calculator.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/sample-size-calculator.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/help/zh/index.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>

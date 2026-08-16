@@ -220,6 +220,18 @@
       "lastmod": "2026-08-15",
       "changefreq": "monthly",
       "priority": "0.7"
+    },
+    {
+      "loc": "/visit-calculator.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/sample-size-calculator.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
     }
   ],
   "home": {

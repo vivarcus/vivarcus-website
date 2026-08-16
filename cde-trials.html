@@ -38,7 +38,6 @@
     .content-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
     .content-note p { margin: 0.25rem 0; }
     .content-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
-
     .viz-root {
       --viz-surface: #ffffff;
       --viz-ink: #101828;
@@ -88,6 +87,9 @@
     .viz-label { fill: var(--viz-ink); font-size: 13px; font-weight: 600; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
     .viz-note { fill: var(--viz-ink-2); font-size: 11.5px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
     .viz-seg { stroke: var(--viz-surface); stroke-width: 2; }
+    .viz-seg.viz-s1 { fill: var(--viz-s1); }
+    .viz-seg.viz-s2 { fill: var(--viz-s2); }
+    .viz-seg.viz-s3 { fill: var(--viz-s3); }
     .viz-seg-label { font-size: 12.5px; font-weight: 600; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
     .viz-seg-label.viz-s1-ink { fill: var(--viz-s1-ink); }
     .viz-seg-label.viz-s2-ink { fill: var(--viz-s2-ink); }
@@ -118,7 +120,6 @@
     .viz-chip.cg i { background: var(--viz-gray); }
     .viz-rank-controls { display: flex; align-items: center; gap: 0.6rem; margin: 0.4rem 0 0.8rem; font-size: 0.86rem; }
     .viz-rank-controls select { padding: 0.4rem 0.6rem; font-size: 0.86rem; border: 1px solid var(--border, #d8dde4); border-radius: 8px; background: var(--bg, #fff); color: inherit; }
-  
   </style>
 </head>
 <body>
@@ -415,25 +416,30 @@
           <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
           <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
           <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
           <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
           <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
           <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
           <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
           <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
           <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
           <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
-          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
-          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
-          <a href="products.html" data-i18n="common.footer.productsPage">产品介绍</a>
-          <a href="about.html" data-i18n="common.footer.about">关于我们</a>
         </div>
 
         <div class="footer-col">
           <h4 data-i18n="common.footer.links">链接</h4>
           <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
           <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
           <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
         </div>
+
       </div>
 
       <div class="footer-bottom">

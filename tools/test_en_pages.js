@@ -36,6 +36,7 @@ const EN_PAGES = [
   // regulations hub + generated regulation/whitepaper pages (batch 3)
   'regulations.html', 'gcp-2026.html', 'ich-e6r3.html', 'audit-trail.html',
   'whitepaper.html', 'cde-trials.html',
+  'visit-calculator.html', 'sample-size-calculator.html',
 ];
 
 async function visibleChinese(page) {
@@ -87,7 +88,7 @@ async function visibleChinese(page) {
 
   // ---------- 2. zh regression (no lang param) ----------
   console.log('\n== 2. zh regression ==');
-  for (const p of ['ctcae.html', 'glossary.html', 'templates.html', 'audit-findings.html', 'template-sae-report.html', 'gcp-2026.html', 'regulations.html']) {
+  for (const p of ['ctcae.html', 'glossary.html', 'templates.html', 'audit-findings.html', 'template-sae-report.html', 'gcp-2026.html', 'regulations.html', 'whitepaper.html']) {
     await page.evaluate(() => localStorage.removeItem('vivarcus-lang'));
     await page.goto(`${BASE}/${p}`, { waitUntil: 'networkidle0' });
     await new Promise((r) => setTimeout(r, 400));
@@ -201,6 +202,59 @@ async function visibleChinese(page) {
     return { first, rows: document.querySelectorAll('#viz-ranking rect').length };
   });
   check('cde ranking en', cdeRank.first === 'Oncology' && cdeRank.rows === 10, JSON.stringify(cdeRank));
+
+  // 3.11 whitepaper embedded CDE charts: baked EN labels, zh body has zh charts
+  await page.goto(`${BASE}/whitepaper.html?lang=en`, { waitUntil: 'networkidle0' });
+  const wpCharts = await page.evaluate(() => {
+    const svgs = document.querySelectorAll('.content-inner svg.viz-svg');
+    const svgText = Array.from(svgs).map((s) => s.textContent).join(' ');
+    const subs = Array.from(document.querySelectorAll('.content-inner .viz-chart-sub')).map((s) => s.textContent).join(' ');
+    return { n: svgs.length, enSub: /Biological products/.test(subs), svgZh: /[一-鿿]/.test(svgText) };
+  });
+  check('whitepaper charts en', wpCharts.n === 2 && wpCharts.enSub && !wpCharts.svgZh, JSON.stringify(wpCharts));
+
+  // 3.12 visit calculator: schedule rows + dates in EN
+  await page.goto(`${BASE}/visit-calculator.html?lang=en`, { waitUntil: 'networkidle0' });
+  const vcRes = await page.evaluate(() => {
+    const set = (id, v) => { const el = document.getElementById(id); el.value = v; };
+    set('vc-c1d1', '2026-08-15'); set('vc-cycle', '21'); set('vc-window', '3');
+    set('vc-cycles', '6'); set('vc-screen', '28'); set('vc-fu', '30');
+    vcCalc();
+    const first = document.querySelector('#vc-body tr td').textContent.trim();
+    const dates = Array.from(document.querySelectorAll('#vc-body td.vc-date')).map(td => td.textContent.trim()).join('|');
+    return { rows: document.querySelectorAll('#vc-body tr').length, first, dates };
+  });
+  check('visit calc rows', vcRes.rows === 8 && /Screening visit/.test(vcRes.first), JSON.stringify(vcRes));
+  check('visit calc dates', /2026-07-18/.test(vcRes.dates) && /2026-09-26/.test(vcRes.dates) && /2026-12-28/.test(vcRes.dates), vcRes.dates);
+
+  // 3.13 sample size calculator: proportions default + means mode, EN
+  await page.goto(`${BASE}/sample-size-calculator.html?lang=en`, { waitUntil: 'networkidle0' });
+  const ssProp = await page.evaluate(() => {
+    const set = (id, v) => { const el = document.getElementById(id); el.value = v; };
+    set('ss-p1', '0.8'); set('ss-p2', '0.6'); set('ss-ratio', '1'); set('ss-dropout', '0');
+    ssCalc();
+    return document.getElementById('ss-out').textContent.replace(/\s+/g, ' ');
+  });
+  check('sample size prop', /n₁ = 82/.test(ssProp) && /n₂ = 82/.test(ssProp) && /Total sample size: 164/.test(ssProp), ssProp.slice(0, 160));
+  const ssMean = await page.evaluate(() => {
+    document.querySelector('input[name="ss-mode"][value="mean"]').click();
+    const set = (id, v) => { const el = document.getElementById(id); el.value = v; };
+    set('ss-delta', '1'); set('ss-sigma', '3');
+    ssCalc();
+    return document.getElementById('ss-out').textContent.replace(/\s+/g, ' ');
+  });
+  check('sample size mean', /n₁ = 142/.test(ssMean) && /n₂ = 142/.test(ssMean), ssMean.slice(0, 160));
+
+  // 3.14 footer structure: 4 columns (products/resources/tools/links), not nested
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle0' });
+  const foot = await page.evaluate(() => {
+    const grid = document.querySelector('.footer-grid');
+    const cols = grid.querySelectorAll(':scope > .footer-col');
+    const counts = Array.from(cols).map(c => c.querySelectorAll('a').length);
+    const nested = grid.querySelectorAll('.footer-col .footer-col').length;
+    return { colCount: cols.length, counts, nested };
+  });
+  check('footer structure', foot.colCount === 4 && JSON.stringify(foot.counts) === '[3,8,9,5]' && foot.nested === 0, JSON.stringify(foot));
 
   // ---------- 4. language switch via button on one page ----------
   console.log('\n== 4. lang toggle button ==');

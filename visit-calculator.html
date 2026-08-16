@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="vc.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="vc.meta.desc" content="临床试验访视窗口计算器：输入方案周期长度、访视窗口与首剂日期，自动生成筛选/周期/随访访视计划表（含窗口起止与星期），可打印。仅供参考，以方案为准。" />
+  <title>访视窗口计算器：按方案周期生成访视计划 | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/visit-calculator.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/visit-calculator.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/visit-calculator.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/visit-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/visit-calculator.html" />
+  <meta property="og:title" data-i18n-og="vc.meta.title" content="访视窗口计算器：按方案周期生成访视计划 | Vivarcus" />
+  <meta property="og:description" data-i18n-og="vc.meta.desc" content="输入方案周期长度、访视窗口与首剂日期，自动生成筛选/周期/随访访视计划表，可打印。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="访视窗口计算器 | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .vc-wrap { padding: 2rem 0 3rem; max-width: 48rem; margin: 0 auto; }
+    .vc-controls { display: flex; gap: 0.7rem 1.2rem; align-items: flex-end; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .vc-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.82rem; }
+    .vc-field label { font-weight: 600; opacity: 0.85; }
+    .vc-field input { padding: 0.5rem 0.7rem; border: 1px solid var(--border, #d8dde4); border-radius: 8px; font-size: 0.95rem; background: transparent; width: 8.5rem; }
+    .vc-field input[type="date"] { width: 10.5rem; }
+    .vc-print { margin-left: auto; }
+    .vc-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .vc-table th, .vc-table td { text-align: left; padding: 0.55rem 0.7rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .vc-table th { font-size: 0.78rem; opacity: 0.6; font-weight: 600; white-space: nowrap; }
+    .vc-date { font-weight: 600; font-family: ui-monospace, monospace; white-space: nowrap; }
+    .vc-basis { font-size: 0.78rem; opacity: 0.6; }
+    .vc-note { font-size: 0.86rem; opacity: 0.78; line-height: 1.8; margin-top: 1.4rem; }
+    @media print { .site-header, .site-footer, .cta-section, .page-hero, .vc-controls { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--calendar" aria-hidden="true"></i>
+          <span data-i18n="vc.hero.eyebrow">行业资源 · 交互工具</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="vc.hero.title">访视窗口计算器</h1>
+        <p class="page-hero-subtitle" data-i18n="vc.hero.subtitle">输入方案周期长度、窗口与首剂日期，自动生成筛选、每周期 D1 与随访访视计划表，打印出来贴工位。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0.5rem;">
+      <div class="container">
+        <div class="vc-wrap">
+
+          <div class="vc-controls">
+            <div class="vc-field">
+              <label for="vc-cycle" data-i18n="vc.f.cycle">周期长度（天）</label>
+              <input type="number" id="vc-cycle" value="21" min="1" max="120" onchange="vcCalc()" />
+            </div>
+            <div class="vc-field">
+              <label for="vc-window" data-i18n="vc.f.window">访视窗口 ±（天）</label>
+              <input type="number" id="vc-window" value="3" min="0" max="30" onchange="vcCalc()" />
+            </div>
+            <div class="vc-field">
+              <label for="vc-cycles" data-i18n="vc.f.cycles">周期数</label>
+              <input type="number" id="vc-cycles" value="6" min="1" max="60" onchange="vcCalc()" />
+            </div>
+            <div class="vc-field">
+              <label for="vc-screen" data-i18n="vc.f.screen">筛选期（天）</label>
+              <input type="number" id="vc-screen" value="28" min="0" max="120" onchange="vcCalc()" />
+            </div>
+            <div class="vc-field">
+              <label for="vc-fu" data-i18n="vc.f.fu">随访（末次给药后天）</label>
+              <input type="number" id="vc-fu" value="30" min="0" max="365" onchange="vcCalc()" />
+            </div>
+            <div class="vc-field">
+              <label for="vc-c1d1" data-i18n="vc.f.c1d1">首剂日期（C1D1）</label>
+              <input type="date" id="vc-c1d1" onchange="vcCalc()" />
+            </div>
+            <button class="vc-print btn btn-outline btn-sm" onclick="window.print()" data-i18n="vc.f.print">🖨 打印计划表</button>
+          </div>
+
+          <div style="overflow-x:auto;"><table class="vc-table">
+            <thead><tr><th data-i18n="vc.col.visit">访视</th><th data-i18n="vc.col.target">目标日期</th><th data-i18n="vc.col.winStart">窗口起</th><th data-i18n="vc.col.winEnd">窗口止</th><th data-i18n="vc.col.basis">说明</th></tr></thead>
+            <tbody id="vc-body"></tbody>
+          </table></div>
+
+          <p class="vc-note" data-i18n-html="vc.note">
+            <strong>说明</strong>：计算采用自然日；假设每周期第 1 天给药，末次给药为最后周期 D1。访视窗口起止为完整自然日，实际执行以方案与机构 SOP 为准。更新于 2026-08-16。本工具为通用参考，不构成法律意见。
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="vc.cta.title">访视计划别手排，Vivarcus CTMS 里按方案自动生成</h2>
+          <p data-i18n="vc.cta.desc">受试者访视排程、窗口提醒、超窗记录——结构化跟踪，监查与稽查时导出即证据。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="tmf-checker.html" class="btn btn-outline btn-lg" data-i18n="vc.cta.secondary">TMF 完整性自查器</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var VC_LABELS = {
+      zh: {
+        screen: '筛选访视', c1d1: '第 1 周期 D1（首剂）', cycle: '第 {n} 周期 D1', eot: '治疗结束 / 安全性随访',
+        basisScreen: '方案筛选期 {n} 天', basisC1d1: '首剂给药日（基线访视）', basisCycle: '方案周期 {n} 天', basisEot: '末次给药后 {n} 天（假设每周期 D1 给药）',
+        weekdays: ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+      },
+      en: {
+        screen: 'Screening visit', c1d1: 'Cycle 1 Day 1 (first dose)', cycle: 'Cycle {n} Day 1', eot: 'End of treatment / safety follow-up',
+        basisScreen: 'Protocol screening period: {n} days', basisC1d1: 'First dosing day (baseline visit)', basisCycle: 'Protocol cycle length: {n} days', basisEot: '{n} days after last dose (assuming dosing on D1 of each cycle)',
+        weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      }
+    };
+
+    function vcNum(id, def) {
+      var v = parseInt(document.getElementById(id).value, 10);
+      return isFinite(v) ? v : def;
+    }
+
+    function vcShift(d, days) {
+      var x = new Date(d);
+      x.setDate(x.getDate() + days);
+      return x;
+    }
+
+    function vcFmt(d, en) {
+      var y = d.getFullYear();
+      var m = String(d.getMonth() + 1).padStart(2, '0');
+      var day = String(d.getDate()).padStart(2, '0');
+      var wd = en ? VC_LABELS.en.weekdays[d.getDay()] : VC_LABELS.zh.weekdays[d.getDay()];
+      return y + '-' + m + '-' + day + (en ? ' (' + wd + ')' : '（' + wd + '）');
+    }
+
+    function vcCalc() {
+      var en = !!(window.I18N && I18N.getLang() === 'en');
+      var L = en ? VC_LABELS.en : VC_LABELS.zh;
+      var raw = document.getElementById('vc-c1d1').value;
+      if (!raw) return;
+      var parts = raw.split('-');
+      var c1d1 = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+      if (isNaN(c1d1.getTime())) return;
+      var cycle = Math.max(1, vcNum('vc-cycle', 21));
+      var win = Math.max(0, vcNum('vc-window', 3));
+      var cycles = Math.max(1, vcNum('vc-cycles', 6));
+      var screen = Math.max(0, vcNum('vc-screen', 28));
+      var fu = Math.max(0, vcNum('vc-fu', 30));
+
+      var rows = [];
+      var scr = vcShift(c1d1, -screen);
+      rows.push([L.screen, vcFmt(scr, en), '—', '—', L.basisScreen.replace('{n}', screen)]);
+      rows.push([L.c1d1, vcFmt(c1d1, en), vcFmt(c1d1, en), vcFmt(c1d1, en), L.basisC1d1]);
+      for (var k = 2; k <= cycles; k++) {
+        var d = vcShift(c1d1, (k - 1) * cycle);
+        rows.push([L.cycle.replace('{n}', k), vcFmt(d, en), vcFmt(vcShift(d, -win), en), vcFmt(vcShift(d, win), en), L.basisCycle.replace('{n}', cycle)]);
+      }
+      var lastDose = vcShift(c1d1, (cycles - 1) * cycle);
+      var eot = vcShift(lastDose, fu);
+      rows.push([L.eot, vcFmt(eot, en), vcFmt(vcShift(eot, -win), en), vcFmt(vcShift(eot, win), en), L.basisEot.replace('{n}', fu)]);
+
+      document.getElementById('vc-body').innerHTML = rows.map(function (r) {
+        return '<tr><td style="font-weight:600;">' + r[0] + '</td><td class="vc-date">' + r[1] + '</td><td class="vc-date">' + r[2] + '</td><td class="vc-date">' + r[3] + '</td><td class="vc-basis">' + r[4] + '</td></tr>';
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var input = document.getElementById('vc-c1d1');
+      if (!input.value) {
+        var t = new Date();
+        input.value = t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
+      }
+      vcCalc();
+    });
+    window.addEventListener('langchange', vcCalc);
+  </script>
+</body>
+</html>

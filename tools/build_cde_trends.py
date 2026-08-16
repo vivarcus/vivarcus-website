@@ -87,9 +87,28 @@ def bilang(zh):
     return f'data-l-zh="{zh}" data-l-en="{en_of(zh)}"'
 
 
+def _t(zh, en, lang):
+    """Bilingual SVG <text>: lang=None emits data-l dual attrs with zh default
+    text (runtime switch on the cde page); lang='zh'/'en' bakes one language
+    with no attrs (static embeds such as the whitepaper)."""
+    if lang is None:
+        return f'data-l-zh="{zh}" data-l-en="{en}"', zh
+    return "", en if lang == "en" else zh
+
+
+def _aria(zh, en, lang):
+    """Bilingual aria-label for an <svg>: dual attrs (cde page) or baked."""
+    if lang is None:
+        return f'aria-label="{zh}" data-l-aria-zh="{zh}" data-l-aria-en="{en}"'
+    return f'aria-label="{en if lang == "en" else zh}"'
+
+
 # ---------- SVG chart builders ----------
 
-def trend_svg():
+def trend_svg(lang=None, interactive=True):
+    """Line chart of yearly registrations. lang=None emits dual attrs with zh
+    default text; lang='zh'/'en' bakes one language for static embeds.
+    interactive=False skips the hover hit areas (whitepaper)."""
     years = [y for y, _ in YEARLY]
     values = [v for _, v in YEARLY]
     n = len(years)
@@ -131,22 +150,25 @@ def trend_svg():
                  f'class="viz-note" text-anchor="middle">{values[-1]:,}</text>')
     # annotation: 722 dip
     i_dip = 2  # 2015
+    ann_zh = "2015-2016 回落：722 自查核查"
+    ann_attrs, ann_text = _t(ann_zh, EN_ANNOTATION, lang)
     parts.append(f'<text x="{X(i_dip + 0.5):.1f}" y="{Y(1300):.1f}" class="viz-note" '
-                 f'data-l-zh="2015-2016 回落：722 自查核查" data-l-en="{EN_ANNOTATION}">'
-                 f'2015-2016 回落：722 自查核查</text>')
+                 f'{ann_attrs}>{ann_text}</text>')
     # hit areas (per year)
-    for i in range(n):
-        parts.append(f'<rect x="{X(i) - step / 2:.1f}" y="{y0}" width="{step:.1f}" '
-                     f'height="{y1 - y0}" class="viz-hit" data-t="trend" data-i="{i}"/>')
+    if interactive:
+        for i in range(n):
+            parts.append(f'<rect x="{X(i) - step / 2:.1f}" y="{y0}" width="{step:.1f}" '
+                         f'height="{y1 - y0}" class="viz-hit" data-t="trend" data-i="{i}"/>')
+    aria = _aria("2013 至 2026 年平台登记公示试验数量折线图",
+                 "Registered published trials by year, 2013 to 2026", lang)
     return ('<svg viewBox="0 0 960 372" class="viz-svg" data-trend="1" role="img" '
-            'aria-label="2013 至 2026 年平台登记公示试验数量折线图" '
-            'data-l-aria-zh="2013 至 2026 年平台登记公示试验数量折线图" '
-            'data-l-aria-en="Registered published trials by year, 2013 to 2026">\n'
+            f'{aria}>\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
-def stacked_bar_svg(data):
-    """Horizontal 100% stacked bar for a part-to-whole of 3 categories."""
+def stacked_bar_svg(data, lang=None):
+    """Horizontal 100% stacked bar for a part-to-whole of 3 categories.
+    lang semantics same as trend_svg."""
     total = sum(v for _, v in data)
     bar_w, bar_h, x, y = 780, 48, 150, 24
     parts = []
@@ -160,11 +182,12 @@ def stacked_bar_svg(data):
                      f'class="viz-seg {seg_colors[i]}" data-t="stack" data-i="{i}"/>')
         label_zh = f"{name} {fmt(v)} · {pct(v, total)}"
         label_en = f"{en_of(name)} {fmt(v)} · {pct(v, total)}"
-        fits = w > 6.5 * len(label_zh) + 40
+        label_attrs, label_text = _t(label_zh, label_en, lang)
+        fits = w > 6.5 * len(label_text) + 40
         if fits:
             parts.append(f'<text x="{cx + w / 2:.1f}" y="{y + bar_h / 2 + 4:.1f}" '
                          f'class="viz-seg-label {seg_inks[i]}" text-anchor="middle" '
-                         f'data-l-zh="{label_zh}" data-l-en="{label_en}">{label_zh}</text>')
+                         f'{label_attrs}>{label_text}</text>')
         cx += w
     # external label for segments that didn't fit
     cx = x
@@ -172,17 +195,21 @@ def stacked_bar_svg(data):
         w = bar_w * v / total
         label_zh = f"{name} {fmt(v)} · {pct(v, total)}"
         label_en = f"{en_of(name)} {fmt(v)} · {pct(v, total)}"
-        if w <= 6.5 * len(label_zh) + 40:
+        label_attrs, label_text = _t(label_zh, label_en, lang)
+        if w <= 6.5 * len(label_text) + 40:
             parts.append(f'<text x="{cx + w + 10:.1f}" y="{y + bar_h / 2 + 4:.1f}" class="viz-seg-label-ext" '
-                         f'data-l-zh="{label_zh}" data-l-en="{label_en}">{label_zh}</text>')
+                         f'{label_attrs}>{label_text}</text>')
         cx += w
-    return ('<svg viewBox="0 0 960 96" class="viz-svg" role="img" aria-label="药物类别分布堆叠条形图" '
-            'data-l-aria-zh="药物类别分布堆叠条形图" data-l-aria-en="Stacked bar chart of drug category distribution">\n'
+    aria = _aria("药物类别分布堆叠条形图",
+                 "Stacked bar chart of drug category distribution", lang)
+    return ('<svg viewBox="0 0 960 96" class="viz-svg" role="img" '
+            f'{aria}>\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
-def scope_bars_svg(data):
-    """Horizontal bar list for magnitude comparison (single measure)."""
+def scope_bars_svg(data, lang=None):
+    """Horizontal bar list for magnitude comparison (single measure).
+    lang semantics same as trend_svg."""
     total = sum(v for _, v in data)
     maxv = max(v for _, v in data)
     label_w, x, y0, row_h, gap = 150, 150, 16, 34, 14
@@ -190,15 +217,17 @@ def scope_bars_svg(data):
     parts = []
     for i, (name, v) in enumerate(data):
         y = y0 + i * (row_h + gap)
+        label_attrs, label_text = _t(name, en_of(name), lang)
         parts.append(f'<text x="{label_w - 14}" y="{y + 16}" class="viz-tick" text-anchor="end" '
-                     f'data-l-zh="{name}" data-l-en="{en_of(name)}">{name}</text>')
+                     f'{label_attrs}>{label_text}</text>')
         w = max(bar_max * v / maxv, 2)
         parts.append(f'<rect x="{x}" y="{y}" width="{w:.1f}" height="22" rx="4" '
                      f'class="viz-bar" data-t="scope" data-i="{i}"/>')
         parts.append(f'<text x="{x + w + 10:.1f}" y="{y + 16}" class="viz-label">{fmt(v)} · {pct(v, total)}</text>')
     h = y0 + len(data) * (row_h + gap) - gap + 6
-    return (f'<svg viewBox="0 0 960 {h}" class="viz-svg" role="img" aria-label="试验范围条形图" '
-            'data-l-aria-zh="试验范围条形图" data-l-aria-en="Bar chart of trial scope">\n'
+    aria = _aria("试验范围条形图", "Bar chart of trial scope", lang)
+    return (f'<svg viewBox="0 0 960 {h}" class="viz-svg" role="img" '
+            f'{aria}>\n'
             + "\n".join(f"  {p}" for p in parts) + "\n</svg>")
 
 
@@ -358,7 +387,10 @@ PAGE_JS = """<script>
     });
   </script>"""
 
-EXTRA_STYLE = """
+# Chart styles, split into a shared core (also used by build_whitepaper.py for
+# static embedded charts) and cde-page-specific extras. EXTRA_STYLE keeps the
+# same content as before the split.
+_VIZ_THEME = """
     .viz-root {
       --viz-surface: #ffffff;
       --viz-ink: #101828;
@@ -390,15 +422,21 @@ EXTRA_STYLE = """
       --viz-s3-ink: #0b0b0b;
     }
     .viz-root { position: relative; }
+"""
+_VIZ_KPIS = """
     .viz-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; margin: 1.6rem 0 0.6rem; }
     .viz-kpi { border: 1px solid var(--border, #d8dde4); border-radius: 10px; padding: 1rem 1.1rem; background: var(--bg-soft, #f6f8fa); }
     .viz-kpi-value { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
     .viz-kpi-caption { font-size: 0.8rem; opacity: 0.68; margin-top: 0.3rem; line-height: 1.5; }
     @media (max-width: 720px) { .viz-kpis { grid-template-columns: repeat(2, 1fr); } }
+"""
+_VIZ_CHART = """
     .viz-chart { margin: 0.6rem 0 2rem; }
     .viz-chart h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
     .viz-chart-sub { font-size: 0.84rem; opacity: 0.68; margin: 0 0 0.8rem; line-height: 1.6; }
     .viz-svg { width: 100%; height: auto; display: block; }
+"""
+_VIZ_ELEMS = """
     .viz-grid { stroke: var(--viz-grid); stroke-width: 1; }
     .viz-tick { fill: var(--viz-muted); font-size: 12px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
     .viz-line { fill: none; stroke: var(--viz-s1); stroke-width: 2; }
@@ -407,17 +445,28 @@ EXTRA_STYLE = """
     .viz-marker-open { fill: var(--viz-surface); stroke: var(--viz-s1); stroke-width: 2; }
     .viz-label { fill: var(--viz-ink); font-size: 13px; font-weight: 600; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
     .viz-note { fill: var(--viz-ink-2); font-size: 11.5px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+"""
+_VIZ_SEG = """
     .viz-seg { stroke: var(--viz-surface); stroke-width: 2; }
+    .viz-seg.viz-s1 { fill: var(--viz-s1); }
+    .viz-seg.viz-s2 { fill: var(--viz-s2); }
+    .viz-seg.viz-s3 { fill: var(--viz-s3); }
     .viz-seg-label { font-size: 12.5px; font-weight: 600; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
     .viz-seg-label.viz-s1-ink { fill: var(--viz-s1-ink); }
     .viz-seg-label.viz-s2-ink { fill: var(--viz-s2-ink); }
     .viz-seg-label.viz-s3-ink { fill: var(--viz-s3-ink); }
     .viz-seg-label-ext { fill: var(--viz-ink-2); font-size: 12px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+"""
+_VIZ_BARS = """
     .viz-bar { fill: var(--viz-s1); }
     .viz-bar-gray { fill: var(--viz-gray); }
+"""
+_VIZ_INTERACT = """
     .viz-hit { fill: transparent; cursor: crosshair; }
     .viz-svg [data-t]:not(.viz-hit):hover { opacity: 0.88; }
     .viz-crosshair { stroke: var(--viz-muted); stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none; }
+"""
+_VIZ_TOOLTIP = """
     .viz-tooltip {
       position: absolute; display: none; z-index: 10; pointer-events: none;
       background: var(--viz-ink); color: var(--viz-surface);
@@ -425,6 +474,8 @@ EXTRA_STYLE = """
       white-space: nowrap; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
     }
     .viz-tip-note { opacity: 0.7; }
+"""
+_VIZ_TABLES = """
     .viz-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.9rem 0 0; }
     .viz-table th, .viz-table td { text-align: left; padding: 0.5rem 0.7rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
     .viz-table th { font-size: 0.78rem; opacity: 0.6; font-weight: 600; white-space: nowrap; }
@@ -438,7 +489,21 @@ EXTRA_STYLE = """
     .viz-chip.cg i { background: var(--viz-gray); }
     .viz-rank-controls { display: flex; align-items: center; gap: 0.6rem; margin: 0.4rem 0 0.8rem; font-size: 0.86rem; }
     .viz-rank-controls select { padding: 0.4rem 0.6rem; font-size: 0.86rem; border: 1px solid var(--border, #d8dde4); border-radius: 8px; background: var(--bg, #fff); color: inherit; }
-  """
+"""
+
+# Shared chart core: theme vars + chart/svg element styles (also used by
+# build_whitepaper.py to embed static charts into the whitepaper page).
+
+def _join(*pieces):
+    """Join CSS pieces, stripping the triple-quote padding newlines so the
+    assembled stylesheet keeps the original single-block formatting."""
+    return "\n".join(p.strip("\n") for p in pieces)
+
+
+VIZ_CHART_CSS = _join(_VIZ_THEME, _VIZ_CHART, _VIZ_ELEMS, _VIZ_SEG, _VIZ_BARS)
+# Full cde page styles (same content/order as the original single block).
+EXTRA_STYLE = _join(_VIZ_THEME, _VIZ_KPIS, _VIZ_CHART, _VIZ_ELEMS, _VIZ_SEG,
+                    _VIZ_BARS, _VIZ_INTERACT, _VIZ_TOOLTIP, _VIZ_TABLES)
 
 
 def build_page():
