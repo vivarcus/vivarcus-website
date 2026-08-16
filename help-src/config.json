@@ -24,6 +24,12 @@
       "priority": "0.7"
     },
     {
+      "loc": "/contact.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
       "loc": "/trial.html",
       "lastmod": "2026-08-08",
       "changefreq": "monthly",
@@ -162,14 +168,62 @@
       "priority": "0.7"
     },
     {
+      "loc": "/template-metadata-review-sop.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-data-correction-sop.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/template-access-register.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
       "loc": "/ich-e6r3.html",
-      "lastmod": "2026-08-15",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/annex-c.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/retention.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/safety-reporting.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/ethics-review.html",
+      "lastmod": "2026-08-16",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    },
+    {
+      "loc": "/submission.html",
+      "lastmod": "2026-08-16",
       "changefreq": "monthly",
       "priority": "0.7"
     },
     {
       "loc": "/regulations.html",
-      "lastmod": "2026-08-15",
+      "lastmod": "2026-08-16",
       "changefreq": "monthly",
       "priority": "0.8"
     },

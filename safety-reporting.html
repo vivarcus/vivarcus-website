@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="safety.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="safety.meta.desc" content="临床试验安全性报告专题：2026 GCP 第 26/44 条与 ICH E6(R3) 2.7.2/3.13 官方要求对照、SAE/SUSAR/DSUR 时限速查表（24h/7·15 天）、报告路径与分工、盲态管理与实操要点。" />
+  <title>临床试验安全性报告专题：2026 GCP 第 26/44 条与 ICH E6(R3) | Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/safety-reporting.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/safety-reporting.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/safety-reporting.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/safety-reporting.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/safety-reporting.html" />
+  <meta property="og:title" data-i18n-og="safety.meta.title" content="临床试验安全性报告专题：2026 GCP 第 26/44 条与 ICH E6(R3) | Vivarcus" />
+  <meta property="og:description" data-i18n-og="safety.meta.desc" content="临床试验安全性报告专题：2026 GCP 第 26/44 条与 ICH E6(R3) 2.7.2/3.13 官方要求对照、SAE/SUSAR/DSUR 时限速查表（24h/7·15 天）、报告路径与分工、盲态管理与实操要点。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="临床试验安全性报告专题：2026 GCP 第 26/44 条与 ICH E6(R3) | Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .content-wrap { padding: 1.5rem 0 3rem; }
+    .content-inner { max-width: 56rem; }
+    .content-inner h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .content-inner h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .content-inner h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .content-inner p { line-height: 1.8; }
+    .content-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .content-table th, .content-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .content-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .content-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .content-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .content-note p { margin: 0.25rem 0; }
+    .content-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--book-open" aria-hidden="true"></i>
+          <span data-i18n="safety.hero.eyebrow">法规库 · 专题</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="safety.hero.title">安全性报告专题</h1>
+        <p class="page-hero-subtitle" data-i18n="safety.hero.subtitle">SAE 多久报、SUSAR 怎么判、签阅怎么留痕——第 26/44 条与 R3 3.8/3.13 合成一张时限速查表与报告路径图。</p>
+      </div>
+    </section>
+
+    <section class="section content-wrap">
+      <div class="container content-inner">
+<aside class="content-note"><p>更新于 2026-08-16｜来源：<a href="https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html" target="_blank" rel="noopener">2026 版 GCP 官方公告</a>（2026 年第 50 号，全文附件自官方提取核实）、<a href="https://database.ich.org/sites/default/files/ICH%20E6%28R3%29_Step4_FinalConsolidatedGuideline_2026_0616_.pdf" target="_blank" rel="noopener">ICH E6(R3) 合并版官方 PDF</a>（2026-06-16，2.7.2 / 3.13 节）</p><p>免责：本文解读为编者自产，非法律意见；时限标注"行业通行/以方案为准"处请以贵司 SOP 与现行监管要求为准。正式引用请以官方文本为准。</p></aside>
+<h2>一、一句话背景</h2>
+<p>安全性报告是临床试验里<strong>时限敏感度最高</strong>的合规环节：晚一天报告 SAE/SUSAR，性质就从"流程瑕疵"变成"不合规发现"。9 月 1 日 2026 版 GCP 施行后，研究者与申办者两侧的安全性报告义务都有更新，且新增了对伦理审查委员会"按紧迫性相称审查"的明确要求。本页把官方条文合成一张时限速查表 + 报告路径图。</p>
+<p>三个必须记住的关键点：</p>
+<ol><li><strong>报告链是双向的</strong>：研究者 → 申办者（SAE 立即报告）→ CDE/伦理（SUSAR 快速报告）→ 回传研究者和伦理 → 研究者签阅并考虑治疗调整——每一段都有时限或"及时"要求</li><li><strong>"立即报告"≠"24 小时"</strong>：2026 GCP 第 26 条（二）写的是"获知后立即"书面报告；24 小时是行业通行标准（以方案为准）——方案里没写明的，补进方案</li><li><strong>SUSAR 的判定链是"严重性 + 相关性 + 预期性"</strong>：与 IB/产品信息（RSI）比对预期性，是申办方报告前的必要评估步骤（R3 3.13.2(c)）</li></ol>
+<p>时限计算用 <a href="timeline-calendar.html">临床试验时限日历</a>；SAE 报告表用 <a href="template-sae-report.html">SAE 报告模板</a>。</p>
+<h2>二、官方要求对照</h2>
+<h3>2.1 2026 版 GCP</h3>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>条款</th><th>要求（原文要点）</th>
+</tr></thead><tbody>
+<tr><td>第二十六条（一）</td><td>研究者按方案要求与时限向申办者报告安全性评价所需的<strong>不良事件、异常检查结果</strong></td></tr>
+<tr><td>第二十六条（二）</td><td>除方案/IB 规定不需立即报告的 SAE 外，研究者应在<strong>获知后立即</strong>向申办者和伦理审查委员会<strong>书面报告所有 SAE</strong>，随后及时提供详尽的<strong>书面随访报告</strong></td></tr>
+<tr><td>第二十六条（三）</td><td>死亡事件：申办者/伦理/监管要求提供尸检报告、最终医学报告等资料时，研究者获得后<strong>及时提供</strong></td></tr>
+<tr><td>第二十六条（四）</td><td>研究者收到申办者提供的 SUSAR、其他潜在严重安全性风险信息、DSUR 等信息后应<strong>及时签阅</strong>，考虑治疗调整，必要时尽早与参与者沟通</td></tr>
+<tr><td>第四十四条（一）</td><td>申办者审阅评估安全性信息，将影响参与者安全/参与意愿、影响试验实施、可能改变伦理批准意见的问题<strong>及时通知</strong>研究者、机构和伦理；按规定更新方案、IB、ICF 等文件</td></tr>
+<tr><td>第四十四条（二）</td><td>申办者收到任何来源的安全性信息后<strong>立即分析评估</strong>：严重性、与试验药物的相关性、是否为预期事件</td></tr>
+<tr><td>第四十四条（三）</td><td><strong>SUSAR 与其他潜在严重安全性风险信息快速报告 CDE</strong>；向研究者/伦理递交 SUSAR 的方式与紧迫性相称；紧急安全性问题按快速报告时限报告</td></tr>
+<tr><td>第四十四条（四）</td><td>申办者<strong>定期向 CDE 提交 DSUR</strong>，并按要求通报研究者和伦理</td></tr>
+<tr><td>第四十四条（五）</td><td>发现安全性问题或其他风险的，及时调整方案、暂停或终止试验，并向 CDE 报告</td></tr>
+<tr><td>第十四条（五）</td><td>伦理委员会重点及时审查：研究者报告的 SAE、紧急方案偏离/修改、严重持续不依从、风险增加的改变、不利新信息；SUSAR/DSUR 的审查方式<strong>与采取措施的紧迫性相称</strong></td></tr>
+<tr><td>第十四条（六）</td><td>伦理委员会对正在实施的试验<strong>定期跟踪审查，间隔不超过 12 个月</strong></td></tr>
+</tbody></table></div>
+<h3>2.2 ICH E6(R3)</h3>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>条款</th><th>要求（原文要点）</th>
+</tr></thead><tbody>
+<tr><td>2.7.2(a)</td><td>方案要求的安全评价所需 AE/异常检查结果，按方案报告要求与时限报告申办者</td></tr>
+<tr><td>2.7.2(b)</td><td>所有 SAE 在研究者合理获知后<strong>立即报告申办者</strong>，并附<strong>相关性评估</strong>；随后按要求提交随访报告；方案可依适用法规列出无需立即报告的 SAE（如作为终点的死亡事件）</td></tr>
+<tr><td>2.7.2(c)</td><td>死亡事件：研究者向申办者、伦理及监管提供其要求的补充信息（尸检报告、最终医学报告）</td></tr>
+<tr><td>2.7.2(d)</td><td>研究者可委托合格人员执行安全性报告活动，但<strong>对受试者安全与报告合规的总体责任保留</strong></td></tr>
+<tr><td>3.13.1</td><td>申办者汇总并<strong>及时审查</strong>安全性信息（含给药前不良医学事件）；必要时更新方案、IB、ICF 及相关文件；将影响参与者意愿、试验实施或批准意见的新信息<strong>及时传达</strong>给参与者、研究者、伦理和监管</td></tr>
+<tr><td>3.13.2(a)(b)</td><td>申办者按要求提交安全性更新与定期报告（含 IB 更新）；按适用法规与 <strong>ICH E2A</strong> 快速报告全部 SUSAR 给监管</td></tr>
+<tr><td>3.13.2(c)</td><td>预期性评估以适用产品信息（IB 中的参考安全性信息 RSI 或替代文件）为基准</td></tr>
+<tr><td>3.13.2(d)</td><td>SUSAR 向研究者/机构和伦理的递交方式应反映<strong>所需行动的紧迫性</strong>；部分地区可采用定期行列表 + 总体安全性评估</td></tr>
+<tr><td>3.13.2(e)</td><td>需要立即关注或行动的紧急安全性问题，<strong>无不当延误</strong>报告伦理/监管和研究者</td></tr>
+</tbody></table></div>
+<h2>三、时限速查表</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>事件</th><th>时限</th><th>报告人 → 接收方</th><th>依据/口径</th>
+</tr></thead><tbody>
+<tr><td>SAE 首次书面报告</td><td>获知后立即（行业通行 24 小时内）</td><td>研究者 → 申办者 + 伦理</td><td>第 26 条（二）、R3 2.7.2(b)</td></tr>
+<tr><td>SAE 随访报告</td><td>及时（详尽书面）</td><td>研究者 → 申办者</td><td>第 26 条（二）</td></tr>
+<tr><td>SUSAR 快速报告（致死/危及生命）</td><td>7 天内初报 + 8 天内随访（15 天内完成）</td><td>申办者 → CDE</td><td>快速报告通行标准（ICH E2A 口径，以现行要求为准）</td></tr>
+<tr><td>SUSAR 快速报告（其他）</td><td>15 天内</td><td>申办者 → CDE</td><td>同上</td></tr>
+<tr><td>SUSAR 递交伦理/研究者</td><td>与紧迫性相称（紧急问题无不当延误）</td><td>申办者 → 伦理 + 研究者</td><td>第 44 条（三）、R3 3.13.2(d)(e)</td></tr>
+<tr><td>DSUR</td><td>定期（年度）</td><td>申办者 → CDE + 通报研究者/伦理</td><td>第 44 条（四）</td></tr>
+<tr><td>死亡事件补充资料</td><td>获得后及时</td><td>研究者 → 申办者/伦理/监管</td><td>第 26 条（三）、R3 2.7.2(c)</td></tr>
+<tr><td>伦理跟踪审查</td><td>≤ 12 个月一次</td><td>伦理 → 试验项目</td><td>第 14 条（六）</td></tr>
+<tr><td>安全性问题调整方案/暂停/终止</td><td>及时 + 报告</td><td>申办者 → CDE</td><td>第 44 条（五）</td></tr>
+</tbody></table></div>
+<aside class="content-note"><p>提醒：SAE 24 小时与 SUSAR 7/15 天为行业通行标准，2026 GCP 条文写的是"立即""快速报告"——具体时限以方案、申办方 SOP 与现行监管要求为准；本表口径与 <a href="timeline-calendar.html">临床试验时限日历</a> 一致。</p></aside>
+<h2>四、报告路径与分工</h2>
+<p>```<br />研究者/机构 ──SAE 立即书面报告（24h 内，通行）──▶ 申办者<br />▲                                              │<br />│  SUSAR/紧急安全性信息回传（与紧迫性相称）       │ SUSAR 快速报告（7/15 天，通行）<br />│                                              ▼<br />伦理委员会 ◀────SUSAR/DSUR 递交────── CDE（药品审评中心）<br />│                                              ▲<br />└──────────── 跟踪审查（≤12 个月）──────────────┘<br />```</p>
+<p>各方职责一句话：</p>
+<ul><li><strong>研究者</strong>：识别 → 立即报告 → 随访报告 → 签阅申办者反馈 → 调整治疗并告知参与者（第 26 条）</li><li><strong>申办者</strong>：立即分析评估（严重性/相关性/预期性）→ 快速报告 CDE → 相称递交伦理与研究者 → 定期 DSUR → 必要时更新方案/IB/ICF（第 44 条）</li><li><strong>伦理委员会</strong>：重点审查 SAE 与风险变化，跟踪审查不超 12 个月（第 14 条）</li></ul>
+<h2>五、实操要点</h2>
+<ol><li><strong>方案里写明时限</strong>：第 26 条（一）的 AE 报告时限以方案为准；SAE 立即报告的除外清单（如作为终点的死亡事件）也应在方案里明确——两个"方案没说清"是稽查最常抓的点</li><li><strong>签阅留痕</strong>：研究者对 SUSAR/DSUR 的<strong>签阅记录</strong>是稽查必查文件（第 26 条（四））——只转发不签阅、只签阅不归档都会被发现</li><li><strong>盲态管理</strong>：SUSAR 分发不能破坏盲态——设盲试验中快速报告与揭盲边界要在 SOP 里写明（与第 52 条盲态完整性衔接）</li><li><strong>RSI 版本控制</strong>：预期性评估依赖 IB 的参考安全性信息（RSI），IB 更新后历史 SUSAR 的预期性判断口径变化要有记录（R3 3.13.2(c)）</li><li><strong>及时性证据链</strong>：报告"及时"的证明 = 系统时间戳 + 发送记录——用系统留痕而不是"我记得当天发了"</li><li><strong>文件更新闭环</strong>：第 44 条（一）要求按新安全性信息更新方案/IB/ICF 并重新递交伦理——SUSAR 报告完不算闭环，文件更新与再批准才是</li></ol>
+<h2>六、eTMF/CTMS 合规落点</h2>
+<div class="content-scroll"><table class="content-table"><thead><tr>
+<th>要求</th><th>系统落点</th>
+</tr></thead><tbody>
+<tr><td>SAE 事件登记</td><td>Site SAE Tracking 记录：严重性、相关性、预期性、结局与起止日期；登记/变更时间戳入审计轨迹，作为"获知时间"证据</td></tr>
+<tr><td>报告路径与接收记录</td><td>报告与签阅作为 TMF 文档管理（审批留痕）；SAE 报告表见<a href="template-sae-report.html">模板库</a></td></tr>
+<tr><td>文件更新闭环</td><td>SUSAR → IB/ICF 更新 → 伦理再批准的文件链归档 TMF</td></tr>
+<tr><td>定期报告</td><td>DSUR 与伦理跟踪审查的到期日按 SOP 登记管理（时限口径见<a href="timeline-calendar.html">时限日历</a>）</td></tr>
+</tbody></table></div>
+<p>Vivarcus CTMS 内置 SAE 事件登记（严重性/相关性/预期性结构化字段 + 全程稽查轨迹），SAE 记录的登记与变更时间线可直接导出给核查员；SUSAR 快速报告与签阅以 TMF 文档流程落地。</p>
+<h2>七、来源与说明</h2>
+<ul><li><a href="https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html" target="_blank" rel="noopener">中国 2026 版 GCP 官方公告</a>（2026 年第 50 号，第 14/26/44 条自附件提取核实）</li><li><a href="https://database.ich.org/sites/default/files/ICH%20E6%28R3%29_Step4_FinalConsolidatedGuideline_2026_0616_.pdf" target="_blank" rel="noopener">ICH E6(R3) 合并版官方 PDF</a>（2026-06-16，2.7.2 与 3.13 节自该 PDF 提取；E2A 为 R3 3.13.2(b) 明示引用的快速报告标准）</li><li>相关页面：<a href="timeline-calendar.html">临床试验时限日历</a>、<a href="template-sae-report.html">SAE 报告模板</a>、<a href="ethics-review.html">伦理审查专题</a>、<a href="gcp-2026.html">2026 版 GCP 要点</a>、<a href="ich-e6r3.html">ICH E6(R3) 中文要点</a></li><li>本文为编者整理，条款理解有疑问时以官方文本为准</li></ul>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="safety.cta.title">SAE/SUSAR 的时限与签阅，Vivarcus CTMS 里可以管起来</h2>
+          <p data-i18n="safety.cta.desc">事件登记时间戳、时限提醒、报告发送接收留痕、签阅状态跟踪——获知到报告的完整时间线可直接导出。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="timeline-calendar.html" class="btn btn-outline btn-lg" data-i18n="safety.cta.secondary">临床试验时限日历</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="contact.html" data-i18n="common.footer.contact">联系我们</a>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script type="application/json" id="body-data-en">"<aside class=\"content-note\"><p>Updated 2026-08-16 | Sources: <a href=\"https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html\" target=\"_blank\" rel=\"noopener\">China's 2026 GCP official announcement</a> (Announcement No. 50 of 2026; article texts extracted and verified from the official annex) and the <a href=\"https://database.ich.org/sites/default/files/ICH%20E6%28R3%29_Step4_FinalConsolidatedGuideline_2026_0616_.pdf\" target=\"_blank\" rel=\"noopener\">consolidated official ICH E6(R3) PDF</a> (2026-06-16, Sections 2.7.2 / 3.13)</p><p>Disclaimer: these interpretations are editorial and are not legal advice; where time limits are marked \"industry standard / per protocol\", follow your SOPs and current regulatory requirements. Cite the official text for formal use.</p></aside>\n<h2>1. The Big Picture</h2>\n<p>Safety reporting is the most <strong>time-sensitive</strong> compliance area in a clinical trial: report an SAE/SUSAR one day late and a process blemish becomes a noncompliance finding. When the 2026 GCP takes effect on September 1, both the investigator-side and sponsor-side safety reporting duties are updated, with a new explicit requirement that IRBs/IECs review <strong>proportionate to the urgency</strong>. This page merges the official provisions into one timeline table and a reporting-path diagram.</p>\n<p>Three key points to remember:</p>\n<ol><li><strong>The reporting chain is two-way</strong>: investigator → sponsor (immediate SAE reports) → CDE/IRB-IEC (expedited SUSAR reports) → back to investigators and IRBs/IECs → investigator acknowledgement and treatment reconsideration — every leg has a deadline or a \"timely\" requirement</li><li><strong>\"Immediately\" ≠ \"24 hours\"</strong>: 2026 GCP Article 26(2) says \"immediately after becoming aware\"; the 24-hour figure is the industry standard (per protocol) — if your protocol doesn't state it, add it</li><li><strong>The SUSAR judgment chain is seriousness + causality + expectedness</strong>: assessing expectedness against the IB/product information (RSI) is a required evaluation step before sponsor reporting (E6(R3) 3.13.2(c))</li></ol>\n<p>Compute deadlines with the <a href=\"timeline-calendar.html\">Clinical Trial Timeline Calendar</a>; use the <a href=\"template-sae-report.html\">SAE Report Template</a> for SAE forms.</p>\n<h2>2. Official Requirements Side by Side</h2>\n<h3>2.1 China's 2026 GCP</h3>\n<div class=\"content-scroll\"><table class=\"content-table\"><thead><tr>\n<th>Article</th><th>Requirement (abridged from the official text)</th>\n</tr></thead><tbody>\n<tr><td>Article 26(1)</td><td>The investigator reports AEs and abnormal test results required for safety evaluation to the sponsor per the protocol's requirements and timelines</td></tr>\n<tr><td>Article 26(2)</td><td>Except SAEs the protocol/IB exempts from immediate reporting, the investigator reports <strong>all SAEs in writing to the sponsor and the IRB/IEC immediately after becoming aware</strong>, followed promptly by detailed written follow-up reports</td></tr>\n<tr><td>Article 26(3)</td><td>Death reports: when the sponsor, IRB/IEC or regulatory authority requests additional information (autopsy reports, final medical reports), the investigator provides it promptly once available</td></tr>\n<tr><td>Article 26(4)</td><td>On receiving SUSARs, other potentially serious safety risk information or DSUR information from the sponsor, the investigator acknowledges in a timely manner, considers treatment adjustments and communicates with participants early where necessary</td></tr>\n<tr><td>Article 44(1)</td><td>The sponsor reviews and evaluates safety information; promptly notifies the investigator, institution and IRB/IEC of new issues affecting participant safety or willingness, trial conduct or the ethics approval; updates the protocol, IB, ICF etc. per requirements</td></tr>\n<tr><td>Article 44(2)</td><td>The sponsor analyzes and evaluates all safety information from any source immediately: seriousness, causal relationship to the investigational product, expectedness</td></tr>\n<tr><td>Article 44(3)</td><td><strong>Expedited reporting of SUSARs and other potentially serious safety risk information to CDE</strong>; SUSAR submissions to investigators and IRBs/IECs in a manner proportionate to urgency; urgent safety issues reported per expedited timelines</td></tr>\n<tr><td>Article 44(4)</td><td>The sponsor periodically submits the <strong>DSUR to CDE</strong> and communicates the information to investigators and IRBs/IECs as required</td></tr>\n<tr><td>Article 44(5)</td><td>On identifying safety problems or other risks, promptly adjust the protocol, suspend or terminate the trial, and report to CDE</td></tr>\n<tr><td>Article 14(5)</td><td>The IRB/IEC reviews promptly and with priority: SAEs reported by investigators, urgent protocol deviations/changes, serious persistent noncompliance, changes increasing participant risk, and adverse new information; SUSAR/DSUR review <strong>proportionate to the urgency of required action</strong></td></tr>\n<tr><td>Article 14(6)</td><td>The IRB/IEC performs <strong>continuing review at intervals not exceeding 12 months</strong></td></tr>\n</tbody></table></div>\n<h3>2.2 ICH E6(R3)</h3>\n<div class=\"content-scroll\"><table class=\"content-table\"><thead><tr>\n<th>Clause</th><th>Requirement (abridged from the official text)</th>\n</tr></thead><tbody>\n<tr><td>2.7.2(a)</td><td>AEs and/or abnormal test results required for safety evaluation (as outlined in the protocol) are reported to the sponsor per the reporting requirements and timelines specified in the protocol</td></tr>\n<tr><td>2.7.2(b)</td><td>All SAEs reported <strong>immediately</strong> (after the investigator reasonably becomes aware) to the sponsor, including a <strong>causality assessment</strong>; follow-up reports as necessary; the protocol may identify SAEs not requiring immediate reporting (e.g., deaths that are endpoints) per applicable regulatory requirements</td></tr>\n<tr><td>2.7.2(c)</td><td>For reported deaths, the investigator supplies the sponsor, IRB/IEC and (where applicable) the regulatory authority with any additional requested information (autopsy reports, terminal medical reports) when available</td></tr>\n<tr><td>2.7.2(d)</td><td>Safety reporting activities may be delegated to qualified site staff, but the investigator <strong>retains overall responsibility</strong> for participant safety and reporting compliance</td></tr>\n<tr><td>3.13.1</td><td>The sponsor aggregates and reviews safety information in a timely manner (including pre-treatment unfavourable medical events); updates the protocol, IB, ICF and related documents where necessary; communicates new information affecting participant willingness, trial conduct or approval opinions <strong>in a timely manner</strong> to participants, investigators, IRBs/IECs and regulatory authorities</td></tr>\n<tr><td>3.13.2(a)(b)</td><td>The sponsor submits safety updates and periodic reports (including IB changes) as required; expedites reporting of all SUSARs to regulatory authorities per applicable requirements and <strong>ICH E2A</strong></td></tr>\n<tr><td>3.13.2(c)</td><td>Expectedness is assessed against the applicable product information (the Reference Safety Information (RSI) in the IB or alternative documents)</td></tr>\n<tr><td>3.13.2(d)</td><td>SUSAR reporting to investigators/institutions and IRBs/IECs reflects <strong>the urgency of required action</strong>; in some regions, periodic line listings with an overall safety assessment may be appropriate</td></tr>\n<tr><td>3.13.2(e)</td><td>Urgent safety issues requiring immediate attention or action are reported to the IRB/IEC and/or regulatory authorities and investigators <strong>without undue delay</strong></td></tr>\n</tbody></table></div>\n<h2>3. Timeline Quick-Reference Table</h2>\n<div class=\"content-scroll\"><table class=\"content-table\"><thead><tr>\n<th>Event</th><th>Timeline</th><th>Reporter → recipient</th><th>Basis / standard</th>\n</tr></thead><tbody>\n<tr><td>SAE initial written report</td><td>Immediately after awareness (industry standard: within 24 hours)</td><td>Investigator → sponsor + IRB/IEC</td><td>Art. 26(2), E6(R3) 2.7.2(b)</td></tr>\n<tr><td>SAE follow-up report</td><td>Prompt, detailed, written</td><td>Investigator → sponsor</td><td>Art. 26(2)</td></tr>\n<tr><td>SUSAR expedited report (fatal/life-threatening)</td><td>Initial within 7 days + follow-up within 8 more days (complete within 15)</td><td>Sponsor → CDE</td><td>Expedited-reporting standard (ICH E2A; per current requirements)</td></tr>\n<tr><td>SUSAR expedited report (other)</td><td>Within 15 days</td><td>Sponsor → CDE</td><td>Same as above</td></tr>\n<tr><td>SUSAR submission to IRB/IEC and investigators</td><td>Proportionate to urgency (urgent issues without undue delay)</td><td>Sponsor → IRB/IEC + investigators</td><td>Art. 44(3), E6(R3) 3.13.2(d)(e)</td></tr>\n<tr><td>DSUR</td><td>Periodically (annually)</td><td>Sponsor → CDE + investigators/IRBs-IECs</td><td>Art. 44(4)</td></tr>\n<tr><td>Death-report supplementary information</td><td>Promptly once available</td><td>Investigator → sponsor/IRB-IEC/regulator</td><td>Art. 26(3), E6(R3) 2.7.2(c)</td></tr>\n<tr><td>IRB/IEC continuing review</td><td>At intervals ≤ 12 months</td><td>IRB/IEC → trial project</td><td>Art. 14(6)</td></tr>\n<tr><td>Protocol adjustment / suspension / termination for safety issues</td><td>Timely + reported</td><td>Sponsor → CDE</td><td>Art. 44(5)</td></tr>\n</tbody></table></div>\n<aside class=\"content-note\"><p>Reminder: the 24-hour SAE and 7/15-day SUSAR figures are industry standards — the 2026 GCP text says \"immediately\" and \"expedited reporting\". Follow the protocol, sponsor SOPs and current regulatory requirements; this table matches the <a href=\"timeline-calendar.html\">Clinical Trial Timeline Calendar</a>.</p></aside>\n<h2>4. Reporting Path and Division of Duties</h2>\n<p>```<br />Investigator/site ──SAE immediate written report (within 24h, standard)──▶ Sponsor<br />▲                                                                      │<br />│  SUSAR/urgent safety info back (proportionate to urgency)             │ SUSAR expedited (7/15 days, standard)<br />│                                                                      ▼<br />IRB/IEC ◀────────────SUSAR/DSUR submissions────────── CDE (Center for Drug Evaluation)<br />│                                                                      ▲<br />└────────────────── Continuing review (≤12 months) ────────────────────┘<br />```</p>\n<p>Each party in one sentence:</p>\n<ul><li><strong>Investigator</strong>: identify → report immediately → follow-up reports → acknowledge sponsor feedback → adjust treatment and inform participants (Art. 26)</li><li><strong>Sponsor</strong>: analyze immediately (seriousness/causality/expectedness) → expedite to CDE → submit to IRB/IEC and investigators proportionately → periodic DSUR → update protocol/IB/ICF where necessary (Art. 44)</li><li><strong>IRB/IEC</strong>: prioritize SAEs and risk changes; continuing review within 12 months (Art. 14)</li></ul>\n<h2>5. Practical Takeaways</h2>\n<ol><li><strong>Put the timelines in the protocol</strong>: the Article 26(1) AE reporting timeline is protocol-driven; the list of SAEs exempt from immediate reporting (e.g., endpoint deaths) belongs in the protocol too — \"the protocol doesn't say\" is a classic audit finding</li><li><strong>Keep acknowledgement records</strong>: the investigator's <strong>acknowledgement record</strong> of SUSARs/DSURs is a must-check document (Art. 26(4)) — forwarding without acknowledgement, or acknowledgement without filing, both get found</li><li><strong>Manage the blind</strong>: SUSAR distribution must not break the blind — the boundary between expedited reporting and unblinding belongs in the SOP (links to Article 52 blinding integrity)</li><li><strong>Version-control the RSI</strong>: expectedness assessment relies on the Reference Safety Information in the IB; when the IB is updated, record how the expectedness basis changes for historical SUSARs (E6(R3) 3.13.2(c))</li><li><strong>Keep a timeliness evidence chain</strong>: the proof of \"timely\" is system timestamps + transmission records — rely on system traces, not \"I remember sending it that day\"</li><li><strong>Close the document-update loop</strong>: Article 44(1) requires updating the protocol/IB/ICF and resubmitting to the IRB/IEC per new safety information — reporting the SUSAR is not the end; document updates and re-approval are</li></ol>\n<h2>6. eTMF/CTMS Compliance Angles</h2>\n<div class=\"content-scroll\"><table class=\"content-table\"><thead><tr>\n<th>Requirement</th><th>System angle</th>\n</tr></thead><tbody>\n<tr><td>SAE event registration</td><td>Site SAE Tracking records: severity, causality, expectedness, outcome and start/end dates; registration/change timestamps in the audit trail serve as \"time of awareness\" evidence</td></tr>\n<tr><td>Reporting path and receipt records</td><td>Reports and sign-off managed as TMF documents (approval traces); SAE report form in the <a href=\"template-sae-report.html\">template library</a></td></tr>\n<tr><td>Document-update loop</td><td>SUSAR → IB/ICF update → IRB/IEC re-approval chain filed in the TMF</td></tr>\n<tr><td>Periodic reporting</td><td>DSUR and IRB/IEC continuing-review due dates tracked per SOP (see the <a href=\"timeline-calendar.html\">timeline calendar</a>)</td></tr>\n</tbody></table></div>\n<p>Vivarcus CTMS ships SAE event registration (structured severity/causality/expectedness fields with a full audit trail), and SAE registration/change timelines can be exported for inspectors; SUSAR expedited reporting and sign-off are handled via TMF document workflows.</p>\n<h2>7. Sources</h2>\n<ul><li><a href=\"https://www.nmpa.gov.cn/xxgk/fgwj/xzhgfxwj/20260608103856150.html\" target=\"_blank\" rel=\"noopener\">China's 2026 GCP official announcement</a> (Announcement No. 50 of 2026; Articles 14/26/44 verified against the annex)</li><li><a href=\"https://database.ich.org/sites/default/files/ICH%20E6%28R3%29_Step4_FinalConsolidatedGuideline_2026_0616_.pdf\" target=\"_blank\" rel=\"noopener\">ICH E6(R3) consolidated official PDF</a> (2026-06-16; Sections 2.7.2 and 3.13 extracted from this PDF; E2A is the expedited-reporting standard referenced by E6(R3) 3.13.2(b))</li><li>Related pages: <a href=\"timeline-calendar.html\">Clinical Trial Timeline Calendar</a>, <a href=\"template-sae-report.html\">SAE Report Template</a>, <a href=\"ethics-review.html\">Ethics Review Deep Dive</a>, <a href=\"gcp-2026.html\">China's 2026 GCP Essentials</a>, <a href=\"ich-e6r3.html\">ICH E6(R3) Essentials</a></li><li>This page is editorial; when in doubt about clause interpretation, follow the official text</li></ul>"</script>
+  <script>
+    (function () {
+      var el = document.querySelector('.content-inner');
+      var zhHTML = el.innerHTML;
+      var enHTML = JSON.parse(document.getElementById('body-data-en').textContent);
+      function applyBody() {
+        var en = !!(window.I18N && I18N.getLang() === 'en');
+        el.innerHTML = en ? enHTML : zhHTML;
+      }
+      applyBody();
+      window.addEventListener('langchange', applyBody);
+    })();
+  </script>
+</body>
+</html>

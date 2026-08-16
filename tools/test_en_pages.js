@@ -33,10 +33,14 @@ const EN_PAGES = [
   'template-audit-readiness-checklist.html', 'template-training-log.html',
   'template-sae-report.html', 'template-site-initiation-checklist.html',
   'template-monitoring-visit-checklist.html', 'template-closeout-checklist.html',
+  'template-metadata-review-sop.html', 'template-data-correction-sop.html', 'template-access-register.html',
   // regulations hub + generated regulation/whitepaper pages (batch 3)
   'regulations.html', 'gcp-2026.html', 'ich-e6r3.html', 'audit-trail.html',
+  'annex-c.html', 'retention.html', 'safety-reporting.html',
+  'ethics-review.html', 'submission.html',
   'whitepaper.html', 'cde-trials.html',
   'visit-calculator.html', 'sample-size-calculator.html',
+  'contact.html',
 ];
 
 async function visibleChinese(page) {
@@ -88,7 +92,7 @@ async function visibleChinese(page) {
 
   // ---------- 2. zh regression (no lang param) ----------
   console.log('\n== 2. zh regression ==');
-  for (const p of ['ctcae.html', 'glossary.html', 'templates.html', 'audit-findings.html', 'template-sae-report.html', 'gcp-2026.html', 'regulations.html', 'whitepaper.html']) {
+  for (const p of ['ctcae.html', 'glossary.html', 'templates.html', 'audit-findings.html', 'template-sae-report.html', 'gcp-2026.html', 'regulations.html', 'whitepaper.html', 'annex-c.html', 'retention.html', 'safety-reporting.html', 'template-metadata-review-sop.html']) {
     await page.evaluate(() => localStorage.removeItem('vivarcus-lang'));
     await page.goto(`${BASE}/${p}`, { waitUntil: 'networkidle0' });
     await new Promise((r) => setTimeout(r, 400));
@@ -254,7 +258,93 @@ async function visibleChinese(page) {
     const nested = grid.querySelectorAll('.footer-col .footer-col').length;
     return { colCount: cols.length, counts, nested };
   });
-  check('footer structure', foot.colCount === 4 && JSON.stringify(foot.counts) === '[3,8,9,5]' && foot.nested === 0, JSON.stringify(foot));
+  check('footer structure', foot.colCount === 4 && JSON.stringify(foot.counts) === '[3,8,9,6]' && foot.nested === 0, JSON.stringify(foot));
+
+  // 3.15 annex-c body swap + full 52-entry table present in both languages
+  await page.goto(`${BASE}/annex-c.html?lang=en`, { waitUntil: 'networkidle0' });
+  const annexc = await page.evaluate(() => {
+    const el = document.querySelector('.content-inner');
+    const before = el.querySelector('h2').textContent.trim();
+    const tables = Array.from(document.querySelectorAll('.content-inner .content-table'));
+    const mainRows = tables.length ? tables[tables.length - 1].querySelectorAll('tbody tr').length : 0;
+    const hasMap = mainRows ? tables[tables.length - 1].textContent : '';
+    window.I18N.setLang('zh');
+    const zh = el.querySelector('h2').textContent.trim();
+    window.I18N.setLang('en');
+    const back = el.querySelector('h2').textContent.trim();
+    return { before, zh, back, tables: tables.length, mainRows, hasMap };
+  });
+  check('annex-c body swap',
+    /^\d\./.test(annexc.before) && /[一-鿿]/.test(annexc.zh) && annexc.back === annexc.before,
+    JSON.stringify({ before: annexc.before, zh: annexc.zh }));
+  check('annex-c 52-entry table',
+    annexc.tables === 3 && annexc.mainRows === 62 && /02\.01\.01/.test(annexc.hasMap) && /Investigator's Brochure/.test(annexc.hasMap),
+    `tables ${annexc.tables}, rows ${annexc.mainRows}`);
+
+  // 3.16 retention body swap + quick-reference table in both languages
+  await page.goto(`${BASE}/retention.html?lang=en`, { waitUntil: 'networkidle0' });
+  const retention = await page.evaluate(() => {
+    const el = document.querySelector('.content-inner');
+    const before = el.querySelector('h2').textContent.trim();
+    const text = el.textContent;
+    const enOk = /5 years after marketing approval/.test(text) && /whichever is the longest/.test(text) && /Art\. 28\(2\)/.test(text);
+    window.I18N.setLang('zh');
+    const zhText = el.textContent;
+    const zh = el.querySelector('h2').textContent.trim();
+    window.I18N.setLang('en');
+    const back = el.querySelector('h2').textContent.trim();
+    return { before, zh, back, enOk, zhOk: /获批上市后 5 年/.test(zhText) && /以较长者为准/.test(zhText) };
+  });
+  check('retention body swap',
+    /^\d\./.test(retention.before) && /[一-鿿]/.test(retention.zh) && retention.back === retention.before,
+    JSON.stringify({ before: retention.before, zh: retention.zh }));
+  check('retention quick-ref table', retention.enOk && retention.zhOk, JSON.stringify(retention));
+
+  // 3.17 data governance template pack: body swap + companion links to audit-trail
+  await page.goto(`${BASE}/template-data-correction-sop.html?lang=en`, { waitUntil: 'networkidle0' });
+  const dgPack = await page.evaluate(() => {
+    const el = document.getElementById('tpl-content');
+    const before = el.querySelector('h2').textContent.trim();
+    const enOk = /Data Correction Log/.test(el.textContent) && /written PI consent/.test(el.textContent);
+    window.I18N.setLang('zh');
+    const zhOk = /数据更正记录表/.test(el.textContent) && /PI 书面同意/.test(el.textContent);
+    const zh = el.querySelector('h2').textContent.trim();
+    window.I18N.setLang('en');
+    const back = el.querySelector('h2').textContent.trim();
+    return { before, zh, back, enOk, zhOk };
+  });
+  check('dg pack body swap',
+    /^[1-9]\./.test(dgPack.before) && /[一-鿿]/.test(dgPack.zh) && dgPack.back === dgPack.before,
+    JSON.stringify({ before: dgPack.before, zh: dgPack.zh }));
+  check('dg pack content', dgPack.enOk && dgPack.zhOk, JSON.stringify(dgPack));
+
+  // 3.18 templates index shows the data governance section
+  await page.goto(`${BASE}/templates.html?lang=en`, { waitUntil: 'networkidle0' });
+  const tplDg = await page.evaluate(() => {
+    const links = Array.from(document.querySelectorAll('a[href^="template-"]')).map(a => a.getAttribute('href'));
+    const title = Array.from(document.querySelectorAll('h2')).map(h => h.textContent.trim()).join(' | ');
+    return { hasNew: links.includes('template-metadata-review-sop.html') && links.includes('template-data-correction-sop.html') && links.includes('template-access-register.html'), title };
+  });
+  check('templates index dg section', tplDg.hasNew && /Data Governance Template Pack/.test(tplDg.title), tplDg.title.slice(0, 80));
+
+  // 3.19 safety reporting body swap + timeline table in both languages
+  await page.goto(`${BASE}/safety-reporting.html?lang=en`, { waitUntil: 'networkidle0' });
+  const safety = await page.evaluate(() => {
+    const el = document.querySelector('.content-inner');
+    const before = el.querySelector('h2').textContent.trim();
+    const text = el.textContent;
+    const enOk = /7 days/.test(text) && /whichever/i.test(text) === false && /Expedited report/.test(text) && /3\.13\.2\(c\)/.test(text);
+    window.I18N.setLang('zh');
+    const zhText = el.textContent;
+    const zh = el.querySelector('h2').textContent.trim();
+    window.I18N.setLang('en');
+    const back = el.querySelector('h2').textContent.trim();
+    return { before, zh, back, enOk, zhOk: /获知后立即/.test(zhText) && /SUSAR 快速报告/.test(zhText) && /第二十六条/.test(zhText) };
+  });
+  check('safety body swap',
+    /^\d\./.test(safety.before) && /[一-鿿]/.test(safety.zh) && safety.back === safety.before,
+    JSON.stringify({ before: safety.before, zh: safety.zh }));
+  check('safety timeline table', safety.enOk && safety.zhOk, JSON.stringify(safety));
 
   // ---------- 4. language switch via button on one page ----------
   console.log('\n== 4. lang toggle button ==');

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="tpl.dcsop.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="tpl.dcsop.meta.desc" content="数据更正流程 SOP 模板：更正发起（研究者方/申办方方/源记录三场景）、审批执行五步、数据更正记录表（原值/新值/原因/批准/时间戳）与自检清单。对应 2026 GCP 第 48/51 条与 E6(R3) 4.2.3。" />
+  <title>数据更正流程 SOP 模板（受控更正）| Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/template-data-correction-sop.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-data-correction-sop.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-data-correction-sop.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-data-correction-sop.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/template-data-correction-sop.html" />
+  <meta property="og:title" data-i18n-og="tpl.dcsop.meta.title" content="数据更正流程 SOP 模板（受控更正）| Vivarcus" />
+  <meta property="og:description" data-i18n-og="tpl.dcsop.meta.desc" content="数据更正流程 SOP 模板：更正发起（研究者方/申办方方/源记录三场景）、审批执行五步、数据更正记录表（原值/新值/原因/批准/时间戳）与自检清单。对应 2026 GCP 第 48/51 条与 E6(R3) 4.2.3。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="数据更正流程 SOP 模板（受控更正）| Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .template-wrap { padding: 1.5rem 0 3rem; }
+    .template-content { max-width: 56rem; }
+    .template-content h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .template-content h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .template-content h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .template-content p { line-height: 1.8; }
+    .template-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .template-table th, .template-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .template-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .template-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .template-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .template-note p { margin: 0.25rem 0; }
+    .template-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+    .template-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.2rem 0 1.5rem; }
+    .template-guide-item { border: 1px solid var(--border, #d8dde4); border-radius: 8px; padding: 0.8rem 0.9rem; }
+    .template-guide-item strong { display: block; margin-bottom: 0.25rem; font-size: 0.78rem; }
+    .template-guide-item span { font-size: 0.86rem; line-height: 1.6; opacity: 0.78; }
+    .template-related { margin: -0.25rem 0 1.4rem; font-size: 0.88rem; }
+    @media (max-width: 720px) { .template-guide { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--folder-open" aria-hidden="true"></i>
+          <span data-i18n="tpl.dcsop.hero.eyebrow">模板库 · 数据治理</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="tpl.dcsop.hero.title">数据更正流程 SOP 模板</h1>
+        <p class="page-hero-subtitle" data-i18n="tpl.dcsop.hero.subtitle">改数据不是问题，改得没痕迹才是问题。本流程把"申请 → 批准 → 留痕"三步写成受控程序，覆盖申办方更正须 PI 书面同意的场景。</p>
+      </div>
+    </section>
+
+    <section class="section template-wrap">
+      <div class="container template-content">
+        <p class="template-back"><a href="templates.html" data-i18n="tpl.common.back">&larr; 返回模板库</a></p>
+<div id="tpl-content">
+<div class="template-guide" aria-label="模板使用说明"><div class="template-guide-item"><strong data-i18n="tpl.common.who">适合谁</strong><span>数据管理、研究中心、QA</span></div><div class="template-guide-item"><strong data-i18n="tpl.common.when">何时使用</strong><span>建立更正流程、处理数据修改时</span></div><div class="template-guide-item"><strong data-i18n="tpl.common.avoid">重点避免</strong><span>避免覆盖式修改、审批缺失、留痕不完整</span></div></div><p class="template-related"><strong data-i18n="tpl.common.relatedLabel">配套资源：</strong><a href="audit-trail.html">稽查轨迹专题</a> · <a href="template-metadata-review-sop.html">元数据审核规程 SOP</a></p>
+<aside class="template-note"><p>更新于 2026-08-16｜适用场景：申办方/CRO 数据管理、研究中心建立数据更正流程</p><p>依据：2026 版 GCP 第五十一条（更正可追溯）、第四十八条（二）（申办方更正须 PI 书面同意）、ICH E6(R3) 4.2.3（审计追踪要求）——对照见 <a href="audit-trail.html">稽查轨迹专题</a></p><p>免责：本模板为通用框架，具体格式与审批流程以贵司质量管理体系（QMS）文件为准。</p></aside>
+<h2>一、文件控制页</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>项目</th><th>内容</th>
+</tr></thead><tbody>
+<tr><td>文件编号</td><td>（如：SOP-DM-XXX）</td></tr>
+<tr><td>版本号 / 生效日期</td><td></td></tr>
+<tr><td>文件名称</td><td>数据更正流程</td></tr>
+<tr><td>起草人 / 日期</td><td></td></tr>
+<tr><td>审核人（QA/数据管理负责人）/ 日期</td><td></td></tr>
+<tr><td>批准人 / 日期</td><td></td></tr>
+<tr><td>下次回顾日期</td><td></td></tr>
+<tr><td>关联文件</td><td>DMP、元数据审核规程 SOP、权限台账、稽查轨迹专题自查清单</td></tr>
+</tbody></table></div>
+<h2>二、目的（Purpose）</h2>
+<p>规范电子数据与源记录的更正流程，确保<strong>每一次更正都可追溯</strong>：原值不遮盖、原因明确、审批到位、时间戳完整——对应 2026 GCP 第 51 条与 E6(R3) 4.2.3。</p>
+<h2>三、适用范围（Scope）</h2>
+<p>适用于试验所有数据载体：EDC/eCRF、ePRO、IRT、中心实验室数据、申办方数据库，以及源记录（含纸质）的更正。不适用：受试者本人自填 ePRO 的正常录入（按录入规则处理）。</p>
+<h2>四、职责（Responsibilities）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>角色</th><th>职责</th>
+</tr></thead><tbody>
+<tr><td>研究者/被授权人员</td><td>发起更正申请，说明原因，批准本人职责范围内的更正</td></tr>
+<tr><td>PI（主要研究者）</td><td>批准申办方提出的数据更改（GCP 第 48 条（二）：申办方更正须获得 PI 书面同意）</td></tr>
+<tr><td>数据管理员（DM）</td><td>审核更正申请、执行系统内更正、记录留痕</td></tr>
+<tr><td>申办方数据治理责任人</td><td>确保系统支持"原值保留 + 更正留痕"，不接受覆盖式修改</td></tr>
+<tr><td>QA</td><td>定期核查更正记录完整性与合规性</td></tr>
+</tbody></table></div>
+<h2>五、定义与缩写</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>术语</th><th>定义</th>
+</tr></thead><tbody>
+<tr><td>覆盖式修改</td><td>直接覆盖原值、不留痕迹的修改——<strong>禁止</strong></td></tr>
+<tr><td>受控更正</td><td>保留原值、记录新值/原因/操作者/时间的更正</td></tr>
+<tr><td>质疑（query）</td><td>对数据疑问发起澄清的过程；澄清后如需修改数据，按本流程执行更正</td></tr>
+</tbody></table></div>
+<h2>六、程序（Procedure）</h2>
+<h3>6.1 更正发起</h3>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>场景</th><th>发起人</th><th>要求</th>
+</tr></thead><tbody>
+<tr><td>研究者方数据错误</td><td>研究者/被授权人员</td><td>说明原因，附源记录依据</td></tr>
+<tr><td>申办方方数据错误（录入、逻辑错误）</td><td>DM</td><td>提交 PI，取得书面同意后执行（第 48 条（二））</td></tr>
+<tr><td>源记录错误</td><td>研究者</td><td>按病历/源文件管理要求更正：单线划改、签名、日期，<strong>不遮盖原文</strong></td></tr>
+</tbody></table></div>
+<h3>6.2 审批与执行</h3>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>步骤</th><th>责任人</th><th>操作要求</th><th>时限</th><th>产出记录</th>
+</tr></thead><tbody>
+<tr><td>6.2.1 申请</td><td>发起人</td><td>填写数据更正记录表：原值、新值、原因、依据</td><td>发现后 5 个工作日</td><td>更正申请</td></tr>
+<tr><td>6.2.2 审核</td><td>DM</td><td>核对依据是否充分、是否影响安全性/终点评价</td><td>2 个工作日</td><td>审核意见</td></tr>
+<tr><td>6.2.3 批准</td><td>PI / 数据管理负责人</td><td>重大更正（影响安全性、主要终点）须 PI 批准；申办方更正一律 PI 书面同意</td><td>2 个工作日</td><td>批准记录</td></tr>
+<tr><td>6.2.4 执行</td><td>DM</td><td>在系统内执行更正，系统自动留痕（操作者、时间、新旧值）</td><td>批准后 2 个工作日</td><td>系统稽查轨迹</td></tr>
+<tr><td>6.2.5 确认归档</td><td>DM</td><td>更正记录表与系统留痕核对一致后归档</td><td>数据截止前</td><td>更正记录表</td></tr>
+</tbody></table></div>
+<h3>6.3 禁止事项</h3>
+<ul><li>禁止任何覆盖式修改（纸质划改保留原文，电子更正保留原值）</li><li>禁止绕过审批直接修改数据库</li><li>禁止在数据库锁定后更正（锁库后需走解锁审批流程）</li></ul>
+<h2>七、数据更正记录表</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>编号</th><th>受试者/记录标识</th><th>字段</th><th>原值</th><th>新值</th><th>更正原因</th><th>依据（源记录/文件）</th><th>申请人/日期</th><th>批准人/日期</th><th>执行人/时间戳</th><th>关闭日期</th>
+</tr></thead><tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<h2>八、自检清单</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>检查项</th><th>是</th><th>否</th>
+</tr></thead><tbody>
+<tr><td>所有更正走受控流程，无覆盖式修改</td><td></td><td></td></tr>
+<tr><td>原值可查（系统留痕或纸质划改保留）</td><td></td><td></td></tr>
+<tr><td>申办方发起的更正均有 PI 书面同意记录</td><td></td><td></td></tr>
+<tr><td>重大更正（安全性、主要终点）有 PI 批准</td><td></td><td></td></tr>
+<tr><td>更正记录表与系统稽查轨迹一致</td><td></td><td></td></tr>
+<tr><td>锁库后无未授权更正；解锁有审批记录</td><td></td><td></td></tr>
+<tr><td>更正记录已归档 TMF 对应节点</td><td></td><td></td></tr>
+</tbody></table></div>
+<aside class="template-note"><p>💡 <strong>使用提示</strong>：稽查发现的高频问题是"改了数据但查不到谁改的、为什么改"。本流程的关键不是表单，而是"申请 → 批准 → 留痕"三个动作缺一不可——表格可以简单，链路必须完整。</p></aside>
+</div>
+        <script type="application/json" id="tpl-data-en">{"guide": "<div class=\"template-guide\" aria-label=\"Template usage notes\"><div class=\"template-guide-item\"><strong>Who it’s for</strong><span>Data management, study sites, QA</span></div><div class=\"template-guide-item\"><strong>When to use</strong><span>When building correction flows, when handling data changes</span></div><div class=\"template-guide-item\"><strong>Key pitfalls to avoid</strong><span>Avoid overwrite edits, missing approvals and incomplete traces</span></div></div><p class=\"template-related\"><strong>Companion resources:</strong> <a href=\"audit-trail.html\">Audit Trail Deep Dive</a> · <a href=\"template-metadata-review-sop.html\">Metadata Review SOP</a></p>", "body": "<aside class=\"template-note\"><p>Updated 2026-08-16 | Use case: sponsor/CRO data management and study sites building data correction flows</p><p>Basis: China's 2026 GCP Article 51 (traceable corrections), Article 48(2) (sponsor corrections need written PI consent), ICH E6(R3) 4.2.3 — see the <a href=\"audit-trail.html\">Audit Trail Deep Dive</a></p><p>Disclaimer: this template is a generic framework; the exact format and approval flow should follow your QMS documents.</p></aside>\n<h2>1. Document Control Page</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Item</th><th>Content</th>\n</tr></thead><tbody>\n<tr><td>Document ID</td><td>(e.g., SOP-DM-XXX)</td></tr>\n<tr><td>Version / effective date</td><td></td></tr>\n<tr><td>Document title</td><td>Data Correction Procedure</td></tr>\n<tr><td>Author / date</td><td></td></tr>\n<tr><td>Reviewer (QA/data management lead) / date</td><td></td></tr>\n<tr><td>Approver / date</td><td></td></tr>\n<tr><td>Next review date</td><td></td></tr>\n<tr><td>Related documents</td><td>DMP, Metadata Review SOP, Access Rights Register, Audit Trail self-check list</td></tr>\n</tbody></table></div>\n<h2>2. Purpose</h2>\n<p>To define the correction process for electronic data and source records so that <strong>every correction is traceable</strong>: the original value is preserved, the reason is stated, approval is in place, timestamps are complete — per 2026 GCP Article 51 and E6(R3) 4.2.3.</p>\n<h2>3. Scope</h2>\n<p>Applies to all trial data carriers: EDC/eCRF, ePRO, IRT, central laboratory data, the sponsor database, and source records (including paper). Not applicable: normal participant-entered ePRO entries (handled per entry rules).</p>\n<h2>4. Responsibilities</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Role</th><th>Responsibility</th>\n</tr></thead><tbody>\n<tr><td>Investigator / delegates</td><td>Initiate correction requests, state the reason, approve corrections within their remit</td></tr>\n<tr><td>PI (Principal Investigator)</td><td>Approve sponsor-proposed data changes (GCP Art. 48(2): sponsor corrections require written PI consent)</td></tr>\n<tr><td>Data Manager (DM)</td><td>Review correction requests, execute corrections in-system, keep records</td></tr>\n<tr><td>Sponsor data governance owner</td><td>Ensure the system supports \"original value retained + correction traced\"; overwrite-style edits are unacceptable</td></tr>\n<tr><td>QA</td><td>Periodically verify correction record completeness and compliance</td></tr>\n</tbody></table></div>\n<h2>5. Definitions &amp; Abbreviations</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Term</th><th>Definition</th>\n</tr></thead><tbody>\n<tr><td>Overwrite edit</td><td>Modifying data by replacing the original value without a trace — <strong>prohibited</strong></td></tr>\n<tr><td>Controlled correction</td><td>A correction that retains the original value and records the new value, reason, operator and time</td></tr>\n<tr><td>Query</td><td>Clarification raised about questionable data; if data must change after clarification, corrections follow this procedure</td></tr>\n</tbody></table></div>\n<h2>6. Procedure</h2>\n<h3>6.1 Correction Initiation</h3>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Scenario</th><th>Initiator</th><th>Requirement</th>\n</tr></thead><tbody>\n<tr><td>Investigator-side data error</td><td>Investigator / delegates</td><td>State the reason, attach the source-document basis</td></tr>\n<tr><td>Sponsor-side data error (entry or logic errors)</td><td>DM</td><td>Submit to the PI; execute only after written consent (Art. 48(2))</td></tr>\n<tr><td>Source record error</td><td>Investigator</td><td>Follow medical-record/source-document rules: single-line strike-through, signature, date — <strong>never obscure the original</strong></td></tr>\n</tbody></table></div>\n<h3>6.2 Approval and Execution</h3>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Step</th><th>Owner</th><th>Requirement</th><th>Timeline</th><th>Record</th>\n</tr></thead><tbody>\n<tr><td>6.2.1 Request</td><td>Initiator</td><td>Complete the correction log: original value, new value, reason, basis</td><td>Within 5 working days of discovery</td><td>Correction request</td></tr>\n<tr><td>6.2.2 Review</td><td>DM</td><td>Verify the basis is sufficient and whether safety/endpoint evaluation is affected</td><td>2 working days</td><td>Review note</td></tr>\n<tr><td>6.2.3 Approval</td><td>PI / data management lead</td><td>Major corrections (safety, primary endpoint) require PI approval; all sponsor corrections require written PI consent</td><td>2 working days</td><td>Approval record</td></tr>\n<tr><td>6.2.4 Execution</td><td>DM</td><td>Execute in-system; the system traces automatically (operator, time, old/new values)</td><td>Within 2 working days of approval</td><td>System audit trail</td></tr>\n<tr><td>6.2.5 Confirm and file</td><td>DM</td><td>Reconcile the correction log with the system trail, then file</td><td>Before data cut</td><td>Correction log</td></tr>\n</tbody></table></div>\n<h3>6.3 Prohibitions</h3>\n<ul><li>No overwrite edits of any kind (paper: strike-through preserving the original; electronic: original value retained)</li><li>No direct database modifications bypassing approval</li><li>No corrections after database lock (unlock requires the unlock-approval flow)</li></ul>\n<h2>7. Data Correction Log</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>ID</th><th>Subject/record ID</th><th>Field</th><th>Original value</th><th>New value</th><th>Reason</th><th>Basis (source/document)</th><th>Requester/date</th><th>Approver/date</th><th>Executor/timestamp</th><th>Closure date</th>\n</tr></thead><tbody>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n</tbody></table></div>\n<h2>8. Self-Check List</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Check item</th><th>Yes</th><th>No</th>\n</tr></thead><tbody>\n<tr><td>All corrections go through the controlled flow; no overwrite edits</td><td></td><td></td></tr>\n<tr><td>Original values retrievable (system trace or paper strike-through retained)</td><td></td><td></td></tr>\n<tr><td>Sponsor-initiated corrections all carry written PI consent</td><td></td><td></td></tr>\n<tr><td>Major corrections (safety, primary endpoint) carry PI approval</td><td></td><td></td></tr>\n<tr><td>Correction logs reconcile with the system audit trail</td><td></td><td></td></tr>\n<tr><td>No unauthorized corrections after lock; unlocks carry approval records</td><td></td><td></td></tr>\n<tr><td>Correction records filed at the right TMF nodes</td><td></td><td></td></tr>\n</tbody></table></div>\n<aside class=\"template-note\"><p>💡 <strong>Tip</strong>: the high-frequency audit finding is \"data was changed but you cannot see who changed it or why\". The point of this flow is not the form — it is that the three actions \"request → approve → leave a trace\" must all happen. The form can be simple; the chain must be complete.</p></aside>"}</script>
+        <script>
+          (function () {
+            var el = document.getElementById('tpl-content');
+            var zhHTML = el.innerHTML;
+            var data = JSON.parse(document.getElementById('tpl-data-en').textContent);
+            function apply() {
+              var en = !!(window.I18N && I18N.getLang() === 'en');
+              el.innerHTML = en ? (data.guide + data.body) : zhHTML;
+            }
+            window.addEventListener('langchange', apply);
+          })();
+        </script>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="tpl.dcsop.cta.title">受控的数据更正，Vivarcus eTMF 里已经内置</h2>
+          <p data-i18n="tpl.dcsop.cta.desc">原值不遮盖、更正留痕、批准后生效——对应第 48/51 条与 R3 4.2.3，核查现场可直接演示。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="templates.html" class="btn btn-outline btn-lg" data-i18n="tpl.common.ctaSecondary">全部模板</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="contact.html" data-i18n="common.footer.contact">联系我们</a>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

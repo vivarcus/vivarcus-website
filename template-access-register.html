@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="tpl.access.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="tpl.access.meta.desc" content="用户权限台账模板：权限主表与登记表、授权五原则（职责相符/盲态隔离/组织隔离/最小必要/全量留痕）、变更六步流程与自检清单。对应 2026 GCP 第 53 条（五）。" />
+  <title>用户权限台账模板（Access Rights Register）| Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/template-access-register.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-access-register.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-access-register.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-access-register.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/template-access-register.html" />
+  <meta property="og:title" data-i18n-og="tpl.access.meta.title" content="用户权限台账模板（Access Rights Register）| Vivarcus" />
+  <meta property="og:description" data-i18n-og="tpl.access.meta.desc" content="用户权限台账模板：权限主表与登记表、授权五原则（职责相符/盲态隔离/组织隔离/最小必要/全量留痕）、变更六步流程与自检清单。对应 2026 GCP 第 53 条（五）。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="用户权限台账模板（Access Rights Register）| Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .template-wrap { padding: 1.5rem 0 3rem; }
+    .template-content { max-width: 56rem; }
+    .template-content h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .template-content h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .template-content h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .template-content p { line-height: 1.8; }
+    .template-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .template-table th, .template-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .template-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .template-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .template-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .template-note p { margin: 0.25rem 0; }
+    .template-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+    .template-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.2rem 0 1.5rem; }
+    .template-guide-item { border: 1px solid var(--border, #d8dde4); border-radius: 8px; padding: 0.8rem 0.9rem; }
+    .template-guide-item strong { display: block; margin-bottom: 0.25rem; font-size: 0.78rem; }
+    .template-guide-item span { font-size: 0.86rem; line-height: 1.6; opacity: 0.78; }
+    .template-related { margin: -0.25rem 0 1.4rem; font-size: 0.88rem; }
+    @media (max-width: 720px) { .template-guide { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--folder-open" aria-hidden="true"></i>
+          <span data-i18n="tpl.access.hero.eyebrow">模板库 · 数据治理</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="tpl.access.hero.title">用户权限台账模板</h1>
+        <p class="page-hero-subtitle" data-i18n="tpl.access.hero.subtitle">飞检常查"离岗到权限收回中间差几天"。本台账让授权、变更、收回全量留痕，附定期复核流程与自检清单。</p>
+      </div>
+    </section>
+
+    <section class="section template-wrap">
+      <div class="container template-content">
+        <p class="template-back"><a href="templates.html" data-i18n="tpl.common.back">&larr; 返回模板库</a></p>
+<div id="tpl-content">
+<div class="template-guide" aria-label="模板使用说明"><div class="template-guide-item"><strong data-i18n="tpl.common.who">适合谁</strong><span>权限管理员、QA、项目负责人</span></div><div class="template-guide-item"><strong data-i18n="tpl.common.when">何时使用</strong><span>建立权限台账、人员变动时</span></div><div class="template-guide-item"><strong data-i18n="tpl.common.avoid">重点避免</strong><span>避免离岗未收回、权限与职责不符、台账与系统不一致</span></div></div><p class="template-related"><strong data-i18n="tpl.common.relatedLabel">配套资源：</strong><a href="audit-trail.html">稽查轨迹专题</a> · <a href="template-metadata-review-sop.html">元数据审核规程 SOP</a></p>
+<aside class="template-note"><p>更新于 2026-08-16｜适用场景：申办方/CRO/研究中心管理各系统用户权限，建立权限台账</p><p>依据：2026 版 GCP 第五十三条（五）（授权用户及其权限应明确记录、维护和保存）、ICH E6(R3) 9.4——对照见 <a href="audit-trail.html">稽查轨迹专题</a></p><p>免责：本模板为通用框架，具体格式以贵司系统与 SOP 为准。</p></aside>
+<h2>一、权限台账主表</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>字段</th><th>说明</th><th>示例</th>
+</tr></thead><tbody>
+<tr><td>系统</td><td>系统名称与版本</td><td>EDC、IRT、eTMF、CTMS、邮箱、网盘</td></tr>
+<tr><td>用户</td><td>姓名 + 唯一账号</td><td></td></tr>
+<tr><td>角色</td><td>系统角色（权限组）</td><td>研究者、CRC、CRA、DM、申办方统计师</td></tr>
+<tr><td>权限范围</td><td>可访问的试验/中心/模块</td><td>仅限 001 号中心、脱敏数据</td></tr>
+<tr><td>授权依据</td><td>授权分工表（Delegation Log）/岗位职责</td><td>见授权分工表 v1.2</td></tr>
+<tr><td>批准人/日期</td><td>授权审批记录</td><td></td></tr>
+<tr><td>生效日期</td><td>权限生效时间</td><td></td></tr>
+<tr><td>到期/撤销日期</td><td>离岗、转组、试验结束</td><td></td></tr>
+<tr><td>复核日期</td><td>最近一次权限复核</td><td></td></tr>
+</tbody></table></div>
+<h2>二、台账登记表</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>系统</th><th>用户</th><th>角色</th><th>权限范围</th><th>授权依据</th><th>批准人/日期</th><th>生效日期</th><th>撤销/变更日期</th><th>变更类型</th><th>复核日期</th>
+</tr></thead><tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<h2>三、授权原则（对照 GCP 第 53 条（五））</h2>
+<ol><li><strong>职责相符</strong>：权限与其职责职能一致——CRC 不给数据库导出权限，监查员不给数据修改权限</li><li><strong>盲态隔离</strong>：权限符合盲法设置——设盲团队成员不接触揭盲数据与随机化列表</li><li><strong>组织隔离</strong>：权限符合用户所属组织——申办方与 CRO、机构与申办方之间的数据边界</li><li><strong>最小必要</strong>：只授予完成任务所需的最小权限</li><li><strong>全量留痕</strong>：授权、变更、收回均记录——台账本身是稽查必查文件</li></ol>
+<h2>四、变更流程（Procedure）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>步骤</th><th>责任人</th><th>操作要求</th><th>时限</th><th>产出记录</th>
+</tr></thead><tbody>
+<tr><td>4.1 申请</td><td>需求方</td><td>填写权限申请：用户、系统、角色、理由</td><td>提前 3 个工作日</td><td>权限申请表</td></tr>
+<tr><td>4.2 审批</td><td>权限管理员 + 项目负责人</td><td>按授权原则核对（职责/盲态/组织）</td><td>2 个工作日</td><td>审批记录</td></tr>
+<tr><td>4.3 开通</td><td>权限管理员</td><td>按批准的角色开通，截图/记录生效时间</td><td>批准后 1 个工作日</td><td>系统开通记录</td></tr>
+<tr><td>4.4 登记台账</td><td>权限管理员</td><td>更新权限台账主表</td><td>开通当日</td><td>台账更新</td></tr>
+<tr><td>4.5 复核</td><td>QA/项目负责人</td><td>定期（至少每季度）复核权限与现职一致性</td><td>每季度</td><td>复核记录</td></tr>
+<tr><td>4.6 收回</td><td>权限管理员</td><td>人员离岗/转组/试验结束时收回权限并登记</td><td>当日</td><td>撤销记录</td></tr>
+</tbody></table></div>
+<h2>五、自检清单</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>检查项</th><th>是</th><th>否</th>
+</tr></thead><tbody>
+<tr><td>台账覆盖全部在用系统（含邮箱、网盘、即时通讯）</td><td></td><td></td></tr>
+<tr><td>每个账号有角色、权限范围与授权依据</td><td></td><td></td></tr>
+<tr><td>离岗/转组人员的权限在离职当日收回并登记</td><td></td><td></td></tr>
+<tr><td>盲态团队权限与揭盲数据隔离有据可查</td><td></td><td></td></tr>
+<tr><td>最近一次权限复核不超过 3 个月</td><td></td><td></td></tr>
+<tr><td>台账与系统实际权限一致（抽查核对）</td><td></td><td></td></tr>
+<tr><td>权限变更与系统稽查轨迹相互印证</td><td></td><td></td></tr>
+</tbody></table></div>
+<aside class="template-note"><p>💡 <strong>使用提示</strong>：飞检常查三个动作的时点——"人什么时候离岗、权限什么时候收回、中间差几天"。台账的价值就是让这三个时点对齐且可查。系统能自动生成台账的（如 eTMF 权限报表），定期导出归档，人工台账只做例外登记。</p></aside>
+</div>
+        <script type="application/json" id="tpl-data-en">{"guide": "<div class=\"template-guide\" aria-label=\"Template usage notes\"><div class=\"template-guide-item\"><strong>Who it’s for</strong><span>Access administrators, QA, project leads</span></div><div class=\"template-guide-item\"><strong>When to use</strong><span>When building the access register, at staff changes</span></div><div class=\"template-guide-item\"><strong>Key pitfalls to avoid</strong><span>Avoid unrevoked access after departure, role mismatches and register-system drift</span></div></div><p class=\"template-related\"><strong>Companion resources:</strong> <a href=\"audit-trail.html\">Audit Trail Deep Dive</a> · <a href=\"template-metadata-review-sop.html\">Metadata Review SOP</a></p>", "body": "<aside class=\"template-note\"><p>Updated 2026-08-16 | Use case: sponsors/CROs/study sites managing system user access and building the access register</p><p>Basis: China's 2026 GCP Article 53(5) (authorized users and their rights must be clearly documented, maintained and preserved), ICH E6(R3) 9.4 — see the <a href=\"audit-trail.html\">Audit Trail Deep Dive</a></p><p>Disclaimer: this template is a generic framework; the exact format should follow your systems and SOPs.</p></aside>\n<h2>1. Register Master Table</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Field</th><th>Description</th><th>Example</th>\n</tr></thead><tbody>\n<tr><td>System</td><td>System name and version</td><td>EDC, IRT, eTMF, CTMS, email, cloud drive</td></tr>\n<tr><td>User</td><td>Name + unique account</td><td></td></tr>\n<tr><td>Role</td><td>System role (permission group)</td><td>Investigator, CRC, CRA, DM, sponsor statistician</td></tr>\n<tr><td>Access scope</td><td>Trials/sites/modules accessible</td><td>Site 001 only; blinded data</td></tr>\n<tr><td>Authorization basis</td><td>Delegation Log / job description</td><td>Delegation Log v1.2</td></tr>\n<tr><td>Approver / date</td><td>Authorization approval record</td><td></td></tr>\n<tr><td>Effective date</td><td>When access takes effect</td><td></td></tr>\n<tr><td>Expiry / revocation date</td><td>Departure, reassignment, trial end</td><td></td></tr>\n<tr><td>Review date</td><td>Most recent access review</td><td></td></tr>\n</tbody></table></div>\n<h2>2. Register Table</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>System</th><th>User</th><th>Role</th><th>Access scope</th><th>Authorization basis</th><th>Approver/date</th><th>Effective date</th><th>Revocation/change date</th><th>Change type</th><th>Review date</th>\n</tr></thead><tbody>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n</tbody></table></div>\n<h2>3. Authorization Principles (per GCP Art. 53(5))</h2>\n<ol><li><strong>Role-fit</strong>: access matches duties and functions — no database export rights for CRCs, no data-modification rights for monitors</li><li><strong>Blind isolation</strong>: access conforms to the blinding setup — blinded team members cannot touch unblinding data or the randomization list</li><li><strong>Organization isolation</strong>: access conforms to the user's organization — data boundaries between sponsor and CRO, institution and sponsor</li><li><strong>Least privilege</strong>: grant only the minimum access needed for the task</li><li><strong>Full trace</strong>: authorizations, changes and revocations are all recorded — the register itself is a must-check audit document</li></ol>\n<h2>4. Change Procedure</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Step</th><th>Owner</th><th>Requirement</th><th>Timeline</th><th>Record</th>\n</tr></thead><tbody>\n<tr><td>4.1 Request</td><td>Requester</td><td>Complete the access request: user, system, role, reason</td><td>3 working days in advance</td><td>Access request form</td></tr>\n<tr><td>4.2 Approval</td><td>Access administrator + project lead</td><td>Check against the authorization principles (role/blind/organization)</td><td>2 working days</td><td>Approval record</td></tr>\n<tr><td>4.3 Grant</td><td>Access administrator</td><td>Grant the approved role; capture the effective time</td><td>Within 1 working day of approval</td><td>System grant record</td></tr>\n<tr><td>4.4 Register</td><td>Access administrator</td><td>Update the master register</td><td>Same day</td><td>Register update</td></tr>\n<tr><td>4.5 Review</td><td>QA / project lead</td><td>Periodically (at least quarterly) verify access matches current roles</td><td>Quarterly</td><td>Review record</td></tr>\n<tr><td>4.6 Revoke</td><td>Access administrator</td><td>Revoke and register on departure, reassignment or trial end</td><td>Same day</td><td>Revocation record</td></tr>\n</tbody></table></div>\n<h2>5. Self-Check List</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Check item</th><th>Yes</th><th>No</th>\n</tr></thead><tbody>\n<tr><td>Register covers all systems in use (including email, cloud drives, messaging)</td><td></td><td></td></tr>\n<tr><td>Every account has a role, access scope and authorization basis</td><td></td><td></td></tr>\n<tr><td>Access of departed/reassigned staff revoked and registered the same day</td><td></td><td></td></tr>\n<tr><td>Blinded-team isolation from unblinding data is demonstrable</td><td></td><td></td></tr>\n<tr><td>Most recent access review no older than 3 months</td><td></td><td></td></tr>\n<tr><td>Register matches actual system access (spot-check)</td><td></td><td></td></tr>\n<tr><td>Access changes corroborate the system audit trail</td><td></td><td></td></tr>\n</tbody></table></div>\n<aside class=\"template-note\"><p>💡 <strong>Tip</strong>: inspections often check three timestamps — \"when the person left, when access was revoked, and the gap between the two\". The register's value is aligning those three points so they are retrievable. Where the system can generate the register automatically (e.g., eTMF access reports), export and file it periodically; keep the manual register for exceptions only.</p></aside>"}</script>
+        <script>
+          (function () {
+            var el = document.getElementById('tpl-content');
+            var zhHTML = el.innerHTML;
+            var data = JSON.parse(document.getElementById('tpl-data-en').textContent);
+            function apply() {
+              var en = !!(window.I18N && I18N.getLang() === 'en');
+              el.innerHTML = en ? (data.guide + data.body) : zhHTML;
+            }
+            window.addEventListener('langchange', apply);
+          })();
+        </script>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="tpl.access.cta.title">权限台账，Vivarcus eTMF 里可以自动生成</h2>
+          <p data-i18n="tpl.access.cta.desc">角色权限按职责、盲态、组织分层管理，授权与变更全量留痕，台账一键导出。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="templates.html" class="btn btn-outline btn-lg" data-i18n="tpl.common.ctaSecondary">全部模板</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="contact.html" data-i18n="common.footer.contact">联系我们</a>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

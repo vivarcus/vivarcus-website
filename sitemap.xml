@@ -29,6 +29,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/about.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/contact.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/contact.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/contact.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/trial.html</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -236,8 +245,35 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-closeout-checklist.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/template-metadata-review-sop.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-metadata-review-sop.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-metadata-review-sop.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-metadata-review-sop.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/template-data-correction-sop.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-data-correction-sop.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-data-correction-sop.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-data-correction-sop.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/template-access-register.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-access-register.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-access-register.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-access-register.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/ich-e6r3.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/ich-e6r3.html" />
@@ -245,8 +281,53 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/ich-e6r3.html" />
   </url>
   <url>
+    <loc>https://vivarcus.com/annex-c.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/annex-c.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/annex-c.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/annex-c.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/retention.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/retention.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/retention.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/retention.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/safety-reporting.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/safety-reporting.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/safety-reporting.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/safety-reporting.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/ethics-review.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/ethics-review.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/ethics-review.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/ethics-review.html" />
+  </url>
+  <url>
+    <loc>https://vivarcus.com/submission.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/submission.html" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://vivarcus.com/submission.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vivarcus.com/submission.html" />
+  </url>
+  <url>
     <loc>https://vivarcus.com/regulations.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/regulations.html" />

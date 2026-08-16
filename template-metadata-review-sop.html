@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="tpl.mdsop.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="tpl.mdsop.meta.desc" content="元数据审核规程 SOP 模板：审核范围与方法（稽查轨迹完整性、数据更正合规、关键字段元数据、权限一致性、系统时间同步）、发现分级与关闭流程、元数据审核记录表与自检清单。对应 2026 GCP 第 51 条与 E6(R3) 4.2.2。" />
+  <title>元数据审核规程 SOP 模板（数据治理配套）| Vivarcus</title>
+  <link rel="canonical" href="https://vivarcus.com/template-metadata-review-sop.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://vivarcus.com/template-metadata-review-sop.html" />
+  <link rel="alternate" hreflang="en-US" href="https://vivarcus.com/template-metadata-review-sop.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://vivarcus.com/template-metadata-review-sop.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivarcus" />
+  <meta property="og:url" content="https://vivarcus.com/template-metadata-review-sop.html" />
+  <meta property="og:title" data-i18n-og="tpl.mdsop.meta.title" content="元数据审核规程 SOP 模板（数据治理配套）| Vivarcus" />
+  <meta property="og:description" data-i18n-og="tpl.mdsop.meta.desc" content="元数据审核规程 SOP 模板：审核范围与方法（稽查轨迹完整性、数据更正合规、关键字段元数据、权限一致性、系统时间同步）、发现分级与关闭流程、元数据审核记录表与自检清单。对应 2026 GCP 第 51 条与 E6(R3) 4.2.2。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://vivarcus.com/assets/og-image.png" />
+  <meta property="og:image:alt" content="元数据审核规程 SOP 模板（数据治理配套）| Vivarcus" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <script src="js/tracking.js"></script>
+  <style>
+    .template-wrap { padding: 1.5rem 0 3rem; }
+    .template-content { max-width: 56rem; }
+    .template-content h2 { margin: 2.2rem 0 0.8rem; font-size: 1.25rem; }
+    .template-content h3 { margin: 1.8rem 0 0.6rem; font-size: 1.08rem; }
+    .template-content h4 { margin: 1.4rem 0 0.5rem; font-size: 1rem; }
+    .template-content p { line-height: 1.8; }
+    .template-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.9rem 0 1.4rem; }
+    .template-table th, .template-table td { text-align: left; padding: 0.55rem 0.8rem; border-top: 1px solid var(--border, #d8dde4); vertical-align: top; }
+    .template-table th { font-size: 0.8rem; opacity: 0.65; font-weight: 600; white-space: nowrap; }
+    .template-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .template-note { font-size: 0.88rem; opacity: 0.85; border-left: 3px solid var(--accent, #2563eb); padding: 0.6rem 1rem; margin: 1.2rem 0; background: var(--bg-soft, #f6f8fa); border-radius: 0 6px 6px 0; }
+    .template-note p { margin: 0.25rem 0; }
+    .template-back { margin: 1.2rem 0 0; font-size: 0.9rem; }
+    .template-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.2rem 0 1.5rem; }
+    .template-guide-item { border: 1px solid var(--border, #d8dde4); border-radius: 8px; padding: 0.8rem 0.9rem; }
+    .template-guide-item strong { display: block; margin-bottom: 0.25rem; font-size: 0.78rem; }
+    .template-guide-item span { font-size: 0.86rem; line-height: 1.6; opacity: 0.78; }
+    .template-related { margin: -0.25rem 0 1.4rem; font-size: 0.88rem; }
+    @media (max-width: 720px) { .template-guide { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+
+      <button class="mobile-toggle" data-i18n-aria="common.menu.aria" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="common.nav.products">产品</a>
+        <a href="templates.html" data-i18n="common.nav.templates">模板库</a>
+        <a href="about.html" data-i18n="common.nav.about">关于</a>
+        <a href="release-26r3.html" data-i18n="common.nav.release">发布说明</a>
+        <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.nav.help">帮助中心</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">
+          <i class="ic ic--folder-open" aria-hidden="true"></i>
+          <span data-i18n="tpl.mdsop.hero.eyebrow">模板库 · 数据治理</span>
+        </span>
+        <h1 class="page-hero-title" data-i18n="tpl.mdsop.hero.title">元数据审核规程 SOP 模板</h1>
+        <p class="page-hero-subtitle" data-i18n="tpl.mdsop.hero.subtitle">稽查最常问"多久审一次元数据、上次发现了什么"。本规程把审核范围、频率、分级与关闭流程写成可执行步骤，附记录表与自检清单。</p>
+      </div>
+    </section>
+
+    <section class="section template-wrap">
+      <div class="container template-content">
+        <p class="template-back"><a href="templates.html" data-i18n="tpl.common.back">&larr; 返回模板库</a></p>
+<div id="tpl-content">
+<div class="template-guide" aria-label="模板使用说明"><div class="template-guide-item"><strong data-i18n="tpl.common.who">适合谁</strong><span>申办方/CRO 数据管理、QA</span></div><div class="template-guide-item"><strong data-i18n="tpl.common.when">何时使用</strong><span>建立数据治理 SOP、试验启动前</span></div><div class="template-guide-item"><strong data-i18n="tpl.common.avoid">重点避免</strong><span>避免审核无计划、发现无分级、关闭无记录</span></div></div><p class="template-related"><strong data-i18n="tpl.common.relatedLabel">配套资源：</strong><a href="audit-trail.html">稽查轨迹专题</a> · <a href="template-data-correction-sop.html">数据更正流程 SOP</a></p>
+<aside class="template-note"><p>更新于 2026-08-16｜适用场景：申办方/CRO 数据管理、QA 建立数据治理 SOP</p><p>依据：2026 版 GCP 第五十一条（元数据与稽查轨迹）、ICH E6(R3) 原则 9.4 与 Annex 1 4.2.2——对应 <a href="audit-trail.html">稽查轨迹专题</a></p><p>免责：本模板为通用框架，具体格式与审批流程以贵司质量管理体系（QMS）文件为准。</p></aside>
+<h2>一、文件控制页</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>项目</th><th>内容</th>
+</tr></thead><tbody>
+<tr><td>文件编号</td><td>（如：SOP-DM-XXX）</td></tr>
+<tr><td>版本号 / 生效日期</td><td></td></tr>
+<tr><td>文件名称</td><td>元数据审核规程</td></tr>
+<tr><td>起草人 / 日期</td><td></td></tr>
+<tr><td>审核人（QA/数据管理负责人）/ 日期</td><td></td></tr>
+<tr><td>批准人 / 日期</td><td></td></tr>
+<tr><td>下次回顾日期</td><td></td></tr>
+<tr><td>关联文件</td><td>数据管理计划（DMP）、数据更正流程 SOP、权限台账、计算机化系统验证文件</td></tr>
+</tbody></table></div>
+<h2>二、目的（Purpose）</h2>
+<p>规范临床试验电子数据的<strong>元数据审核</strong>（含稽查轨迹审查）的范围、频率、方法与记录，确保元数据"被应用、评估、访问和管理"（2026 GCP 第 51 条），并满足 E6(R3) 4.2.2 对元数据审核的要求。</p>
+<h2>三、适用范围（Scope）</h2>
+<p>适用于本试验所有电子数据采集与管理系统的元数据，包括但不限于：EDC/eCRF、IRT/IWRS、ePRO、eTMF/CTMS、中心实验室系统。纸质源文件的元数据（签名、日期、修改痕迹）参照执行。</p>
+<h2>四、职责（Responsibilities）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>角色</th><th>职责</th>
+</tr></thead><tbody>
+<tr><td>数据管理员（DM）</td><td>制定审核计划、执行例行审核、记录发现并跟踪关闭</td></tr>
+<tr><td>数据管理负责人</td><td>批准审核计划、审核重大发现、批准 CAPA</td></tr>
+<tr><td>监查员（CRA）</td><td>按监查计划执行源数据核查，向 DM 反馈元数据异常</td></tr>
+<tr><td>QA</td><td>定期审核本规程的执行情况与记录完整性</td></tr>
+<tr><td>申办方数据治理责任人</td><td>确保系统层元数据能力（稽查轨迹、更正留痕）满足要求</td></tr>
+</tbody></table></div>
+<h2>五、定义与缩写</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>术语</th><th>定义</th>
+</tr></thead><tbody>
+<tr><td>元数据（metadata）</td><td>描述数据的数据：录入者、时间戳、变更历史、审批状态、来源系统等</td></tr>
+<tr><td>稽查轨迹（audit trail）</td><td>记录操作事件序列的元数据：谁、何时、做了什么、改了什么、为什么</td></tr>
+<tr><td>数据更正</td><td>对已录入数据的修改；须保留原值、记录原因并留痕（详见数据更正流程 SOP）</td></tr>
+</tbody></table></div>
+<h2>六、审核范围与方法</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>审核项</th><th>方法</th><th>频率</th><th>抽样</th>
+</tr></thead><tbody>
+<tr><td>稽查轨迹完整性</td><td>导出系统审计日志，核对"录入-变更-审批"链路是否完整、无断点</td><td>每次数据截止</td><td>全部或按风险抽样</td></tr>
+<tr><td>数据更正的合规性</td><td>抽查更正记录：原值是否保留、原因是否明确、批准是否到位</td><td>每次数据截止</td><td>高风险字段 100% + 随机 5%</td></tr>
+<tr><td>关键字段元数据</td><td>入排标准、主要终点、安全性字段的时间戳与操作者</td><td>每次数据截止</td><td>100%</td></tr>
+<tr><td>权限与元数据一致性</td><td>对照权限台账，核对实际操作者是否在授权范围内</td><td>每月</td><td>100%</td></tr>
+<tr><td>系统时间同步</td><td>系统时间与标准时间偏差（影响时间戳可信度）</td><td>每季度</td><td>全系统</td></tr>
+</tbody></table></div>
+<h2>七、程序（Procedure）</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>步骤</th><th>责任人</th><th>操作要求</th><th>时限</th><th>产出记录</th>
+</tr></thead><tbody>
+<tr><td>7.1 制定审核计划</td><td>DM</td><td>按 DMP 与本规程确定审核范围、频率、抽样规则</td><td>试验启动前</td><td>元数据审核计划</td></tr>
+<tr><td>7.2 执行审核</td><td>DM</td><td>按第六节方法逐项核对，发现项记入审核记录表</td><td>按计划</td><td>元数据审核记录表</td></tr>
+<tr><td>7.3 发现分级与跟进</td><td>DM</td><td>重大发现（影响数据完整性/安全性）24 小时内上报数据管理负责人</td><td>24 小时</td><td>发现项记录</td></tr>
+<tr><td>7.4 问题关闭</td><td>DM/QA</td><td>逐项关闭：更正、CAPA 或风险评估；关闭前不得锁定数据库</td><td>数据截止前</td><td>CAPA 记录</td></tr>
+<tr><td>7.5 审核报告</td><td>数据管理负责人</td><td>汇总审核结果与发现，随数据管理报告归档 TMF</td><td>每次数据截止后</td><td>审核报告</td></tr>
+</tbody></table></div>
+<h2>八、元数据审核记录表</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>日期</th><th>系统/模块</th><th>审核项</th><th>抽样范围</th><th>发现描述</th><th>分级（重大/一般）</th><th>处理措施</th><th>责任人</th><th>关闭日期</th>
+</tr></thead><tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<h2>九、自检清单</h2>
+<div class="template-scroll"><table class="template-table"><thead><tr>
+<th>检查项</th><th>是</th><th>否</th>
+</tr></thead><tbody>
+<tr><td>审核计划在试验启动前批准，覆盖全部在用系统</td><td></td><td></td></tr>
+<tr><td>稽查轨迹完整性核对有记录、有抽样依据</td><td></td><td></td></tr>
+<tr><td>高风险字段（入排、主要终点、安全性）100% 审核</td><td></td><td></td></tr>
+<tr><td>发现项全部有分级、有处理措施、有关闭日期</td><td></td><td></td></tr>
+<tr><td>数据锁定前所有重大发现已关闭</td><td></td><td></td></tr>
+<tr><td>审核报告与记录已归档 TMF 对应节点</td><td></td><td></td></tr>
+<tr><td>本规程与数据更正流程 SOP、DMP 无冲突</td><td></td><td></td></tr>
+</tbody></table></div>
+<aside class="template-note"><p>💡 <strong>使用提示</strong>：稽查最常问的两句话——"你们多久审一次元数据？""最近一次审核发现了什么、怎么处理的？"本规程的价值就是把这两个问题变成有据可查的记录。系统能自动留痕的部分（稽查轨迹导出）交给系统，人工只审异常。</p></aside>
+</div>
+        <script type="application/json" id="tpl-data-en">{"guide": "<div class=\"template-guide\" aria-label=\"Template usage notes\"><div class=\"template-guide-item\"><strong>Who it’s for</strong><span>Sponsor/CRO data management, QA</span></div><div class=\"template-guide-item\"><strong>When to use</strong><span>When building data governance SOPs, before trial start</span></div><div class=\"template-guide-item\"><strong>Key pitfalls to avoid</strong><span>Avoid unplanned reviews, ungraded findings and unrecorded closures</span></div></div><p class=\"template-related\"><strong>Companion resources:</strong> <a href=\"audit-trail.html\">Audit Trail Deep Dive</a> · <a href=\"template-data-correction-sop.html\">Data Correction SOP</a></p>", "body": "<aside class=\"template-note\"><p>Updated 2026-08-16 | Use case: sponsor/CRO data management and QA building data governance SOPs</p><p>Basis: China's 2026 GCP Article 51 (metadata and audit trails), ICH E6(R3) Principle 9.4 and Annex 1 4.2.2 — see the <a href=\"audit-trail.html\">Audit Trail Deep Dive</a></p><p>Disclaimer: this template is a generic framework; the exact format and approval flow should follow your QMS documents.</p></aside>\n<h2>1. Document Control Page</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Item</th><th>Content</th>\n</tr></thead><tbody>\n<tr><td>Document ID</td><td>(e.g., SOP-DM-XXX, coded by department-process-sequence)</td></tr>\n<tr><td>Version / effective date</td><td></td></tr>\n<tr><td>Document title</td><td>Metadata Review Procedure</td></tr>\n<tr><td>Author / date</td><td></td></tr>\n<tr><td>Reviewer (QA/data management lead) / date</td><td></td></tr>\n<tr><td>Approver / date</td><td></td></tr>\n<tr><td>Next review date</td><td></td></tr>\n<tr><td>Related documents</td><td>Data Management Plan (DMP), Data Correction SOP, Access Rights Register, computerized system validation records</td></tr>\n</tbody></table></div>\n<h2>2. Purpose</h2>\n<p>To define the scope, frequency, method and records of <strong>metadata review</strong> (including audit trail review) for clinical trial electronic data, ensuring metadata is \"applied, evaluated, accessed and managed\" (2026 GCP Article 51) and meeting E6(R3) 4.2.2.</p>\n<h2>3. Scope</h2>\n<p>Applies to metadata of all electronic data capture and management systems in the trial, including but not limited to: EDC/eCRF, IRT/IWRS, ePRO, eTMF/CTMS, central laboratory systems. Metadata of paper source documents (signatures, dates, correction marks) follows by analogy.</p>\n<h2>4. Responsibilities</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Role</th><th>Responsibility</th>\n</tr></thead><tbody>\n<tr><td>Data Manager (DM)</td><td>Draft the review plan, perform routine reviews, record and track findings to closure</td></tr>\n<tr><td>Data management lead</td><td>Approve the review plan, review major findings, approve CAPAs</td></tr>\n<tr><td>Monitor (CRA)</td><td>Perform SDV per the monitoring plan; feed metadata anomalies back to DM</td></tr>\n<tr><td>QA</td><td>Periodically audit execution of this procedure and record completeness</td></tr>\n<tr><td>Sponsor data governance owner</td><td>Ensure system-level metadata capabilities (audit trails, correction traces) meet requirements</td></tr>\n</tbody></table></div>\n<h2>5. Definitions &amp; Abbreviations</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Term</th><th>Definition</th>\n</tr></thead><tbody>\n<tr><td>Metadata</td><td>Data describing data: who entered it, timestamps, change history, approval status, source system</td></tr>\n<tr><td>Audit trail</td><td>Metadata recording the sequence of operational events: who, when, did what, changed what, why</td></tr>\n<tr><td>Data correction</td><td>Modification of entered data; must preserve the original value, record the reason and leave a trace (see the Data Correction SOP)</td></tr>\n</tbody></table></div>\n<h2>6. Review Scope and Methods</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Review item</th><th>Method</th><th>Frequency</th><th>Sampling</th>\n</tr></thead><tbody>\n<tr><td>Audit trail completeness</td><td>Export system audit logs; verify the enter-change-approve chain is complete with no gaps</td><td>Each data cut</td><td>All, or risk-based sampling</td></tr>\n<tr><td>Correction compliance</td><td>Spot-check corrections: original value preserved, reason clear, approval in place</td><td>Each data cut</td><td>100% high-risk fields + random 5%</td></tr>\n<tr><td>Critical-field metadata</td><td>Timestamps and operators of inclusion/exclusion, primary endpoint and safety fields</td><td>Each data cut</td><td>100%</td></tr>\n<tr><td>Access/metadata consistency</td><td>Against the Access Rights Register, verify actual operators were within their authorization</td><td>Monthly</td><td>100%</td></tr>\n<tr><td>System time sync</td><td>Drift between system time and standard time (affects timestamp credibility)</td><td>Quarterly</td><td>All systems</td></tr>\n</tbody></table></div>\n<h2>7. Procedure</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Step</th><th>Owner</th><th>Requirement</th><th>Timeline</th><th>Record</th>\n</tr></thead><tbody>\n<tr><td>7.1 Draft the review plan</td><td>DM</td><td>Define scope, frequency and sampling rules per the DMP and this SOP</td><td>Before trial start</td><td>Metadata review plan</td></tr>\n<tr><td>7.2 Perform the review</td><td>DM</td><td>Check items per Section 6; record findings in the review log</td><td>Per plan</td><td>Metadata review log</td></tr>\n<tr><td>7.3 Grade and escalate findings</td><td>DM</td><td>Major findings (data integrity or safety impact) escalated within 24 hours</td><td>24 hours</td><td>Finding records</td></tr>\n<tr><td>7.4 Close findings</td><td>DM/QA</td><td>Close each item: correction, CAPA or risk assessment; no database lock before closure</td><td>Before data cut</td><td>CAPA records</td></tr>\n<tr><td>7.5 Review report</td><td>Data management lead</td><td>Summarize results and findings; file with the data management report in the TMF</td><td>After each data cut</td><td>Review report</td></tr>\n</tbody></table></div>\n<h2>8. Metadata Review Log</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Date</th><th>System/module</th><th>Review item</th><th>Sampling scope</th><th>Finding</th><th>Grade (major/minor)</th><th>Action</th><th>Owner</th><th>Closure date</th>\n</tr></thead><tbody>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n</tbody></table></div>\n<h2>9. Self-Check List</h2>\n<div class=\"template-scroll\"><table class=\"template-table\"><thead><tr>\n<th>Check item</th><th>Yes</th><th>No</th>\n</tr></thead><tbody>\n<tr><td>Review plan approved before trial start, covering all systems in use</td><td></td><td></td></tr>\n<tr><td>Audit-trail completeness checks are recorded with sampling rationale</td><td></td><td></td></tr>\n<tr><td>High-risk fields (inclusion/exclusion, primary endpoint, safety) reviewed 100%</td><td></td><td></td></tr>\n<tr><td>Every finding has a grade, an action and a closure date</td><td></td><td></td></tr>\n<tr><td>All major findings closed before database lock</td><td></td><td></td></tr>\n<tr><td>Review reports and records filed at the right TMF nodes</td><td></td><td></td></tr>\n<tr><td>This SOP has no conflicts with the Data Correction SOP and the DMP</td><td></td><td></td></tr>\n</tbody></table></div>\n<aside class=\"template-note\"><p>💡 <strong>Tip</strong>: the two questions auditors ask most — \"How often do you review metadata?\" and \"What did your last review find, and what did you do about it?\" This procedure turns both into retrievable records. Let the system keep the traces it can generate automatically (audit trail exports); review only the anomalies manually.</p></aside>"}</script>
+        <script>
+          (function () {
+            var el = document.getElementById('tpl-content');
+            var zhHTML = el.innerHTML;
+            var data = JSON.parse(document.getElementById('tpl-data-en').textContent);
+            function apply() {
+              var en = !!(window.I18N && I18N.getLang() === 'en');
+              el.innerHTML = en ? (data.guide + data.body) : zhHTML;
+            }
+            window.addEventListener('langchange', apply);
+          })();
+        </script>
+      </div>
+    </section>
+    <section class="cta-section" data-reveal>
+      <div class="container">
+        <div class="cta-content">
+          <h2 data-i18n="tpl.mdsop.cta.title">元数据审核的留痕，Vivarcus eTMF 里已经内置</h2>
+          <p data-i18n="tpl.mdsop.cta.desc">稽查轨迹随记录自动留存、审核可导出，发现项在系统里直接闭环，不用手工维护审核台账。</p>
+          <div class="cta-actions">
+            <a href="trial.html" class="btn btn-primary btn-lg">
+              <span data-i18n="common.nav.trial">试用申请</span>
+              <i class="ic ic--arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="templates.html" class="btn btn-outline btn-lg" data-i18n="tpl.common.ctaSecondary">全部模板</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus">
+            <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+          </a>
+          <p data-i18n="common.footer.brand">为生命科学行业打造的数字化平台。灵活、合规、自主可控。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.products">产品</h4>
+          <a href="products.html" data-i18n="common.footer.etmf">eTMF</a>
+          <a href="products.html" data-i18n="common.footer.ctms">CTMS</a>
+          <a href="products.html" data-i18n="common.footer.startup">Study Startup</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.resources">资源</h4>
+          <a href="etmf-guide.html" data-i18n="common.footer.guide">eTMF 指南</a>
+          <a href="ctms-guide.html" data-i18n="common.footer.ctmsGuide">CTMS 指南</a>
+          <a href="etmf-ctms-edc.html" data-i18n="common.footer.cmp">系统对比</a>
+          <a href="tmf-reference.html" data-i18n="common.footer.tmfReference">TMF 分类参考</a>
+          <a href="templates.html" data-i18n="common.footer.templates">模板库</a>
+          <a href="regulations.html" data-i18n="common.footer.regulations">法规库</a>
+          <a href="whitepaper.html" data-i18n="common.footer.whitepaper">白皮书</a>
+          <a href="glossary.html" data-i18n="common.footer.glossary">术语词典</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.tools">工具</h4>
+          <a href="ctcae.html" data-i18n="common.footer.ctcae">CTCAE 速查</a>
+          <a href="pd-decision-tree.html" data-i18n="common.footer.pdTree">PD 决策树</a>
+          <a href="timeline-calendar.html" data-i18n="common.footer.timeline">时限日历</a>
+          <a href="visit-calculator.html" data-i18n="common.footer.visitCalc">访视计算器</a>
+          <a href="sample-size-calculator.html" data-i18n="common.footer.sampleSize">样本量计算器</a>
+          <a href="tmf-checker.html" data-i18n="common.footer.tmfChecker">TMF 自查器</a>
+          <a href="edl-generator.html" data-i18n="common.footer.edlGenerator">EDL 生成器</a>
+          <a href="audit-findings.html" data-i18n="common.footer.auditFindings">稽查对照表</a>
+          <a href="cde-trials.html" data-i18n="common.footer.cdeTrials">CDE 数据</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="contact.html" data-i18n="common.footer.contact">联系我们</a>
+          <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
+          <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
+          <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
+          <a href="https://github.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.github">GitHub</a>
+          <a href="https://gitee.com/vivarcus" target="_blank" rel="noopener" data-i18n="common.footer.gitee">Gitee</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="common.footer.copyright">&copy; 2010–2026 Vivarcus. 保留所有权利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

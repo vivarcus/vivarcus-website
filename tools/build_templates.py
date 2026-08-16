@@ -84,6 +84,21 @@ PAGES = [
      "关中心检查清单模板：数据清理、药物清点、生物样本、文件归档、通知收尾五类逐项关闭。关中心访视前 2 周先自查，稽查高发环节提前堵漏。",
      "模板库 · 检查清单", "关中心检查清单模板",
      "关中心是稽查高发环节：数据没清干净、药物对不上账、伦理没结题通知最常见。关中心前 2 周先用本清单自查。"),
+    ("14-metadata-review-sop.md", "template-metadata-review-sop.html",
+     "元数据审核规程 SOP 模板（数据治理配套）| Vivarcus",
+     "元数据审核规程 SOP 模板：审核范围与方法（稽查轨迹完整性、数据更正合规、关键字段元数据、权限一致性、系统时间同步）、发现分级与关闭流程、元数据审核记录表与自检清单。对应 2026 GCP 第 51 条与 E6(R3) 4.2.2。",
+     "模板库 · 数据治理", "元数据审核规程 SOP 模板",
+     "稽查最常问\"多久审一次元数据、上次发现了什么\"。本规程把审核范围、频率、分级与关闭流程写成可执行步骤，附记录表与自检清单。"),
+    ("15-data-correction-sop.md", "template-data-correction-sop.html",
+     "数据更正流程 SOP 模板（受控更正）| Vivarcus",
+     "数据更正流程 SOP 模板：更正发起（研究者方/申办方方/源记录三场景）、审批执行五步、数据更正记录表（原值/新值/原因/批准/时间戳）与自检清单。对应 2026 GCP 第 48/51 条与 E6(R3) 4.2.3。",
+     "模板库 · 数据治理", "数据更正流程 SOP 模板",
+     "改数据不是问题，改得没痕迹才是问题。本流程把\"申请 → 批准 → 留痕\"三步写成受控程序，覆盖申办方更正须 PI 书面同意的场景。"),
+    ("16-access-register.md", "template-access-register.html",
+     "用户权限台账模板（Access Rights Register）| Vivarcus",
+     "用户权限台账模板：权限主表与登记表、授权五原则（职责相符/盲态隔离/组织隔离/最小必要/全量留痕）、变更六步流程与自检清单。对应 2026 GCP 第 53 条（五）。",
+     "模板库 · 数据治理", "用户权限台账模板",
+     "飞检常查\"离岗到权限收回中间差几天\"。本台账让授权、变更、收回全量留痕，附定期复核流程与自检清单。"),
 ]
 
 HEAD = """<!DOCTYPE html>
@@ -263,6 +278,7 @@ FOOT = """
 
         <div class="footer-col">
           <h4 data-i18n="common.footer.links">链接</h4>
+          <a href="contact.html" data-i18n="common.footer.contact">联系我们</a>
           <a href="trial.html" data-i18n="common.footer.trial">试用申请</a>
           <a href="help/zh/index.html" data-lang-href-zh="help/zh/index.html" data-lang-href-en="help/en/index.html" data-i18n="common.footer.help">帮助中心</a>
           <a href="release-26r3.html" data-i18n="common.footer.release">发布说明</a>
@@ -289,11 +305,17 @@ CTA_TITLES = {
     "template-tmf-index.html": "这份清单，Vivarcus eTMF 里已经内置",
     "template-audit-readiness-checklist.html": "这套自查，Vivarcus eTMF 里已经内置",
     "template-sop-framework.html": "这套流程，Vivarcus 里已经内置",
+    "template-metadata-review-sop.html": "元数据审核的留痕，Vivarcus eTMF 里已经内置",
+    "template-data-correction-sop.html": "受控的数据更正，Vivarcus eTMF 里已经内置",
+    "template-access-register.html": "权限台账，Vivarcus eTMF 里可以自动生成",
 }
 CTA_DESCS = {
     "template-tmf-index.html": "EDL 自动生成、文件自动归位到参考模型对应节点，比手工维护 Excel 清单快一个量级。",
     "template-audit-readiness-checklist.html": "完整性、及时性、质量三类指标实时可见，稽查前导出清单而不是突击整理。",
     "template-sop-framework.html": "流程、角色、时限在系统里结构化运转，SOP 与实操天然一致。",
+    "template-metadata-review-sop.html": "稽查轨迹随记录自动留存、审核可导出，发现项在系统里直接闭环，不用手工维护审核台账。",
+    "template-data-correction-sop.html": "原值不遮盖、更正留痕、批准后生效——对应第 48/51 条与 R3 4.2.3，核查现场可直接演示。",
+    "template-access-register.html": "角色权限按职责、盲态、组织分层管理，授权与变更全量留痕，台账一键导出。",
 }
 DEFAULT_CTA_TITLE = "这些模板，Vivarcus eTMF 里已经内置"
 DEFAULT_CTA_DESC = "表格可以直接使用；文件归位、版本受控和问题闭环，则可以交给系统持续管理。"
@@ -382,6 +404,24 @@ PAGE_GUIDES = {
         "关中心访视前 2 周与访视当日",
         "避免数据未清理、药物不平账、伦理未结题",
         '<a href="template-closeout-visit-report.html">关中心访视报告</a> · <a href="template-tmf-index.html">TMF 文件清单</a>',
+    ),
+    "template-metadata-review-sop.html": (
+        "申办方/CRO 数据管理、QA",
+        "建立数据治理 SOP、试验启动前",
+        "避免审核无计划、发现无分级、关闭无记录",
+        '<a href="audit-trail.html">稽查轨迹专题</a> · <a href="template-data-correction-sop.html">数据更正流程 SOP</a>',
+    ),
+    "template-data-correction-sop.html": (
+        "数据管理、研究中心、QA",
+        "建立更正流程、处理数据修改时",
+        "避免覆盖式修改、审批缺失、留痕不完整",
+        '<a href="audit-trail.html">稽查轨迹专题</a> · <a href="template-metadata-review-sop.html">元数据审核规程 SOP</a>',
+    ),
+    "template-access-register.html": (
+        "权限管理员、QA、项目负责人",
+        "建立权限台账、人员变动时",
+        "避免离岗未收回、权限与职责不符、台账与系统不一致",
+        '<a href="audit-trail.html">稽查轨迹专题</a> · <a href="template-metadata-review-sop.html">元数据审核规程 SOP</a>',
     ),
 }
 
@@ -472,6 +512,24 @@ EN_META = {
         "Template Library · Checklist",
         "Close-out Checklist Template",
         "Close-out is an audit hotspot: uncleaned data, drug accountability gaps and missing ethics close-out notifications are the most common. Self-check with this list 2 weeks before the close-out visit."),
+    "template-metadata-review-sop.html": ("tpl.mdsop",
+        "Metadata Review SOP Template (Data Governance Companion) | Vivarcus",
+        "Metadata review SOP template: review scope and methods (audit-trail completeness, correction compliance, critical-field metadata, access consistency, system time sync), finding grading and closure, review log and self-check list. Matching 2026 GCP Article 51 and E6(R3) 4.2.2.",
+        "Template Library · Data Governance",
+        "Metadata Review SOP Template",
+        "Auditors' two favorite questions: \"how often do you review metadata?\" and \"what did the last review find?\" This procedure turns scope, frequency, grading and closure into executable steps, with a log and self-check list."),
+    "template-data-correction-sop.html": ("tpl.dcsop",
+        "Data Correction SOP Template (Controlled Corrections) | Vivarcus",
+        "Data correction SOP template: correction initiation (investigator-side / sponsor-side / source-record scenarios), a five-step approval and execution flow, a correction log (original/new value, reason, approval, timestamps) and a self-check list. Matching 2026 GCP Articles 48/51 and E6(R3) 4.2.3.",
+        "Template Library · Data Governance",
+        "Data Correction SOP Template",
+        "Changing data is not the problem — changing it without a trace is. This flow turns \"request → approve → leave a trace\" into a controlled procedure, including the case where sponsor corrections need written PI consent."),
+    "template-access-register.html": ("tpl.access",
+        "User Access Rights Register Template | Vivarcus",
+        "User access rights register template: master table and register, five authorization principles (role-fit, blind isolation, organization isolation, least privilege, full trace), a six-step change flow and a self-check list. Matching 2026 GCP Article 53(5).",
+        "Template Library · Data Governance",
+        "User Access Rights Register Template",
+        "Inspections often check \"the gap between departure and access revocation\". This register makes authorizations, changes and revocations fully traceable, with a periodic review flow and self-check list."),
 }
 
 # English CTA overrides (others fall back to EN default)
@@ -479,11 +537,17 @@ EN_CTA_TITLES = {
     "template-tmf-index.html": "This checklist is built into Vivarcus eTMF",
     "template-audit-readiness-checklist.html": "This self-check is built into Vivarcus eTMF",
     "template-sop-framework.html": "These processes are built into Vivarcus",
+    "template-metadata-review-sop.html": "Metadata review traces are built into Vivarcus eTMF",
+    "template-data-correction-sop.html": "Controlled data corrections are built into Vivarcus eTMF",
+    "template-access-register.html": "The access register generates itself in Vivarcus eTMF",
 }
 EN_CTA_DESCS = {
     "template-tmf-index.html": "Auto-generated EDLs, documents auto-filed to the right reference model nodes — an order of magnitude faster than maintaining an Excel checklist by hand.",
     "template-audit-readiness-checklist.html": "Completeness, timeliness and quality metrics are visible in real time — export the checklist before an audit instead of last-minute scrambling.",
     "template-sop-framework.html": "Processes, roles and timelines run structurally inside the system — SOPs and practice stay consistent by design.",
+    "template-metadata-review-sop.html": "Audit trails are kept with every record and exports are reviewable; findings close inside the system — no manual review ledgers to maintain.",
+    "template-data-correction-sop.html": "Original values never obscured, corrections traced, effective only after approval — matching Articles 48/51 and E6(R3) 4.2.3, demonstrable live during inspections.",
+    "template-access-register.html": "Roles and access managed by duty, blinding and organization with full traces of grants and changes — export the register in one click.",
 }
 EN_DEFAULT_CTA_TITLE = "These templates are built into Vivarcus eTMF"
 EN_DEFAULT_CTA_DESC = "The forms work as-is; filing, version control and issue closure can be handed to the system for ongoing management."
@@ -573,6 +637,24 @@ EN_GUIDES = {
         "2 weeks before the close-out visit and on the visit day",
         "Avoid uncleaned data, unbalanced drug accountability and unclosed ethics notifications",
         '<a href="template-closeout-visit-report.html">Close-out Visit Report</a> · <a href="template-tmf-index.html">TMF Index</a>',
+    ),
+    "template-metadata-review-sop.html": (
+        "Sponsor/CRO data management, QA",
+        "When building data governance SOPs, before trial start",
+        "Avoid unplanned reviews, ungraded findings and unrecorded closures",
+        '<a href="audit-trail.html">Audit Trail Deep Dive</a> · <a href="template-data-correction-sop.html">Data Correction SOP</a>',
+    ),
+    "template-data-correction-sop.html": (
+        "Data management, study sites, QA",
+        "When building correction flows, when handling data changes",
+        "Avoid overwrite edits, missing approvals and incomplete traces",
+        '<a href="audit-trail.html">Audit Trail Deep Dive</a> · <a href="template-metadata-review-sop.html">Metadata Review SOP</a>',
+    ),
+    "template-access-register.html": (
+        "Access administrators, QA, project leads",
+        "When building the access register, at staff changes",
+        "Avoid unrevoked access after departure, role mismatches and register-system drift",
+        '<a href="audit-trail.html">Audit Trail Deep Dive</a> · <a href="template-metadata-review-sop.html">Metadata Review SOP</a>',
     ),
 }
 
