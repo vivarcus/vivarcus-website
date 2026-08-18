@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="notfound.meta.title">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>页面不存在 — Vivarcus</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n-data.js"></script>
+  <script src="js/seo-head.js"></script>
+  <style>
+    .notfound-wrap {
+      padding: 5rem 1rem 4rem;
+      max-width: 40rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .notfound-code {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent, #2563eb);
+      margin-bottom: 0.5rem;
+    }
+    .notfound-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="header-logo" data-i18n-aria="common.logo.aria" aria-label="Vivarcus 首页">
+        <span class="header-logo-dark">Vivar</span><span class="header-logo-accent">cus</span>
+      </a>
+      <div class="header-actions">
+        <button class="lang-switch" data-lang-toggle aria-label="Switch to English">
+          <span data-lang-zh>EN</span><span data-lang-en>中</span>
+        </button>
+        <a href="trial.html" class="btn btn-sm btn-primary" data-i18n="common.nav.trial">试用申请</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="notfound-wrap">
+    <p class="notfound-code">404</p>
+    <h1 data-i18n="notfound.title">页面不存在</h1>
+    <p data-i18n="notfound.desc">您访问的链接可能已失效，或地址输入有误。</p>
+    <div class="notfound-actions">
+      <a href="/" class="btn btn-primary" data-i18n="notfound.home">返回首页</a>
+      <a href="contact.html" class="btn btn-secondary" data-i18n="notfound.contact">联系我们</a>
+    </div>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

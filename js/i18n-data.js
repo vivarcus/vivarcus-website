@@ -1610,6 +1610,13 @@ window.I18N_DATA = {
     'ss.cta.desc': '方案、访视计划、TMF 清单、时限提醒——从构思到稽查，一套系统全流程落点。',
     'ss.cta.secondary': '中国 TMF 白皮书',
 
+    /* ---- 404 ---- */
+    'notfound.meta.title': '页面不存在 — Vivarcus',
+    'notfound.title': '页面不存在',
+    'notfound.desc': '您访问的链接可能已失效，或地址输入有误。',
+    'notfound.home': '返回首页',
+    'notfound.contact': '联系我们',
+
     /* ---- 联系我们 ---- */
     'contact.meta.title': '联系我们 — Vivarcus',
     'contact.meta.desc': '联系 Vivarcus：商务合作、产品试用、技术支持与开源社区反馈渠道，邮件 1–2 个工作日内回复。',
@@ -3241,6 +3248,13 @@ window.I18N_DATA = {
     'ss.cta.title': 'The protocol design toolchain, unified in one system by Vivarcus',
     'ss.cta.desc': 'Protocol, visit schedule, TMF index, deadline reminders — from design to audit, one system for the whole workflow.',
     'ss.cta.secondary': 'China TMF Whitepaper',
+
+    /* ---- 404 ---- */
+    'notfound.meta.title': 'Page Not Found — Vivarcus',
+    'notfound.title': 'Page not found',
+    'notfound.desc': 'The link may be outdated or the address may be incorrect.',
+    'notfound.home': 'Back to home',
+    'notfound.contact': 'Contact us',
 
     /* ---- Contact Us ---- */
     'contact.meta.title': 'Contact Us — Vivarcus',
