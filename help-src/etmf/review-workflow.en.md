@@ -1,7 +1,7 @@
 ---
 title: Document Review, Approval & Versioning
 description: Learn the full controlled document lifecycle: submit for review, content review, QC, approval, electronic signature, and versioning when amendments occur.
-last_updated: 2026-08-15
+last_updated: 2026-08-20
 related:
   - upload-documents
   - quality-issues
@@ -24,14 +24,14 @@ Documents move through a controlled lifecycle in Vivarcus:
 
 Open the document detail page → **All Actions → Submit for Review**:
 
-1. Assign a **Reviewer** and a **QC Reviewer** (choose yourself in a single-account trial).
+1. Assign a **Reviewer** and a **QC Reviewer** (search any Vault user; choose yourself in a single-account trial).
 2. Fill in **Due Date** and submit. The state becomes **In Review**.
 
 ## Review, QC & Approval
 
 | Task | Steps | Result |
 |------|-------|--------|
-| **Review Content** | Complete it in **My Tasks**, choose **Send to QC** | State becomes In QC Review |
+| **Review Content** | Open it in **My Tasks** and complete it, choose **Send to QC** (no Accept step) | State becomes In QC Review |
 | **QC Review** | Complete it, choose **Passed** | State becomes In Approval |
 | **Approve Document** | **All Actions → Approve**, assign an Approver and submit; complete the approval task in **My Tasks** (with electronic signature if required) | State becomes Approved, version ~1.0 |
 
@@ -52,6 +52,7 @@ The same document family keeps its version history; the steady-state version adv
 | Symptom | Suggestion |
 |---------|------------|
 | Submit for Review is missing | Verify the document is saved and the account has document action permissions |
+| Cannot find users in the start dialog | Search by name or email; you do not need to grant Reviewer / QC Reviewer in Sharing first |
 | Electronic signature step fails | Follow the on-page prompts; contact support if it persists |
 | Want to skip review | Use **Promote to Approved** |
 
